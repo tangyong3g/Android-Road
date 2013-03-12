@@ -1,0 +1,71 @@
+package com.example.android_begin_gl_3d;
+
+import com.ty.example_unit_1.UnitOneActivity;
+
+import android.app.ListActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+public class MainActivity extends ListActivity {
+
+	String[] units = new String[] { "unit_1", "unit_2", "unit_3", "unit_4",
+			"unit_5", "unit_6", "unit_7", };
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items,
+				units));
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+
+		Class cls = null;
+		switch (position) {
+		case 0:
+			cls = UnitOneActivity.class;
+			intentToUnit(cls);
+			break;
+		case 1:
+			intentToUnit(cls);
+			break;
+		case 2:
+			intentToUnit(cls);
+			break;
+		case 3:
+			intentToUnit(cls);
+			break;
+		case 4:
+			intentToUnit(cls);
+			break;
+		case 5:
+			intentToUnit(cls);
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	private void intentToUnit(Class cls) {
+
+		Intent intent = new Intent();
+		intent.setClass(this, cls);
+
+		startActivity(intent);
+	}
+
+}
