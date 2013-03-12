@@ -1,5 +1,8 @@
 package com.ty.example_unit_1;
 
-public class UnitTwoActivity {
+import android.app.Activity;
+
+public class UnitTwoActivity extends Activity{
+	
 
 }
