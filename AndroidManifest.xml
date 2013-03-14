@@ -30,6 +30,8 @@
         </activity>
         <activity android:name="com.ty.example_unit_1.ViewPortActivity" >
         </activity>
+        <activity android:name="com.ty.example_unit_1.ISOMapActivity" >
+        </activity>
     </application>
 
 </manifest>
