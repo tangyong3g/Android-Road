@@ -11,8 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class UnitOneActivity extends ListActivity {
-
-	String[] units = new String[] { "viewPort" };
+	
+	String[] units = new String[] { "viewPort" ,"isoMap","drawMethod"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +29,20 @@ public class UnitOneActivity extends ListActivity {
 		switch (position) {
 		case 0:
 			cls = ViewPortActivity.class;
-			intentToActivity(cls);
+			break;
+		case 1:
+			cls = ISOMapActivity.class;
+			break;
+		case 2:
+			cls = DrawMethodActivity.class;
 			break;
 		default:
 			break;
 		}
+		intentToActivity(cls);
 	}
-
+	
+	
 	private void intentToActivity(Class cls) {
 		Intent intent = new Intent();
 		intent.setClass(this, cls);
