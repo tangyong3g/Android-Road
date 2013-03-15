@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 public class UnitOneActivity extends ListActivity {
 	
-	String[] units = new String[] { "viewPort" ,"isoMap","drawMethod"};
+	String[] units = new String[] { "viewPort" ,"isoMap","drawMethod","SpritchMove"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,9 @@ public class UnitOneActivity extends ListActivity {
 			break;
 		case 2:
 			cls = DrawMethodActivity.class;
+			break;
+		case 3:
+			cls = SpritchMoveActivity.class;
 			break;
 		default:
 			break;
