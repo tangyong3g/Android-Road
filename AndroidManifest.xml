@@ -36,6 +36,8 @@
         </activity>
 		<activity android:name="com.ty.example_unit_1.SpritchMoveActivity" >
         </activity>
+        <activity android:name="com.ty.example_unit_1.CanavsActivity" >
+        </activity>
     </application>
 
 </manifest>
