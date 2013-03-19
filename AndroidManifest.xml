@@ -34,9 +34,11 @@
         </activity>
         <activity android:name="com.ty.example_unit_1.DrawMethodActivity" >
         </activity>
-		<activity android:name="com.ty.example_unit_1.SpritchMoveActivity" >
+        <activity android:name="com.ty.example_unit_1.SpritchMoveActivity" >
         </activity>
         <activity android:name="com.ty.example_unit_1.CanavsActivity" >
+        </activity>
+        <activity android:name="com.ty.example_unit_1.cube.CubeActivity" >
         </activity>
     </application>
 

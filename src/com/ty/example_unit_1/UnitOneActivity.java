@@ -1,18 +1,20 @@
 package com.ty.example_unit_1;
 
 import com.example.android_begin_gl_3d.R;
+import com.ty.example_unit_1.cube.CubeActivity;
 
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class UnitOneActivity extends ListActivity {
 	
-	String[] units = new String[] { "viewPort" ,"isoMap","drawMethod","SpritchMove","Canvas"};
+	String[] units = new String[] { "viewPort" ,"isoMap","drawMethod","SpritchMove","Canvas","Animation","Cube"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,12 @@ public class UnitOneActivity extends ListActivity {
 			break;
 		case 4:
 			cls = CanavsActivity.class;
+			break;
+		case 5:
+			cls = AnimationActivity.class;
+			break;
+		case 6:
+			cls = CubeActivity.class;
 			break;
 		default:
 			break;
