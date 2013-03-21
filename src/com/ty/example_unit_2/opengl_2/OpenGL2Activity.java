@@ -1,4 +1,4 @@
-package com.ty.example_unit_2;
+package com.ty.example_unit_2.opengl_2;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -8,20 +8,21 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
-import com.ty.example_unit_2.opengl_1.OpenGL1Activity;
+import com.ty.example_unit_2.opengl_2.meshcube.ＭeshCubeActivity;
 
 /**
  * 
  * @author tangyong
  * 
  */
-public class UnitTwoActivity extends ListActivity {
+public class OpenGL2Activity extends ListActivity {
 
-	String[] units = new String[] { "openGL1.x" };
+	String[] units = new String[] { "MeshCube" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items,
 				units));
 	}
@@ -33,7 +34,7 @@ public class UnitTwoActivity extends ListActivity {
 		Class cls = null;
 		switch (position) {
 		case 0:
-			cls = OpenGL1Activity.class;
+			cls = ＭeshCubeActivity.class;
 			break;
 		case 1:
 			break;

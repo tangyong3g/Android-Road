@@ -15,7 +15,7 @@ import android.widget.ListView;
 
 public class UnitOneActivity extends ListActivity {
 	
-	String[] units = new String[] { "viewPort" ,"isoMap","drawMethod","SpritchMove","Canvas","Animation","Cube","CoordiateSystem"};
+	String[] units = new String[] { "viewPort" ,"isoMap","drawMethod","SpritchMove","Canvas","Animation","Cube","CoordiateSystem","MeshCube"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,8 @@ public class UnitOneActivity extends ListActivity {
 			break;
 		case 7:
 			cls = CoordiateSystemActivity.class;
+			break;
+		case 8:
 			break;
 		default:
 			break;

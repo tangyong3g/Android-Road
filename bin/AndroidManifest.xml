@@ -46,6 +46,16 @@
         </activity>
         <activity android:name="com.ty.example_unit_2.UnitTwoActivity" >
         </activity>
+        
+        
+        <activity android:name="com.ty.example_unit_2.opengl_1.cube.CubeActivity" >
+        </activity>
+         
+        <activity android:name="com.ty.example_unit_2.opengl_1.OpenGL1Activity" >
+        </activity>
+        
+        
+        
     </application>
 
 </manifest>
