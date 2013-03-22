@@ -4,6 +4,8 @@ import java.nio.ByteBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import android.util.Log;
+
 /**
  * 定义立方体的顶点，色彩
  * 
@@ -15,6 +17,9 @@ public class Cube {
 	 ByteBuffer verticesBuffer;
 	//索引缓冲
 	ByteBuffer indexBuffer;
+	
+	//纹理缓冲　
+	ByteBuffer textureBuffer;
 	
 	public Cube(){
 		//定义的顶点坐标
@@ -55,6 +60,19 @@ public class Cube {
 			-1, 1, 1,  
 			-1, -1, -1 
 		};
+		 
+		 
+		 //纹理坐标
+		 final byte[] s_cube_texture_coordiate  = {
+				 
+		     0,0,
+		     0,1,
+		     1,1,
+		     1,0,
+		     0,0,
+		     1,1,
+		     
+		 };
 		
 		//定义的绘制顺序
 		 final byte[] s_cubeIndices = {
@@ -67,19 +85,29 @@ public class Cube {
 		};
 		
 		//把数据转化到缓冲中去
+		 //申请这么多长度
 		verticesBuffer = ByteBuffer.allocateDirect(s_cubeVertices.length);
+		//把数据加入
 		verticesBuffer.put(s_cubeVertices);
+		//设置开始位置　为0
 		verticesBuffer.rewind();
 		
 		indexBuffer = ByteBuffer.allocateDirect(s_cubeIndices.length);
 		indexBuffer.put(s_cubeIndices);
 		indexBuffer.rewind(); 
+		
+		textureBuffer = ByteBuffer.allocateDirect(s_cube_texture_coordiate.length);
+		textureBuffer.put(s_cube_texture_coordiate);
+		textureBuffer.rewind();
 	}
 	
 	//绘制
-	public void draw(GL10 gl10){
+	public void draw(GL10 gl10,int textureId){
+		gl10.glBindTexture(GL10.GL_TEXTURE_2D, textureId);
 		gl10.glVertexPointer(3, GL10.GL_BYTE, 0, verticesBuffer);
 		gl10.glDrawElements(GL10.GL_TRIANGLES, 6*6, GL10.GL_UNSIGNED_BYTE, indexBuffer);
+		gl10.glTexCoordPointer(2, GL10.GL_FLOAT, 0, textureBuffer);
+		
 	}
 
 }

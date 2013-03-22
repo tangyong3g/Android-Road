@@ -1,6 +1,7 @@
 package com.example.android_begin_gl_3d;
 
 import com.ty.example_unit_1.UnitOneActivity;
+import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -43,7 +44,7 @@ public class MainActivity extends ListActivity {
 			cls = com.ty.example_unit_2.UnitTwoActivity.class;
 			break;
 		case 2:
-			intentToUnit(cls);
+			cls = UnitThreeActivity.class;
 			break;
 		case 3:
 			intentToUnit(cls);

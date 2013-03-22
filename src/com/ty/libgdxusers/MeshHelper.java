@@ -3,7 +3,7 @@ package com.ty.libgdxusers;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Mesh;
-import com.badlogic.gdx.graphics.g3d.loaders.ModelLoaderOld;
+//import com.badlogic.gdx.graphics.g3d.loaders.ModelLoaderOld;
 import com.badlogic.gdx.math.Vector3;
 
 public class MeshHelper {
@@ -27,7 +27,8 @@ public class MeshHelper {
 	}
 
 	protected MeshHelper load(String fpath) {
-		mesh = ModelLoaderOld.loadObj(Gdx.files.internal(fpath).read());
+		//还不知道在9.8里面哪里东西来　升级原来　的modelLoaderOld
+//		mesh = ModelLoaderOld.loadObj(Gdx.files.internal(fpath).read());
 		return this;
 	}
 
