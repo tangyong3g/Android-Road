@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
+import com.ty.example_unit_2.opengl_2.loadmodel.LoadModelActivity;
 import com.ty.example_unit_2.opengl_2.meshcube.ＭeshCubeActivity;
 
 /**
@@ -17,7 +18,7 @@ import com.ty.example_unit_2.opengl_2.meshcube.ＭeshCubeActivity;
  */
 public class OpenGL2Activity extends ListActivity {
 
-	String[] units = new String[] { "MeshCube" };
+	String[] units = new String[] { "MeshCube", "LoadModel" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class OpenGL2Activity extends ListActivity {
 			cls = ＭeshCubeActivity.class;
 			break;
 		case 1:
+			cls = LoadModelActivity.class;
 			break;
 		case 2:
 			break;

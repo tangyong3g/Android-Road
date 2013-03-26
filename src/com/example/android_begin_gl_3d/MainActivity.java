@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 public class MainActivity extends ListActivity {
 
-	String[] units = new String[] { "unit_1", "unit_2", "unit_3", "unit_4",
+	String[] units = new String[] { "unit_1", "unit_2---[OpenGL1.x/2.x]", "unit_3---[LibGDX]", "unit_4",
 			"unit_5", "unit_6", "unit_7", };
 
 	@Override

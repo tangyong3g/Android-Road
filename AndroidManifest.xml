@@ -54,6 +54,10 @@
         <activity android:name="com.ty.example_unit_2.opengl_1.OpenGL1Activity" >
         </activity>
         
+        <activity android:name="com.ty.example_unit_2.opengl_2.OpenGL2Activity"></activity>
+        
+        <activity android:name="com.ty.example_unit_2.opengl_2.loadmodel.LoadModelActivity">
+        </activity>
         
         
      

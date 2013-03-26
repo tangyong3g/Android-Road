@@ -21,7 +21,6 @@ import com.ty.util.DemoWapper;
 
 public class EdgeDetectionTest extends DemoWapper {
 
-
 	FPSLogger logger;
 	ShaderProgram shader;
 	StillModel mesh;
@@ -97,7 +96,7 @@ public class EdgeDetectionTest extends DemoWapper {
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 
 		cam.update();
-		matrix.setToRotation(0, 1, 0, angle);
+//		matrix.setToRotation(0, 1, 0, angle);
 		cam.combined.mul(matrix);
 
 		fbo.begin();
@@ -110,7 +109,7 @@ public class EdgeDetectionTest extends DemoWapper {
 		shader.end();
 		fbo.end();
 
-//		texture.bind();
+		texture.bind();
 		
 		batch.begin();
 		batch.disableBlending();

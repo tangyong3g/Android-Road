@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
 import com.ty.example_unit_2.opengl_1.OpenGL1Activity;
+import com.ty.example_unit_2.opengl_2.OpenGL2Activity;
 
 /**
  * 
@@ -17,7 +18,7 @@ import com.ty.example_unit_2.opengl_1.OpenGL1Activity;
  */
 public class UnitTwoActivity extends ListActivity {
 
-	String[] units = new String[] { "openGL1.x" };
+	String[] units = new String[] { "openGL1.x" ,"openGL2.x"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class UnitTwoActivity extends ListActivity {
 			cls = OpenGL1Activity.class;
 			break;
 		case 1:
+			cls = OpenGL2Activity.class;
 			break;
 		case 2:
 			break;
