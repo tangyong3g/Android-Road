@@ -5,7 +5,9 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
 import android.opengl.GLES20;
+import android.util.Log;
 
+import com.badlogic.gdx.math.Vector3;
 import com.ty.util.MatrixState;
 import com.ty.util.ShaderUtil;
 
@@ -28,10 +30,18 @@ public class LoadedObjectVertexOnly {
 	FloatBuffer mVertexBuffer;// 顶点坐标数据缓冲
 	FloatBuffer   mTexCoorBuffer;//顶点纹理坐标数据缓冲
 	FloatBuffer   mNormalBuffer;//顶点纹理坐标数据缓冲
-
+	
+	Vector3 mModelCenterPosition; //模型的中心位置
+	
 	int vCount = 0;
+	
+	float angle = 0.0f;
 
-	public LoadedObjectVertexOnly(ModelView mv, float[] vertices,float[] textureCoors,float[] normalCoors) {
+	public LoadedObjectVertexOnly(ModelView mv, float[] vertices,float[] textureCoors,float[] normalCoors,Vector3 centerPosition) {
+		
+		mModelCenterPosition =  centerPosition;
+		
+		Log.i("tyler.tang","centerPosition:\t"+mModelCenterPosition.toString());
 		// 初始化顶点坐标与着色数据
 		initVertexData(vertices,textureCoors,normalCoors);
 		// 初始化shader
@@ -62,15 +72,13 @@ public class LoadedObjectVertexOnly {
         mTexCoorBuffer.put(textureCoor);
         mTexCoorBuffer.position(0); 
         
-        
         //顶点法向量数据缓冲
-        /*
+        /* */
         ByteBuffer nbb = ByteBuffer.allocateDirect(normalCoor.length*4);
         nbb.order(ByteOrder.nativeOrder());
         mNormalBuffer = tbb.asFloatBuffer();
         mNormalBuffer.put(textureCoor);
         mNormalBuffer.position(0);//设置缓冲区起始位置
-        */
         
     }
     
@@ -78,8 +86,19 @@ public class LoadedObjectVertexOnly {
     {        
     	 //制定使用某套着色器程序
     	 GLES20.glUseProgram(mProgram); 
+    	 
+    	 float xOffset = mModelCenterPosition.x; 
+    	 //float yOffset = -mModelCenterPosition.y;
+    	// float zOffset = mModelCenterPosition.z;
+    	 float yOffset = 0;
+    	 float zOffset = 0;
+    	 MatrixState.translate(xOffset, yOffset, zOffset);
+    	 MatrixState.rotate(angle, 0, 1, 0);
+    	 MatrixState.translate(-xOffset, -yOffset, -zOffset);
+    	 
          //将最终变换矩阵传入着色器程序
          GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false, MatrixState.getFinalMatrix(), 0); 
+         
          // 将顶点位置数据传入渲染管线
          GLES20.glVertexAttribPointer  
          (
@@ -93,7 +112,6 @@ public class LoadedObjectVertexOnly {
          
          //把纹理坐标传入渲染管线中去
          /* */
-         
          GLES20.glVertexAttribPointer
          (
     			maTexCoorHandle, 
@@ -104,9 +122,8 @@ public class LoadedObjectVertexOnly {
                 mTexCoorBuffer
          );
        
-         
          //将顶点法向量数据传入渲染管线
-         /*
+         /*  */
          GLES20.glVertexAttribPointer  
          (
         		maNormalHandle, 
@@ -119,7 +136,6 @@ public class LoadedObjectVertexOnly {
          
          
          GLES20.glEnableVertexAttribArray(maNormalHandle);
-         */
          GLES20.glEnableVertexAttribArray(maTexCoorHandle);
          
          GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
@@ -130,6 +146,8 @@ public class LoadedObjectVertexOnly {
          GLES20.glEnableVertexAttribArray(maPositionHandle); 
          //绘制加载的物体
          GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vCount); 
+         
+         angle += 0.2f;
     }
 	
 	   //初始化shader

@@ -41,7 +41,6 @@ public class ModelView extends GLSurfaceView {
 	
 	@Override
 	public boolean onTouchEvent(MotionEvent e) {
-		Log.i("tyler.tang","onTouchEvent");
 		  float y = e.getY();
 	        float x = e.getX();
 	        switch (e.getAction()) {
@@ -68,16 +67,25 @@ public class ModelView extends GLSurfaceView {
 		int mTextureId;
 		float yAngle;//绕Y轴旋转的角度
     	float xAngle; //绕Z轴旋转的角度
+    	
+    	float mAngle;
+    	
+    	private float mYStep = 0;
 
 		@Override
 		public void onDrawFrame(GL10 gl) {
 			// 清除深度缓冲与颜色缓冲
 			GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT
 					| GLES20.GL_COLOR_BUFFER_BIT);
+			
+			MatrixState.setCamera(
+					0, 0, 0, 
+					0f, 0f, -1f, 
+					0f, 1.0f, 0.0f);
 
 			// 坐标系推远
 			MatrixState.pushMatrix();
-			MatrixState.translate(0, -2f, -45f); // ch.obj
+//			MatrixState.translate(0, -2f, -185f); // ch.obj
 			// 绕Y轴、Z轴旋转
 			 MatrixState.rotate(yAngle, 0, 1, 0);
 			 MatrixState.rotate(xAngle, 1, 0, 0);
@@ -86,6 +94,8 @@ public class ModelView extends GLSurfaceView {
 				lovo.drawSelf(mTextureId);
 			}
 			MatrixState.popMatrix();
+			mAngle+=0.8f;
+			mYStep +=10;
 		}
 
 		@Override
@@ -95,10 +105,10 @@ public class ModelView extends GLSurfaceView {
 			// 计算GLSurfaceView的宽高比
 			float ratio = (float) width / height;
 			// 调用此方法计算产生透视投影矩阵
-			MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 2, 2000);
+			MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 2, 8000);
 			// 调用此方法产生摄像机9参数位置矩阵
 			MatrixState.setCamera(
-					0, 0, 150, 
+					0, 0, 0, 
 					0f, 0f, -1f, 
 					0f, 1.0f, 0.0f);
 		}
@@ -109,7 +119,7 @@ public class ModelView extends GLSurfaceView {
 			// 打开深度测试
 			GLES20.glEnable(GLES20.GL_DEPTH_TEST);
 			// 打开背面剪
-			GLES20.glEnable(GLES20.GL_CULL_FACE);
+			GLES20.glDisable(GLES20.GL_CULL_FACE);
 			// 初始化矩阵
 			MatrixState.setInitStack();
 			// 加载要绘制的物体 实际上就是把文件内容解析然后加入 顶点缓冲中去

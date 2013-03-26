@@ -59,6 +59,10 @@
         <activity android:name="com.ty.example_unit_2.opengl_2.loadmodel.LoadModelActivity">
         </activity>
         
+        <activity android:name="com.ty.example_unit_2.opengl_2.shading.ShadingLanguageActivity">
+        </activity>
+        
+        
         
      
         <activity android:name="com.ty.example_unit_3.libgdx.UnitThreeActivity" >

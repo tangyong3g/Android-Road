@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import com.badlogic.gdx.math.Vector3;
+
 
 import android.content.res.Resources;
 import android.util.Log;
@@ -53,6 +55,20 @@ public class LoadUtil {
 	    	//纹理坐标结果列表
 	    	ArrayList<Float> altResult=new ArrayList<Float>();  
 	    	
+	    	
+	    	float xMin = 10000000.0f;
+	    	float xMax = -10000000.0f;
+	    	
+	    	float yMin = 10000000.0f;
+	    	float yMax = -10000000.0f;
+	    	
+	    	float zMin = 10000000.0f;
+	    	float zMax = -10000000.0f;
+	    		
+	    	
+	    	ArrayList<Float> alvn = new ArrayList<Float>();
+	    	ArrayList<Float> alvnResult=new ArrayList<Float>();    	
+	    	
 	    	try
 	    	{
 	    		InputStream in=r.getAssets().open(fname);
@@ -68,10 +84,34 @@ public class LoadUtil {
 			      	if(tempsa[0].trim().equals("v"))
 			      	{//此行为顶点坐标
 			      	    //若为顶点坐标行则提取出此顶点的XYZ坐标添加到原始顶点坐标列表中
-			      		alv.add(Float.parseFloat(tempsa[1]));
-			      		alv.add(Float.parseFloat(tempsa[2]));
-			      		alv.add(Float.parseFloat(tempsa[3]));
+			      		
+			      		float x =Float.parseFloat(tempsa[1]);
+			      		float y =Float.parseFloat(tempsa[2]);
+			      		float z =Float.parseFloat(tempsa[3]);
+			      		
+			      		alv.add(x);
+			      		alv.add(y);
+			      		alv.add(z);
+			      		
+			      		//处理模型的最大最小值　在X,Y,Z三个分量上面的
+			      		xMin = Math.min(xMin, x);
+			      		xMax = Math.max(xMax, x);
+			      		
+			      		yMin = Math.min(yMin, y);
+			      		yMax = Math.max(yMax, y);
+			      		
+			      		zMin = Math.min(zMin, z);
+			      		zMax = Math.max(zMax, z);
 			      	}
+			      	
+			      	else if(tempsa[0].trim().equals("vn"))
+			      	{
+			      		alvn.add(Float.parseFloat(tempsa[1]));
+			      		alvn.add(Float.parseFloat(tempsa[2]));
+			      		alvn.add(Float.parseFloat(tempsa[3])); 
+			      	}
+			      	
+			      	
 			      	else if(tempsa[0].trim().equals("vt"))
 			      	{//此行为纹理坐标行
 			      		//若为纹理坐标行则提取ST坐标并添加进原始纹理坐标列表中
@@ -199,7 +239,7 @@ public class LoadUtil {
 			    }
 			    
 			    //创建3D物体对象
-			    lo=new LoadedObjectVertexOnly(mv,vXYZ,tST,nXYZ);
+			    lo=new LoadedObjectVertexOnly(mv,vXYZ,tST,nXYZ,new Vector3((xMax-xMin)/2.0f, (yMax-yMin)/2, (zMax-zMin)/2));
 	    	}
 	    	catch(Exception e)
 	    	{
