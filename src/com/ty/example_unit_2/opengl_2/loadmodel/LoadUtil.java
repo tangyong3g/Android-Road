@@ -239,7 +239,7 @@ public class LoadUtil {
 			    }
 			    
 			    //创建3D物体对象
-			    lo=new LoadedObjectVertexOnly(mv,vXYZ,tST,nXYZ,new Vector3((xMax-xMin)/2.0f, (yMax-yMin)/2, (zMax-zMin)/2));
+			    lo=new LoadedObjectVertexOnly(mv,vXYZ,tST,nXYZ,new Vector3((xMax+xMin)/2.0f, (yMax+yMin)/2, (zMax+zMin)/2));
 	    	}
 	    	catch(Exception e)
 	    	{

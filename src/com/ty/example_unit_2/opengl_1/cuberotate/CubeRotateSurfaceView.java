@@ -1,4 +1,4 @@
-package com.ty.example_unit_2.opengl_1.cube;
+package com.ty.example_unit_2.opengl_1.cuberotate;
 
 import java.nio.IntBuffer;
 
@@ -9,8 +9,10 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLUtils;
+import android.util.Log;
 
 import com.example.android_begin_gl_3d.R;
+import com.ty.example_unit_2.opengl_1.cube.Cube;
 import com.ty.util.Utils;
 
 /**
@@ -18,32 +20,33 @@ import com.ty.util.Utils;
  * @author tangyong
  * 
  */
-public class CubeSurfaceView extends GLSurfaceView {
+public class CubeRotateSurfaceView extends GLSurfaceView {
 
-	public CubeSurfaceView(Context context) {
+	public CubeRotateSurfaceView(Context context) {
 		super(context);
-		setRenderer(new CubeRender(getContext()));
+		setRenderer(new CuberOtateRender(context));
 	}
-
+	
 	/**
 	 * 
 	 * @author tangyong
 	 * 
 	 */
-	class CubeRender implements Renderer {
+	class CuberOtateRender implements Renderer {
 
 		Cube cube = null;
 		private float angle = 0;
 		IntBuffer textureIdBuffer ;
 		Context mContext;
 
-		public CubeRender(Context context) {
+		public CuberOtateRender(Context context) {
 			cube = new Cube();
 			mContext = context;
 		}
 
 		@Override
 		public void onDrawFrame(GL10 gl) {
+			Log.i("tyler.tang","onDraw");
 			// 设置色彩　
 			gl.glColor4f(0.1f, 1, 1, 1);
 			// 清除缓存
@@ -59,9 +62,8 @@ public class CubeSurfaceView extends GLSurfaceView {
 			gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
 			gl.glEnable(GL10.GL_TEXTURE_2D);
 			
-
 			gl.glPushMatrix();
-			gl.glRotatef(angle, 1, 1, 0);
+			gl.glRotatef(angle, 0, 1, 0);
 			cube.draw(gl,textureIdBuffer.get(0));
 			gl.glPopMatrix();
 
@@ -146,5 +148,8 @@ public class CubeSurfaceView extends GLSurfaceView {
 		}
 
 	}
+
+	
+	
 
 }

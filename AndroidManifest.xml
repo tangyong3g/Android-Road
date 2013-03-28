@@ -54,17 +54,25 @@
         <activity android:name="com.ty.example_unit_2.opengl_1.OpenGL1Activity" >
         </activity>
         
-        <activity android:name="com.ty.example_unit_2.opengl_2.OpenGL2Activity"></activity>
+        <activity android:name="com.ty.example_unit_2.opengl_1.cuberotate.CubeRotateActivity" >
+        </activity>
         
+        <activity android:name="com.ty.example_unit_2.opengl_2.OpenGL2Activity"></activity>
         <activity android:name="com.ty.example_unit_2.opengl_2.loadmodel.LoadModelActivity">
         </activity>
         
+        <!-- 着色语言 -->
         <activity android:name="com.ty.example_unit_2.opengl_2.shading.ShadingLanguageActivity">
         </activity>
         
+        <!-- 传感器 -->
+        <activity android:name="com.ty.example_unit_2.opengl_2.sensormanager.SensorManagerActivity">
+        </activity>
+        <activity android:name="com.ty.example_unit_2.opengl_2.sensormanager.AccelerometerActivity">
+        </activity>
         
         
-     
+     	<!-- libGDX -->
         <activity android:name="com.ty.example_unit_3.libgdx.UnitThreeActivity" >
         </activity>
         <activity android:name="com.ty.example_unit_3.libgdx.loadmode.LoadModeActivity" >

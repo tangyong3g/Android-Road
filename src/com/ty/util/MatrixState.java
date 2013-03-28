@@ -15,6 +15,7 @@ import android.opengl.Matrix;
 public class MatrixState {
 	
 	
+
 	private static final float [] mProjMatrix = new float[16];	// 4*4 投影矩阵
 	private static float[] mVMatrix = new float[16];//摄像机位置朝向9参数矩阵   
     private static float[] currMatrix;//当前变换矩阵
