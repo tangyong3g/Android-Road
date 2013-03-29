@@ -1,91 +1,82 @@
 package com.ty.example_unit_2.opengl_2.loadmodel;
 
+import java.util.ArrayList;
+
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.opengl.GLSurfaceView;
-import android.util.Log;
-
 
 /**
  * 
  * @author tangyong
- *
+ * 
  */
-public class ModelControler implements SensorEventListener{
+public class ModelControler implements SensorEventListener {
 
 	LoadedObjectVertexOnly model;
-	ModelView view ;
+	ModelView view;
 	private float mCurValue;
 	private float lastValue;
 	private boolean flag;
 	
 	
+
 	public ModelControler(LoadedObjectVertexOnly model) {
 		this.model = model;
 	}
-	
-	public ModelControler(LoadedObjectVertexOnly model,ModelView view) {
+
+	public ModelControler(LoadedObjectVertexOnly model, ModelView view) {
 		this.model = model;
 		this.view = view;
 	}
-	
+
 	public ModelControler() {
 	}
 	
+	int index = 0;
+
 	@Override
 	public void onSensorChanged(SensorEvent event) {
+
+		final float x = event.values[0];
+		final float y = event.values[1];
+		final float z = event.values[2];
 		
-		float x = 	event.values[0];
-		float y = event.values[1];
-		float z = event.values[2];
-		
-	
 		Constant.y = x;
 		Constant.z = x;
 		
-		StringBuffer sb  = new StringBuffer();
+		mCurValue  = x;
 		
-		sb.append("X方向加速度:\t");
-		sb.append(x);
-		sb.append("\n");
-		sb.append("Y方向加速度:\t");
-		sb.append(y);
-		sb.append("\n");
-		sb.append("Z方向加速度:\t");
-		sb.append(z);
-		sb.append("\n");
-		
-		
-		
-		view.queueEvent(new Runnable() {
-			
-			@Override
-			public void run() {
-//					view.getRender().lovo.senorRatio();
-			}
-		});
-		
-		/**/
-		mCurValue = x;
-		if(Math.abs(mCurValue - lastValue) > 0.02){
-			Constant.x = x;
+		if (Math.abs(mCurValue - lastValue) > 0.032) {
 			flag = true;
+			avgRunnable(lastValue, mCurValue);
+			lastValue = mCurValue;
 		}
-		lastValue = mCurValue;
-		
-		if(flag){
-//			LoadedObjectVertexOnly.angleZ = (float)-180*x/9.8f;	
+	
+		if (flag) {
+			
 		}
-		
-		Log.i("tyler.tang",sb.toString());
 		flag = false;
+	}
+	
+	private void avgRunnable(final float last , float current) {
 		
+		final float addValue = (current-last)/1.0f;
+		for(int i = 0; i <= 1 ; i++){
+			final int temp = i;
+			Runnable run = new Runnable() {
+				@Override
+				public void run() {
+					view.getRender().lovo.senorRatio(last+addValue*temp);
+				}
+			};
+			view.queueEvent(run);
+		}
 	}
 
 	@Override
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
-		
+
 	}
-	
+
 }

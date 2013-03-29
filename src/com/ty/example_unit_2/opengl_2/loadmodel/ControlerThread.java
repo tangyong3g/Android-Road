@@ -3,7 +3,7 @@ package com.ty.example_unit_2.opengl_2.loadmodel;
 public class ControlerThread extends Thread{
 	
 	private boolean flag = false;
-	private static final int internal = 50;
+	private static final int internal = 12;
 	LoadedObjectVertexOnly object = null;
 	
 	public ControlerThread(LoadedObjectVertexOnly obj) {
@@ -14,7 +14,7 @@ public class ControlerThread extends Thread{
 	public void run() {
 		while (flag) {
 			
-			object.senorRatio();
+		//	object.senorRatio();
 			
 			try {
 				Thread.sleep(internal);	

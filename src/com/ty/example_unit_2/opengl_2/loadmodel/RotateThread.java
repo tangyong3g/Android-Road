@@ -19,7 +19,7 @@ public class RotateThread implements Runnable {
 	public void run() {
 
 		while (flag) {
-			obj.senorRatio();//调用使所有球运动的方法
+		//	obj.senorRatio();//调用使所有球运动的方法
 			
 			try{
 				Thread.sleep(timeSpan);//一段时间后再运动

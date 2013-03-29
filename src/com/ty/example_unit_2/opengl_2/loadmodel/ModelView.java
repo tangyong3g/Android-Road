@@ -78,7 +78,7 @@ public class ModelView extends GLSurfaceView {
 		(
 				modelControler,         //eventListener 
 				sensor,       // sensor
-				SensorManager.SENSOR_DELAY_GAME   //delay type
+				SensorManager.SENSOR_DELAY_NORMAL   //delay type
         );
 		
 	}
@@ -153,9 +153,9 @@ public class ModelView extends GLSurfaceView {
 			// 调用此方法产生摄像机9参数位置矩阵
 			MatrixState.setCamera(0, 0, 0, 0f, 0f, -1f, 0f, 1.0f, 0.0f);
 			
-			modelThread = new ControlerThread(lovo);
-			modelThread.setFlag(true);
-			modelThread.start();
+//			modelThread = new ControlerThread(lovo);
+//			modelThread.setFlag(true);
+//			modelThread.start();
 		}
 
 		@Override

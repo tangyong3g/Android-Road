@@ -51,8 +51,6 @@ public class LoadedObjectVertexOnly  {
 
 		mModelCenterPosition = centerPosition;
 
-		Log.i("tyler.tang",
-				"centerPosition:\t" + mModelCenterPosition.toString());
 		// 初始化顶点坐标与着色数据
 		initVertexData(vertices, textureCoors, normalCoors);
 		// 初始化shader
@@ -138,7 +136,7 @@ public class LoadedObjectVertexOnly  {
 		// 绘制加载的物体
 		GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vCount);
 
-		angle += 0.05f;
+		angle += 0.0f;
 	}
 
 	// 初始化shader
@@ -161,8 +159,8 @@ public class LoadedObjectVertexOnly  {
 		maNormalHandle = GLES20.glGetAttribLocation(mProgram, "aNormal");
 	}
 
-	public  void senorRatio() {
-		LoadedObjectVertexOnly.angleZ = (float)-180*Constant.x/9.8f;	
+	public  void senorRatio(float x) {
+		LoadedObjectVertexOnly.angleZ = (float)-180*x/10f;	
 	}
 
 	
