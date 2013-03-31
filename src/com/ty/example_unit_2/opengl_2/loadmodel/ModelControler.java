@@ -1,6 +1,5 @@
 package com.ty.example_unit_2.opengl_2.loadmodel;
 
-import java.util.ArrayList;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -34,11 +33,14 @@ public class ModelControler implements SensorEventListener {
 	}
 	
 	int index = 0;
+	public static volatile float kFilteringFactor = (float)0.05;
 
+	
+	float temp = 0.0f;
 	@Override
 	public void onSensorChanged(SensorEvent event) {
 
-		final float x = event.values[0];
+		 float x = event.values[0];
 		final float y = event.values[1];
 		final float z = event.values[2];
 		
@@ -47,14 +49,23 @@ public class ModelControler implements SensorEventListener {
 		
 		mCurValue  = x;
 		
+		/*
 		if (Math.abs(mCurValue - lastValue) > 0.032) {
 			flag = true;
 			avgRunnable(lastValue, mCurValue);
 			lastValue = mCurValue;
-		}
-	
-		if (flag) {
-			
+		}*/
+		
+		temp =   (float) ((x * kFilteringFactor) + (temp * (1.0 - kFilteringFactor)));
+		
+		if(view!=null && view.getRender().lovo!=null){
+			Runnable run = new Runnable() {
+				@Override
+				public void run() {
+					view.getRender().lovo.senorRatio(temp);
+				}
+			};
+			view.queueEvent(run);
 		}
 		flag = false;
 	}

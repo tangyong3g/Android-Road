@@ -155,13 +155,11 @@ public class LoadedObjectVertexOnly  {
 		muMVPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix");
 		// 获取程序中顶点纹理坐标属性引用
 		maTexCoorHandle = GLES20.glGetAttribLocation(mProgram, "aTexCoor");
-
 		maNormalHandle = GLES20.glGetAttribLocation(mProgram, "aNormal");
 	}
 
 	public  void senorRatio(float x) {
-		LoadedObjectVertexOnly.angleZ = (float)-180*x/10f;	
+		LoadedObjectVertexOnly.angleZ = (float)-180*x/20f;	
 	}
 
-	
 }
