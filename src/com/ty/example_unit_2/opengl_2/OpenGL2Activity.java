@@ -9,10 +9,9 @@ import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
 import com.ty.example_unit_2.opengl_2.loadmodel.LoadModelActivity;
-import com.ty.example_unit_2.opengl_2.meshcube.ＭeshCubeActivity;
+import com.ty.example_unit_2.opengl_2.meshcube.MeshCubeActivity;
 import com.ty.example_unit_2.opengl_2.sensormanager.SensorManagerActivity;
 import com.ty.example_unit_2.opengl_2.shading.ShadingLanguageActivity;
-import com.ty.example_unit_2.opengl_2.shading.ShandingView;
 
 /**
  * 
@@ -38,7 +37,7 @@ public class OpenGL2Activity extends ListActivity {
 		Class cls = null;
 		switch (position) {
 		case 0:
-			cls = ＭeshCubeActivity.class;
+			cls = MeshCubeActivity.class;
 			break;
 		case 1:
 			cls = LoadModelActivity.class;

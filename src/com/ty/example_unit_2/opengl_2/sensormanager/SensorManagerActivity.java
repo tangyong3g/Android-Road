@@ -1,16 +1,13 @@
 package com.ty.example_unit_2.opengl_2.sensormanager;
 
-import com.example.android_begin_gl_3d.R;
-import com.ty.example_unit_2.opengl_2.loadmodel.LoadModelActivity;
-import com.ty.example_unit_2.opengl_2.meshcube.ＭeshCubeActivity;
-import com.ty.example_unit_2.opengl_2.shading.ShadingLanguageActivity;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.android_begin_gl_3d.R;
 
 /**
  * 此事例子主要内容是传感器
