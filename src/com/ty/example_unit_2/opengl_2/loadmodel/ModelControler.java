@@ -18,7 +18,17 @@ public class ModelControler implements SensorEventListener {
 	private float lastValue;
 	private boolean flag;
 	
+	private boolean loadModelFinished  = false;
 	
+	
+
+	public boolean isLoadModelFinished() {
+		return loadModelFinished;
+	}
+
+	public void setLoadModelFinished(boolean loadModelFinished) {
+		this.loadModelFinished = loadModelFinished;
+	}
 
 	public ModelControler(LoadedObjectVertexOnly model) {
 		this.model = model;
@@ -33,14 +43,18 @@ public class ModelControler implements SensorEventListener {
 	}
 	
 	int index = 0;
-	public static volatile float kFilteringFactor = (float)0.05;
+	public static volatile float kFilteringFactor = (float)0.10;
 
 	
 	float temp = 0.0f;
 	@Override
 	public void onSensorChanged(SensorEvent event) {
 
-		 float x = event.values[0];
+		if(!loadModelFinished){
+			return;
+		}
+		
+		float x = event.values[0];
 		final float y = event.values[1];
 		final float z = event.values[2];
 		

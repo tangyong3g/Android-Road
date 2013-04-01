@@ -78,7 +78,7 @@ public class ModelView extends GLSurfaceView {
 		(
 				modelControler,         //eventListener 
 				sensor,       // sensor
-				SensorManager.SENSOR_DELAY_NORMAL   //delay type
+				SensorManager.SENSOR_DELAY_GAME   //delay type
         );
 		
 	}
@@ -118,28 +118,26 @@ public class ModelView extends GLSurfaceView {
 			return lovo;
 		}
 
-		private float mYStep = 0;
 
 		@Override
 		public void onDrawFrame(GL10 gl) {
 			// 清除深度缓冲与颜色缓冲
-			GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT
-					| GLES20.GL_COLOR_BUFFER_BIT);
+			GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT| GLES20.GL_COLOR_BUFFER_BIT);
 
-			MatrixState.setCamera(0, 0, 0, 0f, 0f, -1f, 0f, 1.0f, 0.0f);
-
-			// 坐标系推远
+			MatrixState.setCamera
+			(
+					0, 0, 0, 
+					0f, 0f, -1f,
+					0f, 1.0f, 0.0f
+            );
+			
+			
 			MatrixState.pushMatrix();
-			// 绕Y轴、Z轴旋转
-			// MatrixState.rotate(yAngle, 0, 1, 0);
-			// MatrixState.rotate(xAngle, 1, 0, 0);
 			// 若加载的物体不为空则绘制物体
 			if (lovo != null) {
 				lovo.drawSelf(mTextureId);
 			}
 			MatrixState.popMatrix();
-			mAngle += 0.8f;
-			mYStep += 10;
 		}
 
 		@Override
@@ -151,11 +149,13 @@ public class ModelView extends GLSurfaceView {
 			// 调用此方法计算产生透视投影矩阵
 			MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 2, 8000);
 			// 调用此方法产生摄像机9参数位置矩阵
-			MatrixState.setCamera(0, 0, 0, 0f, 0f, -1f, 0f, 1.0f, 0.0f);
+			MatrixState.setCamera
+			(
+					0, 0, 100,
+					0f, 0f, -1f,
+					0f, 1.0f, 0.0f
+            );
 			
-//			modelThread = new ControlerThread(lovo);
-//			modelThread.setFlag(true);
-//			modelThread.start();
 		}
 
 		@Override
@@ -171,7 +171,8 @@ public class ModelView extends GLSurfaceView {
 			lovo = LoadUtil.loadFromFile("data/unit3/model/gd.obj",
 					ModelView.this.getResources(), ModelView.this);
 			
-			mTextureId = initTexture(com.example.android_begin_gl_3d.R.drawable.gd_1);
+			mTextureId = initTexture(com.example.android_begin_gl_3d.R.drawable.gd_3);
+			modelControler.setLoadModelFinished(true);
 		}
 
 	}
@@ -180,7 +181,8 @@ public class ModelView extends GLSurfaceView {
 	{
 		// 生成纹理ID
 		int[] textures = new int[1];
-		GLES20.glGenTextures(1, // 产生的纹理id的数量
+		GLES20.glGenTextures(
+				1, // 产生的纹理id的数量
 				textures, // 纹理id的数组
 				0 // 偏移量
 		);

@@ -107,6 +107,7 @@ public class LoadedObjectVertexOnly  {
 		MatrixState.rotate(angle, 0, 1, 0);
 		MatrixState.translate(-xOffset, -yOffset, -zOffset);
 
+		MatrixState.rotate(angle, 1, 1, 1);
 		// 将最终变换矩阵传入着色器程序
 		GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false,
 				MatrixState.getFinalMatrix(), 0);
@@ -136,7 +137,7 @@ public class LoadedObjectVertexOnly  {
 		// 绘制加载的物体
 		GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vCount);
 
-		angle += 0.0f;
+//		angle += 0.8f;
 	}
 
 	// 初始化shader
@@ -159,7 +160,8 @@ public class LoadedObjectVertexOnly  {
 	}
 
 	public  void senorRatio(float x) {
-		LoadedObjectVertexOnly.angleZ = (float)-180*x/20f;	
+		LoadedObjectVertexOnly.angleZ = (float)-180*x/9.8f;
+//		LoadedObjectVertexOnly.angleZ = (float)-x;	
 	}
 
 }

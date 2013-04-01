@@ -115,8 +115,8 @@ public class LoadUtil {
 			      	else if(tempsa[0].trim().equals("vt"))
 			      	{//此行为纹理坐标行
 			      		//若为纹理坐标行则提取ST坐标并添加进原始纹理坐标列表中
-			      		alt.add(Float.parseFloat(tempsa[1])/2.0f);
-			      		alt.add(Float.parseFloat(tempsa[2])/2.0f); 
+			      		alt.add(Float.parseFloat(tempsa[1]));
+			      		alt.add(Float.parseFloat(tempsa[2])); 
 			      	}
 			      	else if(tempsa[0].trim().equals("f")) 
 			      	{//此行为三角形面
