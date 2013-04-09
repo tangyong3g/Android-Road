@@ -59,11 +59,11 @@ public class CubeSurfaceView extends GLSurfaceView {
 			gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
 			gl.glEnable(GL10.GL_TEXTURE_2D);
 			
-
 			gl.glPushMatrix();
 			gl.glRotatef(angle, 1, 1, 0);
 			cube.draw(gl,textureIdBuffer.get(0));
 			gl.glPopMatrix();
+			
 
 			// 关闭管线　
 			gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
@@ -93,7 +93,7 @@ public class CubeSurfaceView extends GLSurfaceView {
 			// 平面还是平滑着色
 			gl.glShadeModel(GL10.GL_SMOOTH);
 			// 指定色彩缓冲区
-			gl.glClearColor(0, 0, 0, 0);
+			gl.glClearColor(1,1,1, 0);
 			// 设置深度缓存,进行跟踪
 			gl.glClearDepthf(1.0f);
 			gl.glEnable(GL10.GL_DEPTH_TEST);

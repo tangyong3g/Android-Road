@@ -110,8 +110,6 @@ public class LoadUtil {
 			      		alvn.add(Float.parseFloat(tempsa[2]));
 			      		alvn.add(Float.parseFloat(tempsa[3])); 
 			      	}
-			      	
-			      	
 			      	else if(tempsa[0].trim().equals("vt"))
 			      	{//此行为纹理坐标行
 			      		//若为纹理坐标行则提取ST坐标并添加进原始纹理坐标列表中

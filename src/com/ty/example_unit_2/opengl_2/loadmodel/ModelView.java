@@ -9,6 +9,7 @@ import javax.microedition.khronos.opengles.GL10;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.hardware.Sensor;
 import android.hardware.SensorListener;
 import android.hardware.SensorManager;
@@ -67,37 +68,36 @@ public class ModelView extends GLSurfaceView {
 	public void onPause() {
 		super.onPause();
 		
-		mySensormanager.unregisterListener(modelControler);
+		//mySensormanager.unregisterListener(modelControler);
 	}
 	
 	@Override
 	public void onResume() {
 		super.onResume();
-		
+		/*
 		mySensormanager.registerListener
 		(
 				modelControler,         //eventListener 
 				sensor,       // sensor
 				SensorManager.SENSOR_DELAY_GAME   //delay type
-        );
-		
+        );*/
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent e) {
-		float y = e.getY();
-		float x = e.getX();
-		switch (e.getAction()) {
-		case MotionEvent.ACTION_MOVE:
-			float dy = y - mPreviousY;// 计算触控笔Y位移
-			float dx = x - mPreviousX;// 计算触控笔X位移
-			mRenderer.yAngle += dx * TOUCH_SCALE_FACTOR;// 设置沿x轴旋转角度
-			mRenderer.xAngle += dy * TOUCH_SCALE_FACTOR;// 设置沿z轴旋转角度
-			requestRender();// 重绘画面
-		}
-		mPreviousY = y;// 记录触控笔位置
-		mPreviousX = x;// 记录触控笔位置
-		return true;
+	  float y = e.getY();
+        float x = e.getX();
+        switch (e.getAction()) {
+        case MotionEvent.ACTION_MOVE:
+            float dy = y - mPreviousY;//计算触控笔Y位移
+            float dx = x - mPreviousX;//计算触控笔X位移
+            mRenderer.yAngle += dx * TOUCH_SCALE_FACTOR;//设置沿x轴旋转角度
+            mRenderer.xAngle+= dy * TOUCH_SCALE_FACTOR;//设置沿z轴旋转角度
+            requestRender();//重绘画面
+        }
+        mPreviousY = y;//记录触控笔位置
+        mPreviousX = x;//记录触控笔位置
+        return true;
 	}
 
 	/**
@@ -121,23 +121,21 @@ public class ModelView extends GLSurfaceView {
 
 		@Override
 		public void onDrawFrame(GL10 gl) {
-			// 清除深度缓冲与颜色缓冲
-			GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT| GLES20.GL_COLOR_BUFFER_BIT);
+			//清除深度缓冲与颜色缓冲
+            GLES20.glClear( GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
 
-			MatrixState.setCamera
-			(
-					0, 0, 0, 
-					0f, 0f, -1f,
-					0f, 1.0f, 0.0f
-            );
-			
-			
-			MatrixState.pushMatrix();
-			// 若加载的物体不为空则绘制物体
-			if (lovo != null) {
-				lovo.drawSelf(mTextureId);
-			}
-			MatrixState.popMatrix();
+            //坐标系推远
+            MatrixState.pushMatrix();
+            //绕Y轴、Z轴旋转
+            MatrixState.rotate(yAngle, 0, 1, 0);
+            MatrixState.rotate(xAngle, 1, 0, 0);
+            
+            //若加载的物体部位空则绘制物体
+            if(lovo!=null)
+            {
+            	lovo.drawSelf(mTextureId);
+            }   
+            MatrixState.popMatrix();           
 		}
 
 		@Override
@@ -151,11 +149,10 @@ public class ModelView extends GLSurfaceView {
 			// 调用此方法产生摄像机9参数位置矩阵
 			MatrixState.setCamera
 			(
-					0, 0, 100,
+					0, 0, 0,
 					0f, 0f, -1f,
 					0f, 1.0f, 0.0f
             );
-			
 		}
 
 		@Override
@@ -168,13 +165,12 @@ public class ModelView extends GLSurfaceView {
 			// 初始化矩阵
 			MatrixState.setInitStack();
 			// 加载要绘制的物体 实际上就是把文件内容解析然后加入 顶点缓冲中去
-			lovo = LoadUtil.loadFromFile("data/unit3/model/gd.obj",
+			lovo = LoadUtil.loadFromFile("data/unit2/model/cube_4.obj",
 					ModelView.this.getResources(), ModelView.this);
 			
-			mTextureId = initTexture(com.example.android_begin_gl_3d.R.drawable.gd_3);
+			mTextureId = initTexture(com.example.android_begin_gl_3d.R.drawable.cube_simple);
 			modelControler.setLoadModelFinished(true);
 		}
-
 	}
 
 	public int initTexture(int drawableId)// textureId

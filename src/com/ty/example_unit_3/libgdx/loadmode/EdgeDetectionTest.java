@@ -43,7 +43,6 @@ public class EdgeDetectionTest extends DemoWapper {
 		texture = new Texture(Gdx.files.internal("data/unit3/gd.png"));
 		texture.setFilter(TextureFilter.MipMap, TextureFilter.Linear);
 		
-		
 		ShaderProgram.pedantic = false;
 		shader = new ShaderProgram(Gdx.files.internal("data/shaders/default.vert").readString(), Gdx.files.internal(
 			"data/shaders/depthtocolor.frag").readString());
@@ -56,12 +55,12 @@ public class EdgeDetectionTest extends DemoWapper {
 			Gdx.app.log("EdgeDetectionTest", "couldn't compile post-processing shader: " + batchShader.getLog());
 		}
 
-		mesh =  ModelLoaderRegistry.loadStillModel(Gdx.files.internal("data/unit3/model/gd.obj"));
+		mesh =  ModelLoaderRegistry.loadStillModel(Gdx.files.internal("data/unit2/model/cube_single.obj"));
 		
 		fbo = new FrameBuffer(Format.RGB565, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
-		cam = new PerspectiveCamera(167, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		cam.position.set(0, 0, 10);
-		cam.lookAt(0, 0, 0);
+		cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		cam.position.set(0, 0, 0);
+		cam.lookAt(0, 0, -1);
 		cam.far = 30;
 		batch = new SpriteBatch();
 		batch.setShader(batchShader);
@@ -92,6 +91,8 @@ public class EdgeDetectionTest extends DemoWapper {
 	}
 
 	public void render () {
+		
+		
 		angle += 45 * Gdx.graphics.getDeltaTime();
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 

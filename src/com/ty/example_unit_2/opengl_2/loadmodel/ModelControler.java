@@ -19,8 +19,6 @@ public class ModelControler implements SensorEventListener {
 	private boolean flag;
 	
 	private boolean loadModelFinished  = false;
-	
-	
 
 	public boolean isLoadModelFinished() {
 		return loadModelFinished;

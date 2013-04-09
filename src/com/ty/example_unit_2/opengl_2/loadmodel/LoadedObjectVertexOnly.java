@@ -62,7 +62,7 @@ public class LoadedObjectVertexOnly  {
 			float[] normalCoor) {
 		// 顶点坐标数据的初始化================begin============================
 		vCount = vertices.length / 3;
-
+		Log.i("tyler.tang","顶点数:\t"+vCount);
 		// 创建顶点坐标数据缓冲
 		// vertices.length*4是因为一个整数四个字节
 		ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length * 4);
@@ -94,20 +94,19 @@ public class LoadedObjectVertexOnly  {
 	public void drawSelf(int textureId) {
 		// 制定使用某套着色器程序
 		GLES20.glUseProgram(mProgram);
-
 		float xOffset = mModelCenterPosition.x;
 		// float yOffset = -mModelCenterPosition.y;
 		// float zOffset = mModelCenterPosition.z;
 		float yOffset = 0;
 		float zOffset = 0;
 		
-		MatrixState.rotate(angleZ, 0, 0, 1);
+//		MatrixState.rotate(angleZ, 0, 0, 1);
 		
-		MatrixState.translate(xOffset, yOffset, zOffset);
-		MatrixState.rotate(angle, 0, 1, 0);
-		MatrixState.translate(-xOffset, -yOffset, -zOffset);
+//		MatrixState.translate(xOffset, yOffset, zOffset);
+//		MatrixState.rotate(angle, 0, 1, 0);
+//		MatrixState.translate(-xOffset, -yOffset, -zOffset);
 
-		MatrixState.rotate(angle, 1, 1, 1);
+//		MatrixState.rotate(angle, 1, 1, 1);
 		// 将最终变换矩阵传入着色器程序
 		GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false,
 				MatrixState.getFinalMatrix(), 0);
@@ -117,16 +116,16 @@ public class LoadedObjectVertexOnly  {
 				false, 3 * 4, mVertexBuffer);
 
 		// 把纹理坐标传入渲染管线中去
-		/* */
+		/**/
 		GLES20.glVertexAttribPointer(maTexCoorHandle, 2, GLES20.GL_FLOAT,
-				false, 2 * 4, mTexCoorBuffer);
+				false, 2 * 4, mTexCoorBuffer); 
 
 		// 将顶点法向量数据传入渲染管线
 		/*  */
 		GLES20.glVertexAttribPointer(maNormalHandle, 3, GLES20.GL_FLOAT, false,
 				3 * 4, mNormalBuffer);
 
-		GLES20.glEnableVertexAttribArray(maNormalHandle);
+//		GLES20.glEnableVertexAttribArray(maNormalHandle);
 		GLES20.glEnableVertexAttribArray(maTexCoorHandle);
 
 		GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
