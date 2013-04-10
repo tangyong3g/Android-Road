@@ -64,6 +64,7 @@
     
         <!-- 第二单元 openGl2.x 方形 -->
         <activity android:name="com.ty.example_unit_2.opengl_2.cube.CubeActivity"></activity>
+        <activity android:name="com.ty.example_unit_2.opengl_2.cube.CubeActivity2"></activity>
         
         <!-- 第二单元 着色语言 -->
         <activity android:name="com.ty.example_unit_2.opengl_2.shading.ShadingLanguageActivity">

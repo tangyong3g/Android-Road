@@ -6,9 +6,11 @@ import java.nio.FloatBuffer;
 
 import android.content.Context;
 import android.opengl.GLES20;
+import android.opengl.GLSurfaceView;
 import android.util.Log;
 
 import com.badlogic.gdx.math.Vector3;
+import com.ty.example_unit_2.opengl_2.shading.Triangle;
 import com.ty.util.Constant;
 import com.ty.util.MatrixState;
 import com.ty.util.ShaderUtil;
@@ -187,7 +189,7 @@ public class Cube {
     }
     
     //初始化shader
-    public void initShader(Context mv)
+    public void initShader_(Context mv)
     {
     	//加载顶点着色器的脚本内容
         mVertexShader=ShaderUtil.loadFromAssetsFile("data/shaders/unit2/cube/vertex.sh", mv.getResources());
@@ -202,6 +204,24 @@ public class Cube {
     	// 获取程序中顶点纹理坐标属性引用
 		maTexCoorHandle = GLES20.glGetAttribLocation(mProgram, "aTexCoor");
     }
+    
+	
+	//初始化着色器
+	private void initShader(Context mv){
+		
+		//加载顶点着色器的脚本内容
+        mVertexShader=ShaderUtil.loadFromAssetsFile("data/unit2/shader/shading/vertex.sh", mv.getResources());
+        //加载片元着色器的脚本内容
+        mFragmentShader=ShaderUtil.loadFromAssetsFile("data/unit2/shader/shading/frag.sh", mv.getResources());  
+        //基于顶点着色器与片元着色器创建程序
+        mProgram = ShaderUtil.createProgram(mVertexShader, mFragmentShader);
+        
+        maPositionHandle = GLES20.glGetAttribLocation(mProgram, "aPosition");
+        maColorHandle= GLES20.glGetAttribLocation(mProgram, "aColor");
+        //获取程序中总变换矩阵引用id
+        muMVPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix"); 
+//        GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false, Triangle.getFianlMatrix(mMMatrix), 0); 
+	}
     
     
     public void drawSelf(int textuid)

@@ -23,6 +23,7 @@ import android.view.SurfaceView;
 public class CubeView extends GLSurfaceView {
 
 	private Context mContext;
+	
 	public CubeView(Context context) {
 		super(context);
 		this.mContext = context;
@@ -44,7 +45,7 @@ public class CubeView extends GLSurfaceView {
 		public void onDrawFrame(GL10 gl) {
 			GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
 			MatrixState.pushMatrix();
-			mCube.drawSelf(mTextureId);
+//			mCube.drawSelf(mTextureId);
 			MatrixState.popMatrix();
 		}
 

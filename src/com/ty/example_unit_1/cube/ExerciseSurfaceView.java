@@ -119,6 +119,8 @@ public class ExerciseSurfaceView extends GLSurfaceView {
 			GLES20.glEnable(GLES20.GL_DEPTH_TEST);
 			//打开背面裁剪
 			GLES20.glEnable(GLES20.GL_CULL_FACE);
+			
+			
 
 		}
 	}

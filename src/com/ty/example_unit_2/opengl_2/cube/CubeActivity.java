@@ -16,7 +16,6 @@ public class CubeActivity extends Activity{
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		view = new CubeView(this);
 		setContentView(view);

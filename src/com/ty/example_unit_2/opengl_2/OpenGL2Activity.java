@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
-import com.ty.example_unit_2.opengl_2.cube.CubeActivity;
+import com.ty.example_unit_2.opengl_2.cube.CubeActivity2;
 import com.ty.example_unit_2.opengl_2.loadmodel.LoadModelActivity;
 import com.ty.example_unit_2.opengl_2.meshcube.MeshCubeActivity;
 import com.ty.example_unit_2.opengl_2.sensormanager.SensorManagerActivity;
@@ -50,7 +50,7 @@ public class OpenGL2Activity extends ListActivity {
 			cls = SensorManagerActivity.class;
 			break;
 		case 4:
-			cls = CubeActivity.class;
+			cls = CubeActivity2.class;
 			break;
 		case 5:
 			break;
