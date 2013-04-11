@@ -3,6 +3,7 @@ package com.ty.example_unit_1;
 import com.example.android_begin_gl_3d.R;
 import com.ty.example_unit_1.coordiatesystem.CoordiateSystemActivity;
 import com.ty.example_unit_1.cube.CubeActivity;
+import com.ty.example_unit_1.service.ServiceActivity;
 
 import android.app.Activity;
 import android.app.ListActivity;
@@ -15,7 +16,7 @@ import android.widget.ListView;
 
 public class UnitOneActivity extends ListActivity {
 	
-	String[] units = new String[] { "viewPort" ,"isoMap","drawMethod","SpritchMove","Canvas","Animation","Cube","CoordiateSystem","MeshCube"};
+	String[] units = new String[] { "viewPort" ,"isoMap","drawMethod","SpritchMove","Canvas","Animation","Cube","CoordiateSystem","MeshCube","Service"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,9 @@ public class UnitOneActivity extends ListActivity {
 			cls = CoordiateSystemActivity.class;
 			break;
 		case 8:
+			break;
+		case 9:
+			cls = ServiceActivity.class;
 			break;
 		default:
 			break;

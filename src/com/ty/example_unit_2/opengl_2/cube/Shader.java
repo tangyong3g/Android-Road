@@ -26,7 +26,7 @@ public class Shader {
 		mFragmentShader = ShaderUtil.loadFromAssetsFile(fragFilePath,context.getResources());
 
 		mProgram = ShaderUtil.createProgram(mVertextShader, mFragmentShader);
-       maPositionHandle = GLES20.glGetAttribLocation(mProgram, "aPosition");
+        maPositionHandle = GLES20.glGetAttribLocation(mProgram, "aPosition");
 	}
 	
 	

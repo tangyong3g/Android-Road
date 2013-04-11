@@ -45,7 +45,9 @@
         <activity android:name="com.ty.example_unit_1.coordiatesystem.CoordiateSystemActivity" >
         </activity>
         
-        
+        <!-- 第一单元 ServiceActivity -->
+        <activity android:name="com.ty.example_unit_1.service.ServiceActivity" ></activity>
+        <service android:name="com.ty.example_unit_1.service.MyService"></service>
         
         <activity android:name="com.ty.example_unit_2.UnitTwoActivity" >
         </activity>
