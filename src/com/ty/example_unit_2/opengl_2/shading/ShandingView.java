@@ -60,6 +60,10 @@ public class ShandingView extends GLSurfaceView {
 		public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 			GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1);
 			GLES20.glEnable(GLES20.GL_DEPTH_TEST);
+			//背面剪裁
+			GLES20.glEnable(GLES20.GL_CULL_FACE);
+			//卷绕方式 ,默认为 GLES20.GL_CCW 顶点绘制顺序逆时针为正 
+//			GLES20.glFrontFace(GLES20.GL_CW);
 			mTriangle  = new Triangle(ShandingView.this);
 		}
 	}
