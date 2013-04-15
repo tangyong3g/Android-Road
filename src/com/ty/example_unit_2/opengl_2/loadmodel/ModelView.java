@@ -28,6 +28,9 @@ import com.ty.util.MatrixState;
  * 
  */
 public class ModelView extends GLSurfaceView {
+	
+	
+	private static String TAG = "ModelView";
 
 	SenceRender mRenderer;
 	private final float TOUCH_SCALE_FACTOR = 180.0f / 320;// 角度缩放比例
@@ -118,6 +121,7 @@ public class ModelView extends GLSurfaceView {
 			return lovo;
 		}
 
+	
 
 		@Override
 		public void onDrawFrame(GL10 gl) {
@@ -127,9 +131,11 @@ public class ModelView extends GLSurfaceView {
             //坐标系推远
             MatrixState.pushMatrix();
             //绕Y轴、Z轴旋转
-            MatrixState.rotate(yAngle, 0, 1, 0);
-            MatrixState.rotate(xAngle, 1, 0, 0);
+//            MatrixState.rotate(yAngle, 0, 1, 0);
+//            MatrixState.rotate(xAngle, 1, 0, 0);
             
+           int error = GLES20.glGetError();
+           
             //若加载的物体部位空则绘制物体
             if(lovo!=null)
             {
@@ -165,10 +171,10 @@ public class ModelView extends GLSurfaceView {
 			// 初始化矩阵
 			MatrixState.setInitStack();
 			// 加载要绘制的物体 实际上就是把文件内容解析然后加入 顶点缓冲中去
-			lovo = LoadUtil.loadFromFile("data/unit2/model/cube_4.obj",
+			lovo = LoadUtil.loadFromFile("data/unit3/model/gd.obj",
 					ModelView.this.getResources(), ModelView.this);
 			
-			mTextureId = initTexture(com.example.android_begin_gl_3d.R.drawable.cube_simple);
+			mTextureId = initTexture(com.example.android_begin_gl_3d.R.drawable.gd_3);
 			modelControler.setLoadModelFinished(true);
 		}
 	}

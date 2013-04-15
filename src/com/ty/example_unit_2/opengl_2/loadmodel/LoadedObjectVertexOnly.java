@@ -24,7 +24,7 @@ import com.ty.util.ShaderUtil;
  * @author tangyong
  * 
  */
-public class LoadedObjectVertexOnly  {
+public class LoadedObjectVertexOnly {
 
 	int mProgram; // 自定义渲染管线ID
 	int muMVPMatrixHandle;// 总变换矩阵引用
@@ -43,9 +43,8 @@ public class LoadedObjectVertexOnly  {
 
 	int vCount = 0;
 	float angle = 0.0f;
-	public static	float angleZ = 0.0f;
-	
-	
+	public static float angleZ = 0.0f;
+
 	public LoadedObjectVertexOnly(ModelView mv, float[] vertices,
 			float[] textureCoors, float[] normalCoors, Vector3 centerPosition) {
 
@@ -57,12 +56,20 @@ public class LoadedObjectVertexOnly  {
 		initShader(mv);
 	}
 
+	private void checkGlError(String op) {
+		int error;
+		while ((error = GLES20.glGetError()) != GLES20.GL_NO_ERROR) {
+			Log.e("Render", op + ": glError " + error);
+			throw new RuntimeException(op + ": glError " + error);
+		}
+	}
+
 	// 初始化顶点坐标的方法
 	public void initVertexData(float[] vertices, float[] textureCoor,
 			float[] normalCoor) {
 		// 顶点坐标数据的初始化================begin============================
 		vCount = vertices.length / 3;
-		Log.i("tyler.tang","顶点数:\t"+vCount);
+		Log.i("tyler.tang", "顶点数:\t" + vCount);
 		// 创建顶点坐标数据缓冲
 		// vertices.length*4是因为一个整数四个字节
 		ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length * 4);
@@ -99,14 +106,14 @@ public class LoadedObjectVertexOnly  {
 		// float zOffset = mModelCenterPosition.z;
 		float yOffset = 0;
 		float zOffset = 0;
-		
-//		MatrixState.rotate(angleZ, 0, 0, 1);
-		
-//		MatrixState.translate(xOffset, yOffset, zOffset);
-//		MatrixState.rotate(angle, 0, 1, 0);
-//		MatrixState.translate(-xOffset, -yOffset, -zOffset);
 
-//		MatrixState.rotate(angle, 1, 1, 1);
+		// MatrixState.rotate(angleZ, 0, 0, 1);
+
+		// MatrixState.translate(xOffset, yOffset, zOffset);
+		// MatrixState.rotate(angle, 0, 1, 0);
+		// MatrixState.translate(-xOffset, -yOffset, -zOffset);
+
+		// MatrixState.rotate(angle, 1, 1, 1);
 		// 将最终变换矩阵传入着色器程序
 		GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false,
 				MatrixState.getFinalMatrix(), 0);
@@ -118,14 +125,16 @@ public class LoadedObjectVertexOnly  {
 		// 把纹理坐标传入渲染管线中去
 		/**/
 		GLES20.glVertexAttribPointer(maTexCoorHandle, 2, GLES20.GL_FLOAT,
-				false, 2 * 4, mTexCoorBuffer); 
+				false, 2 * 4, mTexCoorBuffer);
+
+		Log.i("tyler.tang", "错误编号:\t" + GLES20.glGetError());
 
 		// 将顶点法向量数据传入渲染管线
 		/*  */
 		GLES20.glVertexAttribPointer(maNormalHandle, 3, GLES20.GL_FLOAT, false,
 				3 * 4, mNormalBuffer);
 
-//		GLES20.glEnableVertexAttribArray(maNormalHandle);
+		// GLES20.glEnableVertexAttribArray(maNormalHandle);
 		GLES20.glEnableVertexAttribArray(maTexCoorHandle);
 
 		GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
@@ -136,7 +145,7 @@ public class LoadedObjectVertexOnly  {
 		// 绘制加载的物体
 		GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vCount);
 
-//		angle += 0.8f;
+		// angle += 0.8f;
 	}
 
 	// 初始化shader
@@ -158,9 +167,9 @@ public class LoadedObjectVertexOnly  {
 		maNormalHandle = GLES20.glGetAttribLocation(mProgram, "aNormal");
 	}
 
-	public  void senorRatio(float x) {
-		LoadedObjectVertexOnly.angleZ = (float)-180*x/9.8f;
-//		LoadedObjectVertexOnly.angleZ = (float)-x;	
+	public void senorRatio(float x) {
+		LoadedObjectVertexOnly.angleZ = (float) -180 * x / 9.8f;
+		// LoadedObjectVertexOnly.angleZ = (float)-x;
 	}
 
 }
