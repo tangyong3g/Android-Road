@@ -127,7 +127,6 @@ public class LoadedObjectVertexOnly {
 		GLES20.glVertexAttribPointer(maTexCoorHandle, 2, GLES20.GL_FLOAT,
 				false, 2 * 4, mTexCoorBuffer);
 
-		Log.i("tyler.tang", "错误编号:\t" + GLES20.glGetError());
 
 		// 将顶点法向量数据传入渲染管线
 		/*  */

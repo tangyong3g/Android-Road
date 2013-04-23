@@ -1,14 +1,17 @@
 package com.ty.example_unit_3.libgdx.loadmode;
 
 import java.util.Arrays;
+import java.util.Calendar;
+
+import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Pixmap.Format;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -37,6 +40,8 @@ public class EdgeDetectionTest extends DemoWapper {
 	
 	Texture texture;
 	
+	long start  = 0;
+	int index = 0;
 
 	public void create () {
 		
@@ -55,7 +60,7 @@ public class EdgeDetectionTest extends DemoWapper {
 			Gdx.app.log("EdgeDetectionTest", "couldn't compile post-processing shader: " + batchShader.getLog());
 		}
 
-		mesh =  ModelLoaderRegistry.loadStillModel(Gdx.files.internal("data/unit2/model/cube_single.obj"));
+		mesh =  ModelLoaderRegistry.loadStillModel(Gdx.files.internal("data/unit3/model/gd.obj"));
 		
 		fbo = new FrameBuffer(Format.RGB565, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
 		cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -91,6 +96,16 @@ public class EdgeDetectionTest extends DemoWapper {
 	}
 
 	public void render () {
+		
+		if(index == 0){
+			start = Calendar.getInstance().getTimeInMillis();
+		}
+		index ++;
+		if(Calendar.getInstance().getTimeInMillis() - start > 1000){
+			
+			Log.i("tyler.tang","FPS:\t"+index);
+			index  = 0;
+		}
 		
 		
 		angle += 45 * Gdx.graphics.getDeltaTime();

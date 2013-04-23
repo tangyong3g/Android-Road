@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.example.android_begin_gl_3d.R;
 import com.ty.example_unit_2.opengl_1.OpenGL1Activity;
 import com.ty.example_unit_3.libgdx.loadmode.LoadModeActivity;
+import com.ty.example_unit_3.libgdx.loadmode.SimpleLoadActivity;
 
 /**
  * 
@@ -18,7 +19,7 @@ import com.ty.example_unit_3.libgdx.loadmode.LoadModeActivity;
  */
 public class UnitThreeActivity extends ListActivity {
 
-	String[] units = new String[] { "loadMode" };
+	String[] units = new String[] { "loadMode","loadModelSimple" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class UnitThreeActivity extends ListActivity {
 			cls = LoadModeActivity.class;
 			break;
 		case 1:
+			cls = SimpleLoadActivity.class;
 			break;
 		case 2:
 			break;

@@ -2,6 +2,7 @@ package com.ty.example_unit_2.opengl_2.loadmodel;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -9,14 +10,11 @@ import javax.microedition.khronos.opengles.GL10;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.hardware.Sensor;
-import android.hardware.SensorListener;
 import android.hardware.SensorManager;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLUtils;
-import android.provider.LiveFolders;
 import android.util.Log;
 import android.view.MotionEvent;
 
@@ -121,8 +119,16 @@ public class ModelView extends GLSurfaceView {
 			return lovo;
 		}
 
+		long start = 0;
+		long end = 0;
+		int index = 0;
 	
 
+		int frame = 0;
+		long time = 0;
+		long timebase = 0;
+		
+		
 		@Override
 		public void onDrawFrame(GL10 gl) {
 			//清除深度缓冲与颜色缓冲
@@ -134,14 +140,25 @@ public class ModelView extends GLSurfaceView {
 //            MatrixState.rotate(yAngle, 0, 1, 0);
 //            MatrixState.rotate(xAngle, 1, 0, 0);
             
-           int error = GLES20.glGetError();
            
             //若加载的物体部位空则绘制物体
             if(lovo!=null)
             {
             	lovo.drawSelf(mTextureId);
             }   
-            MatrixState.popMatrix();           
+            MatrixState.popMatrix();       
+            
+            if(index == 0){
+            	start = Calendar.getInstance().getTimeInMillis();
+            }
+            index++;
+            long rs = Calendar.getInstance().getTimeInMillis()- start;
+            if(rs  > 1000 ){
+            	
+            	 Log.i("tyler.tang","FPS:\t"+index);
+            	 index = 0;
+            }
+            /* calculate effects*/
 		}
 
 		@Override

@@ -78,12 +78,13 @@
         <activity android:name="com.ty.example_unit_2.opengl_2.sensormanager.AccelerometerActivity">
         </activity>
         
-        
      	<!-- 第三单元 libGDX -->
         <activity android:name="com.ty.example_unit_3.libgdx.UnitThreeActivity" >
         </activity>
         <activity android:name="com.ty.example_unit_3.libgdx.loadmode.LoadModeActivity" >
         </activity>
+        
+        <activity android:name="com.ty.example_unit_3.libgdx.loadmode.SimpleLoadActivity"></activity>
         
         
         
