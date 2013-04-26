@@ -43,11 +43,7 @@ public class MainActivity extends ListActivity {
 		Class cls = null;
 		switch (position) {
 		case 0:
-			if(true){
-				float t = 1/0;
-			}
 			cls = UnitOneActivity.class;
-			
 			break;
 		case 1:
 			cls = com.ty.example_unit_2.UnitTwoActivity.class;
