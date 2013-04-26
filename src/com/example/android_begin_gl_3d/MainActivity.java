@@ -11,6 +11,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+/**
+ * 
+ * 
+ * @author tangyong
+ *
+ */
 public class MainActivity extends ListActivity {
 
 	String[] units = new String[] { "unit_1", "unit_2---[OpenGL1.x/2.x]", "unit_3---[LibGDX]", "unit_4",
