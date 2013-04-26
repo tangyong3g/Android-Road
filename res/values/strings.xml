@@ -5,6 +5,8 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     
+    <string name="app_channel">200</string>
+    
     <string name="unit_1">第一章</string>
     <string name="unit_2">第二章</string>
     <string name="unit_3">第三章</string>

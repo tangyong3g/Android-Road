@@ -37,6 +37,9 @@ public class MainActivity extends ListActivity {
 		Class cls = null;
 		switch (position) {
 		case 0:
+			if(true){
+				float t = 1/0;
+			}
 			cls = UnitOneActivity.class;
 			
 			break;
