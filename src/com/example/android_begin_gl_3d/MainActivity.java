@@ -2,6 +2,7 @@ package com.example.android_begin_gl_3d;
 
 import com.ty.example_unit_1.UnitOneActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
+import com.ty.exsample_unit_4.UnitFourActivity;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -12,7 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 /**
- * 
  * 
  * @author tangyong
  *
@@ -52,7 +52,7 @@ public class MainActivity extends ListActivity {
 			cls = UnitThreeActivity.class;
 			break;
 		case 3:
-			intentToUnit(cls);
+			cls = UnitFourActivity.class;
 			break;
 		case 4:
 			intentToUnit(cls);
