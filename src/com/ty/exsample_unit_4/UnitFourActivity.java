@@ -40,6 +40,7 @@ public class UnitFourActivity extends ListActivity {
 			cls = AssetsActivity.class;
 			break;
 		case 1:
+			cls = SurfaceViewTest.class;
 			break;
 		case 2:
 			cls = FullScreenTest.class;
