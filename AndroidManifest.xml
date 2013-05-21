@@ -90,8 +90,8 @@
         </activity>
         <activity android:name="com.ty.example_unit_3.libgdx.loadmode.LoadModeActivity" >
         </activity>
-        
         <activity android:name="com.ty.example_unit_3.libgdx.loadmode.SimpleLoadActivity"></activity>
+        <activity android:name="com.ty.example_unit_3.libgdx.loadmode.MaterialActivity"></activity>
         
         <!-- 第四单元  android 基本知识 -->
         <activity android:name="com.ty.exsample_unit_4.UnitFourActivity"></activity>
