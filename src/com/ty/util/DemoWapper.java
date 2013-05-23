@@ -84,7 +84,7 @@ public class DemoWapper implements ApplicationListener , InputProcessor {
 
 	@Override
 	public boolean touchUp(int arg0, int arg1, int arg2, int arg3) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 

@@ -15,8 +15,7 @@ import com.badlogic.gdx.graphics.g3d.model.still.StillModel;
 import com.ty.util.DemoWapper;
 
 public class MaterialTest extends DemoWapper{
-	
-	// 模型
+		// 模型
 	private StillModel mModel;
 	//纹理属性
 	private TextureAttribute textureAttribute;
