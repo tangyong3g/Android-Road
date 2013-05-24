@@ -95,7 +95,6 @@
         
         
         
-        
         <!-- 第四单元  android 基本知识 -->
         <activity android:name="com.ty.exsample_unit_4.UnitFourActivity"></activity>
         
@@ -105,6 +104,10 @@
         
         <activity android:name="com.ty.exsample_unit_4.SurfaceViewTest"></activity>
         
+        
+        
+        <!-- 第五单元 Android 3D游戏开发宝典里面的知识  -->
+        <activity android:name="com.ty.exsample_unit_5.UnitFiveActivity"></activity>
         
     </application>
 
