@@ -3,6 +3,7 @@ package com.example.android_begin_gl_3d;
 import com.ty.example_unit_1.UnitOneActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.exsample_unit_4.UnitFourActivity;
+import com.ty.exsample_unit_5.UnitFiveActivity;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -55,7 +56,7 @@ public class MainActivity extends ListActivity {
 			cls = UnitFourActivity.class;
 			break;
 		case 4:
-			intentToUnit(cls);
+			cls = UnitFiveActivity.class;
 			break;
 		case 5:
 			intentToUnit(cls);

@@ -1,12 +1,5 @@
-package com.ty.exsample_unit_5;
+package com.ty.exsample_unit_5.translate;
 
-import com.example.android_begin_gl_3d.R;
-import com.ty.exsample_unit_4.AssetsActivity;
-import com.ty.exsample_unit_4.FullScreenTest;
-import com.ty.exsample_unit_4.SurfaceViewTest;
-import com.ty.exsample_unit_5.translate.TranslateActivity;
-
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,19 +7,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.android_begin_gl_3d.R;
 
-/**
- * 
- * 本单元主要讲的是从Android 游戏开发宝典里面的知识
- * 
- * 
- * 
- * @author tangyong ty_sany@163.com
- *
- */
-public class UnitFiveActivity extends ListActivity{
+public class TranslateActivity extends ListActivity{
 	
-	String[] units = new String[] { "Translation[基本变化]", };
+	String[] units = new String[] { "orthCamera[正交投影]", };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +27,7 @@ public class UnitFiveActivity extends ListActivity{
 		Class cls = null;
 		switch (position) {
 		case 0:
-			cls = TranslateActivity.class;
+			cls = OrthCameraActivity.class;
 			break;
 		case 1:
 			break;
