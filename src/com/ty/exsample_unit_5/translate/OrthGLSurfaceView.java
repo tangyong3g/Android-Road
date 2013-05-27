@@ -82,7 +82,7 @@ public class OrthGLSurfaceView extends GLSurfaceView{
         	
             //调用此方法产生摄像机9参数位置矩阵
 			MatrixState.setCamera(
-					0, 0, 0f, 
+					0, 0, 3f, 
 					0, 0, -1f, 
 					0f, 1.0f, 0.0f
 					);
