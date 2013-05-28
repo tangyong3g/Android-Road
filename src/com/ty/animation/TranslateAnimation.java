@@ -130,6 +130,7 @@ public class TranslateAnimation extends Animation {
         float dx = mFromXDelta;
         float dy = mFromYDelta;
         float dz = mFromZDelta;
+        
         if (mFromXDelta != mToXDelta) {
             dx = mFromXDelta + ((mToXDelta - mFromXDelta) * interpolatedTime);
         }

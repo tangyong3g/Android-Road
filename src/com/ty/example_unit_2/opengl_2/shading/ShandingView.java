@@ -3,6 +3,10 @@ package com.ty.example_unit_2.opengl_2.shading;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import com.badlogic.gdx.math.Matrix4;
+import com.ty.animation.Transformation;
+import com.ty.animation.TranslateAnimation;
+
 import android.content.Context;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
@@ -36,13 +40,30 @@ public class ShandingView extends GLSurfaceView {
 	class ShandingRenderer implements Renderer {
 		
 		Triangle mTriangle;
+		TranslateAnimation mTranslateAnimation = null;
 
+		float deltaTime ;
+		long lastFrameTime = 0L;
 		@Override
 		public void onDrawFrame(GL10 gl) {
-			Log.i("tyler.tang","onDrawFrame");
+			
+			long time = System.nanoTime();
+			deltaTime = (time - lastFrameTime) / 1000000000.0f;
+			lastFrameTime = time;
+			
+			float[] result= new float[16];
+			Matrix.setRotateM(result, 0, 0, 1, 0, 0);
+			Matrix.translateM(result, 0, 1, -8, 0);
+			
+			Transformation tran = new Transformation();
+			tran.clear();
+			
 			GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
-			mTriangle.draw();
+//			mTranslateAnimation.getTransformation(deltaTime, tran);
+			mTriangle.draw(result);
 		}
+		
+		
 
 		@Override
 		public void onSurfaceChanged(GL10 gl, int width, int height) {
@@ -53,7 +74,10 @@ public class ShandingView extends GLSurfaceView {
             //调用此方法计算产生透视投影矩阵
             Matrix.frustumM(Triangle.mProjMatrix, 0, -ratio, ratio, -1, 1, 1, 10);
             //调用此方法产生摄像机9参数位置矩阵
-            Matrix.setLookAtM(Triangle.mVMatrix, 0, 0,0,3,0f,0f,0f,0f,1.0f,0.0f); 
+            Matrix.setLookAtM(Triangle.mVMatrix, 0,
+            	0,0,10,
+            	0f,0f,0f,
+            	0f,1.0f,0.0f); 
 		}
 
 		@Override
@@ -65,6 +89,9 @@ public class ShandingView extends GLSurfaceView {
 			//卷绕方式 ,默认为 GLES20.GL_CCW 顶点绘制顺序逆时针为正 
 //			GLES20.glFrontFace(GLES20.GL_CW);
 			mTriangle  = new Triangle(ShandingView.this);
+			
+			mTranslateAnimation = new TranslateAnimation(0,0,0,-10,0,0);
+			mTranslateAnimation.initialize(0, 0,0, 0);
 		}
 	}
 

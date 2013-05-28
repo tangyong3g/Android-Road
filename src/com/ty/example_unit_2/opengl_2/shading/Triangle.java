@@ -8,6 +8,8 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 
+import com.badlogic.gdx.math.Matrix4;
+import com.ty.animation.Transformation;
 import com.ty.util.ShaderUtil;
 
 
@@ -40,9 +42,9 @@ public class Triangle {
 		
 		float [] vertexPosition  = 
 		{
-		     0.0f, 1.0f, 0.0f,
-		    -1.0f,-1.0f, 0.0f,
-		     1.0f,-1.0f, 0.0f
+		     -1.0f, 1.0f, 0.0f,
+		    -2.0f,-1.0f, 0.0f,
+		     0.0f,-1.0f, 0.0f
 		};
 		
 		vCount = vertexPosition.length/3;
@@ -85,16 +87,18 @@ public class Triangle {
         GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false, Triangle.getFianlMatrix(mMMatrix), 0); 
 	}
 	
-	public void draw(){
+	public void draw(float[] matrix){
 		
 		//使用某个着色程序　
 		GLES20.glUseProgram(mProgram);
 		 //初始化变换矩阵
-        Matrix.setRotateM(mMMatrix,0,0,0,1,0);
+//        Matrix.setRotateM(mMMatrix,0,0,0,1,0);
         //设置沿Z轴正向位移1
-        Matrix.translateM(mMMatrix,0,0,0,1);
+//        Matrix.translateM(mMMatrix,0,0,0,1);
         //设置绕x轴旋转
-        Matrix.rotateM(mMMatrix,0,xAngle,1,0,0);
+//        Matrix.rotateM(mMMatrix,0,xAngle,1,0,0);
+		
+		 mMMatrix = matrix;
 		
 		//三角形的顶点坐标使用了 muMVPMatrixHandle 
 		GLES20.glUniformMatrix4fv(muMVPMatrixHandle, 1, false, Triangle.getFianlMatrix(mMMatrix), 0); 
