@@ -29,13 +29,12 @@ public class ModelView extends GLSurfaceView {
 	
 	
 	private static String TAG = "ModelView";
+	private float mAngle = 0.0f;
 
 	SenceRender mRenderer;
 	private final float TOUCH_SCALE_FACTOR = 180.0f / 320;// 角度缩放比例
 	private float mPreviousY;// 上次的触控位置Y坐标
 	private float mPreviousX;// 上次的触控位置X坐标
-	private SensorManager mySensormanager = null;
-	private Sensor sensor;
 	LoadedObjectVertexOnly obj = null;
 	ModelControler modelControler;
 	ControlerThread modelThread;
@@ -51,10 +50,6 @@ public class ModelView extends GLSurfaceView {
 		setRenderer(mRenderer);
 		// 设置渲染模式为主动渲染
 		setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
-		// 传感器
-		mySensormanager = (SensorManager)context.getSystemService(Context.SENSOR_SERVICE);
-		// 重力传感器
-		sensor = mySensormanager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 		
 		modelControler = new ModelControler(obj,this);
 	}
@@ -109,7 +104,9 @@ public class ModelView extends GLSurfaceView {
 	class SenceRender implements Renderer {
 
 		LoadedObjectVertexOnly lovo;
+		LoadedObjectVertexOnly cube;
 		int mTextureId;
+		int mCubeId;
 		float yAngle;// 绕Y轴旋转的角度
 		float xAngle; // 绕Z轴旋转的角度
 
@@ -134,19 +131,22 @@ public class ModelView extends GLSurfaceView {
 			//清除深度缓冲与颜色缓冲
             GLES20.glClear( GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
 
-            //坐标系推远
             MatrixState.pushMatrix();
-            //绕Y轴、Z轴旋转
-//            MatrixState.rotate(yAngle, 0, 1, 0);
-//            MatrixState.rotate(xAngle, 1, 0, 0);
             
-           
             //若加载的物体部位空则绘制物体
             if(lovo!=null)
             {
             	lovo.drawSelf(mTextureId);
             }   
-            MatrixState.popMatrix();       
+            MatrixState.popMatrix();      
+            
+            MatrixState.pushMatrix();
+            
+            if(cube!=null){
+            	MatrixState.translate(0, 200, 0);
+            	cube.drawSelf(mCubeId);
+            }
+            MatrixState.popMatrix();
             
             if(index == 0){
             	start = Calendar.getInstance().getTimeInMillis();
@@ -158,9 +158,10 @@ public class ModelView extends GLSurfaceView {
             	 Log.i("tyler.tang","FPS:\t"+index);
             	 index = 0;
             }
-            /* calculate effects*/
+            
 		}
 
+		
 		@Override
 		public void onSurfaceChanged(GL10 gl, int width, int height) {
 			// 设置视窗大小及位置
@@ -168,11 +169,11 @@ public class ModelView extends GLSurfaceView {
 			// 计算GLSurfaceView的宽高比
 			float ratio = (float) width / height;
 			// 调用此方法计算产生透视投影矩阵
-			MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 2, 8000);
+			MatrixState.setProjectFrustum(-ratio, ratio, -1, 1, 1, 8000);
 			// 调用此方法产生摄像机9参数位置矩阵
 			MatrixState.setCamera
 			(
-					0, 0, 0,
+					0, 0, 300,
 					0f, 0f, -1f,
 					0f, 1.0f, 0.0f
             );
@@ -188,10 +189,11 @@ public class ModelView extends GLSurfaceView {
 			// 初始化矩阵
 			MatrixState.setInitStack();
 			// 加载要绘制的物体 实际上就是把文件内容解析然后加入 顶点缓冲中去
-			lovo = LoadUtil.loadFromFile("data/unit3/model/gd.obj",
-					ModelView.this.getResources(), ModelView.this);
+			lovo = LoadUtil.loadFromFile("data/unit2/model/ground.obj",ModelView.this.getResources(), ModelView.this);
+			cube = LoadUtil.loadFromFile("data/unit2/model/cube.obj",ModelView.this.getResources(), ModelView.this);
 			
-			mTextureId = initTexture(com.example.android_begin_gl_3d.R.drawable.gd_3);
+			mTextureId = initTexture(com.example.android_begin_gl_3d.R.drawable.ground_texture);
+			mCubeId = initTexture(com.example.android_begin_gl_3d.R.drawable.cube_texture);
 			modelControler.setLoadModelFinished(true);
 		}
 	}
