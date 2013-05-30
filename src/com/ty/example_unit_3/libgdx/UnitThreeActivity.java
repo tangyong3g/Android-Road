@@ -11,6 +11,7 @@ import com.example.android_begin_gl_3d.R;
 import com.ty.example_unit_2.opengl_1.OpenGL1Activity;
 import com.ty.example_unit_3.libgdx.animation.MaterialAnimcationActivity;
 import com.ty.example_unit_3.libgdx.loadmode.LoadModeActivity;
+import com.ty.example_unit_3.libgdx.loadmode.LoaderModelActivity;
 import com.ty.example_unit_3.libgdx.loadmode.MaterialActivity;
 import com.ty.example_unit_3.libgdx.loadmode.MaterialOpenGL2Activity;
 import com.ty.example_unit_3.libgdx.loadmode.SimpleLoadActivity;
@@ -22,7 +23,7 @@ import com.ty.example_unit_3.libgdx.loadmode.SimpleLoadActivity;
  */
 public class UnitThreeActivity extends ListActivity {
 
-	String[] units = new String[] { "LoaderModel","loadModelSimple","Material","MaterialOpenGL2.x" , "MaterialAnimation" };
+	String[] units = new String[] { "LoaderModel","loadModelSimple","Material","MaterialOpenGL2.x" , "MaterialAnimation" ,"LoaderModel-[StillMode]"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class UnitThreeActivity extends ListActivity {
 			cls = MaterialAnimcationActivity.class;
 			break;
 		case 5:
+			cls =LoaderModelActivity.class;
 			break;
 		case 6:
 			break;

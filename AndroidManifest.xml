@@ -92,7 +92,7 @@
         <activity android:name="com.ty.example_unit_3.libgdx.loadmode.MaterialActivity"></activity>
         <activity android:name="com.ty.example_unit_3.libgdx.loadmode.MaterialOpenGL2Activity"></activity>
         <activity android:name="com.ty.example_unit_3.libgdx.animation.MaterialAnimcationActivity"></activity>
-        
+        <activity android:name="com.ty.example_unit_3.libgdx.loadmode.LoaderModelActivity"></activity>
         
         
         <!-- 第四单元  android 基本知识 -->
@@ -108,9 +108,11 @@
         
         <!-- 第五单元 Android 3D游戏开发宝典里面的知识  -->
         <activity android:name="com.ty.exsample_unit_5.UnitFiveActivity"></activity>
-        
         <activity android:name="com.ty.exsample_unit_5.translate.TranslateActivity"></activity>
         <activity android:name="com.ty.exsample_unit_5.translate.OrthCameraActivity"></activity>
+        <activity android:name="com.ty.exsample_unit_5.translate.PerCameraActivity"></activity>
+        
+        
         
     </application>
 

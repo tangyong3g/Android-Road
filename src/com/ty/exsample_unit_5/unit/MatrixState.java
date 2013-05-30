@@ -63,4 +63,20 @@ public class MatrixState
         return mMVPMatrix;
     }
     
+ 	/**
+ 	 * 透视投影
+ 	 * @param left near面的左边
+ 	 * @param right near面的右边
+ 	 * @param bottom near面的下面
+ 	 * @param top near面的上面
+ 	 * @param near near面距离观察点的距离
+ 	 * @param far far面距离观察点的距离
+ 	 */
+ 	public static void setProjectFrustum(float left, float right, float bottom, float top,
+ 			float near, float far) {
+ 		Matrix.frustumM(mProjMatrix, 0, left, right, bottom, top, near, far);
+ 	}
+    
+    
+    
 }

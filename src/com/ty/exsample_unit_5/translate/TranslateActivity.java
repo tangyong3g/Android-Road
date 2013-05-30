@@ -11,7 +11,7 @@ import com.example.android_begin_gl_3d.R;
 
 public class TranslateActivity extends ListActivity{
 	
-	String[] units = new String[] { "orthCamera[正交投影]", };
+	String[] units = new String[] { "orthCamera[正交投影]", "perCamera[透视投影]" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class TranslateActivity extends ListActivity{
 			cls = OrthCameraActivity.class;
 			break;
 		case 1:
+			cls = PerCameraActivity.class;
 			break;
 		case 2:
 			break;

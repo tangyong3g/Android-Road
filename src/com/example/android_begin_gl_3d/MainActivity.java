@@ -21,7 +21,7 @@ import android.widget.ListView;
 public class MainActivity extends ListActivity {
 
 	String[] units = new String[] { "unit_1", "unit_2---[OpenGL1.x/2.x]", "unit_3---[LibGDX]", "unit_4",
-			"unit_5", "unit_6", "unit_7", };
+			"unit_5[Android游戏 开发案例]", "unit_6", "unit_7", };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
