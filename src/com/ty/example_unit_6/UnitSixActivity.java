@@ -9,12 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
+import com.ty.example_unit_6.colorselector.ColorSelectorActivity;
 import com.ty.example_unit_6.seekbar.DockLineDialog;
 import com.ty.exsample_unit_5.translate.TranslateActivity;
 
 public class UnitSixActivity extends ListActivity {
 
-	String[] units = new String[] { "可滑动的选择条", };
+	String[] units = new String[] { "可滑动的选择条","颜色选择器" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class UnitSixActivity extends ListActivity {
 			showSeekBar();
 			break;
 		case 1:
+			cls = ColorSelectorActivity.class;
 			break;
 		case 2:
 			break;

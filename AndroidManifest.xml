@@ -113,6 +113,7 @@
         
         <!-- 第6单元 android可重用组件 -->
         <activity android:name="com.ty.example_unit_6.UnitSixActivity"></activity>
+        <activity android:name="com.ty.example_unit_6.colorselector.ColorSelectorActivity"></activity>
         
         
     </application>
