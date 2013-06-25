@@ -10,6 +10,102 @@ package com.example.android_begin_gl_3d;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        /**  actionBar颜色 
+         */
+        public static final int abs_tab_text_color=0x7f04000d;
+        public static final int abs_tab_text_color_press=0x7f04000e;
+        public static final int appwidget_error_color=0x7f040008;
+        public static final int bubble_dark_background=0x7f040006;
+        public static final int delete_color_filter=0x7f040007;
+        /**  垃圾桶文字颜色 
+         */
+        public static final int delete_icon_text_def_color=0x7f040016;
+        public static final int delete_icon_text_sel_color=0x7f040017;
+        /**  ================== 操作提示层      结束  ================================= 
+ 桌面设置 
+         */
+        public static final int desk_setting_bg_color=0x7f040020;
+        public static final int desk_setting_button_color=0x7f040026;
+        public static final int desk_setting_button_text_color=0x7f04002a;
+        public static final int desk_setting_dialog_bg_color=0x7f040029;
+        public static final int desk_setting_dialog_bg_color_select=0x7f04002b;
+        public static final int desk_setting_item_summary_color=0x7f040023;
+        public static final int desk_setting_item_title_color=0x7f040022;
+        public static final int desk_setting_tab_title_no_select=0x7f040025;
+        public static final int desk_setting_tab_title_select=0x7f040024;
+        public static final int desk_setting_title_color=0x7f040021;
+        /**  The alpha/color to apply to the drag image 
+         */
+        public static final int drag_view_multiply_color=0x7f040003;
+        public static final int folder_edit_enter_color=0x7f040010;
+        public static final int folder_edit_item_name_color=0x7f040011;
+        /**  文件夹编辑颜色 
+         */
+        public static final int folder_edit_title_color=0x7f04000f;
+        public static final int gesture_color=0x7f04000a;
+        public static final int grid_dark_background=0x7f040005;
+        public static final int half_translucent_background=0x7f04001b;
+        public static final int icon_edit_base_rotate_tips_text=0x7f04003c;
+        public static final int icon_edit_cover_rotate_tips_text=0x7f04003d;
+        /**  图标编辑 
+         */
+        public static final int icon_edit_mode_switch_text=0x7f04003a;
+        public static final int icon_edit_mode_switch_text_active=0x7f04003b;
+        public static final int icon_glow_color=0x7f040002;
+        /**  图标轮廓颜色 
+         */
+        public static final int icon_outline_color=0x7f040001;
+        /**  非活动背景颜色 
+         */
+        public static final int inactive_area_bg_color=0x7f040012;
+        public static final int memorybar_text_color=0x7f04000c;
+        public static final int menu_divider_color=0x7f040015;
+        public static final int menu_item_text_color=0x7f040014;
+        /**  菜单颜色 
+         */
+        public static final int menu_title_color=0x7f040013;
+        public static final int new_transparent=0x7f040028;
+        /**  ================== 操作提示层      开始  ================================= 
+ 操作提示层的黑色覆盖背景颜色 
+         */
+        public static final int operation_guide_cover_color=0x7f04001d;
+        public static final int operation_guide_text_sub_color=0x7f04001f;
+        public static final int operation_guide_text_title_color=0x7f04001e;
+        public static final int runningbottomprogress_bg_color=0x7f040019;
+        /**  屏幕预览的背景颜色 
+         */
+        public static final int sense_preview_bg_color=0x7f040018;
+        public static final int snag_callout_color=0x7f040009;
+        /**  图标文字颜色 
+         */
+        public static final int text_color=0x7f04001c;
+        public static final int theme_bg=0x7f040039;
+        public static final int theme_bottom_text_focus=0x7f040030;
+        public static final int theme_bottom_text_normal=0x7f040031;
+        public static final int theme_detail_apply_text=0x7f040035;
+        public static final int theme_detail_menu_text=0x7f040034;
+        public static final int theme_detail_modify_text=0x7f040036;
+        public static final int theme_detail_topbar_title=0x7f040033;
+        public static final int theme_findmore_text_color=0x7f040032;
+        public static final int theme_golocker_logo=0x7f040038;
+        public static final int theme_golocker_tips=0x7f040037;
+        public static final int theme_tab_focus=0x7f04002e;
+        public static final int theme_tab_no_focus=0x7f04002f;
+        /**  主题预览界面 
+         */
+        public static final int theme_top_cur_text=0x7f04002c;
+        public static final int theme_top_text=0x7f04002d;
+        /**  对话框半透明设置color 
+         */
+        public static final int translucent_background=0x7f04001a;
+        public static final int transparent=0x7f040027;
+        public static final int uncertain_gesture_color=0x7f04000b;
+        public static final int window_background=0x7f040004;
+        /**  Workspace 缩放界面背景颜色 
+         */
+        public static final int workspace_scaled_background_color=0x7f040000;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -17,8 +113,8 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int cube_simple=0x7f020000;
@@ -30,50 +126,70 @@ public final class R {
         public static final int ground_texture=0x7f020006;
         public static final int ic_launcher=0x7f020007;
         public static final int number=0x7f020008;
+        public static final int unit6_seekbar=0x7f020009;
+        public static final int unit6_seekbar_line2=0x7f02000a;
+        public static final int unit6_seekbar_setting_blue_line=0x7f02000b;
+        public static final int unit6_seekbar_setting_dialog_bg=0x7f02000c;
+        public static final int unit6_seekbar_setting_dialog_bg_selector=0x7f02000d;
     }
     public static final class id {
-        public static final int action_settings=0x7f080005;
-        public static final int alertdialog_text=0x7f080002;
-        public static final int alertdialog_title=0x7f080001;
-        public static final int cancel_report=0x7f080004;
-        public static final int sure_report=0x7f080003;
-        public static final int unit_list_id=0x7f080000;
+        public static final int action_settings=0x7f09000d;
+        public static final int alertdialog_text=0x7f090002;
+        public static final int alertdialog_title=0x7f090001;
+        public static final int cancel_report=0x7f090004;
+        public static final int cancle=0x7f09000a;
+        public static final int center=0x7f09000c;
+        public static final int desk_setting_dialog_buttons=0x7f090009;
+        public static final int desk_setting_dialog_singleormulti_btn_line=0x7f09000b;
+        public static final int desk_setting_dialog_singleormulti_title=0x7f090007;
+        public static final int desk_setting_listview_layout=0x7f090006;
+        public static final int dialog_layout=0x7f090005;
+        public static final int line=0x7f090008;
+        public static final int mRowBar=0x01010001;
+        public static final int rowActualValue=0x01010002;
+        public static final int rowSettingMessage=0x01010000;
+        public static final int sure_report=0x7f090003;
+        public static final int unit_list_id=0x7f090000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int main_items=0x7f030001;
         public static final int report=0x7f030002;
+        public static final int unit6_seekbar_one=0x7f030003;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050009;
-        public static final int app_channel=0x7f05000b;
-        public static final int app_name=0x7f050008;
-        public static final int crash_dialog_text=0x7f050004;
+        public static final int action_settings=0x7f060009;
+        public static final int app_channel=0x7f06000b;
+        public static final int app_name=0x7f060008;
+        public static final int cancle=0x7f060015;
+        public static final int center=0x7f060016;
+        public static final int crash_dialog_text=0x7f060004;
         /**  根据不同的Widget修改 
          */
-        public static final int crash_dialog_title=0x7f050003;
-        public static final int crash_no=0x7f050006;
-        public static final int crash_notif_text=0x7f050002;
+        public static final int crash_dialog_title=0x7f060003;
+        public static final int crash_no=0x7f060006;
+        public static final int crash_notif_text=0x7f060002;
         /**  根据不同的Widget修改 
          */
-        public static final int crash_notif_ticker_text=0x7f050000;
+        public static final int crash_notif_ticker_text=0x7f060000;
         /**  根据不同的Widget修改 
          */
-        public static final int crash_notif_title=0x7f050001;
-        public static final int crash_subject=0x7f050007;
-        public static final int crash_yes=0x7f050005;
-        public static final int hello_world=0x7f05000a;
-        public static final int unit_1=0x7f05000c;
-        public static final int unit_2=0x7f05000d;
-        public static final int unit_3=0x7f05000e;
-        public static final int unit_4=0x7f05000f;
-        public static final int unit_5=0x7f050010;
-        public static final int unit_6=0x7f050011;
-        public static final int unit_7=0x7f050012;
-        public static final int unit_8=0x7f050013;
+        public static final int crash_notif_title=0x7f060001;
+        public static final int crash_subject=0x7f060007;
+        public static final int crash_yes=0x7f060005;
+        public static final int hello_world=0x7f06000a;
+        public static final int set_value=0x7f060014;
+        public static final int unit_1=0x7f06000c;
+        public static final int unit_2=0x7f06000d;
+        public static final int unit_3=0x7f06000e;
+        public static final int unit_4=0x7f06000f;
+        public static final int unit_5=0x7f060010;
+        public static final int unit_6=0x7f060011;
+        public static final int unit_7=0x7f060012;
+        public static final int unit_8=0x7f060013;
     }
     public static final class style {
         /** 
@@ -97,10 +213,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070002;
+        public static final int SettingDialog=0x7f070001;
     }
 }

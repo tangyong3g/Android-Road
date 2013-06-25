@@ -15,5 +15,9 @@
     <string name="unit_6">第六章</string>
     <string name="unit_7">第七章</string>
     <string name="unit_8">第八章</string>
+    
+    <string name="set_value">设置数值</string>
+    <string name="cancle">取消</string>
+    <string name="center">确定</string>
 
 </resources>

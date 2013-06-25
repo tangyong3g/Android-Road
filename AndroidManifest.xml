@@ -105,13 +105,14 @@
         <activity android:name="com.ty.exsample_unit_4.SurfaceViewTest"></activity>
         
         
-        
         <!-- 第五单元 Android 3D游戏开发宝典里面的知识  -->
         <activity android:name="com.ty.exsample_unit_5.UnitFiveActivity"></activity>
         <activity android:name="com.ty.exsample_unit_5.translate.TranslateActivity"></activity>
         <activity android:name="com.ty.exsample_unit_5.translate.OrthCameraActivity"></activity>
         <activity android:name="com.ty.exsample_unit_5.translate.PerCameraActivity"></activity>
         
+        <!-- 第6单元 android可重用组件 -->
+        <activity android:name="com.ty.example_unit_6.UnitSixActivity"></activity>
         
         
     </application>

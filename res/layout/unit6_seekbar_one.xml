@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="10dp" >
+
+    <LinearLayout
+        android:id="@+id/dialog_layout" 
+        android:layout_width="302dip"
+        android:layout_height="wrap_content"
+        android:background="@drawable/unit6_seekbar_setting_dialog_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/desk_setting_listview_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dip"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/desk_setting_dialog_singleormulti_title"
+                android:layout_width="fill_parent"
+                android:layout_height="68dip"
+                android:gravity="center_vertical"
+                android:paddingLeft="11.33dp"
+                android:textColor="#33B5E5"
+                android:textSize="22.6sp" />
+
+            <ImageView
+                android:id="@+id/line"
+                android:layout_width="fill_parent"
+                android:layout_height="3dip"
+                android:background="@drawable/unit6_seekbar_setting_blue_line" />
+
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:minHeight="?android:attr/listPreferredItemHeight" >
+
+                <!-- 第一个滑动条 -->
+                <TextView
+                    android:id="@+android:id/rowSettingMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@android:id/title"
+                    android:layout_below="@android:id/title"
+                    android:maxLines="2"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="6dp"
+                    android:text="@string/set_value"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <SeekBar
+                    android:id="@+android:id/mRowBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@android:id/rowSettingMessage"
+                    android:layout_below="@android:id/rowSettingMessage"
+                    android:maxHeight="4dp"
+                    android:minHeight="4dp"
+                    android:progressDrawable="@drawable/unit6_seekbar"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp" />
+
+                <TextView
+                    android:id="@+android:id/rowActualValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@android:id/mRowBar"
+                    android:layout_below="@android:id/mRowBar"
+                    android:maxLines="1"
+                    android:paddingLeft="15dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/desk_setting_dialog_buttons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="-40dip"
+            android:orientation="vertical" >
+
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/unit6_seekbar_line2" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:orientation="horizontal" >
+                
+                <Button
+                    android:id="@+id/cancle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40.67dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/unit6_seekbar_setting_dialog_bg_selector"
+                    android:gravity="center"
+                    android:text="@string/cancle"
+                    android:textColor="@color/desk_setting_button_text_color"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/desk_setting_dialog_singleormulti_btn_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/unit6_seekbar_line2"
+                    />
+
+                <Button
+                    android:id="@+id/center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40.67dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/unit6_seekbar_setting_dialog_bg_selector"
+                    android:gravity="center"
+                    android:text="@string/center"
+                    android:textColor="@color/desk_setting_button_text_color"
+                    android:textSize="16sp" />
+                
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
