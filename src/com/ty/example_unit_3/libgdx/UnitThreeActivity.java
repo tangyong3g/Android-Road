@@ -8,9 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
-import com.ty.example_unit_3.libgdx.animation.MaterialAnimcationActivity;
 import com.ty.example_unit_3.libgdx.loadmode.LoadModeActivity;
-import com.ty.example_unit_3.libgdx.loadmode.MaterialActivity;
 import com.ty.example_unit_3.libgdx.loadmode.MaterialOpenGL2Activity;
 import com.ty.example_unit_3.libgdx.loadmode.SimpleLoadActivity;
 
@@ -43,13 +41,11 @@ public class UnitThreeActivity extends ListActivity {
 			cls = SimpleLoadActivity.class;
 			break;
 		case 2:
-			cls = MaterialActivity.class;
 			break;
 		case 3:
 			cls = MaterialOpenGL2Activity.class;
 			break;
 		case 4:
-			cls = MaterialAnimcationActivity.class;
 			break;
 		case 5:
 			break;

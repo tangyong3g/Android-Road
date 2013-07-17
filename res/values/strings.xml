@@ -19,5 +19,9 @@
     <string name="set_value">设置数值</string>
     <string name="cancle">取消</string>
     <string name="center">确定</string>
+    
+    
+    <!-- 第4单元 -->
+    <string name="send_msg">发送消息</string>
 
 </resources>

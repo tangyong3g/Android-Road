@@ -21,7 +21,7 @@ import com.ty.example_unit_2.opengl_2.OpenGL2Activity;
  */
 public class UnitFourActivity extends ListActivity {
 
-	String[] units = new String[] { "AssetManager", "SurfaceViewTest","FullScreen" };
+	String[] units = new String[] { "AssetManager", "SurfaceViewTest","FullScreen" ,"Looper"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,7 @@ public class UnitFourActivity extends ListActivity {
 			cls = FullScreenTest.class;
 			break;
 		case 3:
+			cls = LooperActivity.class;
 			break;
 		case 4:
 			break;
