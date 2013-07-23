@@ -12,6 +12,7 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.util.Log;
+import android.view.ViewDebug.HierarchyTraceType;
 
 /**
  * 
@@ -52,8 +53,8 @@ public class ShandingView extends GLSurfaceView {
 			lastFrameTime = time;
 			
 			float[] result= new float[16];
-			Matrix.setRotateM(result, 0, 0, 1, 0, 0);
-			Matrix.translateM(result, 0, 1, -8, 0);
+			Matrix.setRotateM(result, 0, 0, 0, 1, 0);
+//			Matrix.translateM(result, 0, 1, -8, 0);
 			
 			Transformation tran = new Transformation();
 			tran.clear();
@@ -70,12 +71,12 @@ public class ShandingView extends GLSurfaceView {
 			//设置视窗大小及位置 
         	GLES20.glViewport(0, 0, width, height); 
         	//计算GLSurfaceView的宽高比
-            float ratio = (float) width / height;
+            float ratio = (float) height / width;
             //调用此方法计算产生透视投影矩阵
-            Matrix.frustumM(Triangle.mProjMatrix, 0, -ratio, ratio, -1, 1, 1, 10);
+            Matrix.frustumM(Triangle.mProjMatrix, 0, -1, 1, -ratio, ratio, 1, 10f);
             //调用此方法产生摄像机9参数位置矩阵
-            Matrix.setLookAtM(Triangle.mVMatrix, 0,
-            	0,0,10,
+            Matrix.setLookAtM(Triangle.mVMatrix,0,
+            	0,0,1.0000001f,
             	0f,0f,0f,
             	0f,1.0f,0.0f); 
 		}

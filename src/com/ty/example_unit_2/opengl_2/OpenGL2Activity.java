@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
+import com.ty.example_unit_2.SquareActivity;
+import com.ty.example_unit_2.opengl_2.cube.CubeActivity;
 import com.ty.example_unit_2.opengl_2.cube.CubeActivity2;
 import com.ty.example_unit_2.opengl_2.loadmodel.LoadModelActivity;
 import com.ty.example_unit_2.opengl_2.meshcube.MeshCubeActivity;
@@ -21,7 +23,7 @@ import com.ty.example_unit_2.opengl_2.shading.ShadingLanguageActivity;
  */
 public class OpenGL2Activity extends ListActivity {
 
-	String[] units = new String[] { "MeshCube", "LoadModel" ,"Shading Language","sensorManager","Cube" };
+	String[] units = new String[] { "MeshCube", "LoadModel" ,"Shading Language","sensorManager","Cube" ,"Square"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,7 @@ public class OpenGL2Activity extends ListActivity {
 			cls = CubeActivity2.class;
 			break;
 		case 5:
+			cls = SquareActivity.class;
 			break;
 		case 6:
 			break;

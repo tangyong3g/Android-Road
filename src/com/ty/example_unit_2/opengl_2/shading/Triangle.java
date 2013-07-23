@@ -42,9 +42,9 @@ public class Triangle {
 		
 		float [] vertexPosition  = 
 		{
-		     -1.0f, 1.0f, 0.0f,
-		    -2.0f,-1.0f, 0.0f,
-		     0.0f,-1.0f, 0.0f
+		     0f, 1.0f, 0.0f,
+		    -1,-1, 0.0f,
+		    1,-1, 0.0f
 		};
 		
 		vCount = vertexPosition.length/3;

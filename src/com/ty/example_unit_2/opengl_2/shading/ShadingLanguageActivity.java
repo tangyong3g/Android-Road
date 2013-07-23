@@ -9,6 +9,10 @@ import android.os.Bundle;
  * 
  * 主要是顶点着色器与片元着色器。
  * 
+ * 另外在不同的深度可以见到的区域是可以计算的。
+ * 
+ * 本DEMO中就把左右变成了单位 1 
+ * 
  * @author tangyong
  * 
  */

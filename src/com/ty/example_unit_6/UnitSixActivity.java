@@ -15,7 +15,7 @@ import com.ty.exsample_unit_5.translate.TranslateActivity;
 
 public class UnitSixActivity extends ListActivity {
 
-	String[] units = new String[] { "可滑动的选择条","颜色选择器" };
+	String[] units = new String[] { "可滑动的选择条","颜色选择器","色相亮度饱和度"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
