@@ -102,6 +102,7 @@
         <activity android:name="com.ty.exsample_unit_4.FullScreenTest"></activity>
         <activity android:name="com.ty.exsample_unit_4.SurfaceViewTest"></activity>
         <activity android:name="com.ty.exsample_unit_4.LooperActivity"></activity>
+        <activity android:name="com.ty.exsample_unit_4.animation.AnimationActivity"></activity>
         
         
         <!-- 第五单元 Android 3D游戏开发宝典里面的知识  -->

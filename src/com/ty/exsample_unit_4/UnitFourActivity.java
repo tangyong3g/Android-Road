@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.example.android_begin_gl_3d.R;
 import com.ty.example_unit_2.opengl_1.OpenGL1Activity;
 import com.ty.example_unit_2.opengl_2.OpenGL2Activity;
+import com.ty.exsample_unit_4.animation.AnimationActivity;
 
 /**
  * 
@@ -21,7 +22,7 @@ import com.ty.example_unit_2.opengl_2.OpenGL2Activity;
  */
 public class UnitFourActivity extends ListActivity {
 
-	String[] units = new String[] { "AssetManager", "SurfaceViewTest","FullScreen" ,"Looper"};
+	String[] units = new String[] { "AssetManager", "SurfaceViewTest","FullScreen" ,"Looper","Animation"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class UnitFourActivity extends ListActivity {
 			cls = LooperActivity.class;
 			break;
 		case 4:
+			cls = AnimationActivity.class;
 			break;
 		case 5:
 			break;
