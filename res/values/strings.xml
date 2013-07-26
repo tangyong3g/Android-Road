@@ -19,6 +19,9 @@
     <string name="set_value">设置数值</string>
     <string name="cancle">取消</string>
     <string name="center">确定</string>
+    <string name="alp_scal_animation">AlpAnimation</string>
+    <string name="animation_one">动画一</string>
+    <string name="animation_two">动画二</string>
     
     
     <!-- 第4单元 -->

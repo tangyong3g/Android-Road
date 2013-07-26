@@ -1,6 +1,5 @@
-package com.ty.exsample_unit_4.animation;
 
-import java.util.Stack;
+package com.ty.exsample_unit_4.animation;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
@@ -18,127 +16,121 @@ import android.widget.RelativeLayout;
 
 import com.example.android_begin_gl_3d.R;
 
-/**
+/** 
  * 
- * TranslateAnimation如果不写那么就是相对于目前的位置，移动
+ * 2013-07-26 
+ * 
+ *  TranslateAnimation 和 AlpAnimation的用法，
+ *  
+ *  问题 1: 当一个view设置的某个动物，并启动后。如果其它的view也使用了同样的一动画对象那他会同样的做动画，Animation和View之前就像是监听者模式一样
+ * 
+ * 
  * 
  * Animation用法
  * 
- * @author tangyong
- * 
- */
-public class AnimationActivity extends Activity implements OnClickListener , android.view.animation.Animation.AnimationListener{
+ * @author tangyong */
+public class AnimationActivity extends Activity implements OnClickListener, android.view.animation.Animation.AnimationListener {
 
 	String TAG = "AnimationTest";
 	Button mStart;
+	private Button mBtnAnimationTwo;
 	ImageView mImageView;
 	AnimationSet mAnimationSet;
 	RelativeLayout mParent;
-	TranslateAnimation mTranslateAnimation;
 	ImageView mIcon;
-	Stack<Animation> mAnimationStack = new Stack<Animation>();
-	
+	private ImageView mImageOne;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.unit4_animation);
 		initComponent();
-		initAnimation();
 	}
-	
-	
-	private void initAnimation(){
-		
-		AlphaAnimation alpAnimation = new AlphaAnimation(1.0f, 0.0f);
-		alpAnimation.setDuration(1000);
-		ScaleAnimation scalAnimation =  new ScaleAnimation(0.1f, 2.5f, 0.1f, 2.5f,Animation.RELATIVE_TO_SELF, 0.5f,Animation.RELATIVE_TO_SELF, 0.5f);
-		scalAnimation.setDuration(1000);
-		
-		mTranslateAnimation = new TranslateAnimation(0, 100, 0, 100);
-		mTranslateAnimation.setFillAfter(true);
-		mTranslateAnimation.setDuration(1000);
-		
-		TranslateAnimation tAniaOne = new TranslateAnimation(0, 100, 0, 100);
-		tAniaOne.setFillAfter(true);
-		tAniaOne.setDuration(1000);
-		TranslateAnimation tAniaTwo = new TranslateAnimation(0, -100, 0, -100);
-		tAniaTwo.setFillAfter(true);
-		tAniaTwo.setDuration(1000);
-//		mAnimationStack.push(tAniaOne);
-		mAnimationStack.push(tAniaTwo);
-	}
-	
-	
 
-	private void initComponent() {
-		
-		mStart = (Button) findViewById(R.id.btn_start);
-		mImageView = (ImageView) findViewById(R.id.img);
+	private void initComponent () {
+
+		mStart = (Button)findViewById(R.id.btn_start);
+		mBtnAnimationTwo = (Button)findViewById(R.id.btn_animation_two);
+		mImageOne = (ImageView)findViewById(R.id.animation_img_one);
+
+		mImageView = (ImageView)findViewById(R.id.img);
 		mParent = (RelativeLayout)findViewById(R.id.animation_parent);
-		mImageView   = (ImageView)findViewById(R.id.animation_img_one);
-		
-		mStart.setOnClickListener(this);
-	}
 
+		mStart.setOnClickListener(this);
+		mBtnAnimationTwo.setOnClickListener(this);
+	}
 
 	@Override
-	public void onClick(View v) {
+	public void onClick (View v) {
 		int id = v.getId();
 		switch (id) {
-		
+
 		case R.id.btn_start:
 			
-			Animation first  = null;
-			try {
-				first = mAnimationStack.pop();
-			} catch (Exception e) {
-				initAnimation();
-				first = mAnimationStack.pop();
-			}
-			
-			first.setAnimationListener(this);
-			mImageView.startAnimation(first);
-			
+			playAnimationOne();
+
+			break;
+
+		case R.id.btn_animation_two:
+
+			playAnimationTwo();
+
 			break;
 
 		default:
 			break;
 		}
-		
 	}
-
-	@Override
-	public void onAnimationStart(android.view.animation.Animation animation) {
-		RelativeLayout.LayoutParams ly = (RelativeLayout.LayoutParams)mImageView.getLayoutParams();
-		Log.i(TAG, "开始时Left:\t"+ly.leftMargin+":\tTop:\t"+ly.topMargin);
-		
-	}
-
-	@Override
-	public void onAnimationEnd(android.view.animation.Animation animation) {
-		
-		
-		Animation next =  null;
-		boolean isFinished = false;
-		try {
-			next = mAnimationStack.pop();
-		} catch (Exception e) {
-			isFinished = true;
+	
+	private void playAnimationOne(){
+		if (mAnimationSet == null) {
+			mAnimationSet = new AnimationSet(false);
 		}
+		mImageView.clearAnimation();
+		mAnimationSet.getAnimations().clear();
+		TranslateAnimation tran = new TranslateAnimation(0,10,0,10);
+
+		mAnimationSet.addAnimation(tran);
+		mAnimationSet.setDuration(2000);
+		mAnimationSet.setFillAfter(false);
 		
-		RelativeLayout.LayoutParams ly = (RelativeLayout.LayoutParams)mImageView.getLayoutParams();
-		Log.i(TAG, "结束时Left:\t"+ly.leftMargin+":\tTop:\t"+ly.topMargin);
+		mImageOne.startAnimation(mAnimationSet);
 		
-		if(!isFinished){
-			mImageView.startAnimation(next);
+	}
+
+	private void playAnimationTwo () {
+
+		if (mAnimationSet == null) {
+			mAnimationSet = new AnimationSet(false);
 		}
+		mImageOne.clearAnimation();
+		mAnimationSet.getAnimations().clear();
+
+		AlphaAnimation alpAnimation = new AlphaAnimation(1.0f, 0.0f);
+		mAnimationSet.addAnimation(alpAnimation);
+		ScaleAnimation scalAnimation = new ScaleAnimation(0.05f, 2.0f, 0.1f, 2.0f, ScaleAnimation.RELATIVE_TO_SELF, 0.5f,ScaleAnimation.RELATIVE_TO_SELF, 0.5f);
+		mAnimationSet.addAnimation(scalAnimation);
+
+		mAnimationSet.setDuration(2000);
+		mAnimationSet.setRepeatCount(10);
+		mAnimationSet.setFillAfter(false);
+		
+		mImageView.startAnimation(mAnimationSet);
 	}
 
 	@Override
-	public void onAnimationRepeat(android.view.animation.Animation animation) {
-		
+	public void onAnimationStart (android.view.animation.Animation animation) {
 	}
 
+	@Override
+	public void onAnimationEnd (android.view.animation.Animation animation) {
+
+	}
+
+	@Override
+	public void onAnimationRepeat (android.view.animation.Animation animation) {
+		Log.i(TAG,"Repeat");
+	}
 
 }

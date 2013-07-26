@@ -7,35 +7,49 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity" 
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/animation_parent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        
-        <ImageView
-            android:id="@+id/animation_img_one" 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
-            android:layout_marginLeft="80dip"
-            android:layout_marginTop="133dip"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
         <Button
             android:id="@+id/btn_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/center" />
+            android:text="@string/animation_one" />
+
+        <Button
+            android:id="@+id/btn_animation_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/animation_two" />
+        
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/animation_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/animation_img_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dip"
+            android:layout_marginTop="133dip"
+            android:src="@drawable/ic_launcher" />
 
         <ImageView
             android:id="@+id/img"
+            android:layout_centerInParent="true"
             android:layout_width="40dip"
             android:layout_height="40dip"
-            android:layout_centerInParent="true"
-            android:src="@drawable/click_sq" />
-        
+            android:src="@drawable/click_sq"/>
         
     </RelativeLayout>
+
 
 </LinearLayout>
