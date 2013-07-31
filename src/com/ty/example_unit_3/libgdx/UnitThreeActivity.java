@@ -19,8 +19,7 @@ import com.ty.example_unit_3.libgdx.loadmode.SimpleLoadActivity;
  */
 public class UnitThreeActivity extends ListActivity {
 
-	String[] units = new String[] { "LoaderModel","loadModelSimple","Material","MaterialOpenGL2.x" , "MaterialAnimation" ,"LoaderModel-[StillMode]"};
-
+	String[] units = new String[] { "LoaderModel","loadModelSimple","Material","MaterialOpenGL2.x" , "MaterialAnimation" ,"LoaderModel-[StillMode]","Path"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,10 +45,12 @@ public class UnitThreeActivity extends ListActivity {
 			cls = MaterialOpenGL2Activity.class;
 			break;
 		case 4:
+			
 			break;
 		case 5:
 			break;
 		case 6:
+			cls = PatchActivity.class;
 			break;
 		case 7:
 			break;

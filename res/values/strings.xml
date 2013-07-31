@@ -24,6 +24,9 @@
     <string name="animation_two">动画二</string>
     
     
+    <!-- 第三单元 -->
+    <string name="start">开始</string>
+    
     <!-- 第4单元 -->
     <string name="send_msg">发送消息</string>
 
