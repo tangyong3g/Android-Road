@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
 import com.ty.example_unit_3.libgdx.loadmode.MaterialOpenGL2Activity;
+import com.ty.example_unit_3.libgdx.timetunnel.TunnelActivity;
 
 /**
  * 
@@ -17,7 +18,7 @@ import com.ty.example_unit_3.libgdx.loadmode.MaterialOpenGL2Activity;
  */
 public class UnitThreeActivity extends ListActivity {
 
-	String[] units = new String[] { "LoaderModel","loadModelSimple","Material","MaterialOpenGL2.x" , "MaterialAnimation" ,"LoaderModel-[StillMode]","Path"};
+	String[] units = new String[] { "MaterialOpenGL2.x","path","Tunnel"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,13 +33,16 @@ public class UnitThreeActivity extends ListActivity {
 		Class cls = null;
 		switch (position) {
 		case 0:
+			cls = MaterialOpenGL2Activity.class;
 			break;
 		case 1:
+			cls = PatchActivity.class;
 			break;
 		case 2:
+			cls = TunnelActivity.class;
 			break;
 		case 3:
-			cls = MaterialOpenGL2Activity.class;
+		
 			break;
 		case 4:
 			
@@ -46,7 +50,7 @@ public class UnitThreeActivity extends ListActivity {
 		case 5:
 			break;
 		case 6:
-			cls = PatchActivity.class;
+			
 			break;
 		case 7:
 			break;
