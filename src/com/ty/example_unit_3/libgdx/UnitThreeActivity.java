@@ -8,9 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
-import com.ty.example_unit_3.libgdx.loadmode.LoadModeActivity;
 import com.ty.example_unit_3.libgdx.loadmode.MaterialOpenGL2Activity;
-import com.ty.example_unit_3.libgdx.loadmode.SimpleLoadActivity;
 
 /**
  * 
@@ -34,10 +32,8 @@ public class UnitThreeActivity extends ListActivity {
 		Class cls = null;
 		switch (position) {
 		case 0:
-			cls = LoadModeActivity.class;
 			break;
 		case 1:
-			cls = SimpleLoadActivity.class;
 			break;
 		case 2:
 			break;
