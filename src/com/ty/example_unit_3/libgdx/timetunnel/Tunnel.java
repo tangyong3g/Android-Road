@@ -1,5 +1,7 @@
 package com.ty.example_unit_3.libgdx.timetunnel;
 
+import android.opengl.GLES20;
+
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g3d.Model;
@@ -9,6 +11,7 @@ import com.badlogic.gdx.graphics.g3d.materials.BlendingAttribute;
 import com.badlogic.gdx.graphics.g3d.materials.IntAttribute;
 import com.badlogic.gdx.graphics.g3d.materials.Material;
 import com.badlogic.gdx.graphics.g3d.materials.TextureAttribute;
+import com.badlogic.gdx.graphics.g3d.shaders.DefaultShader;
 import com.badlogic.gdx.utils.Array;
 import com.ty.example_unit_3.libgdx.ex.Base3D;
 
@@ -73,9 +76,10 @@ public class Tunnel extends Base3D{
 		Texture tx = assets.get(GD_STARS_TEXTURE_FILENAME, Texture.class);
 		TextureAttribute txAttr = TextureAttribute.createDiffuse(tx);
 		
-		BlendingAttribute blendingAttribute = new BlendingAttribute(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
+		BlendingAttribute blendingAttribute = new BlendingAttribute(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA);
 		material.set(blendingAttribute);
-		IntAttribute intAttr = new IntAttribute(IntAttribute.CullFace, 1);
+		
+		IntAttribute intAttr = new IntAttribute(IntAttribute.CullFace, 0);
 		
 		material.set(intAttr);
 		material.set(txAttr);
@@ -163,14 +167,17 @@ public class Tunnel extends Base3D{
 		}
 		
 		if(mStarsInstance != null){
+			
 			batch.begin(mCamera);
+			DefaultShader.defaultDepthFunc  = 0;
 			batch.render(mStarsInstance);
+			DefaultShader.defaultDepthFunc  = GL10.GL_LEQUAL;
 			batch.end();
+			
 		}
 		
 	}
 
-	
 	
 	@Override
 	protected void update(float delaTime) {
