@@ -21,8 +21,8 @@ import android.widget.ListView;
  */
 public class MainActivity extends ListActivity {
 
-	String[] units = new String[] { "unit_1", "unit_2---[OpenGL1.x/2.x]", "unit_3---[LibGDX]", "unit_4[Android基本知识]",
-			"unit_5[Android游戏 开发案例]", "unit_6[重用组件]", "unit_7", };
+	String[] units = new String[] { "unit_1", "unit_2[OpenGL1.x/2.x]", "unit_3[LibGDX]", "unit_4[Android基本知识]",
+			"unit_5[Android游戏开发案例]", "unit_6[重用组件]", "unit_7", };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

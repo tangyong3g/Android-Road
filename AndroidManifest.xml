@@ -99,6 +99,8 @@
         <activity android:name="com.ty.exsample_unit_4.SurfaceViewTest"></activity>
         <activity android:name="com.ty.exsample_unit_4.LooperActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.animation.AnimationActivity"></activity>
+        <activity android:name="com.ty.exsample_unit_4.MeminfoActivity"></activity>
+        <activity android:name="com.ty.exsample_unit_4.PowerConnectActivity"></activity>
         
         <!-- *************************************************************************************** -->
         
