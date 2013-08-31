@@ -135,23 +135,30 @@ public final class R {
         public static final int unit6_seekbar_setting_dialog_bg_selector=0x7f02000f;
     }
     public static final class id {
-        public static final int action_settings=0x7f090015;
+        public static final int action_settings=0x7f09001c;
         public static final int alertdialog_text=0x7f090003;
         public static final int alertdialog_title=0x7f090002;
         public static final int animation_img_one=0x7f09000b;
         public static final int animation_parent=0x7f09000a;
+        public static final int btnDecode=0x7f090011;
+        public static final int btnGC=0x7f090013;
+        public static final int btnJHRel=0x7f09000e;
+        public static final int btnNHRel=0x7f090010;
+        public static final int btnRecycle=0x7f090012;
+        public static final int btnStart=0x7f09000d;
+        public static final int btnTest=0x7f09000f;
         public static final int btn_animation_two=0x7f090009;
         public static final int btn_start=0x7f090008;
         public static final int cancel_report=0x7f090005;
-        public static final int cancle=0x7f090012;
-        public static final int center=0x7f090014;
-        public static final int desk_setting_dialog_buttons=0x7f090011;
-        public static final int desk_setting_dialog_singleormulti_btn_line=0x7f090013;
-        public static final int desk_setting_dialog_singleormulti_title=0x7f09000f;
-        public static final int desk_setting_listview_layout=0x7f09000e;
-        public static final int dialog_layout=0x7f09000d;
+        public static final int cancle=0x7f090019;
+        public static final int center=0x7f09001b;
+        public static final int desk_setting_dialog_buttons=0x7f090018;
+        public static final int desk_setting_dialog_singleormulti_btn_line=0x7f09001a;
+        public static final int desk_setting_dialog_singleormulti_title=0x7f090016;
+        public static final int desk_setting_listview_layout=0x7f090015;
+        public static final int dialog_layout=0x7f090014;
         public static final int img=0x7f09000c;
-        public static final int line=0x7f090010;
+        public static final int line=0x7f090017;
         public static final int mRowBar=0x01010001;
         public static final int rowActualValue=0x01010002;
         public static final int rowSettingMessage=0x01010000;
@@ -169,7 +176,8 @@ public final class R {
         public static final int unit3_path=0x7f030004;
         public static final int unit4_animation=0x7f030005;
         public static final int unit4_color=0x7f030006;
-        public static final int unit6_seekbar_one=0x7f030007;
+        public static final int unit4_meminfo=0x7f030007;
+        public static final int unit6_seekbar_one=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f080000;

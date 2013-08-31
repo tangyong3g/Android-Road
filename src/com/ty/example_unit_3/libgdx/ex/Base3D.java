@@ -40,7 +40,7 @@ public abstract class Base3D extends AbstractApplication implements
 	public Model axesModel;
 	public ModelInstance axesInstance;
 	// 是否显示参考的世界坐标系　
-	public boolean showAxes = false;
+	public boolean showAxes = true;
 	// 要绘制的模型
 	public Array<ModelInstance> instances = new Array<ModelInstance>();
 
@@ -55,15 +55,14 @@ public abstract class Base3D extends AbstractApplication implements
 		mCamera = new PerspectiveCamera(67, Gdx.graphics.getWidth(),
 				Gdx.graphics.getHeight());
 		
-		mCamera.position.set(0f, 0f, 0f);
+		mCamera.position.set(0f, 0f, 100f);
 		mCamera.near = 2f;
 		mCamera.far = 560f;
 		mCamera.update();
 
 		createAxes();
 
-		// Gdx.input.setInputProcessor(inputController = new
-		// CameraInputController(cam));
+		Gdx.input.setInputProcessor(inputController = new CameraInputController(mCamera));
 
 	}
 

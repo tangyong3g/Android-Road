@@ -90,6 +90,7 @@
         <activity android:name="com.ty.example_unit_3.libgdx.loadmode.MaterialOpenGL2Activity"></activity>
         <activity android:name="com.ty.example_unit_3.libgdx.PatchActivity"></activity>
         <activity android:name="com.ty.example_unit_3.libgdx.timetunnel.TunnelActivity"></activity>
+        <activity android:name="com.ty.example_unit_3.libgdx.AttributeActivity"></activity>
         
         
         <!-- 第四单元  android 基本知识 -->
