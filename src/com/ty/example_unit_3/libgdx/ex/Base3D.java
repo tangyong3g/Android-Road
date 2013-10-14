@@ -135,12 +135,15 @@ public abstract class Base3D extends AbstractApplication implements
 				Gdx.graphics.getHeight());
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 
-		// modelBatch.begin(mCamera);
-		if (showAxes)
+		//
+		if (showAxes){
+			modelBatch.begin(mCamera);
 			modelBatch.render(axesInstance);
+			modelBatch.end();
+		}
 
 		render(modelBatch, instances);
-		// modelBatch.end();
+		
 		super.render();
 	}
 
