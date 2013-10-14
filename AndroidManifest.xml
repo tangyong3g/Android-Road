@@ -92,6 +92,7 @@
         <activity android:name="com.ty.example_unit_3.libgdx.timetunnel.TunnelActivity"></activity>
         <activity android:name="com.ty.example_unit_3.libgdx.AttributeActivity"></activity>
         <activity android:name="com.ty.example_unit_3.libgdx.MeshShaderActivity"></activity>
+        <activity android:name="com.ty.example_unit_3.libgdx.SimpleAnimationActivity"></activity>
         
         
         

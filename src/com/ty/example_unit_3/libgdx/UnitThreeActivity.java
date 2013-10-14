@@ -18,7 +18,7 @@ import com.ty.example_unit_3.libgdx.timetunnel.TunnelActivity;
  */
 public class UnitThreeActivity extends ListActivity {
 
-	String[] units = new String[] { "MaterialOpenGL2.x","path","Tunnel","Attribute","MeshShader"};
+	String[] units = new String[] { "MaterialOpenGL2.x","path","Tunnel","Attribute","MeshShader","SimpleAnimation"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,6 +48,7 @@ public class UnitThreeActivity extends ListActivity {
 			cls = MeshShaderActivity.class;
 			break;
 		case 5:
+			cls = SimpleAnimationActivity.class;
 			break;
 		case 6:
 			
