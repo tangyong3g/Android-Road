@@ -48,10 +48,7 @@ public class SimpleAnimationListener extends Base3D {
 	private ArrayList<Animation> mAnimationList;
 
 	private static final float ANIMATION_SPEED = 0.065f;
-	
-	
 	private int mIndex = 0;
-	
 	
 	
 

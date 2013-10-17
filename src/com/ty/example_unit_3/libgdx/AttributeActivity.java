@@ -2,9 +2,7 @@ package com.ty.example_unit_3.libgdx;
 
 import android.os.Bundle;
 
-import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.android.AndroidApplication;
-import com.badlogic.gdx.graphics.g3d.ModelInstance;
 
 /**
  * 
