@@ -1,3 +1,4 @@
+
 package com.ty.example_unit_3.libgdx;
 
 import android.app.ListActivity;
@@ -11,23 +12,20 @@ import com.example.android_begin_gl_3d.R;
 import com.ty.example_unit_3.libgdx.loadmode.MaterialOpenGL2Activity;
 import com.ty.example_unit_3.libgdx.timetunnel.TunnelActivity;
 
-/**
- * 
- * @author tangyong
- * 
- */
+/** @author tangyong */
 public class UnitThreeActivity extends ListActivity {
 
-	String[] units = new String[] { "MaterialOpenGL2.x","path","Tunnel","Attribute","MeshShader","SimpleAnimation"};
+	String[] units = new String[] {"MaterialOpenGL2.x", "path", "Tunnel", "Attribute", "MeshShader", "SimpleAnimation",
+		"Translate"};
+
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items,
-				units));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
 	}
 
 	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
+	protected void onListItemClick (ListView l, View v, int position, long id) {
 
 		super.onListItemClick(l, v, position, id);
 		Class cls = null;
@@ -51,7 +49,7 @@ public class UnitThreeActivity extends ListActivity {
 			cls = SimpleAnimationActivity.class;
 			break;
 		case 6:
-			
+			cls = TranslateActivity.class;
 			break;
 		case 7:
 			break;
@@ -61,7 +59,7 @@ public class UnitThreeActivity extends ListActivity {
 		intentToActivity(cls);
 	}
 
-	private void intentToActivity(Class cls) {
+	private void intentToActivity (Class cls) {
 		Intent intent = new Intent();
 		intent.setClass(this, cls);
 
