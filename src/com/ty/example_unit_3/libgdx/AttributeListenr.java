@@ -36,10 +36,12 @@ public class AttributeListenr extends Base3D {
 	private Vector3 mDerectUnitUp;
 	private Vector3 mDerectUnitDown;
 
+	public Vector3 mCurrentCameraPos = new Vector3();
+	public Vector3 mCureentLookAtPos = new Vector3();
+
 	private Vector3 mCurPosition = new Vector3();
 	Logger loger = new Logger("test");
 
-	
 	@Override
 	public void create() {
 		super.create();
@@ -57,11 +59,13 @@ public class AttributeListenr extends Base3D {
 
 		Material material = new Material();
 
-		Texture texture = new Texture(Gdx.files.internal("data/bobargb8888-32x32.png"));
+		Texture texture = new Texture(
+				Gdx.files.internal("data/bobargb8888-32x32.png"));
 		TextureAttribute txAttri = TextureAttribute.createDiffuse(texture);
 		// IntAttribute intAttr = new IntAttribute(IntAttribute.CullFace, 0);
 
-		BlendingAttribute blendingAttributeCube = new BlendingAttribute(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
+		BlendingAttribute blendingAttributeCube = new BlendingAttribute(
+				GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
 		blendingAttributeCube.opacity = 0.8f;
 
 		material.set(txAttri);
@@ -69,8 +73,11 @@ public class AttributeListenr extends Base3D {
 		material.set(blendingAttributeCube);
 
 		ModelBuilder builder = new ModelBuilder();
-		Model model = builder.createRect(position_one.x, position_one.y, position_one.z, position_two.x, position_two.y, position_two.z, position_three.x,
-				position_three.y, position_three.z, position_four.x, position_four.y, position_four.z, 0, 0, 1, material, Usage.Position | Usage.Normal
+		Model model = builder.createRect(position_one.x, position_one.y,
+				position_one.z, position_two.x, position_two.y, position_two.z,
+				position_three.x, position_three.y, position_three.z,
+				position_four.x, position_four.y, position_four.z, 0, 0, 1,
+				material, Usage.Position | Usage.Normal
 						| Usage.TextureCoordinates);
 
 		mModelOne = new ModelInstance(model);
@@ -90,15 +97,19 @@ public class AttributeListenr extends Base3D {
 		TextureAttribute txAttri = TextureAttribute.createDiffuse(texture);
 		// IntAttribute intAttr = new IntAttribute(IntAttribute.CullFace, 0);
 
-		BlendingAttribute blendingAttributeCube = new BlendingAttribute(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
+		BlendingAttribute blendingAttributeCube = new BlendingAttribute(
+				GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
 
 		material.set(txAttri);
 		// material.set(intAttr);
 		material.set(blendingAttributeCube);
 
 		ModelBuilder builder = new ModelBuilder();
-		Model model = builder.createRect(position_one.x, position_one.y, position_one.z, position_two.x, position_two.y, position_two.z, position_three.x,
-				position_three.y, position_three.z, position_four.x, position_four.y, position_four.z, 0, 0, 1, material, Usage.Position | Usage.Normal
+		Model model = builder.createRect(position_one.x, position_one.y,
+				position_one.z, position_two.x, position_two.y, position_two.z,
+				position_three.x, position_three.y, position_three.z,
+				position_four.x, position_four.y, position_four.z, 0, 0, 1,
+				material, Usage.Position | Usage.Normal
 						| Usage.TextureCoordinates);
 
 		mModelTwo = new ModelInstance(model);
@@ -108,7 +119,6 @@ public class AttributeListenr extends Base3D {
 	@Override
 	protected void render(ModelBatch batch, Array<ModelInstance> instances) {
 
-		
 		batch.begin(mCamera);
 		batch.render(mModelTwo);
 		batch.render(mModelOne);
@@ -122,29 +132,29 @@ public class AttributeListenr extends Base3D {
 
 	private void updateCameraPosition() {
 
-		
-		
-//		Gdx.app.log("test", "position:\t" + mCurPosition.toString()+"end:\t"+mEnd.toString());
+		// Gdx.app.log("test", "position:\t" +
+		// mCurPosition.toString()+"end:\t"+mEnd.toString());
 
-		if ((int)mCurPosition.x == mStart.x && (int)mCurPosition.y == mStart.y && (mCurPosition.z)== mStart.z) {
-			
-			director  = mDerectUnitDown;
-			
-		}
-		
-		boolean xE = (int)mCurPosition.x == mEnd.x ;
-		boolean yE = (int)mCurPosition.y == mEnd.y ;
-		boolean zE = (int)mCurPosition.z == mEnd.z ;
-		
-//		Gdx.app.log("test", "x==x?"+xE+""+":\ty==y?"+yE+":\tz==z?"+zE);
+		if ((int) mCurPosition.x == mStart.x
+				&& (int) mCurPosition.y == mStart.y
+				&& (mCurPosition.z) == mStart.z) {
 
-		
-		Gdx.app.log("test", ""+mDerectUnitUp.toString());
-		if(xE && yE && zE){
-//			Gdx.app.log("test", "com................");
-			director  = mDerectUnitUp;
+			director = mDerectUnitDown;
+
 		}
-		
+
+		boolean xE = (int) mCurPosition.x == mEnd.x;
+		boolean yE = (int) mCurPosition.y == mEnd.y;
+		boolean zE = (int) mCurPosition.z == mEnd.z;
+
+		// Gdx.app.log("test", "x==x?"+xE+""+":\ty==y?"+yE+":\tz==z?"+zE);
+
+		Gdx.app.log("test", "" + mDerectUnitUp.toString());
+		if (xE && yE && zE) {
+			// Gdx.app.log("test", "com................");
+			director = mDerectUnitUp;
+		}
+
 		mCurPosition.add(director);
 		mCamera.position.set(mCurPosition);
 		mCamera.update();
@@ -154,9 +164,8 @@ public class AttributeListenr extends Base3D {
 
 		mDerectUnitUp = mStart.cpy().sub(mEnd.cpy()).nor().scl(0.1f);
 		mDerectUnitDown = mEnd.cpy().sub(mStart.cpy()).nor().scl(0.1f);
-		
-		Gdx.app.log("test", "position:\t"+mDerectUnitUp.toString());
-		
+
+		Gdx.app.log("test", "position:\t" + mDerectUnitUp.toString());
 
 		mCurPosition.set(0, 50.0f, 100.0f);
 	}
@@ -165,7 +174,5 @@ public class AttributeListenr extends Base3D {
 	protected void update(float delaTime) {
 
 	}
-
-	
 
 }
