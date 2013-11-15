@@ -96,7 +96,6 @@
         <activity android:name="com.ty.example_unit_3.libgdx.TranslateActivity"></activity>
         
         
-        
         <!-- 第四单元  android 基本知识 -->
         <activity android:name="com.ty.exsample_unit_4.UnitFourActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.AssetsActivity"></activity>
@@ -116,11 +115,21 @@
         <activity android:name="com.ty.exsample_unit_5.translate.PerCameraActivity"></activity>
         <activity android:name="com.ty.exsample_unit_5.translate.CullFaceActivity"></activity>
         
+        
+        <!-- 13.1 -->
+        <activity android:name="com.ty.exsample_unit_5.shader.ShaderActivity"></activity>
+        
+        <activity android:name="com.ty.exsample_unit_5.shader.FlagActivity"></activity>
+        
+        
+        
+        
         <!-- *************************************************************************************** -->
         
         <!-- 第6单元 android可重用组件 -->
         <activity android:name="com.ty.example_unit_6.UnitSixActivity"></activity>
         <activity android:name="com.ty.example_unit_6.colorselector.ColorSelectorActivity"></activity>
+        
         
         
     </application>
