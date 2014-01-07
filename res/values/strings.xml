@@ -29,5 +29,8 @@
     
     <!-- 第4单元 -->
     <string name="send_msg">发送消息</string>
+    
+    
+    <string name="choice_color">选择色彩</string>
 
 </resources>

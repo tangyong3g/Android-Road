@@ -52,20 +52,23 @@ public class AttributeListenr extends Base3D {
 
 	private void initModelInstance() {
 
-		Vector3 position_one = new Vector3(0.0f, 0, -10);
-		Vector3 position_two = new Vector3(25.0f, 0, -10);
-		Vector3 position_three = new Vector3(25.0f, 25, -10);
-		Vector3 position_four = new Vector3(0.0f, 25, -10);
+		int width = 50;
+		int height = 100;
+		int depth = 20;
+
+		Vector3 position_one = new Vector3(-width / 2, height / 2, -depth);
+		Vector3 position_two = new Vector3(width / 2, height / 2, -depth);
+		Vector3 position_three = new Vector3(width / 2, -height / 2, -depth);
+		Vector3 position_four = new Vector3(-width / 2, -height / 2, -depth);
 
 		Material material = new Material();
 
-		Texture texture = new Texture(
-				Gdx.files.internal("data/bobargb8888-32x32.png"));
+		Texture texture = new Texture(Gdx.files.internal("data/bobargb8888-32x32.png"));
 		TextureAttribute txAttri = TextureAttribute.createDiffuse(texture);
 		// IntAttribute intAttr = new IntAttribute(IntAttribute.CullFace, 0);
 
-		BlendingAttribute blendingAttributeCube = new BlendingAttribute(
-				GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
+		BlendingAttribute blendingAttributeCube = new BlendingAttribute(GL10.GL_SRC_ALPHA,
+				GL10.GL_ONE_MINUS_SRC_ALPHA);
 		blendingAttributeCube.opacity = 0.8f;
 
 		material.set(txAttri);
@@ -73,12 +76,10 @@ public class AttributeListenr extends Base3D {
 		material.set(blendingAttributeCube);
 
 		ModelBuilder builder = new ModelBuilder();
-		Model model = builder.createRect(position_one.x, position_one.y,
-				position_one.z, position_two.x, position_two.y, position_two.z,
-				position_three.x, position_three.y, position_three.z,
-				position_four.x, position_four.y, position_four.z, 0, 0, 1,
-				material, Usage.Position | Usage.Normal
-						| Usage.TextureCoordinates);
+		Model model = builder.createRect(position_one.x, position_one.y, position_one.z,
+				position_two.x, position_two.y, position_two.z, position_three.x, position_three.y,
+				position_three.z, position_four.x, position_four.y, position_four.z, 0, 0, 1,
+				material, Usage.Position | Usage.Normal | Usage.TextureCoordinates);
 
 		mModelOne = new ModelInstance(model);
 
@@ -97,20 +98,18 @@ public class AttributeListenr extends Base3D {
 		TextureAttribute txAttri = TextureAttribute.createDiffuse(texture);
 		// IntAttribute intAttr = new IntAttribute(IntAttribute.CullFace, 0);
 
-		BlendingAttribute blendingAttributeCube = new BlendingAttribute(
-				GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
+		BlendingAttribute blendingAttributeCube = new BlendingAttribute(GL10.GL_SRC_ALPHA,
+				GL10.GL_ONE_MINUS_SRC_ALPHA);
 
 		material.set(txAttri);
 		// material.set(intAttr);
 		material.set(blendingAttributeCube);
 
 		ModelBuilder builder = new ModelBuilder();
-		Model model = builder.createRect(position_one.x, position_one.y,
-				position_one.z, position_two.x, position_two.y, position_two.z,
-				position_three.x, position_three.y, position_three.z,
-				position_four.x, position_four.y, position_four.z, 0, 0, 1,
-				material, Usage.Position | Usage.Normal
-						| Usage.TextureCoordinates);
+		Model model = builder.createRect(position_one.x, position_one.y, position_one.z,
+				position_two.x, position_two.y, position_two.z, position_three.x, position_three.y,
+				position_three.z, position_four.x, position_four.y, position_four.z, 0, 0, 1,
+				material, Usage.Position | Usage.Normal | Usage.TextureCoordinates);
 
 		mModelTwo = new ModelInstance(model);
 
@@ -135,8 +134,7 @@ public class AttributeListenr extends Base3D {
 		// Gdx.app.log("test", "position:\t" +
 		// mCurPosition.toString()+"end:\t"+mEnd.toString());
 
-		if ((int) mCurPosition.x == mStart.x
-				&& (int) mCurPosition.y == mStart.y
+		if ((int) mCurPosition.x == mStart.x && (int) mCurPosition.y == mStart.y
 				&& (mCurPosition.z) == mStart.z) {
 
 			director = mDerectUnitDown;
