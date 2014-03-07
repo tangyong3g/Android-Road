@@ -6,6 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.VertexAttributes.Usage;
 import com.badlogic.gdx.graphics.g3d.Model;
@@ -32,6 +33,7 @@ public abstract class Base3D extends AbstractApplication implements
 	public AssetManager assets;
 	// 透视投影相机
 	public PerspectiveCamera mCamera;
+	
 	// 相机控类
 	public CameraInputController inputController;
 	// 处理模型
@@ -55,14 +57,14 @@ public abstract class Base3D extends AbstractApplication implements
 		mCamera = new PerspectiveCamera(67, Gdx.graphics.getWidth(),
 				Gdx.graphics.getHeight());
 		
-		mCamera.position.set(0f, 0f, 100f);
+		mCamera.position.set(0f, 0f, 500f);
 		mCamera.near = 2f;
 		mCamera.far = 560f;
 		mCamera.update();
 
 		createAxes();
 
-		Gdx.input.setInputProcessor(inputController = new CameraInputController(mCamera));
+//		Gdx.input.setInputProcessor(inputController = new CameraInputController(mCamera));
 
 	}
 

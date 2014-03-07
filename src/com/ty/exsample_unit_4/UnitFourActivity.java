@@ -22,7 +22,7 @@ import com.ty.exsample_unit_4.animation.AnimationActivity;
  */
 public class UnitFourActivity extends ListActivity {
 
-	String[] units = new String[] { "AssetManager", "SurfaceViewTest","FullScreen" ,"Looper","Animation","Meminfo","powerConnectd"};
+	String[] units = new String[] { "AssetManager", "SurfaceViewTest","FullScreen" ,"Looper","Animation","Meminfo","powerConnectd","图形"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +53,14 @@ public class UnitFourActivity extends ListActivity {
 			cls = AnimationActivity.class;
 			break;
 		case 5:
-			
 			cls = MeminfoActivity.class;
-			
 			break;
 		case 6:
 			
 			cls  = PowerConnectActivity.class;
 			break;
 		case 7:
+			cls = GrapicActivity.class;
 			break;
 		default:
 			break;

@@ -864,7 +864,7 @@ public abstract class Animation implements Cloneable {
         	//计算时间比率
             normalizedTime = ((float) (mTotalDeltaTime -  startOffset)) /(float) duration;
             if(normalizedTime < 1){
-            	Log.d("tyler", "mTotalDeltaTime = " + mTotalDeltaTime + ", normalizedTime = " + normalizedTime +", startOffSet = " + startOffset);
+//            	Log.d("tyler", "mTotalDeltaTime = " + mTotalDeltaTime + ", normalizedTime = " + normalizedTime +", startOffSet = " + startOffset);
             }
         } else {
             // time is a step-change with a zero duration

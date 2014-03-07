@@ -94,8 +94,9 @@
         <activity android:name="com.ty.example_unit_3.libgdx.MeshShaderActivity"></activity>
         <activity android:name="com.ty.example_unit_3.libgdx.SimpleAnimationActivity"></activity>
         <activity android:name="com.ty.example_unit_3.libgdx.TranslateActivity"></activity>
+        <activity android:name="com.ty.example_unit_3.libgdx.ActorFPSAnimationActivity"></activity>
         
-        
+        <!-- ************************************************************************************* -->
         <!-- 第四单元  android 基本知识 -->
         <activity android:name="com.ty.exsample_unit_4.UnitFourActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.AssetsActivity"></activity>
@@ -105,6 +106,9 @@
         <activity android:name="com.ty.exsample_unit_4.animation.AnimationActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.MeminfoActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.PowerConnectActivity"></activity>
+        
+        <activity android:name="com.ty.exsample_unit_4.GrapicActivity"></activity>
+        <activity android:name="com.ty.exsample_unit_4.BitMapDecodeActivity"></activity>
         
         <!-- *************************************************************************************** -->
         

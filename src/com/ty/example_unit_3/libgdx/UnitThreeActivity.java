@@ -1,4 +1,3 @@
-
 package com.ty.example_unit_3.libgdx;
 
 import android.app.ListActivity;
@@ -15,51 +14,52 @@ import com.ty.example_unit_3.libgdx.timetunnel.TunnelActivity;
 /** @author tangyong */
 public class UnitThreeActivity extends ListActivity {
 
-	String[] units = new String[] {"MaterialOpenGL2.x", "path", "Tunnel", "Attribute", "MeshShader", "SimpleAnimation",
-		"Translate"};
+	String[] units = new String[] { "MaterialOpenGL2.x", "path", "Tunnel", "Attribute",
+			"MeshShader", "SimpleAnimation", "Translate", "可施动的Actor" };
 
 	@Override
-	protected void onCreate (Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
 	}
 
 	@Override
-	protected void onListItemClick (ListView l, View v, int position, long id) {
+	protected void onListItemClick(ListView l, View v, int position, long id) {
 
 		super.onListItemClick(l, v, position, id);
 		Class cls = null;
 		switch (position) {
-		case 0:
-			cls = MaterialOpenGL2Activity.class;
-			break;
-		case 1:
-			cls = PatchActivity.class;
-			break;
-		case 2:
-			cls = TunnelActivity.class;
-			break;
-		case 3:
-			cls = AttributeActivity.class;
-			break;
-		case 4:
-			cls = MeshShaderActivity.class;
-			break;
-		case 5:
-			cls = SimpleAnimationActivity.class;
-			break;
-		case 6:
-			cls = TranslateActivity.class;
-			break;
-		case 7:
-			break;
-		default:
-			break;
+			case 0 :
+				cls = MaterialOpenGL2Activity.class;
+				break;
+			case 1 :
+				cls = PatchActivity.class;
+				break;
+			case 2 :
+				cls = TunnelActivity.class;
+				break;
+			case 3 :
+				cls = AttributeActivity.class;
+				break;
+			case 4 :
+				cls = MeshShaderActivity.class;
+				break;
+			case 5 :
+				cls = SimpleAnimationActivity.class;
+				break;
+			case 6 :
+				cls = TranslateActivity.class;
+				break;
+			case 7 :
+				cls = ActorFPSAnimationActivity.class;
+				break;
+			default :
+				break;
 		}
 		intentToActivity(cls);
 	}
 
-	private void intentToActivity (Class cls) {
+	private void intentToActivity(Class cls) {
 		Intent intent = new Intent();
 		intent.setClass(this, cls);
 
