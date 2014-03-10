@@ -109,6 +109,7 @@
         
         <activity android:name="com.ty.exsample_unit_4.GrapicActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.BitMapDecodeActivity"></activity>
+        <activity android:name="com.ty.exsample_unit_4.CanvasDemoActivity"></activity>
         
         <!-- *************************************************************************************** -->
         
