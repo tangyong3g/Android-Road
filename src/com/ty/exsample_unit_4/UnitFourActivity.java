@@ -23,7 +23,7 @@ import com.ty.exsample_unit_4.animation.AnimationActivity;
 public class UnitFourActivity extends ListActivity {
 
 	String[] units = new String[] { "AssetManager", "SurfaceViewTest", "FullScreen", "Looper",
-			"Animation", "Meminfo", "powerConnectd", "图形", "canvas" };
+			"Animation", "Meminfo", "powerConnectd", "图形", "canvas","blending" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +62,16 @@ public class UnitFourActivity extends ListActivity {
 			case 7 :
 				cls = GrapicActivity.class;
 				break;
-			default :
+			case 8:
 				cls = CanvasDemoActivity.class;
+				
+				break;
+			case 9:
+				
+				cls = MomentTest.class;
+				break;
+			default :
+			
 				break;
 		}
 		intentToActivity(cls);
