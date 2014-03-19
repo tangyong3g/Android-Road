@@ -22,13 +22,15 @@ import com.ty.exsample_unit_4.animation.AnimationActivity;
  */
 public class UnitFourActivity extends ListActivity {
 
-	String[] units = new String[] { "AssetManager", "SurfaceViewTest", "FullScreen", "Looper",
-			"Animation", "Meminfo", "powerConnectd", "图形", "canvas","blending" };
+	String[] units = new String[] { "AssetManager", "SurfaceViewTest",
+			"FullScreen", "Looper", "Animation", "Meminfo", "powerConnectd",
+			"图形", "canvas", "blending", "bitmap" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items,
+				units));
 	}
 
 	@Override
@@ -37,42 +39,46 @@ public class UnitFourActivity extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 		Class cls = null;
 		switch (position) {
-			case 0 :
-				cls = AssetsActivity.class;
-				break;
-			case 1 :
-				cls = SurfaceViewTest.class;
-				break;
-			case 2 :
-				cls = FullScreenTest.class;
-				break;
-			case 3 :
-				cls = LooperActivity.class;
-				break;
-			case 4 :
-				cls = AnimationActivity.class;
-				break;
-			case 5 :
-				cls = MeminfoActivity.class;
-				break;
-			case 6 :
+		case 0:
+			cls = AssetsActivity.class;
+			break;
+		case 1:
+			cls = SurfaceViewTest.class;
+			break;
+		case 2:
+			cls = FullScreenTest.class;
+			break;
+		case 3:
+			cls = LooperActivity.class;
+			break;
+		case 4:
+			cls = AnimationActivity.class;
+			break;
+		case 5:
+			cls = MeminfoActivity.class;
+			break;
+		case 6:
 
-				cls = PowerConnectActivity.class;
-				break;
-			case 7 :
-				cls = GrapicActivity.class;
-				break;
-			case 8:
-				cls = CanvasDemoActivity.class;
-				
-				break;
-			case 9:
-				
-				cls = MomentTest.class;
-				break;
-			default :
-			
-				break;
+			cls = PowerConnectActivity.class;
+			break;
+		case 7:
+			cls = GrapicActivity.class;
+			break;
+		case 8:
+			cls = CanvasDemoActivity.class;
+
+			break;
+		case 9:
+
+			cls = MomentTest.class;
+			break;
+		case 10:
+
+			cls = BitmapActivity.class;
+			break;
+		default:
+
+			break;
 		}
 		intentToActivity(cls);
 	}

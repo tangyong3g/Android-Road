@@ -111,6 +111,7 @@
         <activity android:name="com.ty.exsample_unit_4.BitMapDecodeActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.CanvasDemoActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.MomentTest"></activity>
+        <activity android:name="com.ty.exsample_unit_4.BitmapActivity"></activity>
         
         <!-- *************************************************************************************** -->
         
