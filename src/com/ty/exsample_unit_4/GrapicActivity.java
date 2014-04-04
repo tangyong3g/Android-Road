@@ -16,13 +16,12 @@ import com.example.android_begin_gl_3d.R;
  */
 public class GrapicActivity extends ListActivity {
 
-	String[] units = new String[] { "BitMapDecode" };
+	String[] units = new String[] { "BitMapDecode", "canvasSaveLayer" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items,
-				units));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
 	}
 
 	@Override
@@ -31,11 +30,13 @@ public class GrapicActivity extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 		Class cls = null;
 		switch (position) {
-		case 0:
-			cls = BitMapDecodeActivity.class;
-			break;
-		default:
-			break;
+			case 0 :
+				cls = BitMapDecodeActivity.class;
+				break;
+			case 1 :
+				cls = CanvasSavelayerActivity.class;
+			default :
+				break;
 		}
 		intentToActivity(cls);
 	}
