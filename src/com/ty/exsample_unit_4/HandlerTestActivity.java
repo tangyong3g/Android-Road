@@ -78,7 +78,7 @@ public class HandlerTestActivity extends Activity implements Callback, OnClickLi
 
 	@Override
 	public void onClick(View v) {
-		
+
 		mHandler.removeMessages(MESSAGE_TYPE_S);
 		mHandler.sendEmptyMessageDelayed(MESSAGE_TYPE_S, 3 * 1000);
 
