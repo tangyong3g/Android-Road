@@ -141,6 +141,12 @@
         </activity>
         <activity android:name="com.ty.exsample_unit_4.HandlerTestActivity" >
         </activity>
+        <activity android:name="com.ty.exsample_unit_4.LayoutActivity" >
+        </activity>
+        <activity android:name="com.ty.exsample_unit_4.LayoutViewActivity" >
+        </activity>
+        <activity android:name="com.ty.exsample_unit_4.BaseViewActivity" >
+        </activity>
 
         <!-- *************************************************************************************** -->
 
@@ -172,6 +178,16 @@
         <activity android:name="com.ty.example_unit_6.colorselector.ColorSelectorActivity" >
         </activity>
         <activity android:name="com.ty.example_unit_6.colorselector.RectColorActivity" >
+        </activity>
+
+        <!-- 第7单元　shell engine -->
+        <activity android:name="com.example.android_begin_gl_3d.unit_7.ShellEngineActivity" >
+        </activity>
+        <activity android:name="com.example.android_begin_gl_3d.unit_7.Cire3DActivity" >
+        </activity>
+        <activity android:name="com.example.android_begin_gl_3d.unit_7.Main" >
+        </activity>
+        <activity android:name="com.example.android_begin_gl_3d.unit_7.BaseTestActivity" >
         </activity>
     </application>
 

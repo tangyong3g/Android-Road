@@ -25,6 +25,12 @@ public class PerCameraView extends GLSurfaceView{
 	private float mPreviousY;
 	private float mPreviousX;
 	
+	
+	//默认的视角
+	private static float sDEFAULT_FOV = 45;
+	//视点到近平面的单位
+	private static double sDEFAULT_FOV_SCALE_FACTOR = 0.5 / Math.tan(Math.toRadians(sDEFAULT_FOV) * 0.5);
+	
 	private static final float  TOUCH_SCALE_FACTOR = 180/320.0f;
 
 	public PerCameraView (Context context) {
@@ -84,11 +90,13 @@ public class PerCameraView extends GLSurfaceView{
         	MatrixState.setProjectFrustum(-ratio, ratio, -1,1, 1, 100);
         	
             //调用此方法产生摄像机9参数位置矩阵
+        	/**  @formatter:off  */
 			MatrixState.setCamera(
-					0, 0, 3f, 
-					0, 0, -1f, 
-					0f, 1.0f, 0.0f
+					0, 0, 3f, 	// position
+					0, 0, -1f,  // look at 
+					0f, 1.0f, 0.0f  // up 
 					);
+			/**/
 		}
 
 		@Override
