@@ -20,16 +20,13 @@ import com.ty.exsample_unit_4.animation.AnimationActivity;
  */
 public class UnitFourActivity extends ListActivity {
 
-	String[] units = new String[] { "AssetManager", "SurfaceViewTest",
-			"FullScreen", "Looper", "Animation", "Meminfo", "powerConnectd",
-			"图形", "canvas", "blending", "bitmap", "Handler", "Layout",
-			"View_save" };
+	String[] units = new String[] { "AssetManager", "SurfaceViewTest", "FullScreen", "Looper", "Animation", "Meminfo", "powerConnectd", "图形",
+			"canvas", "blending", "bitmap", "Handler", "Layout", "View_save", "List" ,"VewCycle"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items,
-				units));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
 	}
 
 	@Override
@@ -39,63 +36,74 @@ public class UnitFourActivity extends ListActivity {
 		Class cls = null;
 		String componentName = null;
 		switch (position) {
-		case 0:
-			cls = AssetsActivity.class;
-			break;
-		case 1:
-			cls = SurfaceViewTest.class;
-			break;
-		case 2:
-			cls = FullScreenTest.class;
-			break;
-		case 3:
-			cls = LooperActivity.class;
-			break;
-		case 4:
-			cls = AnimationActivity.class;
-			break;
-		case 5:
-			cls = MeminfoActivity.class;
-			break;
-		case 6:
+			case 0 :
+				cls = AssetsActivity.class;
+				break;
+			case 1 :
+				cls = SurfaceViewTest.class;
+				break;
+			case 2 :
+				cls = FullScreenTest.class;
+				break;
+			case 3 :
+				cls = LooperActivity.class;
+				break;
+			case 4 :
+				cls = AnimationActivity.class;
+				break;
+			case 5 :
+				cls = MeminfoActivity.class;
+				break;
+			case 6 :
 
-			cls = PowerConnectActivity.class;
-			break;
-		case 7:
-			cls = GrapicActivity.class;
-			break;
-		case 8:
-			cls = CanvasDemoActivity.class;
+				cls = PowerConnectActivity.class;
+				break;
+			case 7 :
+				cls = GrapicActivity.class;
+				break;
+			case 8 :
+				cls = CanvasDemoActivity.class;
 
-			break;
-		case 9:
+				break;
+			case 9 :
 
-			cls = MomentTest.class;
-			break;
-		case 10:
+				cls = MomentTest.class;
+				break;
+			case 10 :
 
-			cls = BitmapActivity.class;
-			break;
+				cls = BitmapActivity.class;
+				break;
 
-		case 11:
+			case 11 :
 
-			cls = HandlerTestActivity.class;
+				cls = HandlerTestActivity.class;
 
-			break;
+				break;
 
-		case 12:
+			case 12 :
 
-			cls = LayoutActivity.class;
+				cls = LayoutActivity.class;
 
-			break;
-		case 13:
+				break;
+			case 13 :
 
-			componentName = "com.ty.exsample_unit_4.CanvaseSaveRsView";
+				componentName = "com.ty.exsample_unit_4.CanvaseSaveRsView";
 
-			break;
-		default:
+				break;
+			case 14 :
 
-			break;
+				cls = List1.class;
+
+				break;
+			
+			case 15:
+				
+				cls = ViewCycleTestActivity.class;
+				
+				break;
+			default :
+
+				break;
 		}
 
 		if (cls != null) {
@@ -111,8 +119,7 @@ public class UnitFourActivity extends ListActivity {
 	private void intentToView(String componentName) {
 		Intent intent = new Intent();
 		intent.setClass(this, BaseViewActivity.class);
-		
-		
+
 		intent.putExtra(BaseViewActivity.BASE_FLAG, componentName);
 
 		startActivity(intent);

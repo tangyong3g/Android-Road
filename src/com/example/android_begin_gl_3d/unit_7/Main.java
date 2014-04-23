@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile;
 import com.example.android_begin_gl_3d.R;
 
 /**
@@ -68,5 +67,7 @@ public class Main extends ListActivity {
 		addItem("MotionFilter", MotionFilterTestView.class.toString());
 		addItem("Rotate", RotateTestView.class.toString());
 		addItem("Drag", DragTestView.class.toString());
+		addItem("Grid", GlGridTest.class.toString());
+		addItem("layer", LayerTestView.class.toString());
 	}
 }

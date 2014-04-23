@@ -1,6 +1,8 @@
 package com.example.android_begin_gl_3d.unit_7;
 
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.ViewGroup.LayoutParams;
 
 import com.example.android_begin_gl_3d.R;
@@ -16,8 +18,6 @@ import com.go.gl.widget.GLImageView;
 
 /**
  * 
- * 
- * 
  * @author dengweiming
  * @date [2013-7-4]
  */
@@ -31,20 +31,22 @@ public class MotionFilterTestView extends GLFrameLayout {
 	public MotionFilterTestView(Context context) {
 		super(context);
 
+		initImageView(context);
+	}
+
+	private void initOriginal(Context context) {
+
 		mView = new GLImageView(context);
 		mView.setImageResource(R.drawable.ic_launcher);
-		addView(mView, new LayoutParams(LayoutParams.WRAP_CONTENT,
-				LayoutParams.WRAP_CONTENT));
+		addView(mView, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 
-		mMotionFilter = new ScaleMotionFilter(1, 0.8f, 1, 1.25f,
-				MotionFilter.RELATIVE_TO_SELF, 0.5f,
-				MotionFilter.RELATIVE_TO_SELF, 0.5f);
+		mMotionFilter = new ScaleMotionFilter(1, 0.8f, 1, 1.25f, MotionFilter.RELATIVE_TO_SELF,
+				0.5f, MotionFilter.RELATIVE_TO_SELF, 0.5f);
 		mMotionFilter.setDuration(1000);
 		mMotionFilterSet.addMotionFilter(mMotionFilter);
 		mView.setMotionFilter(mMotionFilter);
 
-		mMotionFilter = new RotateMotionFilter(0, 30,
-				MotionFilter.RELATIVE_TO_SELF, 0.5f,
+		mMotionFilter = new RotateMotionFilter(0, 30, MotionFilter.RELATIVE_TO_SELF, 0.5f,
 				MotionFilter.RELATIVE_TO_SELF, 0.5f);
 		mMotionFilter.setDuration(1000);
 		mMotionFilterSet.addMotionFilter(mMotionFilter);
@@ -60,9 +62,16 @@ public class MotionFilterTestView extends GLFrameLayout {
 			public void onClick(GLView v) {
 				mMotionFilterSet.relativeReverse();
 				invalidate();
-
 			}
 		});
+
+	}
+
+	private void initImageView(Context context) {
+
+		mView = new GLImageView(context);
+		mView.setImageResource(R.drawable.ic_launcher);
+		addView(mView, new LayoutParams(200, 200));
 
 	}
 

@@ -23,6 +23,10 @@ import com.go.gl.widget.GLDragView;
 
 /**
  * 
+ * <li> 圆柱体是怎么画的 
+ * <li>
+ * 
+ * 
  * <br>
  * 类描述: 测试在圆柱体上拖拽图标 <br>
  * 功能详细描述: 在屏幕左右两边空白处上下滑动可以旋转圆柱体
@@ -31,6 +35,7 @@ import com.go.gl.widget.GLDragView;
  * @date [2013-7-3]
  */
 public class CylinderDragTestView extends GLViewGroup {
+	
 	final static float SCALE = 1.21f;
 
 	// 使用GLGrid的方式，创建出来网格 -- GLGrid -- GLObject
@@ -76,10 +81,13 @@ public class CylinderDragTestView extends GLViewGroup {
 
 	public CylinderDragTestView(Context context) {
 		super(context);
+		
+		Log.i("cycle","构造方法");
 		// 分割一个圆柱的网格
 		mMesh = new GLCylinder(30, 1, mFillCylinderMesh);
 		// 设置纹理坐标
 		mMesh.setTexcoords(0, 0, 1, 1);
+		
 		// 设置纹理资源
 		mRender.setTexture(getResources(), R.drawable.bg_one);
 
@@ -130,33 +138,51 @@ public class CylinderDragTestView extends GLViewGroup {
 
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		Log.i("cycle","onSizeChanged");
+		
 		mDragView.layout(0, 0, w, h);
 
-		// 设置圆柱体
+		// 设置圆柱体边界　
 		mMesh.setBounds(0, 0, w, h);
-		mMesh.setLongitude(GLCylinder.ANGLE_TO_LEFT, GLCylinder.ANGLE_TO_LEFT
-				+ GLCylinder.FULL_CIRCLE);
+		//设置经度　
+		mMesh.setLongitude(GLCylinder.ANGLE_TO_LEFT, GLCylinder.ANGLE_TO_LEFT+ GLCylinder.FULL_CIRCLE);
+		
+//		mMesh.setLongitude(0,360);
 
 		// 设置上下底的坐标
 		mLowerCenter.set(mMesh.getCenterX(), mMesh.getBottom(),
 				mMesh.getCenterZ());
 		mUpperCenter
 				.set(mMesh.getCenterX(), mMesh.getTop(), mMesh.getCenterZ());
+		
+		//圆柱体
 		mCylinder.set(mLowerCenter, mUpperCenter, mMesh.getRadius());
 
+		//屏幕顶上面的中心世界坐标
 		mHitPoint.set(w * 0.5f, 0, 0);
 
 		// 随机指定图标在圆柱上的位置
+		
+		//得到周长
 		w = (int) mMesh.getPerimeter();
+		
+		
 		int iconSize = Math.min(w, h) / 8;
+		
+		
 		for (int i = 0; i < getChildCount(); ++i) {
 			GLView view = getChildAt(i);
 			if (view instanceof IconView) {
+				
+				
 				IconView icon = (IconView) view;
 				int l = (int) ((w - iconSize) * Math3D.random());
 				int t = (int) ((h - iconSize) * Math3D.random());
 				view.layout(l, t, l + iconSize, t + iconSize);
 				icon.angle = mMesh.xToAngle(l + iconSize / 2);
+				
+				icon.angle = mMesh.xToAngle(l + iconSize / 2);
+				
 			}
 		}
 
@@ -172,6 +198,7 @@ public class CylinderDragTestView extends GLViewGroup {
 			Vector m = mHitPoint.sub(mLowerCenter);
 			mHitAngle = (float) Math.toDegrees(Math.atan2(m.x, m.z));
 			mHitY = -mHitPoint.y;
+			Log.i("tyler.tang","checkTouch:\t"+mHit+"\t"+mHitY);
 		}
 		GeometryPools.restoreStack();
 		return mHit;
@@ -181,8 +208,6 @@ public class CylinderDragTestView extends GLViewGroup {
 	public boolean dispatchTouchEvent(MotionEvent ev) {
 		mTouchX = ev.getX();
 		mTouchY = ev.getY();
-
-		Log.i("tyler.tang", "Y的值:\t" + mTouchY);
 
 		if (mDragView.isInDrag()) {
 			mDragView.dispatchTouchEvent(ev);
@@ -244,6 +269,8 @@ public class CylinderDragTestView extends GLViewGroup {
 
 		mTransformation.clear().setRotateAxisAngle(-mScrollAngle, 0, 1, 0,
 				mMesh.getCenterX(), mMesh.getCenterY(), mMesh.getCenterZ());
+		
+		
 		canvas.concat(mTransformation.getMatrix(), 0);
 
 		mRender.drawTranslucentObject(canvas, mMesh, 192, 128);
