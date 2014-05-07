@@ -35,7 +35,7 @@ import com.go.gl.widget.GLDragView;
  * @date [2013-7-3]
  */
 public class CylinderDragTestView extends GLViewGroup {
-	
+
 	final static float SCALE = 1.21f;
 
 	// 使用GLGrid的方式，创建出来网格 -- GLGrid -- GLObject
@@ -81,13 +81,13 @@ public class CylinderDragTestView extends GLViewGroup {
 
 	public CylinderDragTestView(Context context) {
 		super(context);
-		
-		Log.i("cycle","构造方法");
+
+		Log.i("cycle", "构造方法");
 		// 分割一个圆柱的网格
 		mMesh = new GLCylinder(30, 1, mFillCylinderMesh);
 		// 设置纹理坐标
 		mMesh.setTexcoords(0, 0, 1, 1);
-		
+
 		// 设置纹理资源
 		mRender.setTexture(getResources(), R.drawable.bg_one);
 
@@ -117,13 +117,10 @@ public class CylinderDragTestView extends GLViewGroup {
 					Matrix m = GeometryPools.acquireMatrix();
 					m.set(t.getMatrix3D());
 					// 对照dispatchDraw方法如何绘制图标的
-					m = m.translate(mMesh.getCenterX(), mMesh.getCenterY(),
-							mMesh.getCenterZ());
+					m = m.translate(mMesh.getCenterX(), mMesh.getCenterY(), mMesh.getCenterZ());
 					m = m.rotateAxisAngle(icon.angle, 0, 1, 0);
-					m = m.translate(-mMesh.getCenterX(), -mMesh.getCenterY(),
-							-mMesh.getCenterZ());
-					m = m.translate(mMesh.getCenterX() + icon.getWidth()
-							* -0.5f, icon.getTop());
+					m = m.translate(-mMesh.getCenterX(), -mMesh.getCenterY(), -mMesh.getCenterZ());
+					m = m.translate(mMesh.getCenterX() + icon.getWidth() * -0.5f, icon.getTop());
 					t.set(m.getValues(), 0);
 					GeometryPools.restoreStack();
 
@@ -138,23 +135,21 @@ public class CylinderDragTestView extends GLViewGroup {
 
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-		Log.i("cycle","onSizeChanged");
-		
+		Log.i("cycle", "onSizeChanged");
+
 		mDragView.layout(0, 0, w, h);
 
 		// 设置圆柱体边界　
 		mMesh.setBounds(0, 0, w, h);
 		//设置经度　
-		mMesh.setLongitude(GLCylinder.ANGLE_TO_LEFT, GLCylinder.ANGLE_TO_LEFT+ GLCylinder.FULL_CIRCLE);
-		
-//		mMesh.setLongitude(0,360);
+		mMesh.setLongitude(GLCylinder.ANGLE_TO_LEFT, GLCylinder.ANGLE_TO_LEFT + GLCylinder.FULL_CIRCLE);
+
+		//		mMesh.setLongitude(0,360);
 
 		// 设置上下底的坐标
-		mLowerCenter.set(mMesh.getCenterX(), mMesh.getBottom(),
-				mMesh.getCenterZ());
-		mUpperCenter
-				.set(mMesh.getCenterX(), mMesh.getTop(), mMesh.getCenterZ());
-		
+		mLowerCenter.set(mMesh.getCenterX(), mMesh.getBottom(), mMesh.getCenterZ());
+		mUpperCenter.set(mMesh.getCenterX(), mMesh.getTop(), mMesh.getCenterZ());
+
 		//圆柱体
 		mCylinder.set(mLowerCenter, mUpperCenter, mMesh.getRadius());
 
@@ -162,27 +157,24 @@ public class CylinderDragTestView extends GLViewGroup {
 		mHitPoint.set(w * 0.5f, 0, 0);
 
 		// 随机指定图标在圆柱上的位置
-		
+
 		//得到周长
 		w = (int) mMesh.getPerimeter();
-		
-		
+
 		int iconSize = Math.min(w, h) / 8;
-		
-		
+
 		for (int i = 0; i < getChildCount(); ++i) {
 			GLView view = getChildAt(i);
 			if (view instanceof IconView) {
-				
-				
+
 				IconView icon = (IconView) view;
 				int l = (int) ((w - iconSize) * Math3D.random());
 				int t = (int) ((h - iconSize) * Math3D.random());
 				view.layout(l, t, l + iconSize, t + iconSize);
 				icon.angle = mMesh.xToAngle(l + iconSize / 2);
-				
+
 				icon.angle = mMesh.xToAngle(l + iconSize / 2);
-				
+
 			}
 		}
 
@@ -198,7 +190,7 @@ public class CylinderDragTestView extends GLViewGroup {
 			Vector m = mHitPoint.sub(mLowerCenter);
 			mHitAngle = (float) Math.toDegrees(Math.atan2(m.x, m.z));
 			mHitY = -mHitPoint.y;
-			Log.i("tyler.tang","checkTouch:\t"+mHit+"\t"+mHitY);
+			Log.i("tyler.tang", "checkTouch:\t" + mHit + "\t" + mHitY);
 		}
 		GeometryPools.restoreStack();
 		return mHit;
@@ -219,8 +211,7 @@ public class CylinderDragTestView extends GLViewGroup {
 		mTransformationOnTouch.set(mTransformation); // 记住此时的变换，以免绘制时用于调试的图形受动画影响
 
 		getTouchRay(mTmpRay, true);
-		mTmpRay.inverseRotateAndTranslate(mTransformation.getMatrix3D()).setTo(
-				mTouchRay);
+		mTmpRay.inverseRotateAndTranslate(mTransformation.getMatrix3D()).setTo(mTouchRay);
 		mTouchRay.startCast();
 
 		mHit = mCylinder.intersect(mTouchRay);
@@ -261,16 +252,20 @@ public class CylinderDragTestView extends GLViewGroup {
 
 	@Override
 	protected void dispatchDraw(GLCanvas canvas) {
+
+		float[] pos = new float[3];
+		canvas.getCameraLocalPosition(pos);
+		Log.i("tyler.tang", "localposition 位置:\t" + pos[0] + ":\t" + pos[1] + ":\t" + pos[2]);
+		canvas.getCameraWorldPosition(pos);
+		Log.i("tyler.tang", "wordposition 位置:\t" + pos[0] + ":\t" + pos[1] + ":\t" + pos[2]);
+
 		if (mLookDown) {
-			canvas.setLookFromTop(mMesh.getCenterX(), 0, mMesh.getCenterZ(),
-					false, true); // 从顶上俯视
+			canvas.setLookFromTop(mMesh.getCenterX(), 0, mMesh.getCenterZ(), false, true); // 从顶上俯视
 		}
 		canvas.save();
 
-		mTransformation.clear().setRotateAxisAngle(-mScrollAngle, 0, 1, 0,
-				mMesh.getCenterX(), mMesh.getCenterY(), mMesh.getCenterZ());
-		
-		
+		mTransformation.clear().setRotateAxisAngle(-mScrollAngle, 0, 1, 0, mMesh.getCenterX(), mMesh.getCenterY(), mMesh.getCenterZ());
+
 		canvas.concat(mTransformation.getMatrix(), 0);
 
 		mRender.drawTranslucentObject(canvas, mMesh, 192, 128);
@@ -363,8 +358,7 @@ public class CylinderDragTestView extends GLViewGroup {
 			if (v instanceof IconView) {
 				IconView icon = (IconView) v;
 				float oldX = mMesh.angleTomToArcLen(icon.angle);
-				icon.angle = Math3D.reduceDegrees(icon.angle + mHitAngle
-						- mLastHitAngle);
+				icon.angle = Math3D.reduceDegrees(icon.angle + mHitAngle - mLastHitAngle);
 				float newX = mMesh.angleTomToArcLen(icon.angle);
 				v.offsetLeftAndRight((int) (newX - oldX)); // 因为存在回绕的可能，不能直接累加偏移量
 				v.offsetTopAndBottom((int) (mHitY - mLastHitY));
@@ -391,20 +385,17 @@ public class CylinderDragTestView extends GLViewGroup {
 		}
 
 		@Override
-		public boolean onDropFrom(GLDragView view, float x, float y, Ray ray,
-				GLDragListener target, boolean isHandled) {
+		public boolean onDropFrom(GLDragView view, float x, float y, Ray ray, GLDragListener target, boolean isHandled) {
 			return false;
 		}
 
 		@Override
-		public boolean onDropTo(GLDragView view, float x, float y, Ray ray,
-				GLDragListener source) {
+		public boolean onDropTo(GLDragView view, float x, float y, Ray ray, GLDragListener source) {
 			return false;
 		}
 
 		@Override
-		public boolean onDrawDraggedView(GLDragView view, GLCanvas canvas,
-				GLView draggedView, Transformation3D t) {
+		public boolean onDrawDraggedView(GLDragView view, GLCanvas canvas, GLView draggedView, Transformation3D t) {
 			final int saveCount = canvas.save();
 			canvas.concat(mTransformation.getMatrix(), 0);
 			IconView icon = (IconView) draggedView;

@@ -11,6 +11,7 @@ import com.go.gl.animation.ScaleAnimation;
 import com.go.gl.animation.Transformation3D;
 import com.go.gl.graphics.ColorGLDrawable;
 import com.go.gl.graphics.GLCanvas;
+import com.go.gl.math3d.GeometryPools;
 import com.go.gl.math3d.Ray;
 import com.go.gl.view.GLFrameLayout;
 import com.go.gl.view.GLLayoutInflater;
@@ -20,6 +21,19 @@ import com.go.gl.widget.GLDragListener;
 import com.go.gl.widget.GLDragView;
 
 /**
+ * 
+ * <li>這裏要搞明白的問題有
+ * 
+ * <li>  DragView的工作原理
+ * 					<div>
+ * 								onInterceptTouchEvent 中把 MontionEvent傳入 DragView中 ， 
+ * 								
+ * 					<div>
+ * <li>  GLView在 GlFrameLayout中的佈局
+ * <li>  拖拽懸停區是怎麼用？
+ * 
+ * 
+ * 
  * 
  * <br>类描述: 视图拖拽的简单测试
  * <br>功能详细描述: 屏幕右边1/4的区域可以停放，屏幕右边1/16的区域可以悬停
@@ -70,9 +84,9 @@ public class DragTestView extends GLFrameLayout implements GLDragListener {
 				public boolean onLongClick(GLView v) {
 					v.setVisibility(INVISIBLE);
 					
+					//把要 拖拽的view放入DragView中
 					mDragView.startDrag(DragTestView.this, v, null, null);
 
-					
 					// 施动开始的时候就开始一个300毫秒的动画，放大的动画
 					Animation a = new ScaleAnimation(1, SCALE, 1, SCALE, 
 							Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -96,6 +110,8 @@ public class DragTestView extends GLFrameLayout implements GLDragListener {
 
 	@Override
 	protected void dispatchDraw(GLCanvas canvas) {
+		
+		
 		if (mEnterRightSide && !mPendingHoverOnRightSide && !mResumePeningRunnablePosted) {
 			mFocusDrawable.draw(canvas);
 		}

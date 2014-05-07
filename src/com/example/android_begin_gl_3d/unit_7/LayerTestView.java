@@ -62,6 +62,9 @@ import com.go.gl.view.GLView;
  * <li>GLView的生命周期　onMeasure onSizeChange  onLayout 
  * 
  * 
+ * <li> 相機位置  x = screenWidth / 2  y = - (screenHeight / 2)  z = 每個相機不一樣，讓屏幕像素和世界單位統一的位置。
+ * 
+ * 
  * 
  * <br>类描述: 测试GLCanvas的Layer图层
  * <br>功能详细描述:
@@ -79,23 +82,24 @@ public class LayerTestView extends GLView {
 	int mX;
 	int mY;
 	
+
 	@Override
 	protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
 		super.onLayout(changed, left, top, right, bottom);
-		Log.i("cycle","onLayout"+changed+ "l:\t"+left+"t:\t"+top+"r:\t"+right+"b:\t"+bottom);
+		Log.i("cycle", "onLayout" + changed + "l:\t" + left + "t:\t" + top + "r:\t" + right + "b:\t" + bottom);
 	}
-	
+
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-		
-		Log.i("cycle","onMeasure width:\t"+widthMeasureSpec+":\tH:\t"+heightMeasureSpec);
+
+		Log.i("cycle", "onMeasure width:\t" + widthMeasureSpec + ":\tH:\t" + heightMeasureSpec);
 	}
-	
+
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
-		Log.i("cycle","onFinishInflate");
+		Log.i("cycle", "onFinishInflate");
 	}
 
 	public LayerTestView(Context context) {
@@ -146,14 +150,21 @@ public class LayerTestView extends GLView {
 
 	@Override
 	protected void onDraw(GLCanvas canvas) {
+
+		float[] pos = new float[3];
+		canvas.getCameraLocalPosition(pos);
+		Log.i("tyler.tang", "pos 位置:\t" + pos[0] + ":\t" + pos[1] + ":\t" + pos[2]);
+		canvas.getCameraWorldPosition(pos);
+		Log.i("tyler.tang", "world位置:\t" + pos[0] + ":\t" + pos[1] + ":\t" + pos[2]);
+
 		mGrid.draw(canvas);
 
 		//测试使用LAYER_LOCAL_FLAG时是否正确裁剪
 		{
 			float angle = 0;	//测试仅窗口裁剪
-//			float angle = 30;	//测试蒙板裁剪
+			//			float angle = 30;	//测试蒙板裁剪
 			canvas.rotate(angle);
-//			canvas.save();
+			//			canvas.save();
 			canvas.clipRect(50, 50, 950, 950);
 			canvas.setDrawColor(Color.YELLOW);
 			canvas.drawRect(50 + 1, 50 + 1, 950 - 1, 950 - 1);
@@ -164,23 +175,22 @@ public class LayerTestView extends GLView {
 		//向右，下移动300
 		canvas.translate(300, 300);
 		//转动30度
-//		canvas.rotate(30);
+		//		canvas.rotate(30);
 
 		// 130指的是混合alp  的值 256 为最大 
 		int layerFlag = GLCanvas.LAYER_CLIP_FLAG | GLCanvas.LAYER_ALPHA_FLAG | 130;
-		
+
 		canvas.saveLayer(0, 0, 300, 300, layerFlag);
 		canvas.setDrawColor(Color.RED);
-		
+
 		//填充这个区域 
 		canvas.fillRect(0, 0, 300, 300);
-		
+
 		//重新设置Color
 		canvas.setDrawColor(Color.GREEN);
 		//再填充 这个区域 
 		canvas.fillRect(250, 250, 350, 350);
 
-		
 		//测试遮罩效果
 		{
 			/**/
@@ -193,15 +203,13 @@ public class LayerTestView extends GLView {
 			mMask.draw(canvas);
 
 			canvas.setBlendMode(mode);
-			
+
 		}
-		
 
 		canvas.restore();
 		//可以看到绿色变半透明了，但是没有和红色混合，因为绿色覆盖了红色，再整体淡化
-/**/
-		
-		
+		/**/
+
 		//测试第二个Layer，以及使用LAYER_LOCAL_FLAG
 		{
 			canvas.translate(300, 300);
@@ -240,13 +248,12 @@ public class LayerTestView extends GLView {
 		}
 		return true;
 	}
-	
-	
+
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		super.onSizeChanged(w, h, oldw, oldh);
-		
-		Log.i("cycle","onSizeChange");
+
+		Log.i("cycle", "onSizeChange");
 	}
 
 }

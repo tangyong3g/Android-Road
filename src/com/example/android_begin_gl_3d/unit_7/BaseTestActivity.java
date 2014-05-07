@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.go.gl.GLActivity;
@@ -26,6 +28,12 @@ public class BaseTestActivity extends GLActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		//設置全屏
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		//取消標題
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
 
 		Intent intent = getIntent();
 		Bundle extras = intent.getExtras();

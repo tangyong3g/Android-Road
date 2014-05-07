@@ -7,6 +7,8 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -31,6 +33,12 @@ public class Main extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		//設置全屏
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		//取消標題
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
 		addItems();
 		ArrayAdapter<String> fileList = new ArrayAdapter<String>(this, R.layout.main_list,
 				mItemTitle);
