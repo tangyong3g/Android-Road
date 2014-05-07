@@ -157,6 +157,9 @@
         </activity>
         <activity android:name="com.ty.exsample_unit_4.ViewCycleTestActivity" >
         </activity>
+        <activity android:name="com.ty.exsample_unit_4.DipTestActivity" >
+        </activity>
+        
 
         <!-- *************************************************************************************** -->
 

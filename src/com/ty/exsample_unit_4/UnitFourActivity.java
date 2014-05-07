@@ -21,7 +21,7 @@ import com.ty.exsample_unit_4.animation.AnimationActivity;
 public class UnitFourActivity extends ListActivity {
 
 	String[] units = new String[] { "AssetManager", "SurfaceViewTest", "FullScreen", "Looper", "Animation", "Meminfo", "powerConnectd", "图形",
-			"canvas", "blending", "bitmap", "Handler", "Layout", "View_save", "List" ,"VewCycle"};
+			"canvas", "blending", "bitmap", "Handler", "Layout", "View_save", "List" ,"VewCycle","DislayMetrics"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +99,11 @@ public class UnitFourActivity extends ListActivity {
 			case 15:
 				
 				cls = ViewCycleTestActivity.class;
+				
+				break;
+			case 16:
+				
+				cls = DipTestActivity.class;
 				
 				break;
 			default :
