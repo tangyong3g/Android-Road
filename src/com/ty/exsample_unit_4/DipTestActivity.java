@@ -1,5 +1,7 @@
 package com.ty.exsample_unit_4;
 
+import java.lang.reflect.Field;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -31,7 +33,8 @@ import android.widget.TextView;
  * 				xdip               
  * 				ydip
  * 
- * 			标题栏 + 状态栏 + 下面View可显示的高度　＝　heightPixels 　以HTC　Ｇ11为例 就是 800 
+ * 			标题栏 + 状态栏 + 下面View可显示的高度　＝　heightPixels 　以HTC　Ｇ11为例 就是 800
+ * 			注意状态栏的高度可能得到的是不正确的值，在平板上面更是。 
  * <li>
  * 
  * 
@@ -40,15 +43,15 @@ import android.widget.TextView;
  *
  */
 public class DipTestActivity extends Activity implements Callback {
-	
+
 	private FrameLayout mContainer;
-	
+
 	private Handler mHander;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		mHander = new Handler(this);
 
 		//設置全屏
@@ -56,31 +59,28 @@ public class DipTestActivity extends Activity implements Callback {
 		//取消標題
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-
 		/*构建自定义的View*/
 		DipView dipview = new DipView(this);
 		mContainer = new FrameLayout(this);
-		
+
 		mContainer.addView(dipview);
-		
+
 		mContainer.post(new Runnable() {
-			
+
 			@Override
 			public void run() {
-				
+
 				String info = showDisplayMetricsInfo();
-				
+
 				Message msg = new Message();
 				msg.obj = info;
-				
+
 				msg.what = 1;
-				
+
 				mHander.sendMessage(msg);
-				
-				
+
 			}
 		});
-		
 
 		setContentView(mContainer);
 	}
@@ -91,27 +91,23 @@ public class DipTestActivity extends Activity implements Callback {
 
 		DisplayMetrics displayMetrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-		
-		
+
 		//区域二 宽度相同，高度和view的高度加上标题栏的高度
 		View frameLayout = getWindow().findViewById(Window.ID_ANDROID_CONTENT);
 		Rect outRect = new Rect();
 		frameLayout.getWindowVisibleDisplayFrame(outRect);
-		
-		
+
 		Rect drawoutRect = new Rect();
 		frameLayout.getDrawingRect(drawoutRect);
-		
+
 		//状态栏的高度 note: 这种方式得到状态栏高度不能在oncreate的时候调用不然无法得到。
 		Rect frame = new Rect();
 		getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
 		int statusBarHeight = frame.top;
-		
-		
+
 		/*标题栏的高度*/
 		int contentTop = getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop();
 		int titleBarHeight = contentTop - statusBarHeight;
-		
 
 		float density = displayMetrics.density;
 		float densityDpi = displayMetrics.densityDpi;
@@ -150,31 +146,61 @@ public class DipTestActivity extends Activity implements Callback {
 		rs.append("ydip:\t");
 		rs.append(ydip);
 		rs.append("\n");
-		
-		
+
 		rs.append("frameLayoutHeight");
 		rs.append("\t");
 		rs.append(outRect.toShortString());
 		rs.append("\n");
-		
-		
+
 		rs.append("frameLayoutHeightDrawing");
 		rs.append("\t");
 		rs.append(drawoutRect.toShortString());
 		rs.append("\n");
-		
+
 		rs.append("状态栏的高度");
 		rs.append("\t");
 		rs.append(statusBarHeight);
 		rs.append("\n");
 		
+		
+		rs.append("状态栏的高度方法二:");
+		rs.append("\t");
+		rs.append(getStateBar());
+		rs.append("\n");
+		
+		
+
 		//TODO 这里有问题，不知道为什么　
-//		rs.append("标题栏的高度");
-//		rs.append("\t");
-//		rs.append(titleBarHeight);
-//		rs.append("\n");
+		//		rs.append("标题栏的高度");
+		//		rs.append("\t");
+		//		rs.append(titleBarHeight);
+		//		rs.append("\n");
 
 		return rs.toString();
+	}
+
+	/**
+	 * 得到状态栏的高度
+	 * 
+	 * @return float 
+	 */
+	private float getStateBar() {
+
+		Class<?> c = null;
+		Object obj = null;
+		Field field = null;
+		int x = 0, sbar = 0;
+		try {
+			c = Class.forName("com.android.internal.R$dimen");
+			obj = c.newInstance();
+			field = c.getField("status_bar_height");
+			x = Integer.parseInt(field.get(obj).toString());
+			sbar = getResources().getDimensionPixelSize(x);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return sbar;
 	}
 
 	/**
@@ -197,25 +223,25 @@ public class DipTestActivity extends Activity implements Callback {
 			super.dispatchDraw(canvas);
 
 			mPaint.setColor(Color.RED);
-			
+
 			int height = canvas.getHeight();
 			int width = canvas.getWidth();
 
 			canvas.drawRect(0, 0, width, height, mPaint);
-			
+
 			mPaint.setColor(Color.WHITE);
 			mPaint.setStrokeWidth(1);
-			
-			for(int i = 0 ; i < 10 ; i++){
-				
-				float startX =  0 ;
-				float startY  = i * 100;
-				float stopX =   startX + width ;
-				float stopY =   i * 100 ;
-				
-				canvas.drawLine(startX, startY-3, stopX, stopY-3, mPaint);
-				
-				canvas.drawText(i+"",startX+5, startY+15, mPaint);
+
+			for (int i = 0; i < 10; i++) {
+
+				float startX = 0;
+				float startY = i * 100;
+				float stopX = startX + width;
+				float stopY = i * 100;
+
+				canvas.drawLine(startX, startY - 3, stopX, stopY - 3, mPaint);
+
+				canvas.drawText(i + "", startX + 5, startY + 15, mPaint);
 			}
 
 		}
@@ -227,17 +253,17 @@ public class DipTestActivity extends Activity implements Callback {
 		int what = msg.what;
 		switch (what) {
 			case 1 :
-				
-				String value  = String.valueOf(msg.obj);
-				
+
+				String value = String.valueOf(msg.obj);
+
 				/*构建显示信息TXView*/
-				final	ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+				final ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 				final TextView view = new TextView(this);
-				
+
 				view.setText(value);
-				
+
 				mContainer.addView(view);
-				
+
 				break;
 
 			default :
