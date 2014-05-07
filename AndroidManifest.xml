@@ -200,6 +200,10 @@
         </activity>
         <activity android:name="com.example.android_begin_gl_3d.unit_7.BaseTestActivity" >
         </activity>
+        
+        
+        <!-- 第8单元 EffectJava -->
+        <activity android:name="com.example.android_begin_gl_3d.EffectJavaActivity"></activity>
     </application>
 
 </manifest>
