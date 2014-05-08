@@ -96,6 +96,8 @@ public class CylinderDragTestView extends GLViewGroup {
 		mDragView.setVisibility(INVISIBLE);
 		mDragListener = new DragListener();
 
+		
+		// TODO 这里不知道是什么意思呢？
 		addView(mDragView);
 
 		// 添加几个图标
@@ -124,6 +126,13 @@ public class CylinderDragTestView extends GLViewGroup {
 					t.set(m.getValues(), 0);
 					GeometryPools.restoreStack();
 
+					
+					/* start drag 做的事情有:
+					 * 
+					 * 1: 把 mDragistener 做为dragView的source,把v 做为DragView的view
+					 * 2: 把dragListener 添加到dragView的listeners 集合中去
+					 * 3: 回调drageStar函数 
+					 * */
 					mDragView.startDrag(mDragListener, v, t, null);
 
 					return true;

@@ -27,8 +27,39 @@ import com.go.gl.widget.GLDragView;
  * <li>  DragView的工作原理
  * 					<div>
  * 								onInterceptTouchEvent 中把 MontionEvent傳入 DragView中 ， 
- * 								
  * 					<div>
+ * 					<li>　停区是怎么定义的？怎么样认为是进入的这个区？为什么进入这个区后位置不会回到原来的地方?
+ * 
+ * 
+ * 					2014-05-08
+ * 	
+ * 					这么去理解，DLDragView里面在dispatchDraw里面就去绘制了　GlDragView.startDrag(params,params_2);params_2 并且在里面响应　GlDragListener 回调相应的状态，比如开始绘制，正在绘制等
+ * 
+ * 					不理解的地方: 
+ * 											<li> 是否达到那些停的区域怎么处理呢？ 是在客户端还是在GlGragView里面去处理的。还是定义好区域，然后注入到GlDragView中？
+ * 
+ * 											<li> {@link GLDragListener} 里面的相应的接口方法，代表是什么意思呢?
+ * 
+ * 													1:OnDragStar()	 在OnStartDrag()时给调用。表示开始拖动。
+ * 													2:onDragEnd();   在手指离开时会触发
+ * 													3:onChckTouch(); 在客户端中实现，用来表示是否进入此区域　
+ * 													4:onDragMove();	 在移动时会调用　
+ * 													5:onDragEnter(); 进入相应的区域　
+ * 													6:onDragExist(); 出了相应的区域　	
+ * 													7:onDragHover(); 
+ * 													8:onDropFrom();
+ * 													9:onDropTo();
+ * 												   10:onDrawDraggedView();
+ * 
+ * 											问题　一
+ * 												在　GLDragView中的Move事件中，会调用GlDragListener的OnCheckTcouch事件。如果是进入的相应的区域，那么就会调用listener的Enter事件。
+ * 
+ * 											问题二
+ * 												是在客户端来定义相应的检测规则。
+ * 
+ * 											
+ * 				
+ * 
  * <li>  GLView在 GlFrameLayout中的佈局
  * <li>  拖拽懸停區是怎麼用？
  * 
@@ -48,12 +79,14 @@ public class DragTestView extends GLFrameLayout implements GLDragListener {
 	GLDragView mDragView;
 	// View Group
 	GLViewGroup mLayout;
-	//标记位
+	//标记位 是否进入右边
 	boolean mEnterRightSide;
+	//是否进入停区　
 	boolean mPendingHoverOnRightSide;
 	
-	
+	//聚焦区
 	ColorGLDrawable mFocusDrawable = new ColorGLDrawable(0x7fffffff);
+	//停下的区域
 	ColorGLDrawable mHoverDrawable = new ColorGLDrawable(0x7fff0000);
 
 	
@@ -76,7 +109,7 @@ public class DragTestView extends GLFrameLayout implements GLDragListener {
 
 		
 		for (int count = mLayout.getChildCount(), i = 0; i < count; ++i) {
-			// 给当前布局中的子view 注册事件，
+			// 给当前布局中的子view 注册长按事件，
 			GLView child = mLayout.getChildAt(i);
 			child.setOnLongClickListener(new OnLongClickListener() {
 
@@ -107,7 +140,7 @@ public class DragTestView extends GLFrameLayout implements GLDragListener {
 		//右边1/16的区域作为可悬停的，应该被包含与可交互区域内
 		mHoverDrawable.setBounds((int) (w * 15 / 16), 0, w, h);
 	}
-
+	
 	@Override
 	protected void dispatchDraw(GLCanvas canvas) {
 		
