@@ -23,6 +23,10 @@ public class MatrixState {
     public static FloatBuffer cameraFB;    
     public static Stack<float[]> mStack=new Stack<float[]>();//保护变换矩阵的栈
     
+    public static float[] lightLocation=new float[]{0,0,0};//定位光光源位置
+    public static FloatBuffer lightPositionFB;
+    //设置灯光位置的方法
+    static ByteBuffer llbbL = ByteBuffer.allocateDirect(3*4);
     
     
     public static void setInitStack()//获取不变换初始矩阵
@@ -133,6 +137,20 @@ public class MatrixState {
     public static float[] getMMatrix()
     {       
         return currMatrix;
+    }
+    
+    public static void setLightLocation(float x,float y,float z)
+    {
+    	llbbL.clear();
+    	
+    	lightLocation[0]=x;
+    	lightLocation[1]=y;
+    	lightLocation[2]=z;
+    	
+        llbbL.order(ByteOrder.nativeOrder());//设置字节顺序
+        lightPositionFB=llbbL.asFloatBuffer();
+        lightPositionFB.put(lightLocation);
+        lightPositionFB.position(0);
     }
 
 }

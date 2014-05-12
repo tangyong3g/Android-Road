@@ -23,7 +23,7 @@ import com.ty.exsample_unit_5.translate.TranslateActivity;
  */
 public class UnitFiveActivity extends ListActivity{
 	
-	String[] units = new String[] { "Translation[基本变化]", "顶点着色器妙用"};
+	String[] units = new String[] { "Translation[基本变化]", "顶点着色器妙用","3D基本图形的构建"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class UnitFiveActivity extends ListActivity{
 			cls = ShaderActivity.class;
 			break;
 		case 2:
+			cls = BasicShapeActivity.class;
 			break;
 		case 3:
 			break;
