@@ -179,6 +179,8 @@
         </activity>
         <activity android:name="com.ty.exsample_unit_5.shader.FlagActivity" >
         </activity>
+        
+        <activity android:name="com.ty.exsample_unit_5.shape.CireSlideActivity"></activity>
 
         <!-- *************************************************************************************** -->
 

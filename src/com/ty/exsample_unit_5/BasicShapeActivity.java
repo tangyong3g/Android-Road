@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
+import com.ty.exsample_unit_5.shape.CireSlideActivity;
 import com.ty.exsample_unit_5.translate.TranslateActivity;
 
 /**

@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import com.example.android_begin_gl_3d.R;
 import com.ty.exsample_unit_5.shader.ShaderActivity;
+import com.ty.exsample_unit_5.shape.CireSlideActivity;
 import com.ty.exsample_unit_5.translate.TranslateActivity;
 
 
@@ -45,7 +46,7 @@ public class UnitFiveActivity extends ListActivity{
 			cls = ShaderActivity.class;
 			break;
 		case 2:
-			cls = BasicShapeActivity.class;
+			cls = CireSlideActivity.class;
 			break;
 		case 3:
 			break;

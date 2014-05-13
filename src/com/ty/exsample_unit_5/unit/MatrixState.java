@@ -40,6 +40,7 @@ public class MatrixState {
 		Matrix.multiplyMM(mMVPMatrix, 0, mProjMatrix, 0, mMVPMatrix, 0);
 		return mMVPMatrix;
 	}
+	
 
 	/**
 	 * 透视投影

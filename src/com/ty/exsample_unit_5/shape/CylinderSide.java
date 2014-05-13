@@ -6,8 +6,8 @@ import java.nio.FloatBuffer;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 
-import com.ty.exsample_unit_5.unit.MatrixState;
 import com.ty.exsample_unit_5.unit.ShaderUtil;
+import com.ty.util.MatrixState;
 
 //圆柱侧面
 public class CylinderSide 
