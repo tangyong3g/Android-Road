@@ -51,6 +51,13 @@ public class ViewRenderActivity extends Activity {
 	private MyViewGroup mContainer;
 
 	private static StringBuffer mLog = new StringBuffer();
+	
+	
+	@Override
+	protected void onStop() {
+		mLog.delete(0, mLog.length());
+		super.onStop();
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
