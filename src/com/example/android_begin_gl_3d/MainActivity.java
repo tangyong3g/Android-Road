@@ -2,6 +2,7 @@ package com.example.android_begin_gl_3d;
 
 import com.example.android_begin_gl_3d.unit_7.Main;
 import com.example.android_begin_gl_3d.unit_7.ShellEngineActivity;
+import com.example.android_begin_gl_3d.unit_8.UnitEight;
 import com.ty.example_unit_1.UnitOneActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
@@ -27,7 +28,7 @@ public class MainActivity extends ListActivity {
 
 	String[] units = new String[] { "unit_1", "unit_2[OpenGL1.x/2.x]",
 			"unit_3[LibGDX]", "unit_4[Android基本知识]", "unit_5[Android游戏开发案例]",
-			"unit_6[重用组件]", "unit_7[Shell Engine]","unit_8[EffectJava]" };
+			"unit_6[重用组件]", "unit_7[Shell Engine]","unit_8[EffectJava]" , "unit_9[android源码剖析]" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,11 @@ public class MainActivity extends ListActivity {
 		case 7:
 			
 			cls = EffectJavaActivity.class;
+			break;
+		case 8:
+			cls = UnitEight.class;
+			
+			break;
 
 		default:
 			break;

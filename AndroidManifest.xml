@@ -206,6 +206,13 @@
         
         <!-- 第8单元 EffectJava -->
         <activity android:name="com.example.android_begin_gl_3d.EffectJavaActivity"></activity>
+        
+        
+        <!-- 第9单元　android源码 -->
+        <activity android:name="com.example.android_begin_gl_3d.unit_8.UnitEight"></activity>
+        <activity android:name="com.example.android_begin_gl_3d.unit_8.ViewRenderActivity"></activity>
+        
+        
     </application>
 
 </manifest>
