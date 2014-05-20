@@ -7,6 +7,7 @@ import java.nio.FloatBuffer;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
+import android.test.UiThreadTest;
 
 import com.badlogic.gdx.math.Matrix4;
 import com.ty.animation.Transformation;
@@ -31,20 +32,33 @@ public class Triangle {
 	FloatBuffer mColorBuffer;// 顶点着色数据缓冲
 	int vCount = 0;
 	float xAngle = 0;// 绕x轴旋转的角度
+	
+	private static final float UNIT_SIZE = 400;
 
 	public Triangle(GLSurfaceView mv) {
 		initVertexData();
 		initShader(mv);
 	}
 	
+	public Triangle(GLSurfaceView mv,int width,int height) {
+		initVertexData(width,height);
+		initShader(mv);
+	}
 	
 	private void initVertexData(){
 		
+		
 		float [] vertexPosition  = 
 		{
-		     0f, 1.0f, 0.0f,
-		    -1,-1, 0.0f,
-		    1,-1, 0.0f
+				/*
+		     0f, 1.0f * UNIT_SIZE, 0.0f,
+		    -1* UNIT_SIZE,-1 * UNIT_SIZE, 0.0f,
+		    1* UNIT_SIZE,-1 * UNIT_SIZE, 0.0f
+		    */
+				
+				0.0f,0.0f,0.0f,
+				800*2,-1216,0,
+				800*2,0,0,
 		};
 		
 		vCount = vertexPosition.length/3;
@@ -58,6 +72,66 @@ public class Triangle {
         
         float colors[]=new float[]
         {
+        		1,1,1,0,
+        		0,0,1,0,
+        		0,1,0,0
+        };
+        
+        ByteBuffer cbb = ByteBuffer.allocateDirect(colors.length*4);
+        cbb.order(ByteOrder.nativeOrder());
+        mColorBuffer = cbb.asFloatBuffer();
+        mColorBuffer.put(colors);
+        mColorBuffer.position(0);
+	}
+	
+	
+	private void initVertexData(int width,int height){
+		
+		
+		float [] vertexPosition  = 
+		{
+
+				0.0f,0.0f,0.0f,
+				0.0f,-height,0,
+				width,-height,0,
+				
+				0.0f,0.0f,0.0f,
+				width,-height,0,
+				width,0,0,
+				
+				width,0.0f,0.0f,
+				width,-height,0,
+				width *2,-height,0,
+				
+				width,0.0f,0.0f,
+				width*2,-height,0,
+				width*2,0,0,
+				
+		};
+		
+		vCount = vertexPosition.length/3;
+		
+        ByteBuffer vbb = ByteBuffer.allocateDirect(vertexPosition.length*4);
+        vbb.order(ByteOrder.nativeOrder());
+        mVertexBuffer = vbb.asFloatBuffer();
+        mVertexBuffer.put(vertexPosition);
+        mVertexBuffer.position(0);
+        
+        
+        float colors[]=new float[]
+        {
+        		1,1,1,0,
+        		0,0,1,0,
+        		0,1,0,0,
+        		
+        		1,1,1,0,
+        		0,0,1,0,
+        		0,1,0,0,
+        		
+        		1,1,1,0,
+        		0,0,1,0,
+        		0,1,0,0,
+        		
         		1,1,1,0,
         		0,0,1,0,
         		0,1,0,0
