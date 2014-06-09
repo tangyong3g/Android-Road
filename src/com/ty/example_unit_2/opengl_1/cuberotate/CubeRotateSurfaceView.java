@@ -48,10 +48,10 @@ public class CubeRotateSurfaceView extends GLSurfaceView {
 		public void onDrawFrame(GL10 gl) {
 			Log.i("tyler.tang","onDraw");
 			// 设置色彩　
-			gl.glColor4f(0.1f, 1, 1, 1);
+			gl.glColor4f(1f, 1, 1, 1);
 			// 清除缓存
-			gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BITS);
-
+			gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
+			
 			// 回到原点
 			gl.glLoadIdentity();
 			gl.glTranslatef(0, 0, -9);

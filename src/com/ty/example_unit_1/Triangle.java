@@ -40,12 +40,15 @@ public class Triangle
     {
     	//顶点坐标数据的初始化
         vCount=3;  
-        final float UNIT_SIZE=0.2f;
+        final float UNIT_SIZE=1f;
         float vertices[]=new float[]
         {
-        	-4*UNIT_SIZE,0,
-        	0,0,-4*UNIT_SIZE,
-        	0,4*UNIT_SIZE,0,0
+        	-4*UNIT_SIZE,0,0,
+        	
+        	0,-4*UNIT_SIZE,0,
+        	
+        	4*UNIT_SIZE,0,0,
+        	
         };
 		
         ByteBuffer vbb = ByteBuffer.allocateDirect(vertices.length*4);

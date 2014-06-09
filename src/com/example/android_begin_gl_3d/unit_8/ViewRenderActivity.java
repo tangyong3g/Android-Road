@@ -65,7 +65,7 @@ public class ViewRenderActivity extends Activity {
 
 		mContainer = new MyViewGroup(this);
 		setContentView(mContainer);
-
+		
 		mContainer.postDelayed(new Runnable() {
 
 			@Override

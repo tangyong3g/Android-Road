@@ -18,7 +18,7 @@ import com.ty.example_unit_2.opengl_1.cuberotate.CubeRotateActivity;
  */
 public class OpenGL1Activity extends ListActivity {
 	
-	String[] units = new String[] { "cube","cubeRotate" };
+	String[] units = new String[] { "cube"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

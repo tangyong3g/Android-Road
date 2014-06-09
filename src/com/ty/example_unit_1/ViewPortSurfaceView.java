@@ -63,7 +63,7 @@ public class ViewPortSurfaceView extends GLSurfaceView {
 		@Override
 		public void onSurfaceChanged(GL10 gl, int width, int height) {
 			//设置视窗大小及位置 
-        	GLES20.glViewport(0, 0, width, height); 
+        	GLES20.glViewport(width/2, height/2, width/2, height/2); 
         	//计算GLSurfaceView的宽高比
             float ratio = (float) width / height;
             //调用此方法计算产生透视投影矩阵

@@ -44,10 +44,10 @@ public class CubeSurfaceView extends GLSurfaceView {
 
 		@Override
 		public void onDrawFrame(GL10 gl) {
-			// 设置色彩　
-			gl.glColor4f(0.1f, 1, 1, 1);
 			// 清除缓存
-			gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BITS);
+			gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
+			
+			gl.glColor4f(0.5f, 0.5f, 1, 1);
 
 			// 回到原点
 			gl.glLoadIdentity();
@@ -64,7 +64,6 @@ public class CubeSurfaceView extends GLSurfaceView {
 			cube.draw(gl,textureIdBuffer.get(0));
 			gl.glPopMatrix();
 			
-
 			// 关闭管线　
 			gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
 			gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);

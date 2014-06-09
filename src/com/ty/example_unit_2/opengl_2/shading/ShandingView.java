@@ -89,7 +89,7 @@ public class ShandingView extends GLSurfaceView {
 			
 			mTriangle = new Triangle(ShandingView.this,width,height);
 			
-			GLES20.glViewport(0, 0, width , height );
+			GLES20.glViewport(width/2, height/2, width/2 , height/2 );
 			// 计算GLSurfaceView的宽高比
 			float aspect = (float) width / height;
 			
