@@ -11,6 +11,7 @@
     <!-- 写错误日记到SD卡 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/> 
     <!--  -->
     <supports-screens
         android:anyDensity="true"
@@ -161,6 +162,7 @@
         </activity>
         <activity android:name="com.ty.exsample_unit_4.DipTestActivity" >
         </activity>
+        <activity android:name="com.ty.exsample_unit_4.WallpaperManagerTest"></activity>
 
         <!-- *************************************************************************************** -->
 

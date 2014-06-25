@@ -179,7 +179,8 @@ public class DipTestActivity extends Activity implements Callback {
 
 		DisplayMetrics displayMetrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-
+		
+	
 		//区域二 宽度相同，高度和view的高度加上标题栏的高度
 		View frameLayout = getWindow().findViewById(Window.ID_ANDROID_CONTENT);
 		Rect outRect = new Rect();

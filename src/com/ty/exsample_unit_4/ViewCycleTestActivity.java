@@ -13,6 +13,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -36,7 +37,7 @@ import android.view.WindowManager;
  * @author tang
  *
  */
-public class ViewCycleTestActivity extends Activity {
+public class ViewCycleTestActivity extends Activity implements OnClickListener {
 
 	public int mWidth;
 	public int mHeight;
@@ -62,11 +63,13 @@ public class ViewCycleTestActivity extends Activity {
 		mWidth = metri.widthPixels;
 		mHeight = metri.heightPixels;
 
+		
 		mRowUnit = mHeight / ROW;
 		mColUnit = mWidth / COL;
 
 		SimpleView view = new SimpleView(this);
 		setContentView(view);
+		view.setOnClickListener(this);
 	}
 
 	/**
@@ -161,6 +164,10 @@ public class ViewCycleTestActivity extends Activity {
 					canvas.drawRect(mTemp, mPaint);
 				}
 			}
+			
+			if(mAmi){
+				this.invalidate();
+			}
 		}
 
 		@Override
@@ -170,6 +177,24 @@ public class ViewCycleTestActivity extends Activity {
 			Log.i("tyler.tang", "dispatchDraw: 完成！");
 		}
 
+	}
+
+	@Override
+	public void onClick(View v) {
+		
+		
+		
+		
+	}
+	
+	boolean mAmi = false;
+	
+	int i = 0; 
+
+	private void startAnimation() {
+		mAmi = true;
+		
+		
 	}
 
 }
