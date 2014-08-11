@@ -41,6 +41,7 @@ public class HandlerTestActivity extends Activity implements Callback, OnClickLi
 		btn.setOnClickListener(this);
 
 		mContainer = new LinearLayout(this);
+		mContainer.setOrientation(LinearLayout.VERTICAL);
 		ViewGroup.LayoutParams ly_params = new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
 		mContainer.setLayoutParams(ly_params);
@@ -63,7 +64,7 @@ public class HandlerTestActivity extends Activity implements Callback, OnClickLi
 						LayoutParams.MATCH_PARENT, 67);
 				tx.setLayoutParams(params);
 				tx.setText(getStringDate());
-
+				
 				mContainer.addView(tx);
 
 				Log.i("tyler.tang", "我来了.");
@@ -80,7 +81,7 @@ public class HandlerTestActivity extends Activity implements Callback, OnClickLi
 	public void onClick(View v) {
 
 		mHandler.removeMessages(MESSAGE_TYPE_S);
-		mHandler.sendEmptyMessageDelayed(MESSAGE_TYPE_S, 3 * 1000);
+		mHandler.sendEmptyMessageDelayed(MESSAGE_TYPE_S, 2 * 1000);
 
 	}
 
