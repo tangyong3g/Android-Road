@@ -1,7 +1,7 @@
 package com.ty.exsample_unit_4;
 
 import android.app.Activity;
-import android.mtp.MtpConstants;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.ty.exsample.R;
 
@@ -44,6 +45,9 @@ public class LooperActivity extends Activity implements OnClickListener{
 	String TAG  = "LooperActivity"; 
 	LooperThread mLooperThread;
 	
+	Button mBtn;
+	Context mcontext;
+	
 	
 	/**
 	 * 代码来自于Android源码 Looper 里面有
@@ -70,7 +74,8 @@ public class LooperActivity extends Activity implements OnClickListener{
 					
 					switch (what) {
 					case MSG_MAIN_TO_SUB:
-						
+						mBtn.setText("hello");
+						Toast.makeText(mcontext, "hello", 1000).show();
 						Log.i(TAG,"从主线程发来了消息!");
 						break;
 
@@ -93,10 +98,10 @@ public class LooperActivity extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.looper_layout);
-		Button btn = (Button)findViewById(R.id.send_msg_id);
-		btn.setOnClickListener(this);
+		mBtn = (Button)findViewById(R.id.send_msg_id);
+		mBtn.setOnClickListener(this);
 		
-		
+		mcontext = this;
 		//开启线程
 		mLooperThread = new LooperThread();
 		mLooperThread.start();
