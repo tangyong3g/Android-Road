@@ -54,7 +54,7 @@ import android.os.Looper;
 import android.os.StatFs;
 import android.widget.Toast;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 
 /**
  * <p>

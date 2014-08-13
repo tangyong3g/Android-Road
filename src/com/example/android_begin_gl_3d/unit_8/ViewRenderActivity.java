@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 
 /**
  * 

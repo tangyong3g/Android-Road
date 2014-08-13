@@ -23,6 +23,7 @@ import com.badlogic.gdx.graphics.g3d.materials.TextureAttribute;
 import com.badlogic.gdx.graphics.g3d.utils.DefaultShaderProvider;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.Vector3;
+import com.ty.exsample.R;
 
 public class MomentTest extends AndroidApplication {
 
@@ -107,8 +108,7 @@ public class MomentTest extends AndroidApplication {
 
 			
 			java.io.InputStream is;
-			is = mContext.getResources().openRawResource(
-					com.example.android_begin_gl_3d.R.drawable.bg_one);
+			is = mContext.getResources().openRawResource(R.drawable.bg_one);
 
 			//BitmapFactory.Options 类,  允许我们定义图片以何种方式如何读到内存，
 			BitmapFactory.Options opts = new BitmapFactory.Options();

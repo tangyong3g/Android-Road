@@ -1,6 +1,6 @@
 package com.ty.example_unit_1;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 import com.ty.example_unit_1.coordiatesystem.CoordiateSystemActivity;
 import com.ty.example_unit_1.cube.CubeActivity;
 import com.ty.example_unit_1.service.ServiceActivity;

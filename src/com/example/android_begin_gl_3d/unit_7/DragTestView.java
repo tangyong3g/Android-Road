@@ -5,7 +5,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Toast;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 import com.go.gl.animation.Animation;
 import com.go.gl.animation.ScaleAnimation;
 import com.go.gl.animation.Transformation3D;

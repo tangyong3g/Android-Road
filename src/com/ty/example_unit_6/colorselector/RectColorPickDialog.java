@@ -1,6 +1,6 @@
 package com.ty.example_unit_6.colorselector;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 
 import android.app.Dialog;
 import android.content.Context;

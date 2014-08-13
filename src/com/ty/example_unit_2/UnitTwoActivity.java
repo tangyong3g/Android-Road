@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 import com.ty.example_unit_2.opengl_1.OpenGL1Activity;
 import com.ty.example_unit_2.opengl_2.OpenGL2Activity;
 

@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 import com.badlogic.gdx.math.Bezier;
 import com.badlogic.gdx.math.Path;
 import com.badlogic.gdx.math.Vector2;
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 
 
 /**
@@ -51,7 +51,7 @@ public class PatchActivity extends Activity implements OnClickListener ,Callback
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(com.example.android_begin_gl_3d.R.layout.unit3_path);
+		setContentView(R.layout.unit3_path);
 		initConponent();
 	}
 

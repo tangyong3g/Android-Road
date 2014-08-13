@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 import com.ty.example_unit_6.blurpic.BlurpicActivity;
 import com.ty.example_unit_6.colorselector.ColorSelectorActivity;
 import com.ty.example_unit_6.colorselector.RectColorActivity;

@@ -3,7 +3,7 @@ package com.example.android_begin_gl_3d.unit_7;
 import android.content.Context;
 import android.view.MotionEvent;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 import com.go.gl.graphics.GLCanvas;
 import com.go.gl.graphics.GLDrawable;
 import com.go.gl.view.GLView;

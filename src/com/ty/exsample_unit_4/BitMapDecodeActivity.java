@@ -13,10 +13,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.MaskFilter;
 import android.graphics.Paint;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+
+import com.ty.exsample.R;
 
 /**
  * 
@@ -90,8 +90,7 @@ public class BitMapDecodeActivity extends Activity {
 			blurMaskFilter = new BlurMaskFilter(1000, Blur.NORMAL);
 
 			java.io.InputStream is;
-			is = context.getResources().openRawResource(
-					com.example.android_begin_gl_3d.R.drawable.bg_one);
+			is = context.getResources().openRawResource(R.drawable.bg_one);
 
 			//BitmapFactory.Options 类,  允许我们定义图片以何种方式如何读到内存，
 			BitmapFactory.Options opts = new BitmapFactory.Options();
@@ -117,7 +116,7 @@ public class BitMapDecodeActivity extends Activity {
 			//		   Gdx.app.log("info", "height:\t"+heigt+"width:\t"+width);
 
 			is = context.getResources().openRawResource(
-					com.example.android_begin_gl_3d.R.drawable.ic_launcher);
+					R.drawable.ic_launcher);
 			mBitMapTwo = BitmapFactory.decodeStream(is);
 
 			// create a deep copy of it using getPixels() into different configs

@@ -10,14 +10,13 @@ import javax.microedition.khronos.opengles.GL10;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 
+import com.ty.exsample.R;
 import com.ty.util.MatrixState;
 
 /**
@@ -192,8 +191,8 @@ public class ModelView extends GLSurfaceView {
 			lovo = LoadUtil.loadFromFile("data/unit2/model/ground.obj",ModelView.this.getResources(), ModelView.this);
 			cube = LoadUtil.loadFromFile("data/unit2/model/cube.obj",ModelView.this.getResources(), ModelView.this);
 			
-			mTextureId = initTexture(com.example.android_begin_gl_3d.R.drawable.ground_texture);
-			mCubeId = initTexture(com.example.android_begin_gl_3d.R.drawable.cube_texture);
+			mTextureId = initTexture(R.drawable.ground_texture);
+			mCubeId = initTexture(R.drawable.cube_texture);
 			modelControler.setLoadModelFinished(true);
 		}
 	}

@@ -5,17 +5,16 @@ import java.util.ArrayList;
 import android.content.Context;
 import android.util.Log;
 
-import com.example.android_begin_gl_3d.R;
 import com.go.gl.animator.Animator;
 import com.go.gl.animator.AnimatorSet;
 import com.go.gl.animator.FloatValueAnimator;
 import com.go.gl.animator.ValueAnimator;
 import com.go.gl.animator.ValueAnimator.AnimatorUpdateListener;
-import com.go.gl.animator.motionfilter.RotateMotionFilter;
 import com.go.gl.graphics.GLCanvas;
 import com.go.gl.graphics.GLDrawable;
 import com.go.gl.view.GLView;
 import com.go.gl.view.GLViewGroup;
+import com.ty.exsample.R;;
 
 /**
  * ValueAnimator 动画类的测试样例

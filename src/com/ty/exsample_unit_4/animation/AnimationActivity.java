@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 
 /**
  * 

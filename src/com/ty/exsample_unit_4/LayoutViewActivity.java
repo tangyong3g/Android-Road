@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 
 /**
  * 

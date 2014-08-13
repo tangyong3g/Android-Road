@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 
 /**
  * 

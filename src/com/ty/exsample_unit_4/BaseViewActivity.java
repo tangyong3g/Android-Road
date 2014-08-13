@@ -7,6 +7,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
+import com.ty.exsample.R;
+
 /**
  * 
  * @author tang
@@ -55,7 +57,7 @@ public class BaseViewActivity extends Activity {
 
 		} else {
 
-			setContentView(com.example.android_begin_gl_3d.R.layout.report);
+			setContentView(R.layout.report);
 		}
 
 	}

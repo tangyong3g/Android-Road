@@ -17,6 +17,7 @@ import com.ty.dex.TestDex;
 import com.ty.example_unit_1.UnitOneActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
+import com.ty.exsample.R;
 import com.ty.exsample_unit_4.UnitFourActivity;
 import com.ty.exsample_unit_5.UnitFiveActivity;
 

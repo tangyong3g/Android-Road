@@ -14,7 +14,7 @@ import android.opengl.GLSurfaceView;
 import android.opengl.GLSurfaceView.Renderer;
 import android.os.Bundle;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 import com.ty.util.Constant;
 import com.ty.util.ImageUtil;
 import com.ty.util.MatrixState;

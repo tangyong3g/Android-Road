@@ -5,7 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.ViewGroup.LayoutParams;
 
-import com.example.android_begin_gl_3d.R;
+import com.ty.exsample.R;
 import com.go.gl.animator.ValueAnimator;
 import com.go.gl.animator.motionfilter.AlphaMotionFilter;
 import com.go.gl.animator.motionfilter.MotionFilter;

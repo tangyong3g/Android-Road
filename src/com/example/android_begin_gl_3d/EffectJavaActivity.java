@@ -1,12 +1,5 @@
 package com.example.android_begin_gl_3d;
 
-import com.example.android_begin_gl_3d.unit_7.Main;
-import com.ty.example_unit_1.UnitOneActivity;
-import com.ty.example_unit_3.libgdx.UnitThreeActivity;
-import com.ty.example_unit_6.UnitSixActivity;
-import com.ty.exsample_unit_4.UnitFourActivity;
-import com.ty.exsample_unit_5.UnitFiveActivity;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +8,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.android_begin_gl_3d.unit_7.Main;
+import com.ty.example_unit_1.UnitOneActivity;
+import com.ty.example_unit_3.libgdx.UnitThreeActivity;
+import com.ty.example_unit_6.UnitSixActivity;
+import com.ty.exsample.R;
+import com.ty.exsample_unit_4.UnitFourActivity;
+import com.ty.exsample_unit_5.UnitFiveActivity;
 
 /**
  * 第7单元
