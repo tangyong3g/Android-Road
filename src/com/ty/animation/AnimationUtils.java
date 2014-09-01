@@ -16,6 +16,8 @@
 
 package com.ty.animation;
 
+import java.util.Random;
+
 import android.os.SystemClock;
 
 /**
@@ -23,6 +25,11 @@ import android.os.SystemClock;
  *
  */
 public class AnimationUtils {
+	
+	
+	
+	private static Random sRandom = new Random();
+	
 
     /**
      * These flags are used when parsing AnimatorSet objects
@@ -43,5 +50,17 @@ public class AnimationUtils {
      */
     public static long currentAnimationTimeMillis() {
         return SystemClock.uptimeMillis();
+    }
+    
+    
+    public static float randomMaxAndMin(int max, int min){
+    	
+    	float result   = sRandom.nextInt(max);
+    	
+    	while( result < min && result > max ){
+    		result  = sRandom.nextInt((int)max);
+    	}
+    	
+    	return result;
     }
 }

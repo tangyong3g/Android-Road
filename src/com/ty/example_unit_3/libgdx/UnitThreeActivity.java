@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.ty.exsample.R;
+import com.ty.exsample_unit_4.ViewCycleTestActivity;
 import com.ty.example_unit_3.libgdx.loadmode.MaterialOpenGL2Activity;
 import com.ty.example_unit_3.libgdx.timetunnel.TunnelActivity;
 
@@ -15,7 +16,7 @@ import com.ty.example_unit_3.libgdx.timetunnel.TunnelActivity;
 public class UnitThreeActivity extends ListActivity {
 
 	String[] units = new String[] { "MaterialOpenGL2.x", "path", "Tunnel", "Attribute",
-			"MeshShader", "SimpleAnimation", "Translate", "可施动的Actor" };
+			"MeshShader", "SimpleAnimation", "Translate", "可施动的Actor" ,"任意路径问题"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,11 @@ public class UnitThreeActivity extends ListActivity {
 				break;
 			case 7 :
 				cls = ActorFPSAnimationActivity.class;
+				break;
+			case 8:
+				
+				cls = PathActivity.class;
+				
 				break;
 			default :
 				break;

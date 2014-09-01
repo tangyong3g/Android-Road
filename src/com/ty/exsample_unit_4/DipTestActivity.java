@@ -46,7 +46,6 @@ import com.ty.crashreport.Loger;
  * 				问题一：如果不同的设备都搞成同样的 dip数 是否都是一样的大小呢?  不一样
  * 				问题二: 标题栏，状态栏,导航栏，高度
  * 
- * 
  * @author tang
  *
  */
