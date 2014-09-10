@@ -1,5 +1,6 @@
 package com.example.android_begin_gl_3d;
 
+import android.app.Instrumentation.ActivityMonitor;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.Display;
@@ -8,13 +9,28 @@ import android.view.WindowManager;
 /**
  * 当前屏幕信息
  * 
+ * 
+ * 怎么得到当前Activity的状态
+ * 
  * @author tangyong
  * 
  */
 public class ScreenInfo {
 
+	//屏幕的宽
 	private int mWidth;
+	//高
 	private int mHeight;
+	
+	//屏幕状态栏高度
+	private int mStateBarHeight;
+	
+	//屏幕标题栏高度
+	private int mTitleBarHeight;
+	
+	//屏幕导航栏高度
+//	private int  
+	
 
 	public int getmWidth() {
 		return mWidth;
@@ -43,6 +59,8 @@ public class ScreenInfo {
 
 		mWidth = metrics.widthPixels;
 		mHeight = metrics.heightPixels;
+
+//		ActivityMonitor
 
 	}
 
