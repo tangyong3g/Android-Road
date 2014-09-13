@@ -29,29 +29,32 @@ import com.ty.crashreport.Application;
 public class PathActivity extends Activity implements OnClickListener {
 
 	LinearLayout mContainer;
-	Array<Vector2> mArray  = new Array<Vector2>();
+	Array<Vector2> mArray = new Array<Vector2>();
 	PathSimpleView mPathView;
-	int [] mColorArray = new int[]{Color.RED,Color.BLUE,Color.CYAN,Color.GREEN,Color.MAGENTA,Color.YELLOW};
-	
+	int[] mColorArray = new int[] { Color.RED, Color.BLUE, Color.CYAN,
+			Color.GREEN, Color.MAGENTA, Color.YELLOW };
+
 	private CatmullRomSpline<Vector2> mBsLine;
 	public static final int LEFT_ID = 1000001;
 	public static final int RIGHT_ID = 1000002;
-	
+
 	private float mPercent = 0.0f;
 	private long mStart = 0;
 	private boolean mAnimationFlag = false;
 	private long total = 3000;
-	
-	
-	
+
+	Thread mThread;
+
 	private Vector2 mTemp = new Vector2();
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		LinearLayout.LayoutParams paramsContainer = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-		LinearLayout.LayoutParams topContainerLyParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		LinearLayout.LayoutParams paramsContainer = new LayoutParams(
+				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		LinearLayout.LayoutParams topContainerLyParams = new LayoutParams(
+				LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
 		LinearLayout topContainer = new LinearLayout(this);
 		topContainer.setOrientation(LinearLayout.HORIZONTAL);
@@ -71,52 +74,52 @@ public class PathActivity extends Activity implements OnClickListener {
 
 		topContainer.addView(btnLeft);
 		topContainer.addView(btnRight);
-		
-		
+
 		mPathView = new PathSimpleView(this);
-		
+
 		mContainer = new LinearLayout(this);
 		mContainer.setLayoutParams(paramsContainer);
 		mContainer.setOrientation(LinearLayout.VERTICAL);
-		
+
 		mContainer.addView(topContainer);
 		mContainer.addView(mPathView);
-		
 
 		setContentView(mContainer);
 
 		initPosition();
 	}
-	
-	private void initPosition(){
-		
+
+	private void initPosition() {
+
 		mArray.clear();
-		
-		Runnable positionRun = new Runnable() {
-			
-			@Override
-			public void run() {
-				
-				int screenWidth = Application.getInstance().getScreenInfo().getmWidth();
-				int screenHeight = Application.getInstance().getScreenInfo().getmHeight();
-				
-				
-				for(int i = 0; i < 5; i++){
-					
-					int y = (int)com.ty.animation.AnimationUtils.randomMaxAndMin(screenHeight, 0);
-					int x = (int)com.ty.animation.AnimationUtils.randomMaxAndMin(screenWidth, 0);
-					
-					Vector2 point = new Vector2(x, y);
-					
-					mArray.add(point);
-					
-				}
-			}
-		};
-		
-		Application application = Application.getInstance();
-		application.postRunnableToLightThread(positionRun);
-		
+
+		// Runnable positionRun = new Runnable() {
+		//
+		// @Override
+		// public void run() {
+		//
+		int screenWidth = Application.getInstance().getScreenInfo().getmWidth();
+		int screenHeight = Application.getInstance().getScreenInfo()
+				.getmHeight();
+
+		for (int i = 0; i < 5; i++) {
+
+			int y = (int) com.ty.animation.AnimationUtils.randomMaxAndMin(
+					screenHeight, 0);
+			int x = (int) com.ty.animation.AnimationUtils.randomMaxAndMin(
+					screenWidth, 0);
+
+			Vector2 point = new Vector2(x, y);
+
+			mArray.add(point);
+
+		}
+
+		// }
+		// };
+		//
+		// Application application = Application.getInstance();
+		// application.postRunnableToLightThread(positionRun);
 	}
 
 	class PathSimpleView extends View {
@@ -137,35 +140,37 @@ public class PathActivity extends Activity implements OnClickListener {
 		@Override
 		protected void onDraw(Canvas canvas) {
 			super.onDraw(canvas);
-			
-			if(mArray == null || mArray.size == 0){
-				return ;
+
+			if (mArray == null || mArray.size == 0) {
+				return;
 			}
-			
-			//绘制固定的顶点
-			for(int  i = 0 ; i< mArray.size ; i++){
+
+			// 绘制固定的顶点
+			for (int i = 0; i < mArray.size; i++) {
 				mPaint.setColor(mColorArray[i]);
-				
-				canvas.drawText((i+1)+"", mArray.get(i).x, mArray.get(i).y-5, mPaint);
+
+				canvas.drawText((i + 1) + "", mArray.get(i).x,
+						mArray.get(i).y - 5, mPaint);
 				canvas.drawCircle(mArray.get(i).x, mArray.get(i).y, 5, mPaint);
 			}
-			
-			//绘制线条
-			if(mAnimationFlag){
-				
-				long duration  = AnimationUtils.currentAnimationTimeMillis() - mStart;
-				float percent = (float)duration / total;
-				
-				if(Math.min(percent, 1) == 1){
+
+			// 绘制线条
+			if (mAnimationFlag) {
+
+				long duration = AnimationUtils.currentAnimationTimeMillis()
+						- mStart;
+				float percent = (float) duration / total;
+
+				if (Math.min(percent, 1) == 1) {
 					mAnimationFlag = false;
 				}
-				
+
 				mBsLine.valueAt(mTemp, Interpolation.exp5In.apply(percent));
 				canvas.drawCircle(mTemp.x, mTemp.y, 6, mPaint);
-				
+
 				invalidate();
 			}
-			
+
 		}
 	}
 
@@ -195,36 +200,46 @@ public class PathActivity extends Activity implements OnClickListener {
 	}
 
 	private void reset() {
-		
+
 		initPosition();
-		
-		
+
 		int size = mArray.size;
 		Vector2[] datas = new Vector2[size];
-		
-		for(int i = 0; i< size; i++){
+
+		for (int i = 0; i < size; i++) {
 			datas[i] = mArray.get(i);
 		}
-		
-		if(mBsLine == null){
+
+		if (mBsLine == null) {
 			mBsLine = new CatmullRomSpline<Vector2>(datas, true);
 		}
-		
+
 		mBsLine.set(datas, true);
-		
+
 		mPathView.invalidate();
 
 	}
 
 	private void start() {
-		
+
+		if (mBsLine == null) {
+
+			initPosition();
+
+			int size = mArray.size;
+			Vector2[] datas = new Vector2[size];
+
+			for (int i = 0; i < size; i++) {
+				datas[i] = mArray.get(i);
+			}
+
+			mBsLine = new CatmullRomSpline<Vector2>(datas, true);
+		}
+
 		mStart = AnimationUtils.currentAnimationTimeMillis();
 		mAnimationFlag = true;
-		
-		
+
 		mPathView.invalidate();
-		
 	}
-	
 
 }
