@@ -17,7 +17,7 @@ import com.ty.exsample_unit_5.translate.TranslateActivity;
 
 public class UnitSixActivity extends ListActivity {
 
-	String[] units = new String[] { "可滑动的选择条","颜色选择器","色相亮度饱和度" ,"方形","图片模糊"};
+	String[] units = new String[] { "可滑动的选择条","颜色选择器","色相亮度饱和度" ,"方形","图片模糊","读取Excele"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +47,10 @@ public class UnitSixActivity extends ListActivity {
 			cls = BlurpicActivity.class;
 			break;
 		case 5:
+			cls = ReadExcelActivity.class;
 			break;
 		case 6:
+		
 			break;
 		case 7:
 			break;
