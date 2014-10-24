@@ -46,7 +46,7 @@ public class UnitFiveActivity extends ListActivity{
 			cls = ShaderActivity.class;
 			break;
 		case 2:
-			cls = CireSlideActivity.class;
+//			cls = CireSlideActivity.class;
 			break;
 		case 3:
 			break;

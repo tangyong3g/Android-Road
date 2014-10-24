@@ -56,7 +56,7 @@ public class SimpleAnimationListener extends Base3D {
 	public void create () {
 		super.create();
 		Gdx.input.setInputProcessor(this);
-		texture = new Texture(Gdx.files.internal("data/animation.png"));
+		texture = new Texture(Gdx.files.internal("data/cube_simple.png"));
 		TextureRegion[][] regions = TextureRegion.split(texture, 32, 48);
 		TextureRegion[] downWalkReg = regions[0];
 		TextureRegion[] leftWalkReg = regions[1];

@@ -94,7 +94,7 @@ public class AttributeListenr extends Base3D {
 
 		Material material = new Material();
 
-		Texture texture = new Texture(Gdx.files.internal("data/badlogic.jpg"));
+		Texture texture = new Texture(Gdx.files.internal("data/cube_simple.png"));
 		TextureAttribute txAttri = TextureAttribute.createDiffuse(texture);
 		// IntAttribute intAttr = new IntAttribute(IntAttribute.CullFace, 0);
 

@@ -17,7 +17,8 @@ public class MeshCubeActivity extends AndroidApplication {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		initialize(new MeshRender(), true);
+		
 	}
 
 	class MeshRender extends DemoWapper {
@@ -27,7 +28,6 @@ public class MeshCubeActivity extends AndroidApplication {
 		
 		//初始化网张的顶点坐标
 		private void initVertices(){
-			
 			
 		}
 

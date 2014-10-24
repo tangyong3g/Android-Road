@@ -24,6 +24,8 @@ public class Cylinder
 			int topTexId, int BottomTexId, int sideTexId)
 	{
 		
+		MatrixState.setInitStack();
+		
 		this.h=h;
 		this.scale=scale;
 		this.topTexId=topTexId;
@@ -33,6 +35,8 @@ public class Cylinder
 		topCircle=new Circle(mySurfaceView,scale,r,n);	//创建顶面圆对象
 		bottomCircle=new Circle(mySurfaceView,scale,r,n);  //创建底面圆对象
 		cylinderSide=new CylinderSide(mySurfaceView,scale,r,h,n); //创建侧面无顶圆柱对象
+		
+	
 	}
 	public void drawSelf()
 	{

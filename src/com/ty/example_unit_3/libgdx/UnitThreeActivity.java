@@ -46,7 +46,7 @@ public class UnitThreeActivity extends ListActivity {
 				cls = MeshShaderActivity.class;
 				break;
 			case 5 :
-				cls = SimpleAnimationActivity.class;
+//				cls = SimpleAnimationActivity.class;
 				break;
 			case 6 :
 				cls = TranslateActivity.class;

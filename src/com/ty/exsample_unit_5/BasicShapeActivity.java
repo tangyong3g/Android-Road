@@ -33,7 +33,7 @@ public class BasicShapeActivity extends ListActivity {
 		Class cls = null;
 		switch (position) {
 			case 0 :
-				cls = CireSlideActivity.class;
+//				cls = CireSlideActivity.class;
 				break;
 			case 1 :
 				break;

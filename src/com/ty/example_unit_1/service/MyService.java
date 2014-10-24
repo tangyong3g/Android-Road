@@ -41,8 +41,8 @@ public class MyService extends Service {
 		Log.i("cycle","onStart");
 		super.onStart(intent, startId);
 		
-		final boolean state = intent.getBooleanExtra("state",false);
-		Log.i("tyler.tang","MyService 线程编号:\t"+Thread.currentThread().getId());
+//		final boolean state = intent.getBooleanExtra("state",false);
+//		Log.i("tyler.tang","MyService 线程编号:\t"+Thread.currentThread().getId());
 	}
 
 	@Override

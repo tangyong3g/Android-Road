@@ -28,9 +28,9 @@ class CireSlideSurfaceView extends GLSurfaceView {
 	public CireSlideSurfaceView(Context context) {
 		super(context);
 
-		mRender = new CireSlideRender();
-		setEGLContextClientVersion(2);
-		setRenderer(mRender);
+//		mRender = new CireSlideRender();
+//		setEGLContextClientVersion(2);
+//		setRenderer(mRender);
 
 	}
 
