@@ -3,6 +3,7 @@ package com.example.android_begin_gl_3d;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -30,21 +31,27 @@ public class MainActivity extends ListActivity {
 
 	String[] units = new String[] { "unit_1", "unit_2[OpenGL1.x/2.x]",
 			"unit_3[LibGDX]", "unit_4[Android基本知识]", "unit_5[Android游戏开发案例]",
-			"unit_6[重用组件]", "unit_7[Shell Engine]","unit_8[EffectJava]" , "unit_9[android源码剖析]" };
+			"unit_6[重用组件]", "unit_7[Shell Engine]", "unit_8[EffectJava]",
+			"unit_9[android源码剖析]" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+		Debug.startMethodTracing();
+
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items,
 				units));
-		
+
 		TestDex testDex = new TestDex();
-		Log.i("cycle",testDex.show("tangyong"));
+//		Log.i("cycle", testDex.show("tangyong"));
 		
+		Debug.stopMethodTracing();
+
 	}
 
 	@Override
@@ -81,12 +88,12 @@ public class MainActivity extends ListActivity {
 			cls = Main.class;
 			break;
 		case 7:
-			
+
 			cls = EffectJavaActivity.class;
 			break;
 		case 8:
 			cls = UnitEight.class;
-			
+
 			break;
 
 		default:
@@ -102,6 +109,13 @@ public class MainActivity extends ListActivity {
 		intent.setClass(this, cls);
 
 		startActivity(intent);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+
+	
 	}
 
 }

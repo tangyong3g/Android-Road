@@ -80,7 +80,8 @@
         </activity>
         <activity android:name="com.ty.example_unit_2.SquareActivity" >
         </activity>
-        <activity android:name="com.ty.example_unit_2.opengl_2.meshcube.MeshCubeActivity"></activity>
+        <activity android:name="com.ty.example_unit_2.opengl_2.meshcube.MeshCubeActivity" >
+        </activity>
 
         <!-- 第二单元 openGl2.x 方形 -->
         <activity android:name="com.ty.example_unit_2.opengl_2.cube.CubeActivity" >
@@ -167,6 +168,8 @@
         <activity android:name="com.ty.exsample_unit_4.WallpaperManagerTest" >
         </activity>
         <activity android:name="com.ty.exsample_unit_4.CacheBitmapActivity" >
+        </activity>
+        <activity android:name="com.ty.exsample_unit_4.BelendingActivity" >
         </activity>
 
         <!-- *************************************************************************************** -->
