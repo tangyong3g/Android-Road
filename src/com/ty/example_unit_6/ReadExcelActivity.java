@@ -34,7 +34,7 @@ import android.view.WindowManager;
 public class ReadExcelActivity extends Activity {
 
 	String[] names = new String[] { "杨毅伟", "李世宁", "孔令发", "雷景林", "曹世超",
-			"周达威", "马三兵", "沈星", "区永伦", "曹石磊", "翁汉良", "贺鹏飞", "诸葛秀英", "李晶", "黄伟锋" };
+			"周达威", "马三兵", "沈星", "区永伦", "曹石磊", "翁汉良", "贺鹏飞", "诸葛秀英", "李晶", "黄伟锋","汤勇" };
 
 	Map<String, List<Person>> datas = new HashMap<String, List<Person>>();
 	// 排好的队列

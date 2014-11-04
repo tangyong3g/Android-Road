@@ -26,11 +26,7 @@ import android.widget.LinearLayout;
 /**
  * 本单元内容是要掌握多种混合的方法
  * 
- * 
- * 
  * @author tangyong
- * 
- * 
  * 
  * 
  */
@@ -38,8 +34,30 @@ import android.widget.LinearLayout;
 public class BelendingActivity extends Activity {
 
 	XfModelSimpleView mXfView;
-
 	LinearLayout mContainer;
+	SimpleView mSimple;
+
+	private final Xfermode[] sModes = {
+			new PorterDuffXfermode(PorterDuff.Mode.CLEAR),
+			new PorterDuffXfermode(PorterDuff.Mode.SRC),
+			new PorterDuffXfermode(PorterDuff.Mode.DST),
+			new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER),
+			new PorterDuffXfermode(PorterDuff.Mode.DST_OVER),
+			new PorterDuffXfermode(PorterDuff.Mode.SRC_IN),
+			new PorterDuffXfermode(PorterDuff.Mode.DST_IN),
+			new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT),
+			new PorterDuffXfermode(PorterDuff.Mode.DST_OUT),
+			new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP),
+			new PorterDuffXfermode(PorterDuff.Mode.DST_ATOP),
+			new PorterDuffXfermode(PorterDuff.Mode.XOR),
+			new PorterDuffXfermode(PorterDuff.Mode.DARKEN),
+			new PorterDuffXfermode(PorterDuff.Mode.LIGHTEN),
+			new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY),
+			new PorterDuffXfermode(PorterDuff.Mode.SCREEN) };
+
+	private final String[] sLabels = { "Clear", "Src", "Dst", "SrcOver",
+			"DstOver", "SrcIn", "DstIn", "SrcOut", "DstOut", "SrcATop",
+			"DstATop", "Xor", "Darken", "Lighten", "Multiply", "Screen" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +67,15 @@ public class BelendingActivity extends Activity {
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
 		mXfView = new XfModelSimpleView(this);
-		mXfView.setLayoutParams(params);
+		// mXfView.setLayoutParams(params);
 
 		mContainer = new LinearLayout(this);
 		mContainer.setOrientation(LinearLayout.VERTICAL);
 
-		mContainer.addView(mXfView);
+		mSimple = new SimpleView(this);
 
+		// mContainer.addView(mXfView);
+		mContainer.addView(mSimple);
 		setContentView(mContainer);
 	}
 
@@ -71,28 +91,6 @@ public class BelendingActivity extends Activity {
 		private Bitmap mSrcB;
 		private Bitmap mDstB;
 		private Shader mBG; // background checker-board pattern
-
-		private final Xfermode[] sModes = {
-				new PorterDuffXfermode(PorterDuff.Mode.CLEAR),
-				new PorterDuffXfermode(PorterDuff.Mode.SRC),
-				new PorterDuffXfermode(PorterDuff.Mode.DST),
-				new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER),
-				new PorterDuffXfermode(PorterDuff.Mode.DST_OVER),
-				new PorterDuffXfermode(PorterDuff.Mode.SRC_IN),
-				new PorterDuffXfermode(PorterDuff.Mode.DST_IN),
-				new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT),
-				new PorterDuffXfermode(PorterDuff.Mode.DST_OUT),
-				new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP),
-				new PorterDuffXfermode(PorterDuff.Mode.DST_ATOP),
-				new PorterDuffXfermode(PorterDuff.Mode.XOR),
-				new PorterDuffXfermode(PorterDuff.Mode.DARKEN),
-				new PorterDuffXfermode(PorterDuff.Mode.LIGHTEN),
-				new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY),
-				new PorterDuffXfermode(PorterDuff.Mode.SCREEN) };
-
-		private final String[] sLabels = { "Clear", "Src", "Dst", "SrcOver",
-				"DstOver", "SrcIn", "DstIn", "SrcOut", "DstOut", "SrcATop",
-				"DstATop", "Xor", "Darken", "Lighten", "Multiply", "Screen" };
 
 		public XfModelSimpleView(Context context) {
 			super(context);
@@ -114,15 +112,60 @@ public class BelendingActivity extends Activity {
 		protected void onDraw(Canvas canvas) {
 			super.onDraw(canvas);
 
+			canvas.drawColor(Color.WHITE);
+			// 启用抗锯齿
+			Paint labelP = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			// 设置文本位置
+			labelP.setTextAlign(Paint.Align.CENTER);
+
+			// 画笔
 			Paint paint = new Paint();
-			
-			paint.setColor(Color.rgb(255, 0, 0));
-			canvas.drawRect(0, 0, 100, 100, paint);
-			paint.setXfermode(sModes[3]);
-			paint.setColor(Color.rgb(0, 255, 0));
-			canvas.drawRect(0, 0, 50, 50, paint);
-			
-			
+			paint.setFilterBitmap(false);
+
+			// 移动画布
+			canvas.translate(15, 35);
+
+			int x = 0;
+			int y = 0;
+
+			for (int i = 0; i < sModes.length; i++) {
+
+				paint.setStyle(Paint.Style.STROKE);
+				paint.setShader(null);
+				canvas.drawRect(x - 0.5f, y - 0.5f, x + W + 0.5f, y + H + 0.5f,
+						paint);
+
+				paint.setStyle(Paint.Style.FILL);
+				paint.setShader(mBG);
+				canvas.drawRect(x, y, x + W, y + H, paint);
+
+				/*	*/
+				int sc = canvas.saveLayer(x, y, x + W, y + H, null,
+						Canvas.MATRIX_SAVE_FLAG | Canvas.CLIP_SAVE_FLAG
+								| Canvas.HAS_ALPHA_LAYER_SAVE_FLAG
+								| Canvas.FULL_COLOR_LAYER_SAVE_FLAG
+								| Canvas.CLIP_TO_LAYER_SAVE_FLAG);
+
+				canvas.translate(x, y);
+				canvas.drawBitmap(mDstB, 0, 0, paint);
+				paint.setXfermode(sModes[i]);
+				canvas.drawBitmap(mSrcB, 0, 0, paint);
+				paint.setXfermode(null);
+				canvas.restoreToCount(sc);
+
+				canvas.drawText(sLabels[i], x + W / 2, y - labelP.getTextSize()
+						/ 2, labelP);
+
+				x += W + 10;
+
+				// wrap around when we've drawn enough for one row
+				if ((i % ROW_MAX) == ROW_MAX - 1) {
+					x = 0;
+					y += H + 30;
+				}
+
+			}
 		}
 
 		/**
@@ -158,27 +201,83 @@ public class BelendingActivity extends Activity {
 			}
 		}
 
-		// create a bitmap with a circle, used for the "dst" image
-		Bitmap makeDst(int w, int h) {
-			Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-			Canvas c = new Canvas(bm);
-			Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+	}
 
-			p.setColor(0xFFFFCC44);
-			c.drawOval(new RectF(0, 0, w * 3 / 4, h * 3 / 4), p);
-			return bm;
+	/**
+	 * 
+	 * @author tangyong
+	 * 
+	 */
+	class SimpleView extends View {
+
+		Bitmap mSrc;
+		Bitmap mDesc;
+		Matrix mMatrix = new Matrix();
+
+		public SimpleView(Context context) {
+			super(context);
+
+			mSrc = makeSrcDemo(200, 200);
+			mDesc = makeDstDemo(200, 200);
 		}
 
-		// create a bitmap with a rect, used for the "src" image
-		Bitmap makeSrc(int w, int h) {
-			Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-			Canvas c = new Canvas(bm);
-			Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+		@Override
+		protected void onDraw(Canvas canvas) {
+			super.onDraw(canvas);
 
-			p.setColor(0xFF66AAFF);
-			c.drawRect(w / 3, h / 3, w * 19 / 20, h * 19 / 20, p);
-			return bm;
+			Paint paint = new Paint();
+			canvas.drawBitmap(mSrc, mMatrix, paint);
+			paint.setXfermode(sModes[4]);
+			canvas.drawBitmap(mDesc, mMatrix, paint);
+			paint.setXfermode(null);
 		}
+	}
+
+	// create a bitmap with a circle, used for the "dst" image
+	Bitmap makeDstDemo(int w, int h) {
+		Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+		Canvas c = new Canvas(bm);
+		Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+		p.setColor(Color.argb(1, 0, 255, 0));
+		c.drawOval(new RectF(0, 0, w, h), p);
+		return bm;
+	}
+
+	// create a bitmap with a rect, used for the "src" image
+	Bitmap makeSrcDemo(int w, int h) {
+		Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+		Canvas c = new Canvas(bm);
+		Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+		p.setColor(Color.argb(255, 255, 0, 0));
+		c.drawRect(0, 0, w, h, p);
+		return bm;
+	}
+
+	// create a bitmap with a circle, used for the "dst" image
+	Bitmap makeDst(int w, int h) {
+
+		Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+		Canvas c = new Canvas(bm);
+		Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+		p.setColor(0xFFFFCC44);
+		c.drawOval(new RectF(0, 0, w * 3 / 4, h * 3 / 4), p);
+		return bm;
+
+	}
+
+	// create a bitmap with a rect, used for the "src" image
+	Bitmap makeSrc(int w, int h) {
+
+		Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+		Canvas c = new Canvas(bm);
+		Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+		p.setColor(Color.RED);
+		c.drawRect(0, 0, w, h, p);
+		return bm;
+
 	}
 
 }
