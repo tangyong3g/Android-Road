@@ -24,7 +24,7 @@ public class UnitFourActivity extends ListActivity {
 			"FullScreen", "Looper", "Animation", "Meminfo", "powerConnectd",
 			"图形", "canvas", "blending", "bitmap", "Handler", "Layout",
 			"View_save", "List", "VewCycle", "DislayMetrics",
-			"WallpaperManager", "双缓冲", "混合" };
+			"WallpaperManager", "双缓冲", "混合" ,"属性动画" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +124,14 @@ public class UnitFourActivity extends ListActivity {
 		case 19:
 
 			cls = BelendingActivity.class;
+			
+			break;
+			
+		case 20:
+			
+			cls = AttriAnimationActivity.class;
+			
+			break;
 
 		default:
 
