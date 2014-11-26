@@ -32,5 +32,8 @@
     
     
     <string name="choice_color">选择色彩</string>
+    
+    <string name="error_demo_one">running error following code</string>
+    <string name="right_demo_one">running right following code</string>
 
 </resources>
