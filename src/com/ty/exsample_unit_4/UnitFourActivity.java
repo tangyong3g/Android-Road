@@ -20,15 +20,17 @@ import com.ty.exsample_unit_4.animation.AnimationActivity;
  */
 public class UnitFourActivity extends ListActivity {
 
-	String[] units = new String[] { "AssetManager", "SurfaceViewTest", "FullScreen", "Looper",
-			"Animation", "Meminfo", "powerConnectd", "图形", "canvas", "blending", "bitmap",
-			"Handler", "Layout", "View_save", "List", "VewCycle", "DislayMetrics",
-			"WallpaperManager", "双缓冲", "混合", "属性动画", "ConcurrentModificationException" };
+	String[] units = new String[] { "AssetManager", "SurfaceViewTest",
+			"FullScreen", "Looper", "Animation", "Meminfo", "powerConnectd",
+			"图形", "canvas", "blending", "bitmap", "Handler", "Layout",
+			"View_save", "List", "VewCycle", "DislayMetrics",
+			"WallpaperManager", "双缓冲", "混合" ,"属性动画" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items,
+				units));
 	}
 
 	@Override
@@ -38,107 +40,102 @@ public class UnitFourActivity extends ListActivity {
 		Class cls = null;
 		String componentName = null;
 		switch (position) {
-			case 0 :
-				cls = AssetsActivity.class;
-				break;
-			case 1 :
-				cls = SurfaceViewTest.class;
-				break;
-			case 2 :
-				cls = FullScreenTest.class;
-				break;
-			case 3 :
-				cls = LooperActivity.class;
-				break;
-			case 4 :
-				cls = AnimationActivity.class;
-				break;
-			case 5 :
-				cls = MeminfoActivity.class;
-				break;
-			case 6 :
+		case 0:
+			cls = AssetsActivity.class;
+			break;
+		case 1:
+			cls = SurfaceViewTest.class;
+			break;
+		case 2:
+			cls = FullScreenTest.class;
+			break;
+		case 3:
+			cls = LooperActivity.class;
+			break;
+		case 4:
+			cls = AnimationActivity.class;
+			break;
+		case 5:
+			cls = MeminfoActivity.class;
+			break;
+		case 6:
 
-				cls = PowerConnectActivity.class;
-				break;
-			case 7 :
-				cls = GrapicActivity.class;
-				break;
-			case 8 :
-				cls = CanvasDemoActivity.class;
+			cls = PowerConnectActivity.class;
+			break;
+		case 7:
+			cls = GrapicActivity.class;
+			break;
+		case 8:
+			cls = CanvasDemoActivity.class;
 
-				break;
-			case 9 :
+			break;
+		case 9:
 
-				cls = MomentTest.class;
-				break;
-			case 10 :
+			cls = MomentTest.class;
+			break;
+		case 10:
 
-				cls = BitmapActivity.class;
-				break;
+			cls = BitmapActivity.class;
+			break;
 
-			case 11 :
+		case 11:
 
-				cls = HandlerTestActivity.class;
+			cls = HandlerTestActivity.class;
 
-				break;
+			break;
 
-			case 12 :
+		case 12:
 
-				cls = LayoutActivity.class;
+			cls = LayoutActivity.class;
 
-				break;
-			case 13 :
+			break;
+		case 13:
 
-				componentName = "com.ty.exsample_unit_4.CanvaseSaveRsView";
+			componentName = "com.ty.exsample_unit_4.CanvaseSaveRsView";
 
-				break;
-			case 14 :
+			break;
+		case 14:
 
-				cls = List1.class;
+			cls = List1.class;
 
-				break;
+			break;
 
-			case 15 :
+		case 15:
 
-				cls = ViewCycleTestActivity.class;
+			cls = ViewCycleTestActivity.class;
 
-				break;
-			case 16 :
+			break;
+		case 16:
 
-				cls = DipTestActivity.class;
+			cls = DipTestActivity.class;
 
-				break;
+			break;
 
-			case 17 :
+		case 17:
 
-				cls = WallpaperManagerTest.class;
+			cls = WallpaperManagerTest.class;
 
-				break;
-			case 18 :
+			break;
+		case 18:
 
-				cls = CacheBitmapActivity.class;
+			cls = CacheBitmapActivity.class;
 
-				break;
-			case 19 :
+			break;
+		case 19:
 
-				cls = BelendingActivity.class;
+			cls = BelendingActivity.class;
+			
+			break;
+			
+		case 20:
+			
+			cls = AttriAnimationActivity.class;
+			
+			break;
 
-				break;
+		default:
 
-			case 20 :
-
-				cls = AttriAnimationActivity.class;
-
-				break;
-			case 21 :
-
-				cls = ConcurrentModificationExceptionActivity.class;
-
-				break;
-
-			default :
-
-				break;
+			break;
 		}
 
 		if (cls != null) {

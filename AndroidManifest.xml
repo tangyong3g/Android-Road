@@ -171,15 +171,13 @@
         </activity>
         <activity android:name="com.ty.exsample_unit_4.BelendingActivity" >
         </activity>
+
+        
         <activity android:name="com.ty.exsample_unit_4.AttriAnimationActivity" >
         </activity>
         <activity android:name="com.ty.exsample_unit_4.AttriAnimationXMLActivity" >
         </activity>
         <activity android:name="com.ty.exsample_unit_4.AttriAnimationLayoutActivity" >
-        </activity>
-        
-        
-        <activity android:name="com.ty.exsample_unit_4.ConcurrentModificationExceptionActivity" >
         </activity>
 
         <!-- *************************************************************************************** -->
