@@ -23,7 +23,7 @@ public class UnitFourActivity extends ListActivity {
 	String[] units = new String[] { "AssetManager", "SurfaceViewTest", "FullScreen", "Looper",
 			"Animation", "Meminfo", "powerConnectd", "图形", "canvas", "blending", "bitmap",
 			"Handler", "Layout", "View_save", "List", "VewCycle", "DislayMetrics",
-			"WallpaperManager", "双缓冲", "混合", "属性动画", "ConcurrentModificationException" };
+			"WallpaperManager", "双缓冲", "混合", "属性动画", "ConcurrentModificationException" , "异步任务" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,18 +68,14 @@ public class UnitFourActivity extends ListActivity {
 
 				break;
 			case 9 :
-
 				cls = MomentTest.class;
 				break;
 			case 10 :
-
 				cls = BitmapActivity.class;
 				break;
 
 			case 11 :
-
 				cls = HandlerTestActivity.class;
-
 				break;
 
 			case 12 :
@@ -134,6 +130,11 @@ public class UnitFourActivity extends ListActivity {
 
 				cls = ConcurrentModificationExceptionActivity.class;
 
+				break;
+			case 22:
+				
+				cls = SyncTaskActivity.class;
+					
 				break;
 
 			default :

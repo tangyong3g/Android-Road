@@ -180,6 +180,8 @@
         </activity>
         <activity android:name="com.ty.exsample_unit_4.ConcurrentModificationExceptionActivity" >
         </activity>
+        <activity android:name="com.ty.exsample_unit_4.SyncTaskActivity" >
+        </activity>
 
         <!-- *************************************************************************************** -->
 
