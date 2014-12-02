@@ -17,13 +17,12 @@ import com.ty.exsample_unit_5.translate.TranslateActivity;
 
 public class UnitSixActivity extends ListActivity {
 
-	String[] units = new String[] { "可滑动的选择条","颜色选择器","色相亮度饱和度" ,"方形","图片模糊","读取Excele"};
+	String[] units = new String[] { "可滑动的选择条", "颜色选择器", "色相亮度饱和度", "方形", "图片模糊", "读取Excele", "上传下载" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items,
-				units));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
 	}
 
 	@Override
@@ -32,42 +31,42 @@ public class UnitSixActivity extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 		Class cls = null;
 		switch (position) {
-		case 0:
-			showSeekBar();
-			break;
-		case 1:
-			cls = ColorSelectorActivity.class;
-			break;
-		case 2:
-			break;
-		case 3:
-			cls = RectColorActivity.class;
-			break;
-		case 4:
-			cls = BlurpicActivity.class;
-			break;
-		case 5:
-			cls = ReadExcelActivity.class;
-			break;
-		case 6:
-		
-			break;
-		case 7:
-			break;
-		default:
-			break;
+			case 0 :
+				showSeekBar();
+				break;
+			case 1 :
+				cls = ColorSelectorActivity.class;
+				break;
+			case 2 :
+				break;
+			case 3 :
+				cls = RectColorActivity.class;
+				break;
+			case 4 :
+				cls = BlurpicActivity.class;
+				break;
+			case 5 :
+				cls = ReadExcelActivity.class;
+				break;
+			case 6 :
+				cls = UploadFile.class;
+				
+				break;
+			case 7 :
+				break;
+			default :
+				break;
 		}
 		intentToActivity(cls);
 	}
-	
-	
-	private void showSeekBar(){
-		DockLineDialog dialog = new DockLineDialog(this,1,"Dialog title");
+
+	private void showSeekBar() {
+		DockLineDialog dialog = new DockLineDialog(this, 1, "Dialog title");
 		dialog.show();
 	}
 
 	private void intentToActivity(Class cls) {
-		if(cls==null)
+		if (cls == null)
 			return;
 		Intent intent = new Intent();
 		intent.setClass(this, cls);
