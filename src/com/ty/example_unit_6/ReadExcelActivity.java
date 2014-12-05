@@ -1,30 +1,40 @@
 package com.ty.example_unit_6;
 
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-import com.ty.exsample_unit_4.Hsb;
+import com.example.android_begin_gl_3d.ScreenInfo;
+import com.ty.crashreport.Application;
+import com.ty.exsample.R;
+import com.ty.util.Utils;
 
 import jxl.Sheet;
 import jxl.Workbook;
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.os.AsyncTask;
+import android.os.AsyncTask.Status;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 /**
  * 
@@ -33,37 +43,28 @@ import android.view.WindowManager;
  */
 public class ReadExcelActivity extends Activity {
 
-	String[] names = new String[] { "杨毅伟", "李世宁", "孔令发", "雷景林", "曹世超",
-			"周达威", "马三兵", "沈星", "区永伦", "曹石磊", "翁汉良", "贺鹏飞", "诸葛秀英", "李晶", "黄伟锋","汤勇" };
+	
 
 	Map<String, List<Person>> datas = new HashMap<String, List<Person>>();
 	// 排好的队列
 	List<Person> sortArray = new ArrayList<ReadExcelActivity.Person>();
+
+	ReadSyncTask mReadSyncTask;
+	SimpleView mSimpleView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		// 設置全屏
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		// 取消標題
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-		final SimpleView view = new SimpleView(this);
-
-		setContentView(view);
-
-		Thread t = new Thread() {
-
-			public void run() {
-				readExcel();
-				view.postInvalidate();
-			};
-		};
-
-		t.start();
-
+		mSimpleView = new SimpleView(this);
+		setContentView(mSimpleView);
+		
+		mReadSyncTask = new ReadSyncTask();
+		mReadSyncTask.execute(0, 0, 0);
 	}
 
 	/**
@@ -77,8 +78,9 @@ public class ReadExcelActivity extends Activity {
 		int width;
 		int height;
 		Rect rect;
-		
 		Comparator<Person> comparator;
+
+		public float mShowPercent;
 
 		public SimpleView(Context context) {
 			super(context);
@@ -86,19 +88,32 @@ public class ReadExcelActivity extends Activity {
 			mPaint = new Paint();
 			mPaint.setStrokeWidth(2);
 			rect = new Rect();
-			
+
 			comparator = new PersonComparetor();
 
-			width = com.ty.crashreport.Application.getInstance()
-					.getScreenInfo().getmWidth();
-			height = com.ty.crashreport.Application.getInstance()
-					.getScreenInfo().getmHeight();
+			width = com.ty.crashreport.Application.getInstance().getScreenInfo().getmWidth();
+			height = com.ty.crashreport.Application.getInstance().getScreenInfo().getmHeight();
+
+		}
+
+		public void drawProcess(int process, Canvas canvas) {
 
 		}
 
 		@Override
 		protected void onDraw(Canvas canvas) {
 			super.onDraw(canvas);
+
+			//绘制进度
+			if (mReadSyncTask != null && (mReadSyncTask.getStatus() == Status.RUNNING )) {
+
+				mPaint.setColor(Color.BLACK);
+				String text = mShowPercent + "%";
+				ScreenInfo info = Application.getInstance().getScreenInfo();
+				int x = info.getmWidth() / 2;
+				int y = info.getmHeight() / 2;
+				canvas.drawText(text, x, y, mPaint);
+			}
 
 			mPaint.setColor(Color.BLUE);
 			// 绘制Y轴
@@ -130,116 +145,50 @@ public class ReadExcelActivity extends Activity {
 
 			}
 
-			if (sortArray != null && sortArray.size() > 0) {
-				
-				Collections.sort(sortArray, comparator);
+			//处理完成才开始绘制
+			if (mReadSyncTask != null && mReadSyncTask.getStatus() == Status.FINISHED) {
 
-				int size = datas.size();
-				int index = 0;
-				float widhtPer = width / size;
+				if (sortArray != null && sortArray.size() > 0) {
 
-				for (Person personTemp : sortArray) {
-					
-					String name = personTemp.name;
-					float workTime = personTemp.avg;
-					workTime -= 9.5;
-					float resultHeight = workTime * height / 24;
+					Collections.sort(sortArray, comparator);
 
-					Log.i("data_a", workTime + "" + name);
+					int size = datas.size();
+					int index = 0;
+					float widhtPer = width / size;
 
-					float left = (index++) * widhtPer + 10;
-					float top = height - resultHeight - 10;
-					float right = left + widhtPer / 2;
-					float bottom = height-10;
+					for (Person personTemp : sortArray) {
 
-					Log.i("rect", "");
+						String name = personTemp.name;
+						float workTime = personTemp.avg;
+						workTime -= 9.5;
+						float resultHeight = workTime * height / 24;
 
-					rect.left = (int) left;
-					rect.top = (int) top;
-					rect.right = (int) right;
-					rect.bottom = (int) bottom;
+						Log.i("data_a", workTime + "" + name);
 
-					canvas.drawRect(rect, mPaint);
-					
-					String text = name+":"+workTime;
-					//绘制名字和时间
-					canvas.drawText(text, left, top - 10, mPaint);
-					
+						float left = (index++) * widhtPer + 10;
+						float top = height - resultHeight - 10;
+						float right = left + widhtPer / 2;
+						float bottom = height - 10;
+
+						Log.i("rect", "");
+
+						rect.left = (int) left;
+						rect.top = (int) top;
+						rect.right = (int) right;
+						rect.bottom = (int) bottom;
+
+						canvas.drawRect(rect, mPaint);
+
+						String text = name + ":" + workTime;
+						//绘制名字和时间
+						canvas.drawText(text, left, top - 10, mPaint);
+
+					}
 				}
 			}
 
 		}
 	}
-
-	public void readExcel() {
-
-		try {
-			InputStream is = getResources().getAssets().open("ex.xls");
-			Workbook book = Workbook.getWorkbook(is);
-
-			book.getNumberOfSheets();
-			// 获得第一个工作表对象
-			Sheet sheet = book.getSheet(0);
-			int Rows = sheet.getRows();
-			int Cols = sheet.getColumns();
-			
-
-			for (int i = 0; i < Rows; ++i) {
-
-				String name = sheet.getCell(1, i).getContents();
-				String time = sheet.getCell(2, i).getContents();
-
-				// 判断用户有效性
-				if (!isPersonAva(name) || !isRowAva(time)) {
-					continue;
-				}
-
-				ArrayList<Person> arrayData;
-
-				// 判断就存在
-				if (!isExist(name)) {
-
-					arrayData = new ArrayList<ReadExcelActivity.Person>();
-					datas.put(name, arrayData);
-					
-					Person t = new Person();
-					t.name = name;
-					
-					sortArray.add(t);
-
-				} else {
-					arrayData = (ArrayList<ReadExcelActivity.Person>) datas
-							.get(name);
-				}
-
-				// 每一行对应一个人的数据
-				Person p = new Person();
-
-				String nameTemp = sheet.getCell(1, i).getContents();
-				String timeStr = sheet.getCell(2, i).getContents();
-
-				p.name = nameTemp;
-				p.timeStr = timeStr;
-
-				Log.i("data", p.toString());
-
-				// 添加进来
-				arrayData.add(p);
-			}
-			
-			for(Person p : sortArray){
-				
-				String name =p.name;
-				p.avg =calculateAvgForPerson(name);
-				
-			}
-			
-			book.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	public boolean isExist(String name) {
 
 		boolean result = false;
@@ -263,11 +212,11 @@ public class ReadExcelActivity extends Activity {
 
 		boolean result = false;
 
-		int lenght = names.length;
+		int lenght = Utils.names.length;
 
 		for (int i = 0; i < lenght; i++) {
 
-			String nameTemp = names[i];
+			String nameTemp = Utils.names[i];
 
 			if (nameTemp.equals(name)) {
 				result = true;
@@ -286,8 +235,7 @@ public class ReadExcelActivity extends Activity {
 
 		float result = 0;
 
-		ArrayList<Person> array = (ArrayList<ReadExcelActivity.Person>) datas
-				.get(name);
+		ArrayList<Person> array = (ArrayList<ReadExcelActivity.Person>) datas.get(name);
 
 		int size = array.size();
 		float totalTime = 0.0f;
@@ -334,20 +282,155 @@ public class ReadExcelActivity extends Activity {
 			return name + getTime();
 		}
 
+		public boolean isWeekDay() {
+			boolean result = true;
+
+			if (TextUtils.isEmpty(timeStr)) {
+				result = true;
+			}
+
+			CharSequence dataStr = timeStr.subSequence(0, timeStr.indexOf("下午"));
+			Date d = StringToDate(dataStr.toString(), "yyyy-MM-dd");
+
+			if (d.getDay() == 0 || d.getDay() == 6) {
+				result = false;
+			}
+
+			Log.i("testdata", timeStr + "\t" + result);
+			return result;
+		}
+
+		public Date StringToDate(String dateStr, String formatStr) {
+			DateFormat sdf = new SimpleDateFormat(formatStr);
+			Date date = null;
+			try {
+				date = sdf.parse(dateStr);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			return date;
+		}
+
 	}
 
 	class PersonComparetor implements Comparator<Person> {
 
 		@Override
 		public int compare(Person lhs, Person rhs) {
-			
-			if(lhs.avg > rhs.avg){
+
+			if (lhs.avg > rhs.avg) {
 				return 1;
-			}else if(lhs.avg == rhs.avg){
+			} else if (lhs.avg == rhs.avg) {
 				return 0;
-			}else{
+			} else {
 				return -1;
 			}
+		}
+	}
+
+	class ReadSyncTask extends AsyncTask<Integer, Float, Integer> {
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			Toast.makeText(ReadExcelActivity.this.getApplicationContext(), R.string.read_start, 1000).show();
+		}
+
+		@Override
+		protected Integer doInBackground(Integer... params) {
+
+			try {
+				InputStream is = getResources().getAssets().open("11.xls");
+				Workbook book = Workbook.getWorkbook(is);
+
+				book.getNumberOfSheets();
+				// 获得第一个工作表对象
+				Sheet sheet = book.getSheet(0);
+				int Rows = sheet.getRows();
+				int Cols = sheet.getColumns();
+
+				for (int i = 0; i < Rows; ++i) {
+
+					String name = sheet.getCell(1, i).getContents();
+					String time = sheet.getCell(2, i).getContents();
+
+					// 判断用户有效性
+					if (!isPersonAva(name) || !isRowAva(time)) {
+						continue;
+					}
+
+					publishProgress((float) i / Rows);
+
+					ArrayList<Person> arrayData;
+
+					// 判断就存在
+					if (!isExist(name)) {
+
+						arrayData = new ArrayList<ReadExcelActivity.Person>();
+						datas.put(name, arrayData);
+
+						Person t = new Person();
+						t.name = name;
+
+						sortArray.add(t);
+
+					} else {
+						arrayData = (ArrayList<ReadExcelActivity.Person>) datas.get(name);
+					}
+
+					// 每一行对应一个人的数据
+					Person p = new Person();
+
+					String nameTemp = sheet.getCell(1, i).getContents();
+					String timeStr = sheet.getCell(2, i).getContents();
+
+					p.name = nameTemp;
+					p.timeStr = timeStr;
+
+					if (p.isWeekDay()) {
+						// 添加进来
+						arrayData.add(p);
+
+					}
+				}
+
+				for (Person p : sortArray) {
+
+					String name = p.name;
+					p.avg = calculateAvgForPerson(name);
+
+				}
+
+				book.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			return null;
+		}
+
+		@Override
+		protected void onProgressUpdate(Float... values) {
+			// TODO
+			super.onProgressUpdate(values);
+
+			if (mSimpleView != null) {
+
+				mSimpleView.invalidate();
+				mSimpleView.mShowPercent = values[0];
+
+			}
+		}
+
+		@Override
+		protected void onPostExecute(Integer result) {
+			super.onPostExecute(result);
+			
+			if (mSimpleView != null) {
+				mSimpleView.invalidate();
+			}
+			
+			Toast.makeText(ReadExcelActivity.this.getApplicationContext(), R.string.read_finish, 1000).show();
 		}
 
 	}
