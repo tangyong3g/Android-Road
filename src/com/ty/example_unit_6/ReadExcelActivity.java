@@ -239,11 +239,38 @@ public class ReadExcelActivity extends Activity {
 
 		int size = array.size();
 		float totalTime = 0.0f;
+		
 
 		for (Person p : array) {
 
 			totalTime += p.getTime();
 
+		}
+
+		result = totalTime / size;
+
+		return result;
+	}
+	
+	
+	public float calculateMorAvgForPerson(String name) {
+
+		if (datas.size() == 0) {
+			return 0.0f;
+		}
+
+		float result = 0;
+
+		ArrayList<Person> array = (ArrayList<ReadExcelActivity.Person>) datas.get(name);
+
+		int size = array.size();
+		float totalTime = 0.0f;
+		
+
+		for (Person p : array) {
+			
+			totalTime += p.getMorTime();
+			
 		}
 
 		result = totalTime / size;
@@ -257,8 +284,27 @@ public class ReadExcelActivity extends Activity {
 		public float time;
 		public String date;
 		public float avg;
+		public float mor_avg;
 
 		public String timeStr;
+		
+		
+		public float getMorTime(){
+			
+			if (TextUtils.isEmpty(timeStr)) {
+				return 0.0f;
+			}
+			int afterNindex = timeStr.indexOf("上午");
+			String str = timeStr.substring(afterNindex + 3, timeStr.length());
+
+			String hourStr = str.substring(0, 2);
+			String minStr = str.substring(3, 5);
+
+			int hour = Integer.parseInt(hourStr) + 12;
+			float min = Integer.parseInt(minStr) / (float) 60;
+
+			return hour + min;
+		}
 
 		public float getTime() {
 
@@ -398,7 +444,7 @@ public class ReadExcelActivity extends Activity {
 
 					String name = p.name;
 					p.avg = calculateAvgForPerson(name);
-
+					p.mor_avg = calculateMorAvgForPerson(name);
 				}
 
 				book.close();
