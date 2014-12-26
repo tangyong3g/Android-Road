@@ -182,6 +182,7 @@
         </activity>
         <activity android:name="com.ty.exsample_unit_4.SyncTaskActivity" >
         </activity>
+        <activity android:name="com.ty.exsample_unit_4.DeviceInfomation"></activity>
 
         <!-- *************************************************************************************** -->
 

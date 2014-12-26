@@ -37,7 +37,6 @@
                 android:background="@drawable/unit6_seekbar_setting_blue_line" />
 
             <RelativeLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:clipChildren="false"
@@ -47,7 +46,7 @@
 
                 <!-- 第一个滑动条 -->
                 <TextView
-                    android:id="@+android:id/rowSettingMessage"
+                    android:id="@+id/rowSettingMessage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@android:id/title"
@@ -59,11 +58,10 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <SeekBar
-                    android:id="@+android:id/mRowBar"
+                    android:id="@+id/mRowBar"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@android:id/rowSettingMessage"
-                    android:layout_below="@android:id/rowSettingMessage"
+                    android:layout_alignLeft="@+id/rowSettingMessage"
                     android:maxHeight="4dp"
                     android:minHeight="4dp"
                     android:progressDrawable="@drawable/unit6_seekbar"
@@ -71,11 +69,10 @@
                     android:paddingRight="15dp" />
 
                 <TextView
-                    android:id="@+android:id/rowActualValue"
+                    android:id="@+id/rowActualValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@android:id/mRowBar"
-                    android:layout_below="@android:id/mRowBar"
+                    android:layout_alignLeft="@+id/mRowBar"
                     android:maxLines="1"
                     android:paddingLeft="15dp"
                     android:textAppearance="?android:attr/textAppearanceSmall" />

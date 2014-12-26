@@ -1,6 +1,7 @@
 package com.ty.exsample_unit_4;
 
 import android.app.ListActivity;
+import android.app.admin.DeviceAdminInfo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,10 +21,8 @@ import com.ty.exsample_unit_4.animation.AnimationActivity;
  */
 public class UnitFourActivity extends ListActivity {
 
-	String[] units = new String[] { "AssetManager", "SurfaceViewTest", "FullScreen", "Looper",
-			"Animation", "Meminfo", "powerConnectd", "图形", "canvas", "blending", "bitmap",
-			"Handler", "Layout", "View_save", "List", "VewCycle", "DislayMetrics",
-			"WallpaperManager", "双缓冲", "混合", "属性动画", "ConcurrentModificationException" , "异步任务" };
+	String[] units = new String[] { "AssetManager", "SurfaceViewTest", "FullScreen", "Looper", "Animation", "Meminfo", "powerConnectd", "图形", "canvas", "blending", "bitmap",
+			"Handler", "Layout", "View_save", "List", "VewCycle", "DislayMetrics", "WallpaperManager", "双缓冲", "混合", "属性动画", "ConcurrentModificationException", "异步任务", "DeviceInfo" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -131,10 +130,15 @@ public class UnitFourActivity extends ListActivity {
 				cls = ConcurrentModificationExceptionActivity.class;
 
 				break;
-			case 22:
-				
+			case 22 :
+
 				cls = SyncTaskActivity.class;
-					
+
+				break;
+			case 23 :
+
+				cls = DeviceInfomation.class;
+
 				break;
 
 			default :
