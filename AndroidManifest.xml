@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    
     <!--  -->
     <supports-screens
         android:anyDensity="true"
@@ -182,7 +184,8 @@
         </activity>
         <activity android:name="com.ty.exsample_unit_4.SyncTaskActivity" >
         </activity>
-        <activity android:name="com.ty.exsample_unit_4.DeviceInfomation"></activity>
+        <activity android:name="com.ty.exsample_unit_4.DeviceInfomation" >
+        </activity>
 
         <!-- *************************************************************************************** -->
 
@@ -243,6 +246,13 @@
         </activity>
         <activity android:name="com.example.android_begin_gl_3d.unit_8.ViewRenderActivity" >
         </activity>
+
+        <!-- Android device API GUIDS -->
+        <activity android:name="com.exsample.apiguids.APIGUIDS" />
+        <activity android:name="com.exsample.apiguids.userinterface.UserInterfaceMain" />
+        <activity android:name="com.exsample.apiguids.userinterface.LinearLayoutTest" />
+        <activity android:name="com.exsample.apiguids.userinterface.RalativeLayoutTest" />
+        <activity android:name="com.exsample.apiguids.userinterface.ListViewTest" />
     </application>
 
 </manifest>
