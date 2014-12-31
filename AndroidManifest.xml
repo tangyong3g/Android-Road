@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    
+
     <!--  -->
     <supports-screens
         android:anyDensity="true"
@@ -226,6 +226,7 @@
         </activity>
         <activity android:name="com.ty.example_unit_6.UploadFile" >
         </activity>
+        <activity android:name="com.ty.example_unit_6.SVGACtivityTest" />
 
         <!-- 第7单元　shell engine -->
         <activity android:name="com.example.android_begin_gl_3d.unit_7.ShellEngineActivity" >

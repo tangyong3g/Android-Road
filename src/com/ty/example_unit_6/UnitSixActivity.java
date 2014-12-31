@@ -17,7 +17,7 @@ import com.ty.exsample_unit_5.translate.TranslateActivity;
 
 public class UnitSixActivity extends ListActivity {
 
-	String[] units = new String[] { "可滑动的选择条", "颜色选择器", "色相亮度饱和度", "方形", "图片模糊", "读取Excele", "上传下载" };
+	String[] units = new String[] { "可滑动的选择条", "颜色选择器", "色相亮度饱和度", "方形", "图片模糊", "读取Excele", "上传下载", "SVG" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +50,12 @@ public class UnitSixActivity extends ListActivity {
 				break;
 			case 6 :
 				cls = UploadFile.class;
-				
+
 				break;
 			case 7 :
+
+				cls = SVGACtivityTest.class;
+
 				break;
 			default :
 				break;
