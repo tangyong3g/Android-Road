@@ -247,6 +247,7 @@
         </activity>
         <activity android:name="com.example.android_begin_gl_3d.unit_8.ViewRenderActivity" >
         </activity>
+        
 
         <!-- Android device API GUIDS -->
         <activity android:name="com.exsample.apiguids.APIGUIDS" />
@@ -254,6 +255,8 @@
         <activity android:name="com.exsample.apiguids.userinterface.LinearLayoutTest" />
         <activity android:name="com.exsample.apiguids.userinterface.RalativeLayoutTest" />
         <activity android:name="com.exsample.apiguids.userinterface.ListViewTest" />
+        <activity android:name="com.exsample.apiguids.userinterface.GridViewTest" />
+        
     </application>
 
 </manifest>

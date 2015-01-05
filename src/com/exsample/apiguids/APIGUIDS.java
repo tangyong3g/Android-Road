@@ -40,15 +40,13 @@ public class APIGUIDS extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 		Class cls = null;
 		String componentName = null;
-		
+
 		switch (position) {
 
-			
 			case 0 :
 				cls = UserInterfaceMain.class;
 				break;
-				
-				
+
 			case 23 :
 				cls = DeviceInfomation.class;
 

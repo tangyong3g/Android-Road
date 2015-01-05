@@ -43,7 +43,7 @@ import android.widget.ListView;
  */
 public class UserInterfaceMain extends ListActivity {
 
-	String[] units = new String[] { "Linear Layout", "Relative Layout", "List View" };
+	String[] units = new String[] { "Linear Layout", "Relative Layout", "List View", "Grid View" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +73,11 @@ public class UserInterfaceMain extends ListActivity {
 				cls = ListViewTest.class;
 
 				break;
+			case 3 :
+
+				cls = GridViewTest.class;
+
+				break;
 			default :
 				break;
 		}
@@ -83,7 +88,6 @@ public class UserInterfaceMain extends ListActivity {
 			intentToView(componentName);
 		}
 	}
-
 	private void intentToView(String componentName) {
 		Intent intent = new Intent();
 		intent.setClass(this, BaseViewActivity.class);
