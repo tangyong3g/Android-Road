@@ -3,20 +3,17 @@ package com.ty.example_unit_6;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Picture;
-import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout.LayoutParams;
 
 import com.larvalabs.svgandroid.SVG;
 import com.larvalabs.svgandroid.SVGParser;
-import com.ty.example_unit_6.ReadExcelActivity.PersonComparetor;
-import com.ty.example_unit_6.ReadExcelActivity.SimpleView;
 import com.ty.exsample.R;
 
 /**
@@ -36,24 +33,44 @@ public class SVGACtivityTest extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.svg);
+		//		loadSVG();
+		//
+		//		//		Picture pic = loadSVG();
+		//		// Create a new ImageView
+		//		ImageView imageView = new ImageView(this);
+		//		// Set the background color to white
+		//		imageView.setBackgroundColor(Color.WHITE);
+		//		// Parse the SVG file from the resource
+		//		SVG svg = SVGParser.getSVGFromResource(getResources(), R.raw.gradients);
+		//		// Get a drawable from the parsed SVG and set it as the drawable for the ImageView
+		//		imageView.setImageDrawable(svg.createPictureDrawable());
+		//		// Set the ImageView as the content view for the Activity
+		//		setContentView(imageView);
+		//
+		//		//		SVGView view = new SVGView(this);
+		//		//		setContentView(view);
+		//		//		view.invalidate();
 
-		loadSVG();
+		showTwo();
+	}
 
-		//		Picture pic = loadSVG();
-		// Create a new ImageView
-		ImageView imageView = new ImageView(this);
-		// Set the background color to white
-		imageView.setBackgroundColor(Color.WHITE);
-		// Parse the SVG file from the resource
-		SVG svg = SVGParser.getSVGFromResource(getResources(), R.raw.gradients);
-		// Get a drawable from the parsed SVG and set it as the drawable for the ImageView
-		imageView.setImageDrawable(svg.createPictureDrawable());
-		// Set the ImageView as the content view for the Activity
-		setContentView(imageView);
+	/**
+	 *  it just support less 3.0 version 
+	  * 
+	  * @Description:
+	 */
+	private void showTwo() {
 
-//		SVGView view = new SVGView(this);
-//		setContentView(view);
-//		view.invalidate();
+		SVG svg = SVGParser.getSVGFromResource(getResources(), R.raw.slice2);
+		BitmapDrawable drawable = svg.createBitmapDrawable(this);
+
+		ImageView imageView = (ImageView) findViewById(R.id.img_show);
+		imageView.setLayoutParams(new LayoutParams(185, 185));
+		imageView.setBackgroundDrawable(drawable);
+
+//		setContentView(imageView);
+
 	}
 
 	private Picture loadSVG() {
