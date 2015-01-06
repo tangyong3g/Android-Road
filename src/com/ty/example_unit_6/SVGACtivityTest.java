@@ -75,6 +75,7 @@ public class SVGACtivityTest extends Activity {
 
 	private Picture loadSVG() {
 
+		
 		try {
 
 			mSVG = SVGParser.getSVGFromAsset(getAssets(), "data/svg/gradients.svg");

@@ -22,7 +22,8 @@ import com.ty.exsample_unit_4.animation.AnimationActivity;
 public class UnitFourActivity extends ListActivity {
 
 	String[] units = new String[] { "AssetManager", "SurfaceViewTest", "FullScreen", "Looper", "Animation", "Meminfo", "powerConnectd", "图形", "canvas", "blending", "bitmap",
-			"Handler", "Layout", "View_save", "List", "VewCycle", "DislayMetrics", "WallpaperManager", "双缓冲", "混合", "属性动画", "ConcurrentModificationException", "异步任务", "DeviceInfo" };
+			"Handler", "Layout", "View_save", "List", "VewCycle", "DislayMetrics", "WallpaperManager", "双缓冲", "混合", "属性动画", "ConcurrentModificationException", "异步任务",
+			"DeviceInfo", "Partical", "BitMapDecode" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +142,16 @@ public class UnitFourActivity extends ListActivity {
 
 				break;
 
+			case 24 :
+
+				break;
+
+			case 25 :
+
+				cls = BitMapDecodeTest.class;
+
+				break;
+
 			default :
 
 				break;
@@ -155,7 +166,6 @@ public class UnitFourActivity extends ListActivity {
 			intentToView(componentName);
 		}
 	}
-
 	private void intentToView(String componentName) {
 		Intent intent = new Intent();
 		intent.setClass(this, BaseViewActivity.class);

@@ -186,6 +186,9 @@
         </activity>
         <activity android:name="com.ty.exsample_unit_4.DeviceInfomation" >
         </activity>
+        
+        <activity android:name="com.ty.exsample_unit_4.BitMapDecodeTest" />
+        
 
         <!-- *************************************************************************************** -->
 
@@ -227,6 +230,8 @@
         <activity android:name="com.ty.example_unit_6.UploadFile" >
         </activity>
         <activity android:name="com.ty.example_unit_6.SVGACtivityTest" />
+        
+        
 
         <!-- 第7单元　shell engine -->
         <activity android:name="com.example.android_begin_gl_3d.unit_7.ShellEngineActivity" >
