@@ -1,23 +1,21 @@
 package com.ty.example_unit_6;
 
 import android.app.ListActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.ty.exsample.R;
 import com.ty.example_unit_6.blurpic.BlurpicActivity;
 import com.ty.example_unit_6.colorselector.ColorSelectorActivity;
 import com.ty.example_unit_6.colorselector.RectColorActivity;
 import com.ty.example_unit_6.seekbar.DockLineDialog;
-import com.ty.exsample_unit_5.translate.TranslateActivity;
+import com.ty.exsample.R;
 
 public class UnitSixActivity extends ListActivity {
 
-	String[] units = new String[] { "可滑动的选择条", "颜色选择器", "色相亮度饱和度", "方形", "图片模糊", "读取Excele", "上传下载", "SVG" };
+	String[] units = new String[] { "可滑动的选择条", "颜色选择器", "色相亮度饱和度", "方形", "图片模糊", "读取Excele", "上传下载", "SVG", "AbTest" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +53,12 @@ public class UnitSixActivity extends ListActivity {
 			case 7 :
 
 				cls = SVGACtivityTest.class;
+
+				break;
+
+			case 8 :
+
+				cls = ABTestActivity.class;
 
 				break;
 			default :

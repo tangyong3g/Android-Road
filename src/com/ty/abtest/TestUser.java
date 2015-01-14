@@ -19,28 +19,28 @@ public class TestUser {
 	@TestUserModel
 	public static final String USER_B = "b";
 	
-	@TestUserModel
+	@TestUserModel(isTestUser = true)
 	public static final String USER_C = "c";
 	
-	@TestUserModel
+	@TestUserModel(isTestUser = false)
 	public static final String USER_D = "d";
 	
-	@TestUserModel(isDefaultUser = true)
+	@TestUserModel(isTestUser = false)
 	public static final String USER_E = "e";
 	
-	@TestUserModel
+	@TestUserModel(isTestUser = false)
 	public static final String USER_F = "f";
 	
-	@TestUserModel
+	@TestUserModel(isTestUser = false)
 	public static final String USER_G = "g";
 	
-	@TestUserModel
+	@TestUserModel(isTestUser = false)
 	public static final String USER_H = "h";
 	
-	@TestUserModel
+	@TestUserModel(isTestUser = false)
 	public static final String USER_I = "i";
 	
-	@TestUserModel
+	@TestUserModel(isTestUser = false)
 	public static final String USER_J = "j";
 	
 	@TestUserModel(isTestUser = false, isUpGradeUser = true)

@@ -46,8 +46,8 @@ public class ABTest {
 	private static ABTest sInstance;
 
 	public ABTest(Context context) {
-		mSp = PreferencesManager.getInstance(context);
-		init();
+//		mSp = PreferencesManager.getInstance(context);
+//		init();
 	}
 
 	public static ABTest getInstance(Context context) {
@@ -133,7 +133,7 @@ public class ABTest {
 		return mUser;
 	}
 
-	private String genUser() {
+	public String genUser() {
 		try {
 			List<Field> userList = getUserList();
 			int index = (int) (Math.random() * userList.size());

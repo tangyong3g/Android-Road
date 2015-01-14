@@ -230,6 +230,7 @@
         <activity android:name="com.ty.example_unit_6.UploadFile" >
         </activity>
         <activity android:name="com.ty.example_unit_6.SVGACtivityTest" />
+		<activity android:name="com.ty.example_unit_6.ABTestActivity" />
         
         
 

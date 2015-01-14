@@ -40,6 +40,7 @@
     
     <string name="subject">subject</string>
     <string name="to">to</string>
+    <string name="initCustomer">Create customer</string>
     
 
 </resources>
