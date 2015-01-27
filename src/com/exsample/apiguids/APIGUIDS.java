@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.exsample.apiguids.animationgraphic.AnimationGrapihcs;
 import com.exsample.apiguids.userinterface.UserInterfaceMain;
 import com.ty.exsample.R;
-import com.ty.exsample_unit_4.AssetsActivity;
 import com.ty.exsample_unit_4.BaseViewActivity;
 import com.ty.exsample_unit_4.DeviceInfomation;
 
@@ -26,7 +26,7 @@ import com.ty.exsample_unit_4.DeviceInfomation;
  */
 public class APIGUIDS extends ListActivity {
 
-	String[] units = new String[] { "UserInterface" };
+	String[] units = new String[] { "UserInterface", "Animation and Graphics" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +46,18 @@ public class APIGUIDS extends ListActivity {
 			case 0 :
 				cls = UserInterfaceMain.class;
 				break;
+				
+			case 1:
+				
+				cls = AnimationGrapihcs.class;
+				break;
 
 			case 23 :
 				cls = DeviceInfomation.class;
 
 				break;
+				
+				
 
 			default :
 
