@@ -2,19 +2,17 @@ package com.ty.exsample_unit_4;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.jar.Attributes;
-
-import com.ty.crashreport.Application;
-import com.ty.exsample.R;
-import com.ty.exsample_unit_4.AttriAnimationXMLActivity.ViewWrap;
-import com.ty.util.LayoutParamFactory;
-import com.ty.util.UnitShapeFactory;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
@@ -23,6 +21,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.ty.crashreport.Application;
+import com.ty.exsample.R;
+import com.ty.exsample_unit_4.AttriAnimationXMLActivity.ViewWrap;
+import com.ty.util.LayoutParamFactory;
+import com.ty.util.UnitShapeFactory;
 
 /**
  * 
@@ -60,15 +64,52 @@ public class ConcurrentModificationExceptionActivity extends Activity implements
 	ScrollView mTopContainer;
 	LinearLayout mContainer;
 	Context mContext;
+	
+	private List<Integer> mList = new  ArrayList<Integer>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		mContext = getApplicationContext();
-
+		
+		initData();
 		initView();
+		
+		excuteAccList();
+	}
+	
+	
+	public void excuteAccList(){
+		
+		ExecutorService executorService = Executors.newCachedThreadPool();
+		
+		for(int i = 0 ; i < 5 ; i++){
+			executorService.execute(new Runnable() {
+				
+				@Override
+				public void run() {
+					
+					for( Integer i : mList){
+						try {
+							Thread.sleep(5);
+						} catch (Exception e) {
+						}
+						
+						Log.i("tyler.tang","当前线程:"+Thread.currentThread().getId()+"访问数据:\t"+i);
+					}
+				}
+			});
+		}
+		
+	}
 
+	
+	private void initData() {
+		
+		for(int i  = 0; i < 1000 ; i++){
+			mList.add(new Integer(i));
+		}
 	}
 
 	private void initView() {
