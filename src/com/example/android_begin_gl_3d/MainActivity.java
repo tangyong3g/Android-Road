@@ -15,7 +15,7 @@ import android.widget.ListView;
 import com.example.android_begin_gl_3d.unit_7.Main;
 import com.example.android_begin_gl_3d.unit_8.UnitEight;
 import com.exsample.apiguids.APIGUIDS;
-import com.ty.dex.TestDex;
+//import com.ty.dex.TestDex;
 import com.ty.example_unit_1.UnitOneActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
@@ -44,7 +44,7 @@ public class MainActivity extends ListActivity {
 
 		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
 
-		TestDex testDex = new TestDex();
+//		TestDex testDex = new TestDex();
 		//		Log.i("cycle", testDex.show("tangyong"));
 
 		Debug.stopMethodTracing();

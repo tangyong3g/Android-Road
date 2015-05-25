@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+//编译角本
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+	
+	//利用gradle android 工具的版本。
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+    }
+}
+
+
+android {
+
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.example.administrator.androidgradle2"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+  
+    
+    // 设置目录
+     sourceSets {
+     
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']           
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+			renderscript.srcDirs = ['src']            
+			res.srcDirs = ['res']
+            assets.srcDirs = ['assets']        }
+        	androidTest.setRoot('tests')
+    }
+	
+	lintOptions{
+		abortOnError false
+	}
+	
+	// 处理签名
+	
+	 signingConfigs {
+	 
+       myConfig {
+            storeFile file("3g.keystore")
+            storePassword "androidheart"
+            keyAlias "androidheart"
+            keyPassword "androidheart"
+        }
+    }
+	
+	  // minifyEnabled 是否混淆
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+			signingConfig signingConfigs.myConfig
+        }
+    }
+
+
+}
+
+
+//配置依赖库
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "com.android.support:appcompat-v7:18.0.+"
+}
