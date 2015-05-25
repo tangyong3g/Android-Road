@@ -21,6 +21,12 @@ project.properties
 
 # svn file
 .svn/
-
-
 .settings/
+
+#gradle ignore
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
