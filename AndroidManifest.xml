@@ -263,6 +263,11 @@
         <activity android:name="com.exsample.apiguids.userinterface.ListViewTest" />
         <activity android:name="com.exsample.apiguids.userinterface.GridViewTest" />
         <activity android:name="com.exsample.apiguids.animationgraphic.AnimationGrapihcs" />
+
+
+        <!-- 开源项目-->
+
+        <activity android:name="com.ty.open_source_project.OpenSouceProjectActivity" />
         
     </application>
 

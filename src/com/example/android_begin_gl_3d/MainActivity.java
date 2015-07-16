@@ -22,6 +22,7 @@ import com.ty.example_unit_6.UnitSixActivity;
 import com.ty.exsample.R;
 import com.ty.exsample_unit_4.UnitFourActivity;
 import com.ty.exsample_unit_5.UnitFiveActivity;
+import com.ty.open_source_project.OpenSouceProjectActivity;
 
 /**
  * 
@@ -31,7 +32,7 @@ import com.ty.exsample_unit_5.UnitFiveActivity;
 public class MainActivity extends ListActivity {
 
 	String[] units = new String[] { "unit_1", "unit_2[OpenGL1.x/2.x]", "unit_3[LibGDX]", "unit_4[Android基本知识]", "unit_5[Android游戏开发案例]", "unit_6[重用组件]", "unit_7[Shell Engine]",
-			"unit_8[EffectJava]", "unit_9[android源码剖析]","API guids" };
+			"unit_8[EffectJava]", "unit_9[android源码剖析]","API guids" ,"Open Source Project"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class MainActivity extends ListActivity {
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
+		setListAdapter(new ArrayAdapter<>(this, R.layout.main_items, units));
 
 //		TestDex testDex = new TestDex();
 		//		Log.i("cycle", testDex.show("tangyong"));
@@ -96,6 +97,10 @@ public class MainActivity extends ListActivity {
 
 				cls = APIGUIDS.class;
 
+				break;
+			case 10:
+
+				cls = OpenSouceProjectActivity.class;
 				break;
 
 			default :
