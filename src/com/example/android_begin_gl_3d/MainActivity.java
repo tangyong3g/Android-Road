@@ -40,7 +40,10 @@ public class MainActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		Log.i("tyler.tang","hello world!");
+
+		String test = "just for test ...!";
+
+		Log.i("tyler.tang","hello world! ");
 		Debug.startMethodTracing();
 
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
