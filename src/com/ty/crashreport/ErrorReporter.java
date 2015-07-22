@@ -15,6 +15,24 @@
  */
 package com.ty.crashreport;
 
+import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.Looper;
+import android.os.StatFs;
+import android.widget.Toast;
+
+import com.ty.exsample.R;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -37,24 +55,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
 import java.util.TreeSet;
-
-import android.app.Activity;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Environment;
-import android.os.Looper;
-import android.os.StatFs;
-import android.widget.Toast;
-
-import com.ty.exsample.R;
 
 /**
  * <p>
@@ -377,11 +377,13 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
      * .Thread, java.lang.Throwable)
      */
     public void uncaughtException(Thread t, Throwable e) {
+        Loger.i("ty","tyler.tang");
         try {
             disable();
             // Generate and send crash report
             handleException(e);
         } catch (Exception err) {
+            err.printStackTrace();
         }
 
         if (mReportingInteractionMode == ReportingInteractionMode.TOAST) {

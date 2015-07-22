@@ -24,6 +24,8 @@ import com.ty.exsample_unit_4.UnitFourActivity;
 import com.ty.exsample_unit_5.UnitFiveActivity;
 import com.ty.open_source_project.OpenSouceProjectActivity;
 
+import java.util.logging.Logger;
+
 /**
  * 
  * @author tangyong
@@ -38,6 +40,7 @@ public class MainActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		Log.i("tyler.tang","hello world!");
 		Debug.startMethodTracing();
 
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
