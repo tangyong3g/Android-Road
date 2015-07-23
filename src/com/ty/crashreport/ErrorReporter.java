@@ -743,7 +743,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
         Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
         emailIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-        String[] receiver = new String[] { "tyler.sany@gmail.com" };
+        String[] receiver = new String[] { "ty_sany@163.com" };
         PackageManager pm = context.getPackageManager();
         PackageInfo pi = null;
         try {
