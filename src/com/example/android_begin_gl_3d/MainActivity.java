@@ -55,7 +55,6 @@ public class MainActivity extends ListActivity {
 		//		Log.i("cycle", testDex.show("tangyong"));
 
 		Debug.stopMethodTracing();
-
 	}
 
 	@Override
