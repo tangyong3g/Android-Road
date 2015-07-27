@@ -23,18 +23,22 @@
         android:resizeable="true"
         android:smallScreens="true" />
 
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.ty.crashreport.Application"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.android_begin_gl_3d.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.example.android_begin_gl_3d.AppComActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -186,9 +190,7 @@
         </activity>
         <activity android:name="com.ty.exsample_unit_4.DeviceInfomation" >
         </activity>
-        
         <activity android:name="com.ty.exsample_unit_4.BitMapDecodeTest" />
-        
 
         <!-- *************************************************************************************** -->
 
@@ -230,9 +232,7 @@
         <activity android:name="com.ty.example_unit_6.UploadFile" >
         </activity>
         <activity android:name="com.ty.example_unit_6.SVGACtivityTest" />
-		<activity android:name="com.ty.example_unit_6.ABTestActivity" />
-        
-        
+        <activity android:name="com.ty.example_unit_6.ABTestActivity" />
 
         <!-- 第7单元　shell engine -->
         <activity android:name="com.example.android_begin_gl_3d.unit_7.ShellEngineActivity" >
@@ -253,7 +253,6 @@
         </activity>
         <activity android:name="com.example.android_begin_gl_3d.unit_8.ViewRenderActivity" >
         </activity>
-        
 
         <!-- Android device API GUIDS -->
         <activity android:name="com.exsample.apiguids.APIGUIDS" />
@@ -264,20 +263,23 @@
         <activity android:name="com.exsample.apiguids.userinterface.GridViewTest" />
         <activity android:name="com.exsample.apiguids.animationgraphic.AnimationGrapihcs" />
 
-
-        <!-- 开源项目-->
+        <!-- 开源项目 -->
 
         <activity android:name="com.ty.open_source_project.OpenSouceProjectActivity" />
+
+        <!-- 特效 -->
 
         <activity
             android:name="com.ty.crashreport.CrashReportDialog"
             android:excludeFromRecents="true"
+            android:exported="true"
             android:finishOnTaskLaunch="true"
             android:launchMode="singleInstance"
-            android:exported="true"
             android:theme="@android:style/Theme.Dialog" >
         </activity>
-        
+
+        <!-- Meterail Design support lib -->
+
     </application>
 
 </manifest>

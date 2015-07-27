@@ -3,8 +3,6 @@ package com.example.android_begin_gl_3d;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Debug;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
@@ -15,7 +13,6 @@ import android.widget.ListView;
 import com.example.android_begin_gl_3d.unit_7.Main;
 import com.example.android_begin_gl_3d.unit_8.UnitEight;
 import com.exsample.apiguids.APIGUIDS;
-//import com.ty.dex.TestDex;
 import com.ty.example_unit_1.UnitOneActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
@@ -24,12 +21,12 @@ import com.ty.exsample_unit_4.UnitFourActivity;
 import com.ty.exsample_unit_5.UnitFiveActivity;
 import com.ty.open_source_project.OpenSouceProjectActivity;
 
-import java.util.logging.Logger;
+//import com.ty.dex.TestDex;
 
 /**
  * 
  * @author tangyong
- * 
+ *
  */
 public class MainActivity extends ListActivity {
 
@@ -40,21 +37,10 @@ public class MainActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-
-		String test = "just for test ...!";
-
-		Log.i("tyler.tang","hello world! ");
-		Debug.startMethodTracing();
-
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-
 		setListAdapter(new ArrayAdapter<>(this, R.layout.main_items, units));
 
-//		TestDex testDex = new TestDex();
-		//		Log.i("cycle", testDex.show("tangyong"));
-
-		Debug.stopMethodTracing();
 	}
 
 	@Override

@@ -2,6 +2,8 @@ package com.ty.open_source_project;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 
 import com.ty.exsample.R;
@@ -17,16 +19,21 @@ import com.ty.exsample.R;
  */
 public class OpenSouceProjectActivity extends ListActivity{
 
-    /* */
-    private static final String [] OPEN_SOURCE_STR = new String[]{"Effect"};
+
+    String[] units = new String[] { ""};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setListAdapter(new ArrayAdapter<>(this, R.layout.main_items,
-                OPEN_SOURCE_STR));
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        setListAdapter(new ArrayAdapter<>(this, R.layout.main_items, units));
+
     }
+
 
 
 
