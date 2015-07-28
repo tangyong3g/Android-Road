@@ -40,22 +40,21 @@ android {
             res.srcDirs = ['res']
             assets.srcDirs = ['assets']
             androidTest.setRoot('tests')
-            jniLibs.srcDirs =['libs']
+            jniLibs.srcDirs = ['libs']
         }
     }
 
-    lintOptions{
+    lintOptions {
         abortOnError false
     }
 
 
     signingConfigs {
-
-        myConfig {
-            storeFile file("3g.keystore")
-            storePassword "androidheart"
-            keyAlias "androidheart"
-            keyPassword "androidheart"
+        config {
+            storeFile file('radish.keystore')
+            keyAlias 'radish'
+            keyPassword 'inrcel'
+            storePassword 'inrcel'
         }
     }
 
@@ -64,7 +63,7 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
-            signingConfig signingConfigs.myConfig
+            signingConfig signingConfigs.config
         }
     }
 
