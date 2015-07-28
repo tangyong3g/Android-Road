@@ -22,6 +22,11 @@
             android:icon="@drawable/icon"
             android:title="@string/openSource" />
 
+        <item
+            android:id="@+id/nav_shellengine"
+            android:icon="@drawable/icon"
+            android:title="@string/shellEngine" />
+
     </group>
 
 </menu>

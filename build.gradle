@@ -5,7 +5,7 @@ buildscript {
     repositories {
         mavenCentral()
     }
-	
+
     dependencies {
         classpath 'com.android.tools.build:gradle:1.2.3'
     }
@@ -16,7 +16,7 @@ android {
 
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
-  
+
 
     defaultConfig {
         applicationId "com.ty.example"
@@ -24,47 +24,47 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
-		multiDexEnabled true
+        multiDexEnabled true
     }
 
-  
-    
-     sourceSets {
-     
+
+
+    sourceSets {
+
         main {
             manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['src']           
+            java.srcDirs = ['src']
             resources.srcDirs = ['src']
             aidl.srcDirs = ['src']
-			renderscript.srcDirs = ['src']            
-			res.srcDirs = ['res']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
             assets.srcDirs = ['assets']
-        	androidTest.setRoot('tests')
-       		jniLibs.srcDirs =['libs']
+            androidTest.setRoot('tests')
+            jniLibs.srcDirs =['libs']
         }
     }
-	
-	lintOptions{
-		abortOnError false
-	}
-	
-	
-	 signingConfigs {
-	 
-       myConfig {
+
+    lintOptions{
+        abortOnError false
+    }
+
+
+    signingConfigs {
+
+        myConfig {
             storeFile file("3g.keystore")
             storePassword "androidheart"
             keyAlias "androidheart"
             keyPassword "androidheart"
         }
     }
-	
+
 
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
-			signingConfig signingConfigs.myConfig
+            signingConfig signingConfigs.myConfig
         }
     }
 
@@ -78,6 +78,7 @@ dependencies {
     compile 'com.android.support:design:22.2.0'
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'com.google.android.gms:play-services-analytics:7.3.0'
 }
 
 

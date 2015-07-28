@@ -27,7 +27,9 @@ public class OpenSouceProjectActivity extends ListActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //設置全屏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //取消標題
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setListAdapter(new ArrayAdapter<>(this, R.layout.main_items, units));
