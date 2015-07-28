@@ -22,6 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 测试一下提交记录
+ * <p/>
+ * <p/>
  * Created by Administrator on 2015/7/25.
  */
 public class AppComActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
