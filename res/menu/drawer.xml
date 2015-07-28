@@ -1,21 +1,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/dest"
-            android:title="Home" />
-        <item
-            android:id="@+id/nav_messages"
+            android:id="@+id/nav_androidbasic"
             android:icon="@drawable/icon"
-            android:title="Messages" />
+            android:title="@string/android_basic" />
         <item
-            android:id="@+id/nav_friends"
-            android:icon="@drawable/ic_launcher"
-            android:title="Friends" />
+            android:id="@+id/nav_opengl"
+            android:icon="@drawable/icon"
+            android:title="@string/openGl" />
         <item
-            android:id="@+id/nav_discussion"
-            android:icon="@drawable/ic_launcher"
-            android:title="Discussion" />
+            android:id="@+id/nav_libgdx"
+            android:icon="@drawable/icon"
+            android:title="@string/libgdx" />
+        <item
+            android:id="@+id/nav_component"
+            android:icon="@drawable/icon"
+            android:title="@string/component" />
+
+        <item
+            android:id="@+id/nav_open_source"
+            android:icon="@drawable/icon"
+            android:title="@string/openSource" />
+
     </group>
 
 </menu>

@@ -6,7 +6,15 @@
     <string name="hello_world">Hello world!</string>
     
     <string name="app_channel">200</string>
-    
+
+
+    <string name="android_basic">Android basic</string>
+    <string name="libgdx">Libgdx</string>
+    <string name="openGl">OpenGl</string>
+    <string name="component">Component</string>
+    <string name="openSource">Open Source</string>
+
+
     <string name="unit_1">第一章</string>
     <string name="unit_2">第二章</string>
     <string name="unit_3">第三章</string>

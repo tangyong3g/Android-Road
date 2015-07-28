@@ -75,20 +75,9 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:multidex:1.0.0'
-    // debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
-    //  releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
-    compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:recyclerview-v7:22.2.1'
 }
 
 
-
-/*
-
-      重写Application下面的方法
-  @Override 
-  protected void attachBaseContext(Context base) {
-       super.attachBaseContext(base); MultiDex.install(this);
-   }
-   
-*/
