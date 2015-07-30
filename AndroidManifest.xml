@@ -111,7 +111,6 @@
         <activity android:name="com.ty.exsample_unit_4.BitMapDecodeActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.CanvasDemoActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.MomentTest"></activity>
-        <activity android:name="com.ty.exsample_unit_4.BitmapActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.CanvasSavelayerActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.HandlerTestActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.LayoutActivity"></activity>

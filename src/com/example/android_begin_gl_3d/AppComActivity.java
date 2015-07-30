@@ -15,7 +15,6 @@ import com.ty.example_unit_1.UnitTwoActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
 import com.ty.exsample.R;
-import com.ty.exsample_unit_4.UnitFourActivity;
 import com.ty.open_source_project.OpenSouceProjectActivity;
 
 import java.util.ArrayList;
@@ -106,7 +105,7 @@ public class AppComActivity extends AppCompatActivity implements NavigationView.
         switch (id) {
 
             case R.id.nav_androidbasic:
-                to = UnitFourActivity.class;
+                to = com.sny.tangyong.testaar.MainActivity.class;
                 break;
             case R.id.nav_opengl:
 

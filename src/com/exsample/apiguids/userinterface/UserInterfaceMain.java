@@ -1,37 +1,13 @@
 package com.exsample.apiguids.userinterface;
 
-import com.ty.exsample.R;
-import com.ty.exsample_unit_4.AssetsActivity;
-import com.ty.exsample_unit_4.AttriAnimationActivity;
-import com.ty.exsample_unit_4.BaseViewActivity;
-import com.ty.exsample_unit_4.BelendingActivity;
-import com.ty.exsample_unit_4.BitmapActivity;
-import com.ty.exsample_unit_4.CacheBitmapActivity;
-import com.ty.exsample_unit_4.CanvasDemoActivity;
-import com.ty.exsample_unit_4.ConcurrentModificationExceptionActivity;
-import com.ty.exsample_unit_4.DeviceInfomation;
-import com.ty.exsample_unit_4.DipTestActivity;
-import com.ty.exsample_unit_4.FullScreenTest;
-import com.ty.exsample_unit_4.GrapicActivity;
-import com.ty.exsample_unit_4.HandlerTestActivity;
-import com.ty.exsample_unit_4.LayoutActivity;
-import com.ty.exsample_unit_4.List1;
-import com.ty.exsample_unit_4.LooperActivity;
-import com.ty.exsample_unit_4.MeminfoActivity;
-import com.ty.exsample_unit_4.MomentTest;
-import com.ty.exsample_unit_4.PowerConnectActivity;
-import com.ty.exsample_unit_4.SurfaceViewTest;
-import com.ty.exsample_unit_4.SyncTaskActivity;
-import com.ty.exsample_unit_4.ViewCycleTestActivity;
-import com.ty.exsample_unit_4.WallpaperManagerTest;
-import com.ty.exsample_unit_4.animation.AnimationActivity;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.ty.exsample.R;
 
 /**
  * 
@@ -90,9 +66,7 @@ public class UserInterfaceMain extends ListActivity {
 	}
 	private void intentToView(String componentName) {
 		Intent intent = new Intent();
-		intent.setClass(this, BaseViewActivity.class);
 
-		intent.putExtra(BaseViewActivity.BASE_FLAG, componentName);
 
 		startActivity(intent);
 	}

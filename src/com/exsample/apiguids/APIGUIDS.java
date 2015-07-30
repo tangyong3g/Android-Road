@@ -10,8 +10,8 @@ import android.widget.ListView;
 import com.exsample.apiguids.animationgraphic.AnimationGrapihcs;
 import com.exsample.apiguids.userinterface.UserInterfaceMain;
 import com.ty.exsample.R;
-import com.ty.exsample_unit_4.BaseViewActivity;
-import com.ty.exsample_unit_4.DeviceInfomation;
+
+
 
 /**
  * 
@@ -53,7 +53,7 @@ public class APIGUIDS extends ListActivity {
 				break;
 
 			case 23 :
-				cls = DeviceInfomation.class;
+
 
 				break;
 				
@@ -75,10 +75,6 @@ public class APIGUIDS extends ListActivity {
 
 	private void intentToView(String componentName) {
 		Intent intent = new Intent();
-		intent.setClass(this, BaseViewActivity.class);
-
-		intent.putExtra(BaseViewActivity.BASE_FLAG, componentName);
-
 		startActivity(intent);
 	}
 

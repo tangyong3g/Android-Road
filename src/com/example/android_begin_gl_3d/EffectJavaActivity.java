@@ -14,7 +14,7 @@ import com.ty.example_unit_1.UnitOneActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
 import com.ty.exsample.R;
-import com.ty.exsample_unit_4.UnitFourActivity;
+
 import com.ty.exsample_unit_5.UnitFiveActivity;
 
 /**
@@ -54,7 +54,7 @@ public class EffectJavaActivity extends ListActivity {
 				cls = UnitThreeActivity.class;
 				break;
 			case 3 :
-				cls = UnitFourActivity.class;
+				//cls = UnitFourActivity.class;
 				break;
 			case 4 :
 				cls = UnitFiveActivity.class;
