@@ -26,7 +26,7 @@ public class LayoutViewActivity extends Activity {
 	public View initView() {
 
 		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View view = inflater.inflate(R.layout.frame_layout, null);
+		View view = inflater.inflate(R.layout.basic_item, null);
 
 		return view;
 	}

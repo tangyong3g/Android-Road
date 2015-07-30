@@ -27,7 +27,7 @@ public class UnitFourActivity extends ListActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //取消標題
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
+        setListAdapter(new ArrayAdapter<String>(this, R.layout.basic_item, units));
     }
 
     @Override
@@ -64,7 +64,6 @@ public class UnitFourActivity extends ListActivity {
 
                 break;
             case 8:
-                cls = MomentTest.class;
                 break;
             case 9:
                 cls = BitmapActivity.class;

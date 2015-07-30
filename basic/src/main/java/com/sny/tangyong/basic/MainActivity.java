@@ -62,7 +62,6 @@ public class MainActivity extends ListActivity {
 
                 break;
             case 8:
-                cls = MomentTest.class;
                 break;
             case 9:
                 cls = BitmapActivity.class;

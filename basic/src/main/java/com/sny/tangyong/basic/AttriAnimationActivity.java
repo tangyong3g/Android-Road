@@ -22,7 +22,7 @@ public class AttriAnimationActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.basic_item, units));
 	}
 
 	@Override

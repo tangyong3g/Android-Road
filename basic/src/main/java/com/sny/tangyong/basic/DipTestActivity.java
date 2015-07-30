@@ -21,8 +21,6 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.ty.crashreport.Loger;
-
 import java.lang.reflect.Field;
 
 /**
@@ -110,9 +108,6 @@ public class DipTestActivity extends Activity implements Callback {
 			try {
 				heightPixels = (Integer) Display.class.getMethod("getRawHeight").invoke(d);
 			} catch (Exception e) {
-				if (Loger.isD()) {
-					e.printStackTrace();
-				}
 			}
 		}
 		// includes window decorations (statusbar bar/navigation bar)  
@@ -123,9 +118,6 @@ public class DipTestActivity extends Activity implements Callback {
 						realSize);
 				heightPixels = realSize.y;
 			} catch (Exception e) {
-				if (Loger.isD()) {
-					e.printStackTrace();
-				}
 			}
 		}
 		return heightPixels;

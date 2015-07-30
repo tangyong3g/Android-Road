@@ -114,7 +114,7 @@ public class BitMapDecodeActivity extends Activity {
 			//		   Gdx.app.log("info", "height:\t"+heigt+"width:\t"+width);
 
 			is = context.getResources().openRawResource(
-					R.drawable.ic_launcher);
+					R.drawable.bg_one);
 			mBitMapTwo = BitmapFactory.decodeStream(is);
 
 			// create a deep copy of it using getPixels() into different configs

@@ -3,4 +3,18 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="animation_one">animation one</string>
+    <string name="animation_two">animation two</string>
+    <string name="send_msg">发送消息</string>
+    <string name="read_start">read start ......</string>
+    <string name="read_finish">read finish ......</string>
+    <string name="choice_color">选择色彩</string>
+    <string name="error_demo_one">running error following code</string>
+    <string name="right_demo_one">running right following code</string>
+    <string name="subject">subject</string>
+    <string name="to">to</string>
+    <string name="initCustomer">Create customer</string>
+    <string name="title_activity_app_com">AppComActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="start">start</string>
 </resources>

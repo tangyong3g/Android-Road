@@ -50,7 +50,7 @@ public class AttriAnimationXMLActivity extends Activity implements OnClickListen
 
 		LayoutParams ly = new LayoutParams(100, 100);
 		mImageView = new ImageView(this);
-		mImageView.setBackgroundResource(R.drawable.ic_launcher);
+		mImageView.setBackgroundResource(R.drawable.notification_template_icon_bg);
 		mImageView.setLayoutParams(ly);
 
 		mBtn = new Button(this);

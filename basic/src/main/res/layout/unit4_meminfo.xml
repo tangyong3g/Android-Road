@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Java Heap +1M" />
+
+    <Button
+        android:id="@+id/btnJHRel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Java Heap Release" />
+
+    <Button
+        android:id="@+id/btnTest"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Natvie Heap Malloc" />
+
+    <Button
+        android:id="@+id/btnNHRel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Native Heap Release" />
+
+    <Button
+        android:id="@+id/btnDecode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Decode Bitmap" />
+
+    <Button
+        android:id="@+id/btnRecycle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Recycle Bitmap" />
+
+    <Button
+        android:id="@+id/btnGC"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="GC" />
+
+</LinearLayout>
