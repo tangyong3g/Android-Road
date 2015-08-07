@@ -38,7 +38,7 @@ public class UnitFourActivity extends ListActivity {
         String componentName = null;
         switch (position) {
             case 0:
-                cls = SurfaceViewTest.class;
+                cls = GLSurfaceViewActivity.class;
                 break;
             case 1:
                 cls = FullScreenTest.class;

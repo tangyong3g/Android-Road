@@ -105,7 +105,7 @@ public class AppComActivity extends AppCompatActivity implements NavigationView.
         switch (id) {
 
             case R.id.nav_androidbasic:
-                to = com.sny.tangyong.testaar.MainActivity.class;
+            //    to = com.sny.tangyong.testaar.MainActivity.class;
                 break;
             case R.id.nav_opengl:
 

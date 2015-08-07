@@ -14,9 +14,34 @@ import android.widget.ListView;
  */
 public class MainActivity extends ListActivity {
 
-    String[] units = new String[]{"SurfaceViewTest", "FullScreen", "Looper", "Animation", "Meminfo", "powerConnectd", "图形", "canvas", "blending", "bitmap",
-            "Handler", "Layout", "View_save", "List", "VewCycle", "DislayMetrics", "WallpaperManager", "双缓冲", "混合", "属性动画", "ConcurrentModificationException", "异步任务",
-            "DeviceInfo", "Partical", "BitMapDecode"};
+    String[] units = new String[]{
+
+            "SurfaceViewTest",
+            "FullScreen",
+            "Looper",
+            "Animation",
+            "Meminfo",
+            "powerConnectd",
+            "图形",
+            "canvas",
+            "blending",
+            "bitmap",
+            "Handler",
+            "Layout",
+            "View_save",
+            "List",
+            "VewCycle",
+            "DislayMetrics",
+            "WallpaperManager",
+            "双缓冲",
+            "混合",
+            "属性动画",
+            "ConcurrentModificationException",
+            "异步任务",
+            "DeviceInfo",
+            "Partical",
+            "BitMapDecode"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +61,10 @@ public class MainActivity extends ListActivity {
         String componentName = null;
         switch (position) {
             case 0:
-                cls = SurfaceViewTest.class;
+                cls = GLSurfaceViewActivity.class;
                 break;
             case 1:
-                cls = FullScreenTest.class;
+                 cls = FullScreenTest.class;
                 break;
             case 2:
                 cls = LooperActivity.class;

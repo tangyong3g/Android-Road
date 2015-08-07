@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sny.tangyong.basic">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,10 +17,41 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity android:name="com.sny.tangyong.basic.GLSurfaceViewActivity" />
+        <activity android:name="com.sny.tangyong.basic.FullScreenTest" />
+        <activity android:name="com.sny.tangyong.basic.LooperActivity" />
+        <activity android:name="com.sny.tangyong.basic.AnimationActivity" />
+
+        <activity android:name="com.sny.tangyong.basic.PowerConnectActivity" />
+        <activity android:name="com.sny.tangyong.basic.MeminfoActivity"/>
+        <activity android:name="com.sny.tangyong.basic.AttriAnimationLayoutActivity"/>
+        <activity android:name="com.sny.tangyong.basic.LayoutViewActivity"/>
+        <activity android:name="com.sny.tangyong.basic.CanvasSavelayerActivity"/>
+        <activity android:name="com.sny.tangyong.basic.GrapicActivity" />
+        <activity android:name="com.sny.tangyong.basic.List1"/>
+        <activity android:name="com.sny.tangyong.basic.AttriAnimationXMLActivity"/>
+        <activity android:name="com.sny.tangyong.basic.CanvasDemoActivity" />
+        <activity android:name="com.sny.tangyong.basic.BaseViewActivity"/>
+        <activity android:name="com.sny.tangyong.basic.BelendingActivity" />
+        <activity android:name="com.sny.tangyong.basic.BitmapActivity" />
+        <activity android:name="com.sny.tangyong.basic.HandlerTestActivity" />
+        <activity android:name="com.sny.tangyong.basic.LayoutActivity" />
+        <activity android:name="com.sny.tangyong.basic.ViewCycleTestActivity" />
+        <activity android:name="com.sny.tangyong.basic.DipTestActivity" />
+        <activity android:name="com.sny.tangyong.basic.WallpaperManagerTest" />
+        <activity android:name="com.sny.tangyong.basic.CacheBitmapActivity" />
+        <activity android:name="com.sny.tangyong.basic.AttriAnimationActivity" />
+        <activity android:name="com.sny.tangyong.basic.ConcurrentModificationExceptionActivity" />
+        <activity android:name="com.sny.tangyong.basic.SyncTaskActivity" />
+        <activity android:name="com.sny.tangyong.basic.DeviceInfomation" />
+        <activity android:name="com.sny.tangyong.basic.BitMapDecodeActivity" />
+        <activity android:name="com.sny.tangyong.basic.BitMapDecodeTest" />
+
     </application>
 
 </manifest>
