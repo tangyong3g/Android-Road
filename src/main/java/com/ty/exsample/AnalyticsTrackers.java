@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -14,7 +14,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 
 /**

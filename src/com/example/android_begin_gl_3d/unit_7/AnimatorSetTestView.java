@@ -14,7 +14,7 @@ import com.go.gl.graphics.GLCanvas;
 import com.go.gl.graphics.GLDrawable;
 import com.go.gl.view.GLView;
 import com.go.gl.view.GLViewGroup;
-import com.ty.exsample.R;;
+import com.sny.tangyong.androiddemo.R;;
 
 /**
  * ValueAnimator 动画类的测试样例

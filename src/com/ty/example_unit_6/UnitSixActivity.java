@@ -14,7 +14,7 @@ import com.ty.example_unit_6.blurpic.BlurpicActivity;
 import com.ty.example_unit_6.colorselector.ColorSelectorActivity;
 import com.ty.example_unit_6.colorselector.RectColorActivity;
 import com.ty.example_unit_6.seekbar.DockLineDialog;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 public class UnitSixActivity extends ListActivity {
 

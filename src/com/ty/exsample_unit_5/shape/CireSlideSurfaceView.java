@@ -13,7 +13,7 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLUtils;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.util.MatrixState;
 
 /**

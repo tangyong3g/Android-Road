@@ -3,7 +3,7 @@ package com.ty.example_unit_1;
 import java.io.File;
 import java.util.List;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.example_unit_1.coordiatesystem.CoordiateSystemActivity;
 import com.ty.example_unit_1.cube.CubeActivity;
 import com.ty.example_unit_1.service.ServiceActivity;

@@ -31,7 +31,7 @@ import android.os.Looper;
 import android.os.StatFs;
 import android.widget.Toast;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 import java.io.File;
 import java.io.FileInputStream;

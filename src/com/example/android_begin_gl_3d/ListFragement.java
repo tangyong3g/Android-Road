@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.SimpleAdapter;
 
 import com.ty.crashreport.Application;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -14,7 +14,7 @@ import android.widget.LinearLayout.LayoutParams;
 
 import com.larvalabs.svgandroid.SVG;
 import com.larvalabs.svgandroid.SVGParser;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 /**
  * 

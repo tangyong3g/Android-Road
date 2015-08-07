@@ -4,7 +4,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import com.badlogic.gdx.graphics.PerspectiveCamera;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.util.ImageUtil;
 import com.ty.util.MatrixState;
 

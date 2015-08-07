@@ -1,9 +1,11 @@
 package com.exsample.apiguids.userinterface;
 
-import com.ty.exsample.R;
-
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.sny.tangyong.androiddemo.R;
+
+
 
 /**
  * 

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.example_unit_6.seekbar.DockLineDialog;
 
 /**

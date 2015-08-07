@@ -16,7 +16,7 @@ import com.exsample.apiguids.APIGUIDS;
 import com.ty.example_unit_1.UnitOneActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 import com.ty.exsample_unit_5.UnitFiveActivity;
 import com.ty.open_source_project.OpenSouceProjectActivity;

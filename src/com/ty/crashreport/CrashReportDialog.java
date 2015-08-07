@@ -25,7 +25,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.crashreport.ErrorReporter.ReportsSenderWorker;
 
 /**

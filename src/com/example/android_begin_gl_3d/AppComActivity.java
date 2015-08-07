@@ -14,7 +14,7 @@ import com.example.android_begin_gl_3d.unit_7.Main;
 import com.ty.example_unit_1.UnitTwoActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.open_source_project.OpenSouceProjectActivity;
 
 import java.util.ArrayList;

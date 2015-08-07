@@ -12,7 +12,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 /**
 		*@Title:

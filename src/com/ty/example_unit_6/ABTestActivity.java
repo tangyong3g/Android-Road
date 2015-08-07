@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ty.abtest.ABTest;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 /**
 *@Title:

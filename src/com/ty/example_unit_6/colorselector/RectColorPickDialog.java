@@ -1,6 +1,6 @@
 package com.ty.example_unit_6.colorselector;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 import android.app.Dialog;
 import android.content.Context;

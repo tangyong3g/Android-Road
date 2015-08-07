@@ -11,7 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 /**
  * 

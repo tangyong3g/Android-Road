@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.example_unit_2.opengl_1.cube.CubeActivity;
 import com.ty.example_unit_2.opengl_1.cuberotate.CubeRotateActivity;
 

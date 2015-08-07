@@ -16,7 +16,7 @@ import android.opengl.GLUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.util.MatrixState;
 
 /**

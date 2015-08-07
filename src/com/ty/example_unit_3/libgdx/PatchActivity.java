@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 import com.badlogic.gdx.math.Bezier;
 import com.badlogic.gdx.math.Path;
 import com.badlogic.gdx.math.Vector2;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 
 /**

@@ -20,7 +20,7 @@ import android.opengl.GLUtils;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.example_unit_1.cube.MatrixState;
 import com.ty.exsample_unit_5.unit.ShaderUtil;
 

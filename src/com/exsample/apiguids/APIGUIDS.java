@@ -9,7 +9,7 @@ import android.widget.ListView;
 
 import com.exsample.apiguids.animationgraphic.AnimationGrapihcs;
 import com.exsample.apiguids.userinterface.UserInterfaceMain;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 
 

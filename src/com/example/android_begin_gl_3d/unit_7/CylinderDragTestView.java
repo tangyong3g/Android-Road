@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.Log;
 import android.view.MotionEvent;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.go.gl.animation.Transformation3D;
 import com.go.gl.graphics.GLCanvas;
 import com.go.gl.graphics.geometry.GLCylinder;

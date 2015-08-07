@@ -2,7 +2,7 @@ package com.ty.example_unit_6;
 
 import java.io.File;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 import net.tsz.afinal.FinalHttp;
 import net.tsz.afinal.http.AjaxCallBack;

@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.enrique.stackblur.StackBlurManager;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 /**
  * 

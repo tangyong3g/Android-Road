@@ -15,7 +15,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.example.android_begin_gl_3d.ScreenInfo;
 import com.ty.crashreport.Application;
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.util.Utils;
 
 import jxl.Sheet;

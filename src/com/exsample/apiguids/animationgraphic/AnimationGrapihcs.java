@@ -16,7 +16,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 /**
  * 

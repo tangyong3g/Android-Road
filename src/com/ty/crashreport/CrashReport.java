@@ -24,7 +24,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 /**
  * <p>

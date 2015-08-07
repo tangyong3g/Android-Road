@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.exsample_unit_5.shader.ShaderActivity;
 import com.ty.exsample_unit_5.shape.CireSlideActivity;
 import com.ty.exsample_unit_5.translate.TranslateActivity;

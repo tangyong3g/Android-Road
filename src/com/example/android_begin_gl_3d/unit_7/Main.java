@@ -12,7 +12,7 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.ty.exsample.R;
+import com.sny.tangyong.androiddemo.R;
 
 /**
  * 

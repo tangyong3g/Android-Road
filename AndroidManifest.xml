@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ty.exsample"
+    package="com.sny.tangyong.androiddemo"
     android:versionCode="1"
     android:versionName="1.0">
 
@@ -99,7 +99,7 @@
         <activity android:name="com.ty.example_unit_3.libgdx.PathActivity"></activity>
 
         <!-- ************************************************************************************* -->
-        <!-- 第四单元  android 基本知识 -->
+        <!-- 第四单元  android 基本知识
         <activity android:name="com.ty.exsample_unit_4.UnitFourActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.FullScreenTest"></activity>
         <activity android:name="com.ty.exsample_unit_4.SurfaceViewTest"></activity>
@@ -129,7 +129,7 @@
         <activity android:name="com.ty.exsample_unit_4.SyncTaskActivity"></activity>
         <activity android:name="com.ty.exsample_unit_4.DeviceInfomation"></activity>
         <activity android:name="com.ty.exsample_unit_4.BitMapDecodeTest" />
-
+-->
         <!-- *************************************************************************************** -->
 
 
