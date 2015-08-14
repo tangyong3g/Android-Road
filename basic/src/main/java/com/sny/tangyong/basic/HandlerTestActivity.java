@@ -17,84 +17,87 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 
  * @author tang
- *<activity android:name="com.ty.exsample_unit_4.CanvasSavelayerActivity"></activity>
+ *
+ *         <p/>
+ *         <p/>
+ *         <activity android:name="com.ty.exsample_unit_4.CanvasSavelayerActivity"></activity>
  */
 public class HandlerTestActivity extends Activity implements Callback, OnClickListener {
 
-	Handler mHandler;
-	private static final int MESSAGE_TYPE_S = 1;
-	private LinearLayout mContainer;
+    Handler mHandler;
+    private static final int MESSAGE_TYPE_S = 1;
+    private LinearLayout mContainer;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		mHandler = new Handler(this);
-		Button btn = new Button(this);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, 67);
-		btn.setLayoutParams(params);
-		btn.setText("Click Me");
+        mHandler = new Handler(this);
+        Button btn = new Button(this);
 
-		btn.setOnClickListener(this);
+        LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, 167);
+        btn.setLayoutParams(params);
+        btn.setText("Click Me");
 
-		mContainer = new LinearLayout(this);
-		mContainer.setOrientation(LinearLayout.VERTICAL);
-		LayoutParams ly_params = new LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.MATCH_PARENT);
-		mContainer.setLayoutParams(ly_params);
+        btn.setOnClickListener(this);
 
-		mContainer.addView(btn);
+        mContainer = new LinearLayout(this);
+        mContainer.setOrientation(LinearLayout.VERTICAL);
+        LayoutParams ly_params = new LayoutParams(LayoutParams.MATCH_PARENT,
+                LayoutParams.MATCH_PARENT);
+        mContainer.setLayoutParams(ly_params);
 
-		setContentView(mContainer);
-	}
+        mContainer.addView(btn);
 
-	@Override
-	public boolean handleMessage(Message msg) {
+        setContentView(mContainer);
+    }
 
-		int what = msg.what;
+    @Override
+    public boolean handleMessage(Message msg) {
 
-		switch (what) {
-			case MESSAGE_TYPE_S :
+        int what = msg.what;
 
-				TextView tx = new TextView(this);
-				LayoutParams params = new LayoutParams(
-						LayoutParams.MATCH_PARENT, 67);
-				tx.setLayoutParams(params);
-				tx.setText(getStringDate());
-				
-				mContainer.addView(tx);
+        switch (what) {
+            case MESSAGE_TYPE_S:
 
-				Log.i("tyler.tang", "我来了.");
+                TextView tx = new TextView(this);
+                LayoutParams params = new LayoutParams(
+                        LayoutParams.MATCH_PARENT, 67);
+                tx.setLayoutParams(params);
+                tx.setText(getStringDate());
 
-				break;
+                mContainer.addView(tx);
 
-			default :
-				break;
-		}
-		return false;
-	}
+                Log.i("tyler.tang", "我来了.");
 
-	@Override
-	public void onClick(View v) {
+                break;
 
-		mHandler.removeMessages(MESSAGE_TYPE_S);
-		mHandler.sendEmptyMessageDelayed(MESSAGE_TYPE_S, 2 * 1000);
+            default:
+                break;
+        }
+        return false;
+    }
 
-	}
+    @Override
+    public void onClick(View v) {
 
-	/**
-	  * 获取现在时间
-	  *
-	  * @return返回字符串格式 yyyy-MM-dd HH:mm:ss
-	  */
-	public static String getStringDate() {
+        mHandler.removeMessages(MESSAGE_TYPE_S);
+        mHandler.sendEmptyMessageDelayed(MESSAGE_TYPE_S, 2 * 1000);
 
-		Date currentTime = new Date();
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String dateString = formatter.format(currentTime);
-		return dateString;
-	}
+    }
+
+    /**
+     * 获取现在时间
+     *
+     * @return返回字符串格式 yyyy-MM-dd HH:mm:ss
+     */
+    public static String getStringDate() {
+
+        Date currentTime = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateString = formatter.format(currentTime);
+        return dateString;
+    }
 
 }
