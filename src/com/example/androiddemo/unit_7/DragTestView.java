@@ -1,4 +1,4 @@
-package com.example.android_begin_gl_3d.unit_7;
+package com.example.androiddemo.unit_7;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,7 +11,6 @@ import com.go.gl.animation.ScaleAnimation;
 import com.go.gl.animation.Transformation3D;
 import com.go.gl.graphics.ColorGLDrawable;
 import com.go.gl.graphics.GLCanvas;
-import com.go.gl.math3d.GeometryPools;
 import com.go.gl.math3d.Ray;
 import com.go.gl.view.GLFrameLayout;
 import com.go.gl.view.GLLayoutInflater;

@@ -1,4 +1,4 @@
-package com.example.android_begin_gl_3d.unit_7;
+package com.example.androiddemo.unit_7;
 
 import android.os.Bundle;
 

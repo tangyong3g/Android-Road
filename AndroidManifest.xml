@@ -29,19 +29,20 @@
         android:resizeable="true"
         android:smallScreens="true" />
 
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name="com.ty.crashreport.Application"
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat">
+
         <activity
-            android:name="com.example.android_begin_gl_3d.AppComActivity"
+            android:name="com.example.androiddemo.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/AppBaseTheme">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -159,17 +160,17 @@
         <activity android:name="com.ty.example_unit_6.ABTestActivity" />
 
         <!-- 第7单元　shell engine -->
-        <activity android:name="com.example.android_begin_gl_3d.unit_7.ShellEngineActivity"></activity>
-        <activity android:name="com.example.android_begin_gl_3d.unit_7.Cire3DActivity"></activity>
-        <activity android:name="com.example.android_begin_gl_3d.unit_7.Main"></activity>
-        <activity android:name="com.example.android_begin_gl_3d.unit_7.BaseTestActivity"></activity>
+        <activity android:name="com.example.androiddemo.unit_7.ShellEngineActivity"></activity>
+        <activity android:name="com.example.androiddemo.unit_7.Cire3DActivity"></activity>
+        <activity android:name="com.example.androiddemo.unit_7.Main"></activity>
+        <activity android:name="com.example.androiddemo.unit_7.BaseTestActivity"></activity>
 
         <!-- 第8单元 EffectJava -->
-        <activity android:name="com.example.android_begin_gl_3d.EffectJavaActivity"></activity>
+     <!--   <activity android:name="com.example.androiddemo.EffectJavaActivity"></activity>-->
 
         <!-- 第9单元　android源码 -->
-        <activity android:name="com.example.android_begin_gl_3d.unit_8.UnitEight"></activity>
-        <activity android:name="com.example.android_begin_gl_3d.unit_8.ViewRenderActivity"></activity>
+        <activity android:name="com.example.androiddemo.unit_8.UnitEight"></activity>
+        <activity android:name="com.example.androiddemo.unit_8.ViewRenderActivity"></activity>
 
         <!-- Android device API GUIDS -->
         <activity android:name="com.exsample.apiguids.APIGUIDS" />

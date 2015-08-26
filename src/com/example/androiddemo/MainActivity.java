@@ -1,32 +1,37 @@
-package com.example.android_begin_gl_3d;
+package com.example.androiddemo;
 
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.android_begin_gl_3d.unit_7.Main;
+import com.example.androiddemo.unit_7.Main;
+import com.example.androiddemo.unit_8.UnitEight;
+import com.exsample.apiguids.APIGUIDS;
 import com.ty.example_unit_1.UnitOneActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
 import com.sny.tangyong.androiddemo.R;
 
 import com.ty.exsample_unit_5.UnitFiveActivity;
+import com.ty.open_source_project.OpenSouceProjectActivity;
+
+//import com.ty.dex.TestDex;
 
 /**
- * 第7单元
  * 
- * @author tang
+ * @author tangyong
  *
  */
-public class EffectJavaActivity extends ListActivity {
+public class MainActivity extends ListActivity {
 
-	String[] units = new String[] { "unit_1", "unit_2[OpenGL1.x/2.x]", "unit_3[LibGDX]", "unit_4[Android基本知识]", "unit_5[Android游戏开发案例]",
-			"unit_6[重用组件]", "unit_7[Shell Engine]", "unit_8[EffectJava]" };
+	String[] units = new String[] { "unit_1", "unit_2[OpenGL1.x/2.x]", "unit_3[LibGDX]", "unit_4[Android基本知识]", "unit_5[Android游戏开发案例]", "unit_6[重用组件]", "unit_7[Shell Engine]",
+			"unit_8[EffectJava]", "unit_9[android源码剖析]","API guids" ,"Open Source Project"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +39,14 @@ public class EffectJavaActivity extends ListActivity {
 
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setListAdapter(new ArrayAdapter<>(this, R.layout.main_items, units));
 
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
 	}
 
 	@Override
@@ -54,7 +65,7 @@ public class EffectJavaActivity extends ListActivity {
 				cls = UnitThreeActivity.class;
 				break;
 			case 3 :
-				//cls = UnitFourActivity.class;
+			//	cls = UnitFourActivity.class;
 				break;
 			case 4 :
 				cls = UnitFiveActivity.class;
@@ -68,6 +79,20 @@ public class EffectJavaActivity extends ListActivity {
 			case 7 :
 
 				cls = EffectJavaActivity.class;
+				break;
+			case 8 :
+				cls = UnitEight.class;
+				break;
+
+			case 9 :
+
+				cls = APIGUIDS.class;
+
+				break;
+			case 10:
+
+				cls = OpenSouceProjectActivity.class;
+				break;
 
 			default :
 				break;
@@ -82,6 +107,12 @@ public class EffectJavaActivity extends ListActivity {
 		intent.setClass(this, cls);
 
 		startActivity(intent);
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+
 	}
 
 }

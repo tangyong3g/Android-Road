@@ -126,7 +126,8 @@
 -keep class com.google.android.gms.** { *; }
 
 
-
 -dontwarn com.badlogic.gdx.jnigen.**
 -dontwarn net.margaritov.preference.colorpicker.**
 
+-dontwarn net.tsz.afinal.**
+-dontwarn com.go.gl.scroller.effector.**

@@ -1,4 +1,4 @@
-package com.example.android_begin_gl_3d.unit_8;
+package com.example.androiddemo.unit_8;
 
 import android.app.ListActivity;
 import android.content.Intent;

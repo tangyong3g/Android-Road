@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
 
-import com.example.android_begin_gl_3d.ScreenInfo;
+import com.example.androiddemo.ScreenInfo;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
@@ -56,7 +56,7 @@ public class Application extends android.app.Application {
         //初始化各个组件的值
         initApplicationComponent();
         //初始化GA
-        initGoogleAna();
+        //initGoogleAna();
     }
 
 

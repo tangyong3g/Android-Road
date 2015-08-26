@@ -1,4 +1,4 @@
-package com.example.android_begin_gl_3d;
+package com.example.androiddemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

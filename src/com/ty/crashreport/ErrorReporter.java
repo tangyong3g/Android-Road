@@ -565,9 +565,18 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
         Loger.i(LOG_TAG, reportFileName, this);
         PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0,
                 notificationIntent, 0);
-        notification.setLatestEventInfo(mContext, contentTitle, contentText,
-                contentIntent);
-        notificationManager.notify(CrashReport.NOTIF_CRASH_ID, notification);
+
+        //notification.setLatestEventInfo(mContext, contentTitle, contentText, contentIntent);
+        //notificationManager.notify(CrashReport.NOTIF_CRASH_ID, notification);
+
+        Notification noti = new Notification.Builder(mContext)
+                .setContentTitle(contentTitle)
+                .setContentText(contentTitle)
+                .setSmallIcon(R.drawable.icon)
+                .setContentIntent(contentIntent)
+                .build();
+
+        noti.notify();
     }
 
     /**

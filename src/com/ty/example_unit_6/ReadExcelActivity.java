@@ -11,9 +11,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
 
-import com.example.android_begin_gl_3d.ScreenInfo;
+import com.example.androiddemo.ScreenInfo;
 import com.ty.crashreport.Application;
 import com.sny.tangyong.androiddemo.R;
 import com.ty.util.Utils;

@@ -1,6 +1,5 @@
-package com.example.android_begin_gl_3d;
+package com.example.androiddemo;
 
-import android.app.Instrumentation.ActivityMonitor;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.Display;

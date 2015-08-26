@@ -13,22 +13,16 @@ buildscript {
 
 
 android {
-
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
-
-
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
     defaultConfig {
-        applicationId "com.ty.example"
-        minSdkVersion 15
-        targetSdkVersion 22
+        applicationId 'com.sny.tangyong.androiddemo'
+        minSdkVersion 16
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
     }
-
-
-
     sourceSets {
 
         main {
@@ -43,12 +37,9 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
-
     lintOptions {
         abortOnError false
     }
-
-
     signingConfigs {
         config {
             storeFile file('radish.keystore')
@@ -57,8 +48,6 @@ android {
             storePassword 'inrcel'
         }
     }
-
-
     buildTypes {
         release {
             minifyEnabled true
@@ -66,17 +55,17 @@ android {
             signingConfig signingConfigs.config
         }
     }
-
-
+    productFlavors {
+    }
 }
 
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:multidex:1.0.0'
-    compile 'com.android.support:design:22.2.0'
-    compile 'com.android.support:appcompat-v7:22.2.1'
-    compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'com.android.support:design:23.0.0'
+    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'com.android.support:recyclerview-v7:23.0.0'
     compile 'com.google.android.gms:play-services-analytics:7.3.0'
 }
 

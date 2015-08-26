@@ -1,4 +1,4 @@
-package com.example.android_begin_gl_3d.unit_7;
+package com.example.androiddemo.unit_7;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.sny.tangyong.androiddemo.R;
-import com.ty.example_unit_6.seekbar.DockLineDialog;
 
 /**
  * 

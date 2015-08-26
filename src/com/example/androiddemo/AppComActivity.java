@@ -1,4 +1,4 @@
-package com.example.android_begin_gl_3d;
+package com.example.androiddemo;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,11 +10,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.android_begin_gl_3d.unit_7.Main;
+import com.example.androiddemo.unit_7.Main;
+import com.sny.tangyong.androiddemo.R;
 import com.ty.example_unit_1.UnitTwoActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
-import com.sny.tangyong.androiddemo.R;
 import com.ty.open_source_project.OpenSouceProjectActivity;
 
 import java.util.ArrayList;
@@ -56,12 +56,12 @@ public class AppComActivity extends AppCompatActivity implements NavigationView.
      */
     private void initViewPage(ViewPager viewPager) {
 
-        Adapter adapter = new Adapter(getSupportFragmentManager());
+      //  Adapter adapter = new Adapter(getSupportFragmentManager());
 
-        adapter.addFragment(new ListFragement(), "one");
-        adapter.addFragment(new ListFragement(), "two");
+        //adapter.addFragment(new ListFragement(), "one");
+        //adapter.addFragment(new ListFragement(), "two");
 
-        viewPager.setAdapter(adapter);
+        //viewPager.setAdapter(adapter);
     }
 
     static class Adapter extends FragmentPagerAdapter {
