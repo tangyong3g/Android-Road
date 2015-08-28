@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapters>
+
+    <chapter
+        name="androidbasic"
+        action="com.sny.tangyong.demostart.SettingsActivity"
+        id="nav_androidbasic" />
+
+    <chapter
+        name="openGl"
+        action="com.sny.tangyong.demostart.SettingsActivity"
+        id="nav_opengl" />
+
+    <chapter
+        name="libgdx"
+        action="com.sny.tangyong.demostart.SettingsActivity"
+        id="nav_opengl" />
+    <chapter
+        name="component"
+        action="com.sny.tangyong.demostart.SettingsActivity"
+        id="nav_libgdx" />
+    <chapter
+        name="openSource"
+        action="com.sny.tangyong.demostart.SettingsActivity"
+        id="nav_component" />
+
+    <chapter
+        name="shellEngine"
+        action="com.sny.tangyong.demostart.SettingsActivity"
+        id="nav_open_source" />
+
+</chapters>
+

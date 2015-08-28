@@ -3,4 +3,21 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+
+    <!-- Chapter -->
+    <string name="android_basic">android_basic</string>
+    <string name="openGl">openGl</string>
+    <string name="libgdx">libgdx</string>
+    <string name="component">component</string>
+    <string name="openSource">openSource</string>
+    <string name="shellEngine">shellEngine</string>
+
+
+
+    <!-- tips -->
+    <string name="slide_right">Slide Right</string>
+
+
+
 </resources>
