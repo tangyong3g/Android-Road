@@ -1,6 +1,26 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".DemoStartActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_androidbasic"
+            android:title="@string/android_basic" />
+        <item
+            android:id="@+id/nav_opengl"
+            android:title="@string/openGl" />
+        <item
+            android:id="@+id/nav_libgdx"
+            android:title="@string/libgdx" />
+        <item
+            android:id="@+id/nav_component"
+            android:title="@string/component" />
+
+        <item
+            android:id="@+id/nav_open_source"
+            android:title="@string/openSource" />
+
+        <item
+            android:id="@+id/nav_shellengine"
+            android:title="@string/shellEngine" />
+
+    </group>
+
 </menu>

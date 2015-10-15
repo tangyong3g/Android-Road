@@ -135,7 +135,6 @@ public class AppComActivity extends AppCompatActivity implements NavigationView.
             intentToUnit(to);
         }
 
-
         return false;
     }
 
