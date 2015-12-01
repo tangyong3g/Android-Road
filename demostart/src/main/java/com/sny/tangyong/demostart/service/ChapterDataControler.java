@@ -67,9 +67,9 @@ public class ChapterDataControler implements ILifeCycle {
     }
 
 
-    public Intent getChapterIntentByTitle(String id, Context context) throws Exception {
+    public Class getChapterIntentByTitle(String id, Context context) throws Exception {
 
-        Intent intent = null;
+        Class c = null;
         if (mChapters == null) {
             mChapters = getmChapters(context);
         }
@@ -79,13 +79,10 @@ public class ChapterDataControler implements ILifeCycle {
             String key = temp.getKey();
 
             if (key.equals(id)) {
-
-                intent = new Intent();
-                intent.setAction(key);
+                c = temp.getActionIntentClass();
             }
         }
-
-        return intent;
+        return c;
     }
 
 

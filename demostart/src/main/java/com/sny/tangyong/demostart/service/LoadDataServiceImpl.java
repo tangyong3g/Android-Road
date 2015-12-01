@@ -52,7 +52,7 @@ public class LoadDataServiceImpl implements ILoaderDataService {
                     String attrName = xrp.getAttributeValue(1);
                     String attrAction = xrp.getAttributeValue(2);
 
-                    chapter.setmActionIntentClass(attrAction);
+                    //chapter.setmActionIntentClass(attrAction);
                     chapter.setChapterKey(id);
 
                     chapters.add(chapter);

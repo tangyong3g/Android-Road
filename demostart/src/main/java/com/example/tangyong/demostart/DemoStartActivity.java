@@ -1,11 +1,16 @@
 package com.example.tangyong.demostart;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
+import com.sny.tangyong.demostart.SettingsActivity;
 import com.sny.tangyong.demostart.bean.Chapter;
 import com.sny.tangyong.demostart.service.ChapterDataControler;
 import com.sny.tangyong.demostart.service.ILoaderDataService;
@@ -35,8 +40,34 @@ public class DemoStartActivity extends AppCompatActivity implements NavigationVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
+        DrawerLayout dy = (DrawerLayout)findViewById(R.id.drawerlayout);
+        Button btn = new Button(this);
+        btn.setText("Click Me ");
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnClick();
+            }
+        });
+
+        dy.addView(btn);
+
         initView();
         initData();
+    }
+
+
+    public void btnClick() {
+
+        Intent intent = new Intent();
+//        intent.setAction("com.sny.tangyong.demostart.SettingsActivity");
+        try{
+            intent.setClass(this, Class.forName("com.sny.tangyong.demostart.SettingsActivity"));
+        }catch (Exception e){
+        }
+
+        startActivity(intent);
+
     }
 
     private void initData() {
@@ -91,7 +122,6 @@ public class DemoStartActivity extends AppCompatActivity implements NavigationVi
 
         int id = menuItem.getItemId();
         String title = menuItem.getTitle().toString();
-
 
 
         return false;

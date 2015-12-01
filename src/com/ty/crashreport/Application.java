@@ -56,7 +56,7 @@ public class Application extends android.app.Application {
         //初始化各个组件的值
         initApplicationComponent();
         //初始化GA
-        //initGoogleAna();
+        initGoogleAna();
     }
 
 
@@ -70,7 +70,7 @@ public class Application extends android.app.Application {
         tracker.enableAdvertisingIdCollection(true);
         tracker.enableAutoActivityTracking(true);
 
-        googleAnaDemo();
+//        googleAnaDemo();
 
     }
 
