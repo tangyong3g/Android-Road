@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">demostart</string>
+    <string name="app_name">Demo start</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -14,10 +14,8 @@
     <string name="shellEngine">shellEngine</string>
 
 
-
     <!-- tips -->
     <string name="slide_right">Slide Right</string>
-
 
 
 </resources>

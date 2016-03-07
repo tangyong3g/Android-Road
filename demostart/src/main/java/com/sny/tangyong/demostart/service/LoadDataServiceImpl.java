@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.res.XmlResourceParser;
 import android.util.Log;
 
-import com.example.tangyong.demostart.R;
+import com.sny.tangyong.demostart.R;
 import com.sny.tangyong.demostart.bean.Chapter;
 
 import org.xmlpull.v1.XmlPullParser;

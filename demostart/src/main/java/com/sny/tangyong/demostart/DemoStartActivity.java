@@ -1,29 +1,28 @@
-package com.example.tangyong.demostart;
+package com.sny.tangyong.demostart;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.sny.tangyong.demostart.SettingsActivity;
 import com.sny.tangyong.demostart.bean.Chapter;
 import com.sny.tangyong.demostart.service.ChapterDataControler;
 import com.sny.tangyong.demostart.service.ILoaderDataService;
 import com.sny.tangyong.demostart.service.LoadDataServiceImpl;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 
 /**
  * @author ty_sany@163.com
- *         <p/>
- *         <p/>
- *         <p/>
+ *         <p>
  *         1: 要解决的问题，跳转不要增加和修改，里面的Intent信息也要保存在里面才行
  */
 public class DemoStartActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,7 +30,9 @@ public class DemoStartActivity extends AppCompatActivity implements NavigationVi
 
     // NavigationView
     private NavigationView mNavigationView;
+    //章节数据
     private ArrayList<Chapter> mChapters;
+    //控制器
     private ChapterDataControler mControler;
 
 
@@ -40,36 +41,31 @@ public class DemoStartActivity extends AppCompatActivity implements NavigationVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
-        DrawerLayout dy = (DrawerLayout)findViewById(R.id.drawerlayout);
-        Button btn = new Button(this);
-        btn.setText("Click Me ");
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                btnClick();
-            }
-        });
+        DrawerLayout dy = (DrawerLayout) findViewById(R.id.drawerlayout);
 
-        dy.addView(btn);
 
+        //初始化视图
         initView();
-        initData();
+        //加载视图数据 @// TODO: 2015/12/1  这样做意义不大，因为本来配置文件就解决了这个问题，而且还有多语言支持
+        //initData();
     }
 
 
     public void btnClick() {
 
         Intent intent = new Intent();
-//        intent.setAction("com.sny.tangyong.demostart.SettingsActivity");
-        try{
+        try {
             intent.setClass(this, Class.forName("com.sny.tangyong.demostart.SettingsActivity"));
-        }catch (Exception e){
+        } catch (Exception e) {
         }
 
         startActivity(intent);
 
     }
 
+    /**
+     * 加载数据
+     */
     private void initData() {
 
         ILoaderDataService loader = new LoadDataServiceImpl();
@@ -80,6 +76,12 @@ public class DemoStartActivity extends AppCompatActivity implements NavigationVi
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+
+        for (Chapter cTemp : mChapters) {
+
+            Log.i("Tyler.tang", cTemp.getKey());
+
         }
     }
 
@@ -98,6 +100,7 @@ public class DemoStartActivity extends AppCompatActivity implements NavigationVi
 
         mNavigationView = (NavigationView) findViewById(R.id.demostart_navigation_id);
         mNavigationView.setNavigationItemSelectedListener(this);
+
 
     }
 

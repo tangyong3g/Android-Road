@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">演示程序</string>
+
+    <string name="hello_world">你好!</string>
+    <string name="action_settings">设置</string>
+
+
+    <!-- Chapter -->
+    <string name="android_basic">基础内容</string>
+    <string name="openGl">openGl</string>
+    <string name="libgdx">libgdx引擎</string>
+    <string name="component">组件</string>
+    <string name="openSource">开源项目</string>
+    <string name="shellEngine">Shell引擎</string>
+
+
+    <!-- tips -->
+    <string name="slide_right">右滑</string>
+
+</resources>

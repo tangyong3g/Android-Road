@@ -1,4 +1,4 @@
-package com.example.tangyong.demostart;
+package com.sny.tangyong.demostart;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
