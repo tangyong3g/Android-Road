@@ -51,6 +51,8 @@
         <activity android:name="com.sny.tangyong.basic.DeviceInfomation" />
         <activity android:name="com.sny.tangyong.basic.BitMapDecodeActivity" />
         <activity android:name="com.sny.tangyong.basic.BitMapDecodeTest" />
+        <activity android:name="com.sny.tangyong.basic.LooperVersion2" />
+
 
     </application>
 

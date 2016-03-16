@@ -40,7 +40,8 @@ public class MainActivity extends ListActivity {
             "异步任务",
             "DeviceInfo",
             "Partical",
-            "BitMapDecode"
+            "BitMapDecode",
+            "LooperVersion2.0"
     };
 
     @Override
@@ -169,6 +170,9 @@ public class MainActivity extends ListActivity {
 
                 cls = BitMapDecodeTest.class;
 
+                break;
+            case 25:
+                cls = LooperVersion2.class;
                 break;
 
             default:

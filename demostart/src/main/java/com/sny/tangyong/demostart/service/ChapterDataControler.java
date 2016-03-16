@@ -6,6 +6,7 @@ import android.content.Intent;
 import com.sny.tangyong.demostart.bean.Chapter;
 
 import java.util.ArrayList;
+import java.util.logging.Handler;
 
 /**
  * Created by T540P on 2015/8/28.

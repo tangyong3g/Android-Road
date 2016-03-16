@@ -5,7 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="animation_one">Animation</string>
     <string name="animation_two">Animation</string>
-    <string name="send_msg">发送消息</string>
+    <string name="send_msg">开始生产机器人</string>
     <string name="read_start">read start ......</string>
     <string name="read_finish">read finish ......</string>
     <string name="choice_color">选择色彩</string>

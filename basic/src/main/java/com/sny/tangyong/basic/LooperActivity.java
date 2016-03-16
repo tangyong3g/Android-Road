@@ -69,7 +69,6 @@ public class LooperActivity extends Activity implements OnClickListener {
                             break;
                     }
                 }
-
                 ;
             };
             Looper.loop();
@@ -92,6 +91,7 @@ public class LooperActivity extends Activity implements OnClickListener {
         //开启线程
         mLooperThread = new LooperThread();
         mLooperThread.start();
+
     }
 
     @Override
