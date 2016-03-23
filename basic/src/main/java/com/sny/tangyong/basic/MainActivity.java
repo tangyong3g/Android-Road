@@ -41,16 +41,17 @@ public class MainActivity extends ListActivity {
             "DeviceInfo",
             "Partical",
             "BitMapDecode",
-            "LooperVersion2.0"
+            "LooperVersion2.0",
+            "Fragment",
+            "Best Practice for performance threads "
+
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        //設置全屏
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        //取消標題
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getActionBar();
         setListAdapter(new ArrayAdapter<String>(this, R.layout.basic_item, units));
     }
 
@@ -65,7 +66,7 @@ public class MainActivity extends ListActivity {
                 cls = GLSurfaceViewActivity.class;
                 break;
             case 1:
-                 cls = FullScreenTest.class;
+                cls = FullScreenTest.class;
                 break;
             case 2:
                 cls = LooperActivity.class;
@@ -175,6 +176,13 @@ public class MainActivity extends ListActivity {
                 cls = LooperVersion2.class;
                 break;
 
+            case 26:
+
+                cls = FragmentTest.class;
+
+                break;
+            case 27:
+                cls = BesetPracticeForThread.class;
             default:
 
                 break;

@@ -2,7 +2,9 @@ package com.sny.tangyong.basic;
 
 import android.app.ListActivity;
 import android.content.Intent;
-import android.os.Bundle;
+import android.os.*;
+import android.os.Process;
+import android.support.v4.util.LruCache;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -54,6 +56,15 @@ public class AttriAnimationActivity extends ListActivity {
 		Intent intent = new Intent();
 		intent.setClass(this, cls);
 		startActivity(intent);
+	}
+
+
+	public static class ThreadTest implements Runnable{
+
+		@Override
+		public void run() {
+			android.os.Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+		}
 	}
 
 }

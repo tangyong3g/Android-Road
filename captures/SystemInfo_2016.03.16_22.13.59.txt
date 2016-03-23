@@ -1,0 +1,107 @@
+TASK com.sny.tangyong.basic id=2950
+  ACTIVITY com.sny.tangyong.basic/.LooperVersion2 2f8bd6cf pid=4427
+    Local Activity 2f60e151 State:
+      mResumed=true mStopped=false mFinished=false
+      mLoadersStarted=true
+      mChangingConfigurations=false
+      mCurrentConfig={0 1.0 themeSeq=0 460mcc3mnc zh_CN ?layoutDir sw411dp w411dp h706dp 560dpi nrml long port finger -keyb/v/h -nav/h mkbd/h s.11}
+      mMultiWindowStyle=MultiWindowStyle{type=0, zone=ZONE_UNKNOWN, option=0x01000002, bounds=null, isNull=false, isolatedCenterPoint=Point(0, 0), scale=0.0, specificTaskId=-1}
+    FragmentManager misc state:
+      mActivity=com.sny.tangyong.basic.LooperVersion2@2f60e151
+      mContainer=android.app.Activity$1@2b812680
+      mCurState=5 mStateSaved=false mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=false
+      mConsumeBatchedInputImmediatelyScheduled=false
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=false
+      mLastFrameTime=48485704 (11235 ms ago)
+    View Hierarchy:
+      com.android.internal.policy.impl.MultiPhoneWindow$MultiPhoneDecorView{26b894b9 V.ED.... R....... 0,0-1440,2560}
+        android.widget.FrameLayout{39fde0fe V.E..... ........ 0,0-1440,2560 #10203b4 android:id/windowContentFrame}
+          android.widget.FrameLayout{e1a605f G.E..... ......I. 0,0-0,0 #10203b5 android:id/windowIconicFrame}
+            android.widget.ImageView{33122aac G.ED...L ......I. 0,0-0,0 #10203b6 android:id/windowIconic}
+          android.widget.LinearLayout{34c4c375 V.E..... ........ 0,0-1440,2560}
+            android.view.ViewStub{cd30f0a G.E..... ......I. 0,0-0,0 #1020418}
+            android.widget.FrameLayout{302ea37b V.E..... ........ 0,88-1440,2560 #1020002 android:id/content}
+              android.widget.LinearLayout{25cd4598 V.E..V.. ........ 0,0-1440,2472}
+                android.widget.Button{f2b21f1 VFED..C. ........ 56,56-1384,224 #7f0d006b app:id/send_msg_id}
+                android.widget.LinearLayout{b1b11d6 V.E..... ........ 56,224-1384,2416 #7f0d006c app:id/id_container_my}
+                  android.widget.TextView{1b79fc57 V.ED.... ........ 0,0-920,125}
+                  android.widget.TextView{201d2344 V.ED.... ........ 0,125-920,250}
+                  android.widget.TextView{17beec2d V.ED.... ........ 0,250-920,375}
+                  android.widget.TextView{200e7562 V.ED.... ........ 0,375-920,500}
+                  android.widget.TextView{39b806f3 V.ED.... ........ 0,500-920,625}
+                  android.widget.TextView{386b2fb0 V.ED.... ........ 0,625-920,750}
+                  android.widget.TextView{4b1e29 V.ED.... ........ 0,750-920,875}
+                  android.widget.TextView{3fe285ae V.ED.... ........ 0,875-920,1000}
+                  android.widget.TextView{ac21f4f V.ED.... ........ 0,1000-920,1125}
+                  android.widget.TextView{4b96dc V.ED.... ........ 0,1125-920,1250}
+                  android.widget.TextView{324e73e5 V.ED.... ........ 0,1250-920,1375}
+                  android.widget.TextView{1ad54eba V.ED.... ........ 0,1375-920,1500}
+                  android.widget.TextView{8ab616b V.ED.... ........ 0,1500-920,1625}
+                  android.widget.TextView{2c6944c8 V.ED.... ........ 0,1625-920,1750}
+                  android.widget.TextView{36776961 V.ED.... ........ 0,1750-920,1875}
+                  android.widget.TextView{34f99c86 V.ED.... ........ 0,1875-920,2000}
+                  android.widget.TextView{319ca947 V.ED.... ........ 0,2000-920,2125}
+                  android.widget.TextView{f31e574 V.ED.... ........ 0,2125-920,2192}
+                  android.widget.TextView{17e03a9d V.ED.... ......ID 0,2192-920,2192}
+                  android.widget.TextView{2ec2fb12 V.ED.... ......ID 0,2192-920,2192}
+        android.view.View{137092e3 V.ED.... ........ 0,0-1440,88 #102002f android:id/statusBarBackground}
+    Looper (main, tid 1) {3f0ae399}
+      (Total messages: 0, idling=false, quitting=false)
+
+  ACTIVITY com.sny.tangyong.basic/.MainActivity e6a0b9b pid=4427
+    Local Activity 9c88297 State:
+      mResumed=false mStopped=true mFinished=false
+      mLoadersStarted=false
+      mChangingConfigurations=false
+      mCurrentConfig={0 1.0 themeSeq=0 460mcc3mnc zh_CN ?layoutDir sw411dp w411dp h706dp 560dpi nrml long port finger -keyb/v/h -nav/h mkbd/h s.11}
+      mMultiWindowStyle=MultiWindowStyle{type=0, zone=ZONE_UNKNOWN, option=0x01000002, bounds=null, isNull=false, isolatedCenterPoint=Point(0, 0), scale=0.0, specificTaskId=-1}
+    FragmentManager misc state:
+      mActivity=com.sny.tangyong.basic.MainActivity@9c88297
+      mContainer=android.app.Activity$1@a51b65e
+      mCurState=3 mStateSaved=true mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=false
+      mConsumeBatchedInputImmediatelyScheduled=false
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=false
+      mLastFrameTime=48485704 (11246 ms ago)
+    View Hierarchy:
+      com.android.internal.policy.impl.MultiPhoneWindow$MultiPhoneDecorView{350f7a3f I.ED.... R......D 0,0-1440,2560}
+        android.widget.FrameLayout{1a906f0c V.E..... .......D 0,0-1440,2560 #10203b4 android:id/windowContentFrame}
+          android.widget.FrameLayout{9d2055 G.E..... ......I. 0,0-0,0 #10203b5 android:id/windowIconicFrame}
+            android.widget.ImageView{397eda6a G.ED...L ......I. 0,0-0,0 #10203b6 android:id/windowIconic}
+          android.widget.LinearLayout{398b7b5b V.E..... .......D 0,0-1440,2560}
+            android.view.ViewStub{35b6ff8 G.E..... ......I. 0,0-0,0 #1020418}
+            android.widget.FrameLayout{1bdc6cd1 V.E..... .......D 0,0-1440,2560 #1020002 android:id/content}
+              android.widget.ListView{a83336 VFED.VC. .F....ID 0,0-1440,2560 #102000a android:id/list}
+                android.widget.TextView{18fc7237 V.ED.... ........ 0,-150-1440,74 #1020014 android:id/text1}
+                android.widget.TextView{1bd393a4 V.ED.... ........ 0,76-1440,300 #1020014 android:id/text1}
+                android.widget.TextView{24ea050d V.ED.... ........ 0,302-1440,526 #1020014 android:id/text1}
+                android.widget.TextView{3a3c4cc2 V.ED.... ........ 0,528-1440,752 #1020014 android:id/text1}
+                android.widget.TextView{b1bfad3 V.ED.... ........ 0,754-1440,978 #1020014 android:id/text1}
+                android.widget.TextView{13884610 V.ED.... ........ 0,980-1440,1204 #1020014 android:id/text1}
+                android.widget.TextView{16bee509 V.ED.... ........ 0,1206-1440,1430 #1020014 android:id/text1}
+                android.widget.TextView{706730e V.ED.... ........ 0,1432-1440,1656 #1020014 android:id/text1}
+                android.widget.TextView{3fa1712f V.ED.... ........ 0,1658-1440,1882 #1020014 android:id/text1}
+                android.widget.TextView{193b33c V.ED.... ........ 0,1884-1440,2108 #1020014 android:id/text1}
+                android.widget.TextView{8e7c8c5 V.ED.... ........ 0,2110-1440,2334 #1020014 android:id/text1}
+                android.widget.TextView{373ab21a V.ED.... ........ 0,2336-1440,2560 #1020014 android:id/text1}
+    Looper (main, tid 1) {3f0ae399}
+      (Total messages: 0, idling=false, quitting=false)

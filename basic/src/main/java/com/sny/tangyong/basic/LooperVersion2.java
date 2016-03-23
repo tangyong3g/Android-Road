@@ -8,6 +8,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.provider.ContactsContract;
 import android.util.Log;
+import android.util.LruCache;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -261,6 +262,7 @@ public class LooperVersion2 extends Activity implements OnClickListener {
 
                 String r = getResources().getString(R.string.send_msg);
                 mBtn.setText(r+"\t"+count);
+
             }
         }
     }
