@@ -1,1 +1,1 @@
-include ':basic', ':common','shellengine','demostart'
+include ':basic', ':common', ':staticssdk','shellengine','demostart'
