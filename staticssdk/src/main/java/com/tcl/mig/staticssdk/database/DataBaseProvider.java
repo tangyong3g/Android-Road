@@ -1,13 +1,6 @@
 package com.tcl.mig.staticssdk.database;
 
 //CHECKSTYLE:OFF
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -21,13 +14,20 @@ import com.tcl.mig.staticssdk.beans.CtrlBean;
 import com.tcl.mig.staticssdk.beans.PostBean;
 import com.tcl.mig.staticssdk.utiltool.UtilTool;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * 
  * <br>
  * 类描述:DB封装工具 <br>
  * 功能详细描述:
  * 
- * @author rongjinsong
+ * @author tangyong
  * @date [2013-3-4]
  */
 public class DataBaseProvider {

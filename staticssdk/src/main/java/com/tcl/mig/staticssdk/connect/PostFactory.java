@@ -5,7 +5,7 @@ import android.content.Context;
 import com.tcl.mig.staticssdk.StatisticsManager;
 /**
  * 
- * @author luozhiping
+ * @author tangyong
  *
  */
 public class PostFactory {

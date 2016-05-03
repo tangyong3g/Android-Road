@@ -3,7 +3,7 @@ package com.tcl.mig.staticssdk.beans;
 /**
  * Option选项的bean，为upload提供选项
  * 
- * @author luozhiping
+ * @author tangyong
  *
  */
 public class OptionBean {

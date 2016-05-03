@@ -8,7 +8,7 @@ import com.tcl.mig.staticssdk.database.*;
 /**
  * 控制信息Bean
  * 
- * @author luozhiping
+ * @author tangyong
  * 
  */
 public class CtrlBean {

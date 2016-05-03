@@ -10,7 +10,7 @@ import java.security.MessageDigest;
 /**
  * 加解密工具类
  * 
- * @author yuxiaowei
+ * @author tangyong
  * 
  */
 public class CryptTool {

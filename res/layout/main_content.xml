@@ -58,7 +58,7 @@
         android:layout_gravity="end|bottom"
         android:layout_marginBottom="@dimen/abc_action_bar_content_inset_material"
         android:layout_marginRight="@dimen/abc_action_bar_overflow_padding_end_material"
-        android:src="@drawable/icon_add" />
+        android:src="@drawable/icon" />
 
 
 </android.support.design.widget.CoordinatorLayout>

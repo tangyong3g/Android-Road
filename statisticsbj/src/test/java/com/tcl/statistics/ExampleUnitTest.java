@@ -1,4 +1,4 @@
-package com.tcl.mig.staticssdk;
+package com.tcl.statistics;
 
 import org.junit.Test;
 

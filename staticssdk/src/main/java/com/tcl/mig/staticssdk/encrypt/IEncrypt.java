@@ -14,7 +14,7 @@ package com.tcl.mig.staticssdk.encrypt;
  * <br>类描述:加密解密接口
  * <br>功能详细描述:
  * 
- * @author  liguoliang
+ * @author  tangyong
  * @date  [2012-9-25]
  */
 public interface IEncrypt {

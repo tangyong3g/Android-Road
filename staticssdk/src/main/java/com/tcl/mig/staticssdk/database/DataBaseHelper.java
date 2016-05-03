@@ -1,7 +1,5 @@
 package com.tcl.mig.staticssdk.database;
 
-import java.util.ArrayList;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -14,6 +12,8 @@ import com.tcl.mig.staticssdk.StatisticsManager;
 import com.tcl.mig.staticssdk.beans.PostBean;
 import com.tcl.mig.staticssdk.utiltool.UtilTool;
 
+import java.util.ArrayList;
+
 //CHECKSTYLE:OFF
 /**
  * 
@@ -21,7 +21,7 @@ import com.tcl.mig.staticssdk.utiltool.UtilTool;
  * 类描述:统计数据post失败时持久化DB <br>
  * 功能详细描述:
  * 
- * @author rongjinsong
+ * @author tangyong
  * @date [2013-3-4]
  */
 public class DataBaseHelper extends SQLiteOpenHelper {

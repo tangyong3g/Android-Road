@@ -19,7 +19,7 @@ package com.tcl.mig.staticssdk.encrypt;
  * <br>类描述:
  * <br>功能详细描述:
  * 
- * @author  liguoliang
+ * @author  tangyong
  * @date  [2012-10-12]
  */
 public class Base64 {

@@ -1,10 +1,11 @@
 package com.tcl.mig.staticssdk.scheduler;
 
-import java.io.FileOutputStream;
-import java.net.HttpURLConnection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import com.tcl.mig.staticssdk.StatisticsManager;
+import com.tcl.mig.staticssdk.beans.CtrlBean;
+import com.tcl.mig.staticssdk.utiltool.UtilTool;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -15,19 +16,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
-import com.tcl.mig.staticssdk.StatisticsManager;
-import com.tcl.mig.staticssdk.beans.CtrlBean;
-import com.tcl.mig.staticssdk.utiltool.UtilTool;
+import java.io.FileOutputStream;
+import java.net.HttpURLConnection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 //CHECKSTYLE:OFF
 
 /**
  * 循环获取控制开关信息的任务，每8小时获取一次
  * 
- * @author luozhiping
+ * @author tangyong
  * 
  */
 public class GetCtrlInfoTask extends SchedulerTask {

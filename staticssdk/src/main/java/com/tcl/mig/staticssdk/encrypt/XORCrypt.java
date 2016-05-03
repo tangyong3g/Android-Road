@@ -16,7 +16,7 @@ import java.util.Random;
  * <br>类描述:桌面的加密方法
  * <br>功能详细描述:
  * 
- * @author  liguoliang
+ * @author  tangyong
  * @date  [2012-9-25]
  */
 public class XORCrypt implements IEncrypt {
