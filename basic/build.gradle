@@ -1,13 +1,22 @@
 apply plugin: 'com.android.application'
 
+//
+//  关于targetSdkVersion的设定
+
+// Warning: Right now when you create a new project in Android Studio.
+// targetSdkVersion will be automatically set to the latest version, 23.
+// If you are not ready to make your application fully support the Runtime Permission,
+// I suggest you to step down the targetSdkVersion to 22 first.
+
+
 android {
-    compileSdkVersion  23
+    compileSdkVersion 23
     buildToolsVersion "23.0.0"
 
     defaultConfig {
         applicationId "com.sny.tangyong.basic"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }

@@ -4,8 +4,6 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -43,7 +41,8 @@ public class MainActivity extends ListActivity {
             "BitMapDecode",
             "LooperVersion2.0",
             "Fragment",
-            "Best Practice for performance threads "
+            "Best Practice for performance threads ",
+            "Imea and android id "
 
     };
 
@@ -183,6 +182,11 @@ public class MainActivity extends ListActivity {
                 break;
             case 27:
                 cls = BesetPracticeForThread.class;
+                break;
+
+            case 28:
+                cls = BasicImeaActivity.class;
+                break;
             default:
 
                 break;

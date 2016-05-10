@@ -17,10 +17,11 @@
     <string name="title_activity_app_com">AppComActivity</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="start">start</string>
-
     <string name="fragment_1">1</string>
     <string name="fragment_2">2</string>
     <string name="fragment_3">3</string>
+    <string name="title_activity_basic_imea">BasicImeaActivity</string>
+    <string name="imea">imea</string>
 
 
 </resources>
