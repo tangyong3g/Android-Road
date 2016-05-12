@@ -42,7 +42,8 @@ public class MainActivity extends ListActivity {
             "LooperVersion2.0",
             "Fragment",
             "Best Practice for performance threads ",
-            "Imea and android id "
+            "Imea and android id ",
+            "设备基础信息"
 
     };
 
@@ -186,6 +187,9 @@ public class MainActivity extends ListActivity {
 
             case 28:
                 cls = BasicImeaActivity.class;
+                break;
+            case 29:
+                cls = BasicDeviceInfoActivity.class;
                 break;
             default:
 

@@ -3,7 +3,6 @@ package com.sny.tangyong.basic;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
-import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
 import android.util.Log;
@@ -23,32 +22,6 @@ import java.text.DecimalFormat;
 		*@Version:1.1.0
  */
 public class DeviceInfomation extends Activity {
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		// TODO
-		super.onCreate(savedInstanceState);
-
-		long size = getAvailableInternalMemorySize();
-		Log.i("data", "获取手机内部剩余存储空间:\t" + formatFileSize(size, false));
-
-		size = getTotalInternalMemorySize();
-		Log.i("data", "获取手机内部总的存储空间:\t" + formatFileSize(size, false));
-
-		size = getTotalExternalMemorySize();
-		Log.i("data", "获取SDCARD总的存储空间:\t" + formatFileSize(size, false));
-
-		size = getAvailableExternalMemorySize();
-		Log.i("data", "获取SDCARD剩余存储空间:\t" + formatFileSize(size, false));
-		
-		
-		size = getTotalExternalStoSizeV();
-		Log.i("data", "获取SDCARD总的存储空间 Tyler:\t" + formatFileSize(size, false));
-		
-		size = getNextExternalStoSizeV();
-		Log.i("data", "获取SDCARD剩余存储空间 tyler :\t" + formatFileSize(size, false));
-
-	}
 
 	/**
 	  * @return
@@ -147,6 +120,21 @@ public class DeviceInfomation extends Activity {
 			return ERROR;
 		}
 	}
+
+	/**
+	 * Calculates the total memory of the device. This is based on an inspection
+	 * of the filesystem, which in android devices is stored in RAM.
+	 *
+	 * @return Total number of bytes.
+	 */
+	public static long getTotalInternalMemorySize_() {
+		File path = Environment.getDataDirectory();
+		StatFs stat = new StatFs(path.getPath());
+		long blockSize = stat.getBlockSize();
+		long totalBlocks = stat.getBlockCount();
+		return totalBlocks * blockSize;
+	}
+
 
 	/**
 	 * 获取SDCARD总的存储空间 VErsion II 

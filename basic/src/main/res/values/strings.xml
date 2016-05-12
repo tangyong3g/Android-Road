@@ -22,6 +22,7 @@
     <string name="fragment_3">3</string>
     <string name="title_activity_basic_imea">BasicImeaActivity</string>
     <string name="imea">imea</string>
+    <string name="title_activity_basic_device_info">BasicDeviceInfoActivity</string>
 
 
 </resources>

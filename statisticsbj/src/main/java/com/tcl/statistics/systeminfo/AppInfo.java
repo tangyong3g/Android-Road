@@ -175,15 +175,15 @@ public class AppInfo {
         }
     }
 
-    private String getMetaData(Context context, String key) {
+    public static String getMetaData(Context context, String key) {
         if (context == null)
             return "";
         try {
-            PackageInfo info = context.getPackageManager().getPackageInfo(
-                    context.getPackageName(), 0);
-            ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(info.packageName, 128);
+            PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(info.packageName, PackageManager.GET_META_DATA);
             return appInfo.metaData.getString(key);
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return "";
     }
