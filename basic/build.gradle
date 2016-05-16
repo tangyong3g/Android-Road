@@ -8,7 +8,6 @@ apply plugin: 'com.android.application'
 // If you are not ready to make your application fully support the Runtime Permission,
 // I suggest you to step down the targetSdkVersion to 22 first.
 
-
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.0"
@@ -26,6 +25,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -33,4 +38,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.0.0'
     compile 'com.android.support:design:23.0.0'
     compile project(':statisticsbj')
+    compile(name: 'logger-debug', ext: 'aar')
 }

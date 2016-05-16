@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.orhanobut.logger.Logger;
 import com.tcl.statistics.systeminfo.AppInfo;
 
 public class BasicDeviceInfoActivity extends AppCompatActivity {
@@ -31,7 +32,6 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
     public static final String NET = "net";
     public static final String HEIGHT = "height";
     public static final String WIDTH = "width";
-
 
 
     @Override
@@ -151,6 +151,8 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
         sb.append(":\t");
         sb.append(DeviceUtils.getHeight(getApplicationContext()));
         sb.append("\n");
+
+        Logger.d(sb.toString());
 
         return sb.toString();
     }

@@ -69,7 +69,7 @@
 # keep child extends views
 -keep public class * extends com.go.gl.view.GLView
 -keep public class * extends com.go.gl.view.GLViewGroup
--keep public class * extends com.go.gl.animation.Animation
+-keep public class * extends com.sny.tangyong.shellengine.animation.Animation
 -keep public class * extends com.go.gl.widget.GLAdapterView
 -keep public class * extends com.go.gl.widget.GLAbsListView
 -keep public class com.go.gowidget.core.** { *;}

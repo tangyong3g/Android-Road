@@ -20,7 +20,7 @@ public class MainActivity extends ListActivity {
             "Animation",
             "Meminfo",
             "powerConnectd",
-            "图形",
+            "graphic",
             "canvas",
             "blending",
             "bitmap",
@@ -31,11 +31,11 @@ public class MainActivity extends ListActivity {
             "VewCycle",
             "DislayMetrics",
             "WallpaperManager",
-            "双缓冲",
-            "混合",
-            "属性动画",
+            "cache",
+            "blending",
+            "attribute animation",
             "ConcurrentModificationException",
-            "异步任务",
+            "ansy task",
             "DeviceInfo",
             "Partical",
             "BitMapDecode",
@@ -43,7 +43,7 @@ public class MainActivity extends ListActivity {
             "Fragment",
             "Best Practice for performance threads ",
             "Imea and android id ",
-            "设备基础信息"
+            "basic device information"
 
     };
 

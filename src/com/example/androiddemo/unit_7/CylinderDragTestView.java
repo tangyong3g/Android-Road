@@ -5,8 +5,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 
 import com.sny.tangyong.androiddemo.R;
-import com.go.gl.animation.Transformation3D;
 import com.go.gl.graphics.GLCanvas;
+import com.go.gl.animation.Transformation3D;
 import com.go.gl.graphics.geometry.GLCylinder;
 import com.go.gl.graphics.geometry.TextureGLObjectRender;
 import com.go.gl.math3d.Cylinder;
