@@ -8,7 +8,7 @@ import com.orhanobut.logger.Logger;
  */
 public class BasicApplication extends Application{
 
-    public static final String TAG = "TYLER";
+    public static final String TAG = "tyler.tang";
 
     @Override
     public void onCreate() {

@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name="com.sny.tangyong.basic.BasicApplication"
+        android:name=".BasicApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:theme="@style/Theme.AppCompat">
@@ -21,16 +21,17 @@
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GLSurfaceViewActivity"  />
-        <activity android:name=".FullScreenTest"  />
-        <activity android:name=".LooperActivity"  />
+        <activity android:name=".GLSurfaceViewActivity" />
+        <activity android:name=".FullScreenTest" />
+        <activity android:name=".LooperActivity" />
         <activity android:name=".AnimationActivity" />
         <activity android:name=".PowerConnectActivity" />
-        <activity android:name=".MeminfoActivity"  />
-        <activity android:name=".AttriAnimationLayoutActivity"  />
+        <activity android:name=".MeminfoActivity" />
+        <activity android:name=".AttriAnimationLayoutActivity" />
         <activity android:name=".LayoutViewActivity" />
         <activity android:name=".CanvasSavelayerActivity" />
         <activity android:name=".GrapicActivity" />
@@ -66,12 +67,13 @@
         <activity
             android:name=".BasicDeviceInfoActivity"
             android:label="@string/title_activity_basic_device_info"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="CHANNEL"
-            android:value="GooglePlay"></meta-data>
+            android:value="GooglePlay" />
 
+        <activity android:name=".UnCatchExceptionActivity"></activity>
     </application>
 
 </manifest>

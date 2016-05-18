@@ -24,5 +24,8 @@
     <string name="imea">imea</string>
     <string name="title_activity_basic_device_info">BasicDeviceInfoActivity</string>
 
+    <string name="error_main_thread">主线程出现异常</string>
+    <string name="error_sub_thread">子线程出现异常</string>
+
 
 </resources>

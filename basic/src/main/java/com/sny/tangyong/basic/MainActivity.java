@@ -43,7 +43,8 @@ public class MainActivity extends ListActivity {
             "Fragment",
             "Best Practice for performance threads ",
             "Imea and android id ",
-            "basic device information"
+            "basic device information",
+            "UnCatchException"
 
     };
 
@@ -190,6 +191,10 @@ public class MainActivity extends ListActivity {
                 break;
             case 29:
                 cls = BasicDeviceInfoActivity.class;
+                break;
+            case 30:
+
+                cls = UnCatchExceptionActivity.class;
                 break;
             default:
 
