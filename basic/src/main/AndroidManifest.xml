@@ -15,6 +15,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:theme="@style/Theme.AppCompat">
+
+        <meta-data android:value="yyql057a60" android:name="TCL_STATISTICS_APP_KEY"/>
+        <meta-data android:value="china" android:name="SERVER_DOMAIN"/>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
