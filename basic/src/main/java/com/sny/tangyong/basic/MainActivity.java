@@ -44,7 +44,9 @@ public class MainActivity extends ListActivity {
             "Best Practice for performance threads ",
             "Imea and android id ",
             "basic device information",
-            "UnCatchException"
+            "UnCatchException",
+            "Https/Http",
+            "HttpsTwo"
 
     };
 
@@ -195,6 +197,13 @@ public class MainActivity extends ListActivity {
             case 30:
 
                 cls = UnCatchExceptionActivity.class;
+                break;
+            case 31:
+
+                cls = BasicHttpActivity.class;
+                break;
+            case 32:
+                cls = BasicHttpTwoActivity.class;
                 break;
             default:
 
