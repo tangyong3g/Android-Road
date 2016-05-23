@@ -27,5 +27,9 @@
     <string name="error_main_thread">主线程出现异常</string>
     <string name="error_sub_thread">子线程出现异常</string>
 
+    <string name="https_connnect">Https Connect</string>
+
+    <string name="https_connnect_method_two">Https Connect method two</string>
+
 
 </resources>
