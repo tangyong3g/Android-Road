@@ -30,7 +30,7 @@ public class TrustCertainHostNameFactory extends SSLSocketFactory {
     try {
       CertificateFactory cf = CertificateFactory.getInstance("X.509");
       InputStream in;
-      in = context.getAssets().open("load-der.crt");
+      in = context.getAssets().open("server.crt");
       Certificate ca = cf.generateCertificate(in);
 
       keystore = KeyStore.getInstance(KeyStore.getDefaultType());
