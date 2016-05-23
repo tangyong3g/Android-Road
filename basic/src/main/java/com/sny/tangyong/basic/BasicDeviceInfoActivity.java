@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.orhanobut.logger.Logger;
-import com.tcl.statistics.systeminfo.AppInfo;
 
 public class BasicDeviceInfoActivity extends AppCompatActivity {
 
@@ -124,7 +123,7 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
 
         sb.append(CHANNEL);
         sb.append(":\t");
-        sb.append(AppInfo.getMetaData(getApplicationContext(),"CHANNEL"));
+//        sb.append(AppInfo.getMetaData(getApplicationContext(),"CHANNEL"));
         sb.append("\n");
 
         sb.append(MAC);
@@ -150,6 +149,50 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
         sb.append(HEIGHT);
         sb.append(":\t");
         sb.append(DeviceUtils.getHeight(getApplicationContext()));
+        sb.append("\n");
+
+        sb.append("Build.VERSION.SDK_INT");
+        sb.append(":\t");
+        sb.append(Build.VERSION.SDK_INT);
+        sb.append("\n");
+
+        try{
+            sb.append("Build.VERSION.BASE_OS");
+            sb.append("\t");
+            sb.append(Build.VERSION.BASE_OS);
+            sb.append("\n");
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
+        sb.append("Build.VERSION.RELEASE");
+        sb.append("\t");
+        sb.append(Build.VERSION.RELEASE);
+        sb.append("\n");
+
+        sb.append("Build.VERSION.INCREMENTAL");
+        sb.append("\t");
+        sb.append(Build.VERSION.INCREMENTAL);
+        sb.append("\n");
+
+        sb.append("Build.VERSION.SECURITY_PATCH");
+        sb.append("\t");
+//        sb.append(Build.VERSION.SECURITY_PATCH);
+        sb.append("\n");
+
+        sb.append("Build.VERSION.SDK");
+        sb.append("\t");
+        sb.append(Build.VERSION.SDK);
+        sb.append("\n");
+
+        sb.append("Build.VERSION.SDK_INT");
+        sb.append("\t");
+        sb.append(Build.VERSION.SDK_INT);
+        sb.append("\n");
+
+        sb.append("Build.VERSION.PREVIEW_SDK_INT");
+        sb.append("\t");
+//        sb.append(Build.VERSION.PREVIEW_SDK_INT);
         sb.append("\n");
 
         Logger.d(sb.toString());
