@@ -78,7 +78,7 @@ public class BasicHttpTwoActivity extends Activity {
                     @Override
                     public void run() {
                         try {
-                            initSSLCertainWithHttpClient();
+//                            initSSLCertainWithHttpClient();
 //                            initSSLAllWithHttpClient();
 //                            TestHttp();
 //                            testMethodTwo();
@@ -86,6 +86,8 @@ public class BasicHttpTwoActivity extends Activity {
 //                            initSSL();
 //                            initSSLCertainWithHttpClient();
 //                            testMethodThreed();
+//                            initSSLALL();
+//                            initSSL();
                         } catch (Exception e) {
                             Log.e("HTTPS TEST", e.getMessage());
                             e.printStackTrace();
@@ -106,8 +108,7 @@ public class BasicHttpTwoActivity extends Activity {
      * @throws NoSuchAlgorithmException
      * @throws KeyManagementException
      */
-    public void initSSL() throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException,
-            KeyManagementException {
+    public void initSSL() throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         CertificateFactory cf = CertificateFactory.getInstance("X.509");
         InputStream in = getAssets().open("server.crt");
         Certificate ca = cf.generateCertificate(in);
@@ -149,7 +150,7 @@ public class BasicHttpTwoActivity extends Activity {
      */
     public void initSSLALL() throws KeyManagementException, NoSuchAlgorithmException, IOException {
 
-        URL url = new URL(HTTPS_TCL_SERVER);
+        URL url = new URL(HTTPS_TEST_SEVER);
         SSLContext context = SSLContext.getInstance("TLS");
         context.init(null, new TrustManager[]{new TrustAllManager()}, null);
         HttpsURLConnection.setDefaultSSLSocketFactory(context.getSocketFactory());
@@ -207,8 +208,6 @@ public class BasicHttpTwoActivity extends Activity {
         }
         Log.e("HTTPS TEST", result.toString());
     }
-
-
 
     /**
      * HttpClient方式实现，支持验证指定证书
