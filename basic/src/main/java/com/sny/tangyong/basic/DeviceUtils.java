@@ -14,6 +14,7 @@ import android.view.WindowManager;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Locale;
 
@@ -216,11 +217,13 @@ public class DeviceUtils {
     }
 
 
-    /*
-     * ****************************************************************
-     * 子函数：获得本地MAC地址****************************************************************
+    /**
+     * 从本地文件获取MAC地址
+     * 
+     * @return
+     * @throws IOException
      */
-    public static String getMacAddress() {
+    public static String getMacAddress() throws IOException {
         String result = "";
         String Mac = "";
         result = callCmd("busybox ifconfig", "HWaddr");
@@ -250,32 +253,29 @@ public class DeviceUtils {
     }
 
 
-    public static String callCmd(String cmd, String filter) {
+    public static String callCmd(String cmd, String filter) throws IOException {
         String result = "";
         String line = "";
-        try {
-            Process proc = Runtime.getRuntime().exec(cmd);
-            InputStreamReader is = new InputStreamReader(proc.getInputStream());
-            BufferedReader br = new BufferedReader(is);
 
-            // 执行命令cmd，只取结果中含有filter的这一行
-            while ((line = br.readLine()) != null && line.contains(filter) == false) {
-                // result += line;
-                Log.i("test", "line: " + line);
-            }
+        Process proc = Runtime.getRuntime().exec(cmd);
+        InputStreamReader is = new InputStreamReader(proc.getInputStream());
+        BufferedReader br = new BufferedReader(is);
 
-            result = line;
-            Log.i("test", "result: " + result);
-        } catch (Exception e) {
-            e.printStackTrace();
+        // 执行命令cmd，只取结果中含有filter的这一行
+        while ((line = br.readLine()) != null && line.contains(filter) == false) {
+            // result += line;
+            Log.i("test", "line: " + line);
         }
+
+        result = line;
+        Log.i("test", "result: " + result);
         return result;
     }
 
 
 
     /**
-     * getMAc
+     * 利用系统API去拿macAddress
      *
      * @param context
      * @return
@@ -283,8 +283,8 @@ public class DeviceUtils {
     public static String getMac(Context context) {
 
         WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-
         WifiInfo info = wifi.getConnectionInfo();
+
         return info.getMacAddress();
     }
 
@@ -372,7 +372,6 @@ public class DeviceUtils {
         am.getMemoryInfo(memoryInfo);
         return memoryInfo.totalMem;
     }
-
 
 
 

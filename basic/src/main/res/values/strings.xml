@@ -31,5 +31,21 @@
 
     <string name="https_connnect_method_two">Https Connect method two</string>
 
+    <string name="androidId"> androidId</string>
+
+    <string name="IMEI"> IMEI </string>
+
+    <string name="UUID"> UUID </string>
+
+    <string name="macAddress"> MacAddress</string>
+
+    <string name="instanceId">instanceId</string>
+
+    <string name="randomUUID"> randomUUID</string>
+    
+    <string name="advertisingId">AdvertisingId</string>
+
+
+
 
 </resources>

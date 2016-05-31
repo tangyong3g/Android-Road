@@ -30,6 +30,7 @@ public class UnCatchExceptionActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Logger.d("onCreate");
+
         setContentView(R.layout.activity_un_catch_exception);
 
         initComponent();
@@ -104,7 +105,6 @@ public class UnCatchExceptionActivity extends Activity {
                         occursProblem();
                     }
                 })) ;
-
             }
         });
     }

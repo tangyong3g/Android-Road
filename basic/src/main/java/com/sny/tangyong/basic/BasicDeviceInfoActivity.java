@@ -17,7 +17,7 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
     public static final String ROM = "rom";
     public static final String MODELTYPE = "modeltype";
     public static final String COUNTRY = "country";
-    public static final String IMEA = "imea";
+    public static final String IMEI = "imei";
     public static final String ISROOT = "isroot";
     public static final String CPUFRE = "cpufre";
     public static final String CPUTYPE = "cputype";
@@ -84,7 +84,7 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
         sb.append(DeviceUtils.getLocal(getApplicationContext()));
         sb.append("\n");
 
-        sb.append(IMEA);
+        sb.append(IMEI);
         sb.append(":\t");
         sb.append(DeviceUtils.getIMEA(getApplicationContext()));
         sb.append("\n");

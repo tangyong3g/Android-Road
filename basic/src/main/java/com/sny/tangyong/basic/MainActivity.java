@@ -46,7 +46,8 @@ public class MainActivity extends ListActivity {
             "basic device information",
             "UnCatchException",
             "Https/Http",
-            "HttpsTwo"
+            "HttpsTwo",
+            "Identifying ID唯一性解决方案"
 
     };
 
@@ -204,6 +205,11 @@ public class MainActivity extends ListActivity {
                 break;
             case 32:
                 cls = BasicHttpTwoActivity.class;
+                break;
+            case 33:
+
+                cls = BasicUnquiueIdentifyActivity.class;
+
                 break;
             default:
 
