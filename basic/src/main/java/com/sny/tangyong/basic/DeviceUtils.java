@@ -33,6 +33,7 @@ public class DeviceUtils {
     private final static int kSystemRootStateDisable = 0;
     private final static int kSystemRootStateEnable = 1;
     private static int systemRootState = kSystemRootStateUnknow;
+    private static final int REQUEST_CODE_ASK_READ_PHONE_PERMISSION = 111;
 
     public static boolean isRootSystem() {
         if (systemRootState == kSystemRootStateEnable) {
@@ -57,7 +58,6 @@ public class DeviceUtils {
         systemRootState = kSystemRootStateDisable;
         return false;
     }
-
 
 
     /**
@@ -116,7 +116,7 @@ public class DeviceUtils {
      *         // --TODO 6.0的权限处理这里在哪个时间点比较好呢。因为如果不是这样那么Activity的对象会被传到统计SDK中。
      *
      */
-    public static String getIMEA(Context context) {
+    public static String getIMEI(Context context){
 
         String imea = null;
 
@@ -129,15 +129,15 @@ public class DeviceUtils {
                 imea = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
                 return imea;
             } else {
-                // ActivityCompat.requestPermissions(context, new String[]
-                // {Manifest.permission.READ_PHONE_STATE}, REQUEST_CODE_ASK_READ_PHONE_PERMISSION);
+                // ActivityCompat.requestPermissions(context, new
+                // String[]{Manifest.permission.READ_PHONE_STATE},
+                // REQUEST_CODE_ASK_READ_PHONE_PERMISSION);
             }
         } else {
             imea = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
         }
         return imea;
     }
-
 
     /**
      * //--TODO 目前好像不好处理
@@ -241,6 +241,42 @@ public class DeviceUtils {
 
             if (Mac.length() > 1) {
                 Mac = Mac.replaceAll(" ", "");
+                // 不处理 :的问题。
+                // result = "";
+                // String[] tmp = Mac.split(":");
+                // for (int i = 0; i < tmp.length; ++i) {
+                // result += tmp[i];
+                // }
+                result = Mac;
+            }
+            Log.i("test", result + " result.length: " + result.length());
+        }
+        return result;
+    }
+
+    /**
+     * 转化Mac地址
+     * 
+     * @param result
+     * @return
+     */
+    public static String resolveMacAddress(String result) {
+
+        String Mac = "";
+
+        // 如果返回的result == null，则说明网络不可取
+        if (result == null) {
+            return "connect error!";
+        }
+
+        // 对该行数据进行解析
+        // 例如：eth0 Link encap:Ethernet HWaddr 00:16:E8:3E:DF:67
+        if (result.length() > 0 && result.contains("HWaddr") == true) {
+            Mac = result.substring(result.indexOf("HWaddr") + 6, result.length() - 1);
+            Log.i("test", "Mac:" + Mac + " Mac.length: " + Mac.length());
+
+            if (Mac.length() > 1) {
+                Mac = Mac.replaceAll(" ", "");
                 result = "";
                 String[] tmp = Mac.split(":");
                 for (int i = 0; i < tmp.length; ++i) {
@@ -250,6 +286,7 @@ public class DeviceUtils {
             Log.i("test", result + " result.length: " + result.length());
         }
         return result;
+
     }
 
 

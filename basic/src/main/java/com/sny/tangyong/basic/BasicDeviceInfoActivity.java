@@ -84,10 +84,14 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
         sb.append(DeviceUtils.getLocal(getApplicationContext()));
         sb.append("\n");
 
-        sb.append(IMEI);
-        sb.append(":\t");
-        sb.append(DeviceUtils.getIMEA(getApplicationContext()));
-        sb.append("\n");
+        try{
+            sb.append(IMEI);
+            sb.append(":\t");
+            sb.append(DeviceUtils.getIMEI(getApplicationContext()));
+            sb.append("\n");
+        }catch (Exception ex){
+
+        }
 
         sb.append(ISROOT);
         sb.append(":\t");

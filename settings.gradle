@@ -1,1 +1,1 @@
-include ':basic', ':common', ':staticssdk', ':statisticsbj','demostart'
+include ':basic', ':common','demostart'
