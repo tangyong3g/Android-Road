@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+
+    <fragment
+        android:id="@+id/fragment_one"
+        android:name="com.sny.tangyong.basic.HeadFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fragment_two"
+        android:name="com.sny.tangyong.basic.FragmentTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+    </fragment>
+
+
+
+</LinearLayout>

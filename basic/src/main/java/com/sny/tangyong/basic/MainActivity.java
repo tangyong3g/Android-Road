@@ -47,7 +47,8 @@ public class MainActivity extends ListActivity {
             "UnCatchException",
             "Https/Http",
             "HttpsTwo",
-            "Identifying ID唯一性解决方案"
+            "Identifying ID唯一性解决方案",
+            "Fragment"
 
     };
 
@@ -209,6 +210,12 @@ public class MainActivity extends ListActivity {
             case 33:
 
                 cls = BasicUnquiueIdentifyActivity.class;
+
+                break;
+
+            case 34:
+
+                cls = BasicFragment.class;
 
                 break;
             default:

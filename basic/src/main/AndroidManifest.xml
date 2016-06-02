@@ -85,6 +85,7 @@
         <activity android:name=".BasicHttpActivity" />
         <activity android:name=".BasicHttpTwoActivity" />
         <activity android:name=".BasicUnquiueIdentifyActivity"></activity>
+        <activity android:name=".BasicFragment"></activity>
     </application>
 
 </manifest>
