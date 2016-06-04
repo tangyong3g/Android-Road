@@ -31,11 +31,8 @@ import java.io.InputStream;
  * 
  *         1: 把文字流变成 bitmap 的方式. 
  *         2: bitMap 只种不同的方式所产生内存的占用的差异. 
- *         3: Paint 和Cavas
- *         的理解.
- * 
- * 
- * 
+ *         3: Paint 和Cavas的理解.
+ *
  */
 public class BitMapDecodeActivity extends Activity {
 
@@ -87,8 +84,9 @@ public class BitMapDecodeActivity extends Activity {
 
 			blurMaskFilter = new BlurMaskFilter(1000, Blur.NORMAL);
 
-			InputStream is;
-			is = context.getResources().openRawResource(R.drawable.bg_one);
+
+			InputStream is = null;
+			is = context.getResources().openRawResource(R.raw.bg_one);
 
 			//BitmapFactory.Options 类,  允许我们定义图片以何种方式如何读到内存，
 			BitmapFactory.Options opts = new BitmapFactory.Options();
@@ -113,8 +111,7 @@ public class BitMapDecodeActivity extends Activity {
 			//		   
 			//		   Gdx.app.log("info", "height:\t"+heigt+"width:\t"+width);
 
-			is = context.getResources().openRawResource(
-					R.drawable.bg_one);
+			is = context.getResources().openRawResource(R.raw.gtm_analytics);
 			mBitMapTwo = BitmapFactory.decodeStream(is);
 
 			// create a deep copy of it using getPixels() into different configs
