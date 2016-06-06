@@ -10,13 +10,18 @@ import com.tcl.statistics.agent.StatisticsAgent;
 public class BasicApplication extends Application{
 
     public static final String TAG = "tyler.tang";
+    static BasicApplication instance ;
 
     @Override
     public void onCreate() {
         super.onCreate();
         Logger.init(TAG);
-
         StatisticsAgent.init(getApplicationContext());
         StatisticsAgent.setDebugMode(true);
+        instance = this;
+    }
+
+    public static BasicApplication getInstance(){
+        return instance;
     }
 }

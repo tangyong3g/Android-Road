@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">basic</string>
+
+    <string name="hello_world">你好!</string>
+    <string name="action_settings">设置</string>
+    <string name="animation_one">动画</string>
+    <string name="animation_two">动画</string>
+    <string name="send_msg">开始生产机器人</string>
+    <string name="read_start">开始读取</string>
+    <string name="read_finish">读取结束</string>
+    <string name="choice_color">选择色彩</string>
+    <string name="error_demo_one">以下错误代码</string>
+    <string name="right_demo_one">正确</string>
+    <string name="subject">主题</string>
+    <string name="to">到</string>
+    <string name="initCustomer">创建用户</string>
+    <string name="title_activity_app_com">演示程序</string>
+    <string name="title_activity_main2">演示程序二</string>
+    <string name="start">start</string>
+    <string name="fragment_1">1</string>
+    <string name="fragment_2">2</string>
+    <string name="fragment_3">3</string>
+    <string name="title_activity_basic_imea">演示程序</string>
+    <string name="imea">imea</string>
+    <string name="title_activity_basic_device_info">演示程序-设备</string>
+    <string name="error_main_thread">主线程出现异常</string>
+    <string name="error_sub_thread">子线程出现异常</string>
+    <string name="https_connnect">Https连接</string>
+    <string name="https_connnect_method_two">Https连接二</string>
+    <string name="androidId">androidId</string>
+    <string name="IMEI"> IMEI </string>
+    <string name="UUID"> UUID </string>
+    <string name="macAddress"> MacAddress</string>
+    <string name="instanceId">instanceId</string>
+    <string name="randomUUID"> randomUUID</string>
+    <string name="advertisingId">AdvertisingId</string>
+
+
+    <!-- Basic Graphic -->
+    <string name="loadImageData">高效加载图片</string>
+    <string name="processImageOffTheUiThread">在异步线程中处理图片</string>
+    <string name="cacheBitmap">缓存图片</string>
+    <string name="managerBitmapMemory">管理图片内存</string>
+    <string name="displayBitmapOnUI">显示图片</string>
+
+
+</resources>

@@ -1,6 +1,5 @@
 package com.sny.tangyong.basic;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by ty_sany@163.com on 2016/6/4.

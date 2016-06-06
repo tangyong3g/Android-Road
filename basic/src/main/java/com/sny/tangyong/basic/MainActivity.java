@@ -1,18 +1,9 @@
 package com.sny.tangyong.basic;
 
 import android.app.ListActivity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.test.PerformanceTestCase;
-import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Administrator on 2015/7/29.
@@ -48,16 +39,13 @@ public class MainActivity extends BaseListActivity {
         info = new ItemComponentInfo("PowerConnected", PowerConnectActivity.class);
         mItemsInfo.add(info);
 
-        info = new ItemComponentInfo("Graphic", GrapicActivity.class);
+        info = new ItemComponentInfo("Graphic", BasicGraphicListActivity.class);
         mItemsInfo.add(info);
 
         info = new ItemComponentInfo("Canvas", CanvasDemoActivity.class);
         mItemsInfo.add(info);
 
         info = new ItemComponentInfo("Blending", BelendingActivity.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("Bitmap", BitMapDecodeActivity.class);
         mItemsInfo.add(info);
 
         info = new ItemComponentInfo("handler", HandlerTestActivity.class);

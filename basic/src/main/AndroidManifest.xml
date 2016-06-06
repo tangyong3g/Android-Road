@@ -84,8 +84,13 @@
         <activity android:name=".UnCatchExceptionActivity" />
         <activity android:name=".BasicHttpActivity" />
         <activity android:name=".BasicHttpTwoActivity" />
-        <activity android:name=".BasicUnquiueIdentifyActivity"></activity>
-        <activity android:name=".BasicFragment"></activity>
+        <activity android:name=".BasicUnquiueIdentifyActivity" />
+        <activity android:name=".BasicFragment" />
+        <activity android:name=".BasicGraphicListActivity" />
+        <activity android:name=".LoadImageDataActivity" />
+        <activity android:name=".ProcessImageOnUiActivity" />
+        <activity android:name=".ManagerBitmapActivity" />
+        <activity android:name=".DisplayBitmapActivity"></activity>
     </application>
 
 </manifest>
