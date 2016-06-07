@@ -71,7 +71,7 @@ public class BaseListActivity extends ListActivity {
 
             String name = temp.mDisplayName;
 
-            if (name.trim().equals(displayName)) {
+            if (name.equals(displayName)) {
                 targetClass = temp.mItemClass;
                 break;
             }

@@ -90,7 +90,12 @@
         <activity android:name=".LoadImageDataActivity" />
         <activity android:name=".ProcessImageOnUiActivity" />
         <activity android:name=".ManagerBitmapActivity" />
-        <activity android:name=".DisplayBitmapActivity"></activity>
+        <activity android:name=".DisplayBitmapActivity" />
+        <activity android:name=".CreateBackGroundServiceActivity" />
+        <activity android:name=".SendRequestToServiceActivity" />
+        <activity android:name=".ReportingWorkStateActivity" />
+        <activity android:name=".BasicBestPracticeForPerfemenceActivity" />
+        <activity android:name=".BasicManagerMemoryActivity"></activity>
     </application>
 
 </manifest>

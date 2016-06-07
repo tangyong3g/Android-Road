@@ -36,13 +36,11 @@
     <string name="advertisingId">AdvertisingId</string>
 
     <!-- Basic Graphic -->
-    <string name="loadImageData">LoadImageData</string>
+    <string name="loadImageData">Load Image Data</string>
     <string name="processImageOffTheUiThread">Process Image off the Thread</string>
     <string name="cacheBitmap">Cache Bitmap</string>
     <string name="managerBitmapMemory">Manager Bitmap memory</string>
     <string name="displayBitmapOnUI">Display bitmap on UI</string>
-
-
 
 
 </resources>

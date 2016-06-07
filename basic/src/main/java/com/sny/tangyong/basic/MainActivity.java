@@ -81,6 +81,12 @@ public class MainActivity extends BaseListActivity {
         info = new ItemComponentInfo("Identifying", BasicUnquiueIdentifyActivity.class);
         mItemsInfo.add(info);
 
+
+        info = new ItemComponentInfo("Best Practice for perfemence", BasicBestPracticeForPerfemenceActivity.class);
+        mItemsInfo.add(info);
+
+
+
         initDisplayList();
 
     }

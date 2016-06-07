@@ -16,8 +16,8 @@ public class BasicApplication extends Application{
     public void onCreate() {
         super.onCreate();
         Logger.init(TAG);
-        StatisticsAgent.init(getApplicationContext());
-        StatisticsAgent.setDebugMode(true);
+//        StatisticsAgent.init(getApplicationContext());
+//        StatisticsAgent.setDebugMode(true);
         instance = this;
     }
 
