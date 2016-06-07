@@ -3,11 +3,12 @@ package com.sny.tangyong.basic;
 import java.util.ArrayList;
 
 /**
- * 性能最佳体验
+ * 
  */
-public class BasicBestPracticeForPerfemenceActivity extends BaseListActivity {
+public class BatteryLifeListActivity extends BaseListActivity {
 
-    public BasicBestPracticeForPerfemenceActivity() {
+
+    public BatteryLifeListActivity() {
         initListItems();
     }
 
@@ -18,15 +19,6 @@ public class BasicBestPracticeForPerfemenceActivity extends BaseListActivity {
         ItemComponentInfo info;
 
         info = new ItemComponentInfo("Manager your app's Memory", LoadImageDataActivity.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("perfemence Tips", PerfemenceTipActivity.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("Improve layout perfemence", LayoutPerfemenceListActivity.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("Optimizing Battery life", BatteryLifeListActivity.class);
         mItemsInfo.add(info);
 
         initDisplayList();

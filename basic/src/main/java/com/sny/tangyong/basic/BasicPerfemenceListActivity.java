@@ -25,7 +25,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 
+ *
+ *
  */
 public class BasicPerfemenceListActivity extends Activity {
 
@@ -65,7 +66,6 @@ public class BasicPerfemenceListActivity extends Activity {
         int position;
 
     }
-
 
 
     class MyAdapter3 extends BaseAdapter {

@@ -98,7 +98,8 @@
         <activity android:name=".BasicManagerMemoryActivity" />
         <activity android:name=".PerfemenceTipActivity" />
         <activity android:name=".LayoutPerfemenceListActivity" />
-        <activity android:name=".BasicPerfemenceListActivity"></activity>
+        <activity android:name=".BasicPerfemenceListActivity" />
+        <activity android:name=".BatteryLifeListActivity"></activity>
     </application>
 
 </manifest>
