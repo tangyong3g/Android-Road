@@ -63,8 +63,6 @@ public class Blur2Activity extends Activity {
             case MotionEvent.ACTION_UP:
                 break;
         }
-
-
         return true;
     }
 }

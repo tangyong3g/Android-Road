@@ -3,12 +3,12 @@ package com.sny.tangyong.basic;
 import java.util.ArrayList;
 
 /**
- * 性能最佳体验
+ * 布局优化
  */
-public class BasicBestPracticeForPerfemenceActivity extends BaseListActivity {
+public class LayoutPerfemenceListActivity extends BaseListActivity {
 
 
-    public BasicBestPracticeForPerfemenceActivity() {
+    public LayoutPerfemenceListActivity() {
         initListItems();
     }
 
@@ -18,14 +18,18 @@ public class BasicBestPracticeForPerfemenceActivity extends BaseListActivity {
 
         ItemComponentInfo info;
 
-        info = new ItemComponentInfo("Manager your app's Memory", LoadImageDataActivity.class);
+        info = new ItemComponentInfo("Optimizing Layout Hierarchies", LoadImageDataActivity.class);
         mItemsInfo.add(info);
 
-        info = new ItemComponentInfo("perfemence Tips", PerfemenceTipActivity.class);
+        info = new ItemComponentInfo("Re-using Layouts", LoadImageDataActivity.class);
         mItemsInfo.add(info);
 
-        info = new ItemComponentInfo("Improve layout perfemence", LayoutPerfemenceListActivity.class);
+        info = new ItemComponentInfo("Loading Views On Demand", LoadImageDataActivity.class);
         mItemsInfo.add(info);
+
+        info = new ItemComponentInfo("Making ListView Scrolling Smooth", BasicPerfemenceListActivity.class);
+        mItemsInfo.add(info);
+
 
         initDisplayList();
     }
@@ -40,6 +44,5 @@ public class BasicBestPracticeForPerfemenceActivity extends BaseListActivity {
             }
         }
     }
-
 
 }

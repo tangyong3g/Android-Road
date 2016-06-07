@@ -95,7 +95,10 @@
         <activity android:name=".SendRequestToServiceActivity" />
         <activity android:name=".ReportingWorkStateActivity" />
         <activity android:name=".BasicBestPracticeForPerfemenceActivity" />
-        <activity android:name=".BasicManagerMemoryActivity"></activity>
+        <activity android:name=".BasicManagerMemoryActivity" />
+        <activity android:name=".PerfemenceTipActivity" />
+        <activity android:name=".LayoutPerfemenceListActivity" />
+        <activity android:name=".BasicPerfemenceListActivity"></activity>
     </application>
 
 </manifest>

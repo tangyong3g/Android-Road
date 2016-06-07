@@ -1,6 +1,5 @@
 package com.sny.tangyong.basic;
 
-import android.app.ListActivity;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -21,34 +20,13 @@ public class MainActivity extends BaseListActivity {
 
         ItemComponentInfo info;
 
-        info = new ItemComponentInfo("SurfaceViewTest", GLSurfaceViewActivity.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("FullScreen", FullScreenTest.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("Looper", LooperActivity.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("Animations", AnimationActivity.class);
-        mItemsInfo.add(info);
-
         info = new ItemComponentInfo("Meminfo", MeminfoActivity.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("PowerConnected", PowerConnectActivity.class);
         mItemsInfo.add(info);
 
         info = new ItemComponentInfo("Graphic", BasicGraphicListActivity.class);
         mItemsInfo.add(info);
 
-        info = new ItemComponentInfo("Canvas", CanvasDemoActivity.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("Blending", BelendingActivity.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("handler", HandlerTestActivity.class);
+        info = new ItemComponentInfo("Thread", HandlerTestActivity.class);
         mItemsInfo.add(info);
 
         info = new ItemComponentInfo("Layout", LayoutActivity.class);
@@ -57,16 +35,10 @@ public class MainActivity extends BaseListActivity {
         info = new ItemComponentInfo("ViewSave", ViewCycleTestActivity.class);
         mItemsInfo.add(info);
 
-        info = new ItemComponentInfo("List", ListActivity.class);
-        mItemsInfo.add(info);
-
         info = new ItemComponentInfo("DeviceInfo", BasicDeviceInfoActivity.class);
         mItemsInfo.add(info);
 
         info = new ItemComponentInfo("LooperVersion2", LooperVersion2.class);
-        mItemsInfo.add(info);
-
-        info = new ItemComponentInfo("Fragment", FragmentTest.class);
         mItemsInfo.add(info);
 
         info = new ItemComponentInfo("Performance For Threads", BesetPracticeForThread.class);
@@ -80,7 +52,6 @@ public class MainActivity extends BaseListActivity {
 
         info = new ItemComponentInfo("Identifying", BasicUnquiueIdentifyActivity.class);
         mItemsInfo.add(info);
-
 
         info = new ItemComponentInfo("Best Practice for perfemence", BasicBestPracticeForPerfemenceActivity.class);
         mItemsInfo.add(info);
