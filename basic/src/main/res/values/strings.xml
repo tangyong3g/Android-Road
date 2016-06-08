@@ -41,6 +41,7 @@
     <string name="cacheBitmap">Cache Bitmap</string>
     <string name="managerBitmapMemory">Manager Bitmap memory</string>
     <string name="displayBitmapOnUI">Display bitmap on UI</string>
+    <string name="title_activity_basic_mem_list">BasicMemListActivity</string>
 
 
 </resources>

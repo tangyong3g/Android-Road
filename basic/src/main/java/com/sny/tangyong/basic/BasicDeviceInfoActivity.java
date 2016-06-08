@@ -53,10 +53,8 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
     }
 
     private void init() {
-
         TextView tx = (TextView) findViewById(R.id.tx_deviceinfo);
         tx.setText(initShowDeviceInfo());
-
     }
 
 

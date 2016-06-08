@@ -4,44 +4,36 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-/**
- * Created by Administrator on 2015/7/29.
- */
-public class MainActivity extends BaseListActivity {
+public class BasicOtherListActivity extends BaseListActivity {
 
-    public MainActivity() {
+
+    public BasicOtherListActivity() {
         initListItems();
     }
 
-
     public void initListItems() {
 
-        mItemsInfo = new ArrayList<ItemComponentInfo>();
+        mItemsInfo = new ArrayList<BaseListActivity.ItemComponentInfo>();
 
-        ItemComponentInfo info;
+        BaseListActivity.ItemComponentInfo info;
 
-        info = new ItemComponentInfo("Meminfo", BasicMemListActivity.class);
+        info = new ItemComponentInfo("ViewSave", ViewCycleTestActivity.class);
         mItemsInfo.add(info);
 
-        info = new ItemComponentInfo("Graphic", BasicGraphicListActivity.class);
+        info = new ItemComponentInfo("DeviceInfo", BasicDeviceInfoActivity.class);
         mItemsInfo.add(info);
 
-        info = new ItemComponentInfo("Thread", BasicThreadListActivity.class);
+        info = new ItemComponentInfo("UnCatchException", UnCatchExceptionActivity.class);
         mItemsInfo.add(info);
 
-        info = new ItemComponentInfo("Layout", LayoutActivity.class);
+        info = new ItemComponentInfo("Http/Https", BasicHttpTwoActivity.class);
         mItemsInfo.add(info);
 
-        info = new ItemComponentInfo("performance", BasicBestPracticeForPerfemenceActivity.class);
-        mItemsInfo.add(info);
-
-
-        info = new ItemComponentInfo("Other", BasicOtherListActivity.class);
+        info = new ItemComponentInfo("Identifying", BasicUnquiueIdentifyActivity.class);
         mItemsInfo.add(info);
 
         initDisplayList();
     }
-
 
     private void initDisplayList() {
         if (mItemsInfo != null && mItemsInfo.size() > 0) {
@@ -53,12 +45,11 @@ public class MainActivity extends BaseListActivity {
         }
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         getActionBar();
-    }
 
+    }
 }

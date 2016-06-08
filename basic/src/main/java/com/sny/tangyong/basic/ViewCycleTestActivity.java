@@ -188,7 +188,6 @@ public class ViewCycleTestActivity extends Activity implements OnClickListener {
     private void startAnimation() {
         mAmi = true;
 
-
     }
 
 }

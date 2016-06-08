@@ -99,7 +99,10 @@
         <activity android:name=".PerfemenceTipActivity" />
         <activity android:name=".LayoutPerfemenceListActivity" />
         <activity android:name=".BasicPerfemenceListActivity" />
-        <activity android:name=".BatteryLifeListActivity"></activity>
+        <activity android:name=".BatteryLifeListActivity" />
+        <activity android:name=".BasicThreadListActivity" />
+        <activity android:name=".BasicMemListActivity" />
+        <activity android:name=".BasicOtherListActivity"></activity>
     </application>
 
 </manifest>
