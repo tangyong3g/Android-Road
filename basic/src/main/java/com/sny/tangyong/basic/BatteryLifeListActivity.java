@@ -18,7 +18,7 @@ public class BatteryLifeListActivity extends BaseListActivity {
 
         ItemComponentInfo info;
 
-        info = new ItemComponentInfo("Manager your app's Memory", LoadImageDataActivity.class);
+        info = new ItemComponentInfo("Reduce Network battery Drain", ReduceBatteryDrainActivity.class);
         mItemsInfo.add(info);
 
         initDisplayList();
