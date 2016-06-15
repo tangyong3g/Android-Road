@@ -32,6 +32,11 @@ public class BasicOtherListActivity extends BaseListActivity {
         info = new ItemComponentInfo("Identifying", BasicUnquiueIdentifyActivity.class);
         mItemsInfo.add(info);
 
+        info = new ItemComponentInfo("Wifi Connected", BasicOtherWifiConectedActivity.class);
+        mItemsInfo.add(info);
+
+
+
         initDisplayList();
     }
 

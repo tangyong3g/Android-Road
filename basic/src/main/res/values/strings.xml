@@ -44,4 +44,9 @@
     <string name="title_activity_basic_mem_list">BasicMemListActivity</string>
 
 
+    <string name="scan">scaning</string>
+    <string name="connect">connect</string>
+    <string name="disconnect">disconnect</string>
+
+
 </resources>

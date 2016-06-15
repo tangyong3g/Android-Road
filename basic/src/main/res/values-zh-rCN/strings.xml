@@ -43,5 +43,9 @@
     <string name="managerBitmapMemory">管理图片内存</string>
     <string name="displayBitmapOnUI">显示图片</string>
 
+    <string name="scan">扫描</string>
+    <string name="connect">连接</string>
+    <string name="disconnect">断开连接</string>
+
 
 </resources>
