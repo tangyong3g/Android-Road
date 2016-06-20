@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="crash_notif_ticker_text">Unexpected error, send an error report…</string>
+	<string name="crash_notif_title">Unexpected error…</string>
+	<string name="crash_notif_text">Please select this to help us fix the problem</string>
+	<string name="crash_dialog_title">Launcher error report</string>
+	<string name="crash_dialog_text">An unexpected error caused the program to stop .We need your feedback to help us fix the problem. Please be assured that we only collect error information ,not personal information .</string>
+	<string name="crash_yes">Send Email</string>
+	<string name="crash_no">Cancel</string>
+	<string name="crash_subject">Error</string>
+</resources>

@@ -47,6 +47,8 @@
     <string name="scan">scaning</string>
     <string name="connect">connect</string>
     <string name="disconnect">disconnect</string>
+    <string name="crashOccur"> crash </string>
+    
 
 
 </resources>

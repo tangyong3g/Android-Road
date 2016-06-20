@@ -1,8 +1,9 @@
 package com.sny.tangyong.basic;
 
 import android.app.Application;
+
 import com.orhanobut.logger.Logger;
-import com.tcl.statistics.agent.StatisticsAgent;
+import com.tcl.mailfeedback.CrashReport;
 
 /**
  * Created by Administrator on 2016/5/17.
@@ -18,6 +19,8 @@ public class BasicApplication extends Application{
         Logger.init(TAG);
 //        StatisticsAgent.init(getApplicationContext());
 //        StatisticsAgent.setDebugMode(true);
+        //异常启动
+        new CrashReport().start(getApplicationContext());
         instance = this;
     }
 

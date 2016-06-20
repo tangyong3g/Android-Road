@@ -35,6 +35,11 @@ public class BasicOtherListActivity extends BaseListActivity {
         info = new ItemComponentInfo("Wifi Connected", BasicOtherWifiConectedActivity.class);
         mItemsInfo.add(info);
 
+        info = new ItemComponentInfo("Error Report Test", BasicErrorReportActivity.class);
+        mItemsInfo.add(info);
+
+
+
 
 
         initDisplayList();
