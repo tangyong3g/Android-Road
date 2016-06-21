@@ -32,6 +32,11 @@ public class BasicThreadListActivity extends BaseListActivity {
         info = new ItemComponentInfo("Performance For Threads", BesetPracticeForThread.class);
         mItemsInfo.add(info);
 
+        info = new ItemComponentInfo("Task Manager", BasicThreadTaskManager.class);
+        mItemsInfo.add(info);
+
+
+
         initDisplayList();
     }
 

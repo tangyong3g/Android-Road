@@ -4,7 +4,6 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.os.*;
 import android.os.Process;
-import android.support.v4.util.LruCache;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;

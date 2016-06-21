@@ -24,18 +24,15 @@ public class BasicOtherWifiConectedActivity extends Activity implements View.OnC
     Button mButtonScan;
     Button mBtnConnect;
     Button mBtnDisConnect;
-
     LinearLayout mVecLy;
     LinearLayout mOrLy;
     LinearLayout mContainer;
-
     Thread mScanThread;
-
     WifiAdmin mWifiAdm;
-
     Handler mHandler;
-
     public static  final int SCAN_FINISH = 111;
+    private static final String SSID = "XILI-5FB-MIE-2.4G";
+
 
     class HandlerNet extends Handler{
 
@@ -48,9 +45,9 @@ public class BasicOtherWifiConectedActivity extends Activity implements View.OnC
 
                 case SCAN_FINISH:
                     showScanResult(msg);
+
                 break;
             }
-
         }
     }
 
@@ -139,6 +136,8 @@ public class BasicOtherWifiConectedActivity extends Activity implements View.OnC
         mBtnConnect = new Button(getBaseContext());
         mBtnConnect.setText(txCon);
 
+        mBtnConnect.setOnClickListener(this);
+
         mBtnDisConnect = new Button(getBaseContext());
         mBtnDisConnect.setText(txDisCon);
 
@@ -178,10 +177,15 @@ public class BasicOtherWifiConectedActivity extends Activity implements View.OnC
                     }
                 };
             };
-
             mScanThread.start();
+        }else if(v == mBtnConnect){
+
+            WifiConfiguration configuration = getmWifiAdm().CreateWifiInfo(SSID,"qwerasdf",2);
+            getmWifiAdm().addNetwork(configuration);
         }
     }
+
+
 
     class WifiAdmin {
         // 定义WifiManager对象
@@ -254,8 +258,7 @@ public class BasicOtherWifiConectedActivity extends Activity implements View.OnC
                 return;
             }
             // 连接配置好的指定ID的网络
-            mWifiManager.enableNetwork(mWifiConfiguration.get(index).networkId,
-                    true);
+            mWifiManager.enableNetwork(mWifiConfiguration.get(index).networkId, true);
         }
 
         public List<ScanResult> startScan() {
@@ -276,8 +279,7 @@ public class BasicOtherWifiConectedActivity extends Activity implements View.OnC
         public StringBuilder lookUpScan() {
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < mWifiList.size(); i++) {
-                stringBuilder
-                        .append("Index_" + new Integer(i + 1).toString() + ":");
+                stringBuilder.append("Index_" + new Integer(i + 1).toString() + ":");
                 // 将ScanResult信息转换成一个字符串包
                 // 其中把包括：BSSID、SSID、capabilities、frequency、level
                 stringBuilder.append((mWifiList.get(i)).toString());
@@ -325,8 +327,7 @@ public class BasicOtherWifiConectedActivity extends Activity implements View.OnC
             mWifiManager.disconnect();
         }
 
-//然后是一个实际应用方法，只验证过没有密码的情况：
-
+        //然后是一个实际应用方法，只验证过没有密码的情况：
         public WifiConfiguration CreateWifiInfo(String SSID, String Password, int Type)
         {
             WifiConfiguration config = new WifiConfiguration();

@@ -108,7 +108,8 @@
         <activity android:name=".BasicOtherListActivity" />
         <activity android:name=".ReduceBatteryDrainActivity" />
         <activity android:name=".BasicOtherWifiConectedActivity" />
-        <activity android:name=".BasicErrorReportActivity"></activity>
+        <activity android:name=".BasicErrorReportActivity" />
+        <activity android:name=".BasicThreadTaskManager"></activity>
     </application>
 
 </manifest>
