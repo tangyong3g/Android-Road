@@ -35,7 +35,6 @@ public class MainActivity extends BaseListActivity {
         info = new ItemComponentInfo("performance", BasicBestPracticeForPerfemenceActivity.class);
         mItemsInfo.add(info);
 
-
         info = new ItemComponentInfo("Other", BasicOtherListActivity.class);
         mItemsInfo.add(info);
 

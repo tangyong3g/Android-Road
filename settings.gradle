@@ -1,1 +1,1 @@
-include ':basic', ':common', ':mailfeedback', 'demostart'
+include ':basic'

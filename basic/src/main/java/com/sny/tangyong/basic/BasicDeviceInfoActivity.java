@@ -2,8 +2,6 @@ package com.sny.tangyong.basic;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -40,6 +38,7 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +47,7 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
                         .show();
             }
         });
+        */
 
         init();
     }
@@ -161,7 +161,7 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
         try{
             sb.append("Build.VERSION.BASE_OS");
             sb.append("\t");
-            sb.append(Build.VERSION.BASE_OS);
+//            sb.append(Build.VERSION.BASE_OS);
             sb.append("\n");
         }catch (Exception ex){
             ex.printStackTrace();

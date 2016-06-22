@@ -57,7 +57,7 @@ public class WallpaperManagerTest extends Activity implements OnClickListener {
 		
 		//设置壁纸
 		try {
-			mWallpaperManager.setResource(R.drawable.bg_one);
+			mWallpaperManager.setResource(R.raw.bg_one);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -110,7 +110,9 @@
         <activity android:name=".BasicOtherWifiConectedActivity" />
         <activity android:name=".BasicErrorReportActivity" />
         <activity android:name=".BasicThreadTaskManager" />
-        <activity android:name=".BasicGraphicInterpolatorActivity"></activity>
+        <activity android:name=".BasicGraphicInterpolatorActivity" />
+        <activity android:name=".AndroidNPreViewListActivity" />
+        <activity android:name=".BackGroundOptizationActivity"></activity>
     </application>
 
 </manifest>

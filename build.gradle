@@ -27,7 +27,7 @@ allprojects {
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    buildToolsVersion '24.0.0'
     defaultConfig {
         applicationId 'com.sny.tangyong.androiddemo'
         minSdkVersion 16
@@ -79,7 +79,7 @@ dependencies {
     compile 'com.android.support:design:23.0.0'
     compile 'com.android.support:appcompat-v7:23.0.0'
     compile 'com.android.support:recyclerview-v7:23.0.0'
-//    compile 'com.google.android.gms:play-services-analytics:7.3.0'
+    //    compile 'com.google.android.gms:play-services-analytics:7.3.0'
     compile 'com.google.android.gms:play-services-analytics:8.1.0'
 }
 

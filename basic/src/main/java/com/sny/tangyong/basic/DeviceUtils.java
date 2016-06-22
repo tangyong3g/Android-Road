@@ -120,7 +120,7 @@ public class DeviceUtils {
 
         String imea = null;
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
             // 检查用户是否通过此权限
             String permission = android.Manifest.permission.READ_PHONE_STATE;

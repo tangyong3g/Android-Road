@@ -9,8 +9,8 @@ apply plugin: 'com.android.application'
 // I suggest you to step down the targetSdkVersion to 22 first.
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    compileSdkVersion 22
+    buildToolsVersion '24.0.0'
 
     defaultConfig {
         applicationId "com.sny.tangyong.basic"
@@ -39,14 +39,16 @@ android {
     }
 
 //    useLibrary 'org.apache.http.legacy'
+
+    lintOptions{
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.android.support:design:23.0.0'
     compile(name: 'logger-debug', ext: 'aar')
-    compile 'com.android.support:support-v4:23.1.1'
     compile 'com.google.android.gms:play-services:8.3.0'
-    compile (name: 'mailfeedback-release', ext: 'aar')
+    compile(name: 'mailfeedback-release', ext: 'aar')
 }

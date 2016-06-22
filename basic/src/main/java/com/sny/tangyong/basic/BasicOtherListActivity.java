@@ -39,6 +39,11 @@ public class BasicOtherListActivity extends BaseListActivity {
         mItemsInfo.add(info);
 
 
+        info = new ItemComponentInfo("Android N Preview", AndroidNPreViewListActivity.class);
+        mItemsInfo.add(info);
+
+
+
 
 
 

@@ -6,8 +6,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -39,14 +37,17 @@ public class BasicImeaActivity extends AppCompatActivity implements View.OnClick
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*
+                FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null)
                         .show();
             }
-        });
+        });       */
+
         init();
     }
 
@@ -70,11 +71,10 @@ public class BasicImeaActivity extends AppCompatActivity implements View.OnClick
             TextView txImea = (TextView) findViewById(R.id.tx_imea);
 
             if (Build.VERSION.SDK_INT >= 23) {
-
-                int readPhoneStatePermission = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_PHONE_STATE);
+/*
+//                int readPhoneStatePermission = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_PHONE_STATE);
                 if (readPhoneStatePermission != PackageManager.PERMISSION_GRANTED) {
-
-                    ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_PHONE_STATE}, REQUEST_CODE_ASK_READ_PHONE);
+//                    ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_PHONE_STATE}, REQUEST_CODE_ASK_READ_PHONE);
                     return;
 
                 } else {
@@ -82,6 +82,7 @@ public class BasicImeaActivity extends AppCompatActivity implements View.OnClick
                     Imei = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getDeviceId();
                     androidId = getAndroidId(getApplicationContext());
                 }
+                */
             } else {
 
                 Imei = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getDeviceId();
