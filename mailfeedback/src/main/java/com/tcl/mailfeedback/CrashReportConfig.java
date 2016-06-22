@@ -10,6 +10,7 @@ import android.os.Environment;
  *
  */
 public final class CrashReportConfig {
+
     /** 通知栏用到的资源 */
     public final static int RES_NOTIF_ICON = android.R.drawable.stat_notify_error;
     public final static int RES_NOTIF_TICKER_TEXT = R.string.crash_notif_ticker_text;
@@ -31,7 +32,7 @@ public final class CrashReportConfig {
     /** 邮件标题的字符串id */
     public final static int RES_EMAIL_SUBJECT = R.string.crash_subject;
 
-    /** 收件邮箱$Lite nextlauncherlitebug@gmail.com */
+    /** 收件邮箱 */
     public static String sEMAIL_RECEIVER = "tyler.sany@gmail.com";
     /** 崩溃日志保存路径 */
     public final static String LOG_PATH = Path.SDCARD + Path.LOG_DIR;
@@ -52,7 +53,7 @@ public final class CrashReportConfig {
     /**
      * 路径类 所有路径相关的常量都同意放在此处
      *
-     * @author luopeihuan
+     * @author tyler.tang
      */
     public static final class Path {
         /**
@@ -85,35 +86,14 @@ public final class CrashReportConfig {
         // public final static String COMMON_ICON_PATH = LAUNCHER_DIR + "/icon/";
 
         public final static String GOTHEMES_PATH = SDCARD + sLAUNCHER_DIR + "/nextTheme/";
-
-        /**
-         * 模块名 各模块文件夹 eg:/sdcard/golauncher/desk/theme/theme1(主题包名)/screen/...
-         */
         public final static String SCREEN_FOLDER = "/screen";
         public final static String DOCK_FOLDER = "/dock";
         public final static String APPDRAWER_FOLDER = "/appdrawer";
-
-        // dock背景
-        // public final static String DOCK_BG = "dockbg.png";
-
-        // 功能表背景
-        // public final static String APPDRAWER_BG = "appdrawerbg.png";
 
         /**
          * 特色图标路径
          */
         public final static String CUSTOM_ICON_DIR = sLAUNCHER_DIR + "/desk/customicon";
-
-        /**
-         * 字体路径
-         */
-        // public final static String FONT_PATH = LAUNCHER_DIR + "/fonts";
-
-        /**
-         * 屏幕截图文件夹
-         */
-        // public static final String SCREEN_CAPUTRE_PATH = SDCARD + LAUNCHER_DIR
-        // + "/capture/";
 
         /**
          * 主题等SharedPreferences文件备份目录
@@ -124,11 +104,6 @@ public final class CrashReportConfig {
          * 自定义手势－文件存储目录
          */
         public static final String DIY_GESTURE_PATH = sLAUNCHER_DIR + "/diygesture/";
-
-        /**
-         * 续费信息文件
-         */
-        public static final String PAY_FOR_UPDATE_PATH = SDCARD + "/.pfu";
     }
 
 }

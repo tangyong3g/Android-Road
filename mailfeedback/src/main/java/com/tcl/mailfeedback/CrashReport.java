@@ -278,7 +278,6 @@ public class CrashReport implements OnSharedPreferenceChangeListener {
             }
             if (ableAcra) {
                 initAcra();
-
             } else {
                 ErrorReporter.getInstance().disable();
             }
@@ -292,7 +291,7 @@ public class CrashReport implements OnSharedPreferenceChangeListener {
      * @return The Shared Preferences where ACRA will check the value of the setting which
      *         disables/enables it's action.
      */
-    // private SharedPreferences getACRASharedPreferences() {
-    // return PreferenceManager.getDefaultSharedPreferences(mApp);
-    // }
+    private SharedPreferences getACRASharedPreferences() {
+        return PreferenceManager.getDefaultSharedPreferences(mApp);
+    }
 }

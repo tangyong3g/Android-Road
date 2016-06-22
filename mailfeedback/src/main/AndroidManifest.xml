@@ -6,8 +6,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
 
-        <activity android:name=".CrashReportDialog">
-        </activity>
+        <activity
+            android:name=".CrashReportDialog"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Dialog"></activity>
 
     </application>
 

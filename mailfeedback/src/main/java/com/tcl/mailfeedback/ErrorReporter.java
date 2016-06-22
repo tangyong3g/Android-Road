@@ -668,10 +668,10 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
             if (track.contains(OUT_OF_MEMORY_ERROR) && track.contains(WIDGET_INIT)) {
                 mIsOutOfMemoryError = true;
             } else if (track.contains(UPGRADE_ERROR)) {
-                // mIsUpgradeError = true;
+                mIsUpgradeError = true;
             } else if ((track.contains(OUT_OF_MEMORY_FITER_EA) || track.contains(OUT_OF_MEMORY_FITER_EB))
                     && (track.contains(OUT_OF_MEMORY_FITER_A) || track.contains(OUT_OF_MEMORY_FITER_B))) {
-                // mIsOutOfMemoryError = true;
+                mIsOutOfMemoryError = true;
             }
 
             track = track.replaceAll("\\n\\t", "\n");
@@ -775,7 +775,6 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
                     }
                     curIndex++;
                 }
-
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -786,7 +785,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
     }
 
     /*
-     * 获取版本号
+     * 获取版本名称
      */
     public static String getVersionName(Context context) {
         String version = "unknown";
@@ -800,6 +799,12 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
         return version;
     }
 
+    /**
+     * 获取版本号
+     * 
+     * @param context
+     * @return
+     */
     private static String getVersionCode(Context context) {
         String version = "unknown";
         try {
@@ -812,6 +817,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
         return version;
     }
 
+
     /**
      * 发送邮件
      *
@@ -820,6 +826,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
      * @param body 文件内容
      */
     private void sendMail(Context context, String file, String body) {
+
         Log.i(LOG_TAG, file);
         Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
         emailIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -925,6 +932,14 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
         return true;
     }
 
+
+    /**
+     * 把Properties数据写到输出流中
+     * 
+     * @param out 输出流
+     * @param properties 数据
+     * @throws IOException
+     */
     public synchronized void storeToOutputStream(OutputStream out, Properties properties) throws IOException {
         if (properties == null) {
             return;
