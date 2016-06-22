@@ -1,6 +1,5 @@
 package com.sny.tangyong.basic;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ public class BasicGraphicListActivity extends BaseListActivity {
         mItemsInfo = new ArrayList<ItemComponentInfo>();
 
         ItemComponentInfo info;
-        //--TODO 在构造方法的时候是无法调用 getContext  Resource不起作用。
+        // --TODO 在构造方法的时候是无法调用 getContext Resource不起作用。
 
         info = new ItemComponentInfo("Load image data", LoadImageDataActivity.class);
         mItemsInfo.add(info);
@@ -43,6 +42,9 @@ public class BasicGraphicListActivity extends BaseListActivity {
         mItemsInfo.add(info);
 
         info = new ItemComponentInfo("Display bitmap on UI", DisplayBitmapActivity.class);
+        mItemsInfo.add(info);
+
+        info = new ItemComponentInfo("interpolator", BasicGraphicInterpolatorActivity.class);
         mItemsInfo.add(info);
 
         initDisplayList();

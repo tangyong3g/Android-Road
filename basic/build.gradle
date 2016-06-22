@@ -48,5 +48,5 @@ dependencies {
     compile(name: 'logger-debug', ext: 'aar')
     compile 'com.android.support:support-v4:23.1.1'
     compile 'com.google.android.gms:play-services:8.3.0'
-    compile project(':mailfeedback')
+    compile (name: 'mailfeedback-release', ext: 'aar')
 }
