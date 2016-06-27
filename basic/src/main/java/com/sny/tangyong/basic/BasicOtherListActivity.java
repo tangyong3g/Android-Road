@@ -4,6 +4,13 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @Title:
+ * @Description:
+ * @Author:ty_sany@163.com
+ * @Since:2016-06
+ */
 public class BasicOtherListActivity extends BaseListActivity {
 
 
@@ -41,9 +48,6 @@ public class BasicOtherListActivity extends BaseListActivity {
 
         info = new ItemComponentInfo("Android N Preview", AndroidNPreViewListActivity.class);
         mItemsInfo.add(info);
-
-
-
 
 
 

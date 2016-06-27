@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
 import android.provider.Settings;
+import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.WindowManager;
@@ -114,13 +115,13 @@ public class DeviceUtils {
      * @return String IMEA
      *
      *         // --TODO 6.0的权限处理这里在哪个时间点比较好呢。因为如果不是这样那么Activity的对象会被传到统计SDK中。
-     *
+     *         https://material.google.com/patterns/permissions.html#permissions-denied-permissions
      */
-    public static String getIMEI(Context context){
+    public static String getIMEI(Context context) {
 
         String imea = null;
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
             // 检查用户是否通过此权限
             String permission = android.Manifest.permission.READ_PHONE_STATE;
@@ -205,15 +206,21 @@ public class DeviceUtils {
      */
     public static String getIMSI(Context context) {
 
-        TelephonyManager telManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        /**
-         * 获取SIM卡的IMSI码 SIM卡唯一标识：IMSI 国际移动用户识别码（IMSI：International Mobile Subscriber Identification
-         * Number）是区别移动用户的标志， 储存在SIM卡中，可用于区别移动用户的有效信息。IMSI由MCC、MNC、MSIN组成，其中MCC为移动国家号码，由3位数字组成，
-         * 唯一地识别移动客户所属的国家，我国为460；MNC为网络id，由2位数字组成，
-         * 用于识别移动客户所归属的移动网络，中国移动为00，中国联通为01,中国电信为03；MSIN为移动客户识别码，采用等长11位数字构成。
-         * 唯一地识别国内GSM移动通信网中移动客户。所以要区分是移动还是联通，只需取得SIM卡中的MNC字段即可
-         */
-        return telManager.getSubscriberId();
+        try {
+            TelephonyManager telManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+            /**
+             * 获取SIM卡的IMSI码 SIM卡唯一标识：IMSI 国际移动用户识别码（IMSI：International Mobile Subscriber
+             * Identification Number）是区别移动用户的标志，
+             * 储存在SIM卡中，可用于区别移动用户的有效信息。IMSI由MCC、MNC、MSIN组成，其中MCC为移动国家号码，由3位数字组成，
+             * 唯一地识别移动客户所属的国家，我国为460；MNC为网络id，由2位数字组成，
+             * 用于识别移动客户所归属的移动网络，中国移动为00，中国联通为01,中国电信为03；MSIN为移动客户识别码，采用等长11位数字构成。
+             * 唯一地识别国内GSM移动通信网中移动客户。所以要区分是移动还是联通，只需取得SIM卡中的MNC字段即可
+             */
+            return telManager.getSubscriberId();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

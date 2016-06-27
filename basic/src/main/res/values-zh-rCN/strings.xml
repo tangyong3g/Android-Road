@@ -50,4 +50,7 @@
     <string name="title_activity_basic_mem_list">List</string>
     <string name="crashOccur">发生错误</string>
 
+    <string name="ok">确认</string>
+    <string name="permission">request permission</string>
+    <string name="request_info">request info</string>
 </resources>
