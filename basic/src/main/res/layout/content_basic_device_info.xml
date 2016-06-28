@@ -16,4 +16,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_request_permission"
+        android:onClick="requesetPermission"
+        android:text="@string/request_permission"
+        android:layout_below="@id/tx_deviceinfo"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_request_info"
+        android:onClick="requesetPermission"
+        android:text="@string/request_info"
+        android:layout_above="@id/btn_request_permission" />
+
 </RelativeLayout>

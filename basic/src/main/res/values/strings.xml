@@ -49,5 +49,11 @@
     <string name="disconnect">disconnect</string>
     <string name="crashOccur"> crash </string>
 
+    <string name="ok">ok</string>
+
+    <string name="permission">request permission</string>
+    <string name="request_permission">request permission</string>
+    <string name="request_info">request info</string>
+
 
 </resources>

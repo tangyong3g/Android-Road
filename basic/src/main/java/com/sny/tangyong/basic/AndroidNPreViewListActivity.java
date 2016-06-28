@@ -1,7 +1,9 @@
 package com.sny.tangyong.basic;
 
-import android.app.Activity;
 import android.os.Bundle;
+
+import com.sny.tangyong.common.view.BaseListActivity;
+import com.sny.tangyong.common.view.ItemComponentInfo;
 
 import java.util.ArrayList;
 
@@ -17,10 +19,10 @@ public class AndroidNPreViewListActivity extends BaseListActivity {
 
     public void initListItems() {
 
-        mItemsInfo = new ArrayList<BaseListActivity.ItemComponentInfo>();
-        BaseListActivity.ItemComponentInfo info;
+        mItemsInfo = new ArrayList<ItemComponentInfo>();
+        ItemComponentInfo info;
 
-        info = new BaseListActivity.ItemComponentInfo("BackGround Optization for Android N", BackGroundOptizationActivity.class);
+        info = new ItemComponentInfo("BackGround Optization for Android N", BackGroundOptizationActivity.class);
         mItemsInfo.add(info);
 
         initDisplayList();

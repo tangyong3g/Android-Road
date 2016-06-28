@@ -15,237 +15,237 @@ import java.text.DecimalFormat;
 
 /**
  * 
-		*@Title:
-		*@Description:
-		*@Author:tangyong
-		*@Since:2014-12-25
-		*@Version:1.1.0
+ * @Title:
+ * @Description:
+ * @Author:tangyong
+ * @Since:2014-12-25
+ * @Version:1.1.0
  */
 public class DeviceInfomation extends Activity {
 
-	/**
-	  * @return
-	  * @Description:
-	 */
-	public boolean isAvaForSD() {
+    /**
+     * @return
+     * @Description:
+     */
+    public boolean isAvaForSD() {
 
-		return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
 
-	}
+    }
 
-	private static final int ERROR = -1;
+    private static final int ERROR = -1;
 
-	/**
-	 * SDCARD是否存
-	 */
-	public static boolean externalMemoryAvailable() {
-		return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
-	}
+    /**
+     * SDCARD是否存
+     */
+    public static boolean externalMemoryAvailable() {
+        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+    }
 
-	/**
-	 * 获取手机内部剩余存储空间
-	 * 
-	 * @return
-	 */
-	public static long getAvailableInternalMemorySize() {
-		File path = Environment.getDataDirectory();
+    /**
+     * 获取手机内部剩余存储空间
+     * 
+     * @return
+     */
+    public static long getAvailableInternalMemorySize() {
+        File path = Environment.getDataDirectory();
 
-		String pathStr = path.getPath();
-		StatFs stat = new StatFs(pathStr);
-		Log.i("path", "获取手机内部剩余存储空间:\t" + pathStr);
+        String pathStr = path.getPath();
+        StatFs stat = new StatFs(pathStr);
+        Log.i("path", "获取手机内部剩余存储空间:\t" + pathStr);
 
-		long blockSize = stat.getBlockSize();
-		long availableBlocks = stat.getAvailableBlocks();
-		return availableBlocks * blockSize;
-	}
+        long blockSize = stat.getBlockSize();
+        long availableBlocks = stat.getAvailableBlocks();
+        return availableBlocks * blockSize;
+    }
 
-	/**
-	 * 获取手机内部总的存储空间
-	 * 
-	 * @return
-	 */
-	public static long getTotalInternalMemorySize() {
-		File path = Environment.getDataDirectory();
+    /**
+     * 获取手机内部总的存储空间
+     * 
+     * @return
+     */
+    public static long getTotalInternalMemorySize() {
+        File path = Environment.getDataDirectory();
 
-		String pathStr = path.getPath();
-		StatFs stat = new StatFs(pathStr);
-		Log.i("path", "获取手机内部总的存储空间:\t" + pathStr);
+        String pathStr = path.getPath();
+        StatFs stat = new StatFs(pathStr);
+        Log.i("path", "获取手机内部总的存储空间:\t" + pathStr);
 
-		long blockSize = stat.getBlockSize();
-		long totalBlocks = stat.getBlockCount();
-		return totalBlocks * blockSize;
-	}
+        long blockSize = stat.getBlockSize();
+        long totalBlocks = stat.getBlockCount();
+        return totalBlocks * blockSize;
+    }
 
-	/**
-	 * 获取SDCARD剩余存储空间
-	 * 
-	 * @return
-	 */
-	public static long getAvailableExternalMemorySize() {
-		if (externalMemoryAvailable()) {
+    /**
+     * 获取SDCARD剩余存储空间
+     * 
+     * @return
+     */
+    public static long getAvailableExternalMemorySize() {
+        if (externalMemoryAvailable()) {
 
-			File path = Environment.getExternalStorageDirectory();
+            File path = Environment.getExternalStorageDirectory();
 
-			String pathStr = path.getPath();
-			StatFs stat = new StatFs(pathStr);
-			Log.i("path", "获取SDCARD剩余存储空间:\t" + pathStr);
+            String pathStr = path.getPath();
+            StatFs stat = new StatFs(pathStr);
+            Log.i("path", "获取SDCARD剩余存储空间:\t" + pathStr);
 
-			long blockSize = stat.getBlockSize();
-			long availableBlocks = stat.getAvailableBlocks();
-			return availableBlocks * blockSize;
+            long blockSize = stat.getBlockSize();
+            long availableBlocks = stat.getAvailableBlocks();
+            return availableBlocks * blockSize;
 
-		} else {
-			return ERROR;
-		}
-	}
+        } else {
+            return ERROR;
+        }
+    }
 
-	/**
-	 * 获取SDCARD总的存储空间
-	 * 
-	 * @return
-	 */
-	public static long getTotalExternalMemorySize() {
+    /**
+     * 获取SDCARD总的存储空间
+     * 
+     * @return
+     */
+    public static long getTotalExternalMemorySize() {
 
-		if (externalMemoryAvailable()) {
-			File path = Environment.getExternalStorageDirectory();
+        if (externalMemoryAvailable()) {
+            File path = Environment.getExternalStorageDirectory();
 
-			String pathStr = path.getPath();
-			StatFs stat = new StatFs(pathStr);
-			Log.i("path", "获取SDCARD总的存储空间:\t" + pathStr);
+            String pathStr = path.getPath();
+            StatFs stat = new StatFs(pathStr);
+            Log.i("path", "获取SDCARD总的存储空间:\t" + pathStr);
 
-			long blockSize = stat.getBlockSize();
-			long totalBlocks = stat.getBlockCount();
-			return totalBlocks * blockSize;
-		} else {
-			return ERROR;
-		}
-	}
+            long blockSize = stat.getBlockSize();
+            long totalBlocks = stat.getBlockCount();
+            return totalBlocks * blockSize;
+        } else {
+            return ERROR;
+        }
+    }
 
-	/**
-	 * Calculates the total memory of the device. This is based on an inspection
-	 * of the filesystem, which in android devices is stored in RAM.
-	 *
-	 * @return Total number of bytes.
-	 */
-	public static long getTotalInternalMemorySize_() {
-		File path = Environment.getDataDirectory();
-		StatFs stat = new StatFs(path.getPath());
-		long blockSize = stat.getBlockSize();
-		long totalBlocks = stat.getBlockCount();
-		return totalBlocks * blockSize;
-	}
+    /**
+     * Calculates the total memory of the device. This is based on an inspection of the filesystem,
+     * which in android devices is stored in RAM.
+     *
+     * @return Total number of bytes.
+     */
+    public static long getTotalInternalMemorySize_() {
+        File path = Environment.getDataDirectory();
+        StatFs stat = new StatFs(path.getPath());
+        long blockSize = stat.getBlockSize();
+        long totalBlocks = stat.getBlockCount();
+        return totalBlocks * blockSize;
+    }
 
 
-	/**
-	 * 获取SDCARD总的存储空间 VErsion II 
-	 * 
-	 * @return
-	 */
-	public static long getTotalExternalStoSizeV() {
+    /**
+     * 获取SDCARD总的存储空间 VErsion II
+     * 
+     * @return
+     */
+    public static long getTotalExternalStoSizeV() {
 
-		if (externalMemoryAvailable()) {
-			
-			File path = getDirectory("EXTERNAL_STORAGE", "/storage/ext_sd");
-			String pathStr = path.getPath();
-			StatFs stat = new StatFs(pathStr);
+        if (externalMemoryAvailable()) {
 
-			long blockSize = stat.getBlockSize();
-			long totalBlocks = stat.getBlockCount();
-			
-			return totalBlocks * blockSize;
-			
-		} else {
-			
-			return ERROR;
-		}
-	}
-	
-	/**
-	 * 获取SDCARD  NExt 的存储空间 VErsion II 
-	 * 
-	 * @return
-	 */
-	public static long getNextExternalStoSizeV() {
+            File path = getDirectory("EXTERNAL_STORAGE", "/storage/ext_sd");
+            String pathStr = path.getPath();
+            StatFs stat = new StatFs(pathStr);
 
-		if (externalMemoryAvailable()) {
-			
-			File path = getDirectory("EXTERNAL_STORAGE", "/storage/ext_sd");
-			String pathStr = path.getPath();
-			StatFs stat = new StatFs(pathStr);
+            long blockSize = stat.getBlockSize();
+            long totalBlocks = stat.getBlockCount();
 
-			long blockSize = stat.getBlockSize();
-			long totalBlocks = stat.getAvailableBlocks();
-			
-			return totalBlocks * blockSize;
-		} else {
-			return ERROR;
-		}
-	}
-	
-	
+            return totalBlocks * blockSize;
 
-	/**
-	 * 获取系统总内存
-	 * 
-	 * @param context 可传入应用程序上下文。
-	 * @return 总内存大单位为B。
-	 */
-	public static long getTotalMemorySize(Context context) {
-		String dir = "/proc/meminfo";
-		try {
-			FileReader fr = new FileReader(dir);
-			BufferedReader br = new BufferedReader(fr, 2048);
-			String memoryLine = br.readLine();
-			String subMemoryLine = memoryLine.substring(memoryLine.indexOf("MemTotal:"));
-			br.close();
-			return Integer.parseInt(subMemoryLine.replaceAll("\\D+", "")) * 1024l;
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return 0;
-	}
+        } else {
 
-	/**
-	 * 获取当前可用内存，返回数据以字节为单位。
-	 * 
-	 * @param context 可传入应用程序上下文。
-	 * @return 当前可用内存单位为B。
-	 */
-	public static long getAvailableMemory(Context context) {
-		ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-		ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
-		am.getMemoryInfo(memoryInfo);
-		return memoryInfo.availMem;
-	}
+            return ERROR;
+        }
+    }
 
-	private static DecimalFormat fileIntegerFormat = new DecimalFormat("#0");
-	private static DecimalFormat fileDecimalFormat = new DecimalFormat("#0.#");
+    /**
+     * 获取SDCARD NExt 的存储空间 VErsion II
+     * 
+     * @return
+     */
+    public static long getNextExternalStoSizeV() {
 
-	/**
-	 * 单位换算
-	 * 
-	 * @param size 单位为B
-	 * @param isInteger 是否返回取整的单位
-	 * @return 转换后的单位
-	 */
-	public static String formatFileSize(long size, boolean isInteger) {
-		DecimalFormat df = isInteger ? fileIntegerFormat : fileDecimalFormat;
-		String fileSizeString = "0M";
-		if (size < 1024 && size > 0) {
-			fileSizeString = df.format((double) size) + "B";
-		} else if (size < 1024 * 1024) {
-			fileSizeString = df.format((double) size / 1024) + "K";
-		} else if (size < 1024 * 1024 * 1024) {
-			fileSizeString = df.format((double) size / (1024 * 1024)) + "M";
-		} else {
-			fileSizeString = df.format((double) size / (1024 * 1024 * 1024)) + "G";
-		}
-		return fileSizeString;
-	}
+        if (externalMemoryAvailable()) {
 
-	static File getDirectory(String variableName, String defaultPath) {
-		
-		String path = System.getenv(variableName);
-		return path == null ? new File(defaultPath) : new File(path);
-	}
+            File path = getDirectory("EXTERNAL_STORAGE", "/storage/ext_sd");
+            String pathStr = path.getPath();
+            StatFs stat = new StatFs(pathStr);
+
+            long blockSize = stat.getBlockSize();
+            long totalBlocks = stat.getAvailableBlocks();
+
+            return totalBlocks * blockSize;
+        } else {
+            return ERROR;
+        }
+    }
+
+
+
+    /**
+     * 获取系统总内存
+     * 
+     * @param context 可传入应用程序上下文。
+     * @return 总内存大单位为B。
+     */
+    public static long getTotalMemorySize(Context context) {
+        String dir = "/proc/meminfo";
+        try {
+            FileReader fr = new FileReader(dir);
+            BufferedReader br = new BufferedReader(fr, 2048);
+            String memoryLine = br.readLine();
+            String subMemoryLine = memoryLine.substring(memoryLine.indexOf("MemTotal:"));
+            br.close();
+            return Integer.parseInt(subMemoryLine.replaceAll("\\D+", "")) * 1024l;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    /**
+     * 获取当前可用内存，返回数据以字节为单位。
+     * 
+     * @param context 可传入应用程序上下文。
+     * @return 当前可用内存单位为B。
+     */
+    public static long getAvailableMemory(Context context) {
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+        am.getMemoryInfo(memoryInfo);
+        return memoryInfo.availMem;
+    }
+
+    private static DecimalFormat fileIntegerFormat = new DecimalFormat("#0");
+    private static DecimalFormat fileDecimalFormat = new DecimalFormat("#0.#");
+
+    /**
+     * 单位换算
+     * 
+     * @param size 单位为B
+     * @param isInteger 是否返回取整的单位
+     * @return 转换后的单位
+     */
+    public static String formatFileSize(long size, boolean isInteger) {
+        DecimalFormat df = isInteger ? fileIntegerFormat : fileDecimalFormat;
+        String fileSizeString = "0M";
+        if (size < 1024 && size > 0) {
+            fileSizeString = df.format((double) size) + "B";
+        } else if (size < 1024 * 1024) {
+            fileSizeString = df.format((double) size / 1024) + "K";
+        } else if (size < 1024 * 1024 * 1024) {
+            fileSizeString = df.format((double) size / (1024 * 1024)) + "M";
+        } else {
+            fileSizeString = df.format((double) size / (1024 * 1024 * 1024)) + "G";
+        }
+        return fileSizeString;
+    }
+
+    static File getDirectory(String variableName, String defaultPath) {
+
+        String path = System.getenv(variableName);
+        return path == null ? new File(defaultPath) : new File(path);
+    }
 }

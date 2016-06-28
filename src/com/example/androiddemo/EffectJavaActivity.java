@@ -9,7 +9,6 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.androiddemo.unit_7.Main;
 import com.ty.example_unit_1.UnitOneActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
@@ -63,7 +62,7 @@ public class EffectJavaActivity extends ListActivity {
 				cls = UnitSixActivity.class;
 				break;
 			case 6 :
-				cls = Main.class;
+//				cls = Main.class;
 				break;
 			case 7 :
 

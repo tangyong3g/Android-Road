@@ -2,6 +2,9 @@ package com.sny.tangyong.basic;
 
 import android.os.Bundle;
 
+import com.sny.tangyong.common.view.BaseListActivity;
+import com.sny.tangyong.common.view.ItemComponentInfo;
+
 import java.util.ArrayList;
 
 
@@ -16,11 +19,11 @@ public class BasicMemListActivity extends BaseListActivity {
 
     public void initListItems() {
 
-        mItemsInfo = new ArrayList<BaseListActivity.ItemComponentInfo>();
+        mItemsInfo = new ArrayList<ItemComponentInfo>();
 
-        BaseListActivity.ItemComponentInfo info;
+        ItemComponentInfo info;
 
-        info = new BaseListActivity.ItemComponentInfo("Mem consume Test", MeminfoActivity.class);
+        info = new ItemComponentInfo("Mem consume Test", MeminfoActivity.class);
         mItemsInfo.add(info);
 
         initDisplayList();

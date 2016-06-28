@@ -1,14 +1,27 @@
 package com.sny.tangyong.basic;
 
+import android.Manifest;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.orhanobut.logger.Logger;
 
+/**
+ *
+ * @Title:
+ * @Description:
+ * @Author:ty_sany@163.com
+ * @Since:2016-06
+ * @Version:1.1.0
+ */
 public class BasicDeviceInfoActivity extends AppCompatActivity {
 
     public static final String ANDROID_ID = "androidID";
@@ -30,6 +43,8 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
     public static final String HEIGHT = "height";
     public static final String WIDTH = "width";
 
+    public static final int REQUEST_PHONE = 999;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,20 +52,52 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_basic_device_info);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
 
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null)
-                        .show();
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+            @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == REQUEST_PHONE) {
+            int i = 0;
+            for (String temp : permissions) {
+                Log.i("tyler.tang", temp + "\t" + grantResults[i]);
             }
-        });
-        */
+        }
+    }
 
+    /**
+     * 获取数据
+     * @param view
+     */
+    public void requestDeviceInfo(View view) {
         init();
     }
+
+    public void requesetPermission(View view) {
+        // request permission
+        // BEGIN_INCLUDE(camera_permission_request)
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_PHONE_STATE)) {
+            // Provide an additional rationale to the user if the permission was not granted
+            // and the user would benefit from additional context for the use of the permission.
+            // For example if the user has previously denied the permission.
+            Log.i("tyler.tang", "Displaying camera permission rationale to provide additional context.");
+            Snackbar.make(findViewById(R.id.tx_deviceinfo), R.string.permission, Snackbar.LENGTH_INDEFINITE)
+                    .setAction(R.string.ok, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            ActivityCompat.requestPermissions(BasicDeviceInfoActivity.this,
+                                    new String[] {Manifest.permission.READ_PHONE_STATE}, REQUEST_PHONE);
+                        }
+                    }).show();
+        } else {
+            // Camera permission has not been granted yet. Request it directly.
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_PHONE_STATE}, REQUEST_PHONE);
+        }
+    }
+
+
 
     private void init() {
         TextView tx = (TextView) findViewById(R.id.tx_deviceinfo);
@@ -74,7 +121,8 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
 
         sb.append(MODELTYPE);
         sb.append(":\t");
-        sb.append("device:\t"+Build.DEVICE +"borad:\t"+ Build.BOARD +"brand:\t"+Build.BRAND +"display:\t"+Build.DISPLAY);
+        sb.append("device:\t" + Build.DEVICE + "borad:\t" + Build.BOARD + "brand:\t" + Build.BRAND + "display:\t"
+                + Build.DISPLAY);
         sb.append("\n");
 
         sb.append(COUNTRY);
@@ -82,14 +130,12 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
         sb.append(DeviceUtils.getLocal(getApplicationContext()));
         sb.append("\n");
 
-        try{
+        try {
             sb.append(IMEI);
             sb.append(":\t");
-            sb.append(DeviceUtils.getIMEI(getApplicationContext()));
+             sb.append(DeviceUtils.getIMEI(getBaseContext()));
             sb.append("\n");
-        }catch (Exception ex){
-
-        }
+        } catch (Exception ex) {}
 
         sb.append(ISROOT);
         sb.append(":\t");
@@ -108,13 +154,13 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
 
         sb.append(RAMMB);
         sb.append(":\t");
-        sb.append(DeviceUtils.getTotalMemory(getApplicationContext())/1024L/1024L);
+        sb.append(DeviceUtils.getTotalMemory(getApplicationContext()) / 1024L / 1024L);
         sb.append("MB");
         sb.append("\n");
 
         sb.append(ROMMB);
         sb.append(":\t");
-        sb.append(DeviceUtils.getTotalInternalMemorySize_()/1024L/1024L);
+        sb.append(DeviceUtils.getTotalInternalMemorySize_() / 1024L / 1024L);
         sb.append("MB");
         sb.append("\n");
 
@@ -125,7 +171,7 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
 
         sb.append(CHANNEL);
         sb.append(":\t");
-//        sb.append(AppInfo.getMetaData(getApplicationContext(),"CHANNEL"));
+        // sb.append(AppInfo.getMetaData(getApplicationContext(),"CHANNEL"));
         sb.append("\n");
 
         sb.append(MAC);
@@ -158,12 +204,12 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
         sb.append(Build.VERSION.SDK_INT);
         sb.append("\n");
 
-        try{
+        try {
             sb.append("Build.VERSION.BASE_OS");
             sb.append("\t");
-//            sb.append(Build.VERSION.BASE_OS);
+             sb.append(Build.VERSION.BASE_OS);
             sb.append("\n");
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
@@ -179,7 +225,7 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
 
         sb.append("Build.VERSION.SECURITY_PATCH");
         sb.append("\t");
-//        sb.append(Build.VERSION.SECURITY_PATCH);
+        // sb.append(Build.VERSION.SECURITY_PATCH);
         sb.append("\n");
 
         sb.append("Build.VERSION.SDK");
@@ -194,7 +240,7 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
 
         sb.append("Build.VERSION.PREVIEW_SDK_INT");
         sb.append("\t");
-//        sb.append(Build.VERSION.PREVIEW_SDK_INT);
+        // sb.append(Build.VERSION.PREVIEW_SDK_INT);
         sb.append("\n");
 
         Logger.d(sb.toString());

@@ -10,7 +10,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.androiddemo.unit_7.Main;
 import com.sny.tangyong.androiddemo.R;
 import com.ty.example_unit_1.UnitTwoActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
@@ -127,7 +126,7 @@ public class AppComActivity extends AppCompatActivity implements NavigationView.
                 break;
             case R.id.nav_shellengine:
 
-                to = Main.class;
+//                to = Main.class;
                 break;
         }
 

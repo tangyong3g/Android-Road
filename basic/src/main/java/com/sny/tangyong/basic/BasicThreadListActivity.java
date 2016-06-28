@@ -2,12 +2,12 @@ package com.sny.tangyong.basic;
 
 import android.os.Bundle;
 
+import com.sny.tangyong.common.view.BaseListActivity;
+import com.sny.tangyong.common.view.ItemComponentInfo;
+
 import java.util.ArrayList;
 
 /**
- *
- *
- * 
  * 
  */
 public class BasicThreadListActivity extends BaseListActivity {
@@ -19,14 +19,14 @@ public class BasicThreadListActivity extends BaseListActivity {
 
     public void initListItems() {
 
-        mItemsInfo = new ArrayList<BaseListActivity.ItemComponentInfo>();
+        mItemsInfo = new ArrayList<ItemComponentInfo>();
 
-        BaseListActivity.ItemComponentInfo info;
+        ItemComponentInfo info;
 
-        info = new BaseListActivity.ItemComponentInfo("Handler Looper ", LooperVersion2.class);
+        info = new ItemComponentInfo("Handler Looper ", LooperVersion2.class);
         mItemsInfo.add(info);
 
-        info = new BaseListActivity.ItemComponentInfo("Handler Cancle task ", HandlerTestActivity.class);
+        info = new ItemComponentInfo("Handler Cancle task ", HandlerTestActivity.class);
         mItemsInfo.add(info);
 
         info = new ItemComponentInfo("Performance For Threads", BesetPracticeForThread.class);

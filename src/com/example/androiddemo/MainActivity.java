@@ -10,7 +10,6 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.androiddemo.unit_7.Main;
 import com.example.androiddemo.unit_8.UnitEight;
 import com.exsample.apiguids.APIGUIDS;
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -84,7 +83,7 @@ public class MainActivity extends ListActivity {
                 cls = UnitSixActivity.class;
                 break;
             case 6:
-                cls = Main.class;
+//                cls = Main.class;
                 break;
             case 7:
 

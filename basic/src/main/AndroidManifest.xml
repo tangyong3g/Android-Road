@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+
     <application
         android:name=".BasicApplication"
         android:allowBackup="true"
@@ -79,7 +80,6 @@
             android:name=".BasicDeviceInfoActivity"
             android:label="@string/title_activity_basic_device_info"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <meta-data
             android:name="CHANNEL"
             android:value="GooglePlay" />

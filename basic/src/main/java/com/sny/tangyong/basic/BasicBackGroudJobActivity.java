@@ -1,6 +1,7 @@
 package com.sny.tangyong.basic;
 
-import android.os.Bundle;
+import com.sny.tangyong.common.view.BaseListActivity;
+import com.sny.tangyong.common.view.ItemComponentInfo;
 
 import java.util.ArrayList;
 

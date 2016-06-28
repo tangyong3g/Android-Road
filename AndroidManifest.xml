@@ -159,9 +159,7 @@
         <activity android:name="com.ty.example_unit_6.ABTestActivity" />
 
         <!-- 第7单元　shell engine -->
-        <activity android:name="com.example.androiddemo.unit_7.ShellEngineActivity"></activity>
         <activity android:name="com.example.androiddemo.unit_7.Cire3DActivity"></activity>
-        <activity android:name="com.example.androiddemo.unit_7.Main"></activity>
         <activity android:name="com.example.androiddemo.unit_7.BaseTestActivity"></activity>
 
         <!-- 第8单元 EffectJava -->

@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
-import com.example.androiddemo.unit_7.Main;
 import com.ty.example_unit_1.UnitTwoActivity;
 import com.ty.example_unit_3.libgdx.UnitThreeActivity;
 import com.ty.example_unit_6.UnitSixActivity;
@@ -123,7 +122,7 @@ public class AppComActivity extends Activity implements NavigationView.OnNavigat
                 break;
             case R.id.nav_shellengine:
 
-                to = Main.class;
+//                to = Main.class;
                 break;
         }
 
