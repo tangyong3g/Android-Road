@@ -1,0 +1,66 @@
+# built application files
+
+# files for the dex VM
+
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse project files
+.classpath
+.project
+project.properties
+
+
+# svn file
+.svn/
+.settings/
+
+#gradle ignore
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/.idea/*
+
+target/
+obj/
+out/
+classes/
+.gwt/
+gwt-unitCache/
+war/
+gen/
+armeabi/
+armeabi-v7a/
+Debug/
+Release/
+x64/
+x86/
+ipch/
+/dist
+
+*.a
+*.dll
+*.dll.mdb
+*.userprefs
+*.sdf
+*.class
+
+*.iml
+/.idea/
+gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
+gradlew.bat
+gradlew
+
+/engine

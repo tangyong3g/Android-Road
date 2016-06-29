@@ -1,1 +1,2 @@
-include ':basic',':common'
+include ':basic'
+include ':common'

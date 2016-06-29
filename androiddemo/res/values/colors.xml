@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/colors.xml
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+<resources>
+
+    <!-- Workspace 缩放界面背景颜色 -->
+    <color name="workspace_scaled_background_color">#72000000</color>
+
+    <!-- 图标轮廓颜色 -->
+    <color name="icon_outline_color">#9ccd00</color>
+    <color name="icon_glow_color">#9ccd00</color>
+    <!-- The alpha/color to apply to the drag image -->
+    <color name="drag_view_multiply_color">#CCFFFFFF</color>
+    <color name="window_background">#FF191919</color>
+    <color name="grid_dark_background">#EB191919</color>
+    <color name="bubble_dark_background">#B2191919</color>
+    <color name="delete_color_filter">#A5FF0000</color>
+    <color name="appwidget_error_color">#FCCC</color>
+    <color name="snag_callout_color">#F444</color>
+    <color name="gesture_color">#ff0563c1</color>
+    <color name="uncertain_gesture_color">#ff848484</color>
+    <color name="memorybar_text_color">#FFFFFF</color>
+
+    <!-- actionBar颜色 -->
+    <color name="abs_tab_text_color">#88FFFFFF</color>
+    <color name="abs_tab_text_color_press">#ff9CCD00</color>
+
+    <!-- 文件夹编辑颜色 -->
+    <color name="folder_edit_title_color">#ff83ac00</color>
+    <color name="folder_edit_enter_color">#d9000000</color>
+    <color name="folder_edit_item_name_color">#d9000000</color>
+
+    <!-- 非活动背景颜色 -->
+    <color name="inactive_area_bg_color">#B3000000</color>
+
+    <!-- 菜单颜色 -->
+    <color name="menu_title_color">#FF2d2d2d</color>
+    <color name="menu_item_text_color">#FF404040</color>
+    <color name="menu_divider_color">#eebababa</color>
+    <!-- 垃圾桶文字颜色 -->
+    <color name="delete_icon_text_def_color">#FFffffff</color>
+    <color name="delete_icon_text_sel_color">#FFdb090a</color>
+
+    <!-- 屏幕预览的背景颜色 -->
+    <color name="sense_preview_bg_color">#99000000</color>
+    <color name="runningbottomprogress_bg_color">#FF013f41</color>
+
+    <!-- 对话框半透明设置color -->
+    <color name="translucent_background">#90000000</color>
+    <color name="half_translucent_background">#b0000000</color>
+
+    <!-- 图标文字颜色 -->
+    <color name="text_color">#FFFFFF</color>
+
+    <!-- ================== 操作提示层      开始  ================================= -->
+    <!-- 操作提示层的黑色覆盖背景颜色 -->
+    <color name="operation_guide_cover_color">#CC000000</color>
+    <color name="operation_guide_text_title_color">#FF29ABE2</color>
+    <color name="operation_guide_text_sub_color">#FFFFFFFF</color>
+    <!-- ================== 操作提示层      结束  ================================= -->
+
+    <!-- 桌面设置 -->
+    <color name="desk_setting_bg_color">#000000</color>
+    <color name="desk_setting_title_color">#FFFFFF</color>
+    <color name="desk_setting_item_title_color">#FFFFFF</color>
+    <color name="desk_setting_item_summary_color">#8C8C8C</color>
+    <color name="desk_setting_tab_title_select">#88B500</color>
+    <color name="desk_setting_tab_title_no_select">#9A9A9A</color>
+    <color name="desk_setting_button_color">#2C2C2C</color>
+    <color name="transparent">#00000000</color>
+    <color name="new_transparent">#11000000</color>
+    
+    <color name="desk_setting_dialog_bg_color">#ff0000</color>
+    <color name="desk_setting_button_text_color">#ffffff</color>
+    <color name="desk_setting_dialog_bg_color_select">#33b5e5</color>
+    
+    <!-- 主题预览界面 -->
+	  <color name="theme_top_cur_text">#99cc00</color>
+	  <color name="theme_top_text">#41F9F6</color>
+	  <color name="theme_tab_focus">#3FF9F6</color>
+	  <color name="theme_tab_no_focus">#9a9a9a</color>
+	  <color name="theme_bottom_text_focus">#656565</color>
+	  <color name="theme_bottom_text_normal">#838383</color>
+	  <color name="theme_findmore_text_color">#FFFFFF</color>
+	  <color name="theme_detail_topbar_title">#DCDCDC</color>
+	  <color name="theme_detail_menu_text">#505253</color>
+	  <color name="theme_detail_apply_text">#FFFFFF</color>
+	  <color name="theme_detail_modify_text">#FFFFFF</color>
+	  <color name="theme_golocker_tips">#888888</color>
+	  <color name="theme_golocker_logo">#3FF9F6</color>
+	  <color name="theme_bg">#f7f7f7</color>
+	  
+	  <!-- 图标编辑 -->
+	  <color name="icon_edit_mode_switch_text">#494949</color>
+	  <color name="icon_edit_mode_switch_text_active">#99FFFF</color>
+	  <color name="icon_edit_base_rotate_tips_text">#999999</color>
+	  <color name="icon_edit_cover_rotate_tips_text">#999999</color>
+
+</resources>

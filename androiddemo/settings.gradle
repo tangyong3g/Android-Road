@@ -1,0 +1,3 @@
+include ':basic'
+include ':common'
+project(':androiddemo').projectDir = file('../androiddemo')
