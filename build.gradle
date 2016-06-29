@@ -38,7 +38,7 @@ android {
     sourceSets {
         main {
             manifest.srcFile 'androiddemo/AndroidManifest.xml'
-            java.srcDirs = ['androiddemo/src']
+            java.srcDirs = ['androiddemo/src/main/java']
             resources.srcDirs = ['androiddemo/res']
             res.srcDirs = ['androiddemo/res']
             assets.srcDirs = ['androiddemo/assets']
