@@ -2,7 +2,6 @@ package com.sny.tangyong.basic;
 
 import android.app.Application;
 
-import com.orhanobut.logger.Logger;
 import com.tcl.mailfeedback.CrashReport;
 
 /**
@@ -16,7 +15,7 @@ public class BasicApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Logger.init(TAG);
+//        Logger.init(TAG);
         // StatisticsAgent.init(getApplicationContext());
         // StatisticsAgent.setDebugMode(true);
         // 异常启动

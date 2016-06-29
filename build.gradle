@@ -12,7 +12,6 @@ buildscript {
 }
 
 
-
 allprojects {
     repositories {
         maven{
@@ -63,24 +62,32 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
             signingConfig signingConfigs.config
         }
     }
     productFlavors {
     }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile(name: 'logger-debug', ext: 'aar')
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support:design:23.0.0'
     compile 'com.android.support:appcompat-v7:23.0.0'
     compile 'com.android.support:recyclerview-v7:23.0.0'
-    //    compile 'com.google.android.gms:play-services-analytics:7.3.0'
     compile 'com.google.android.gms:play-services-analytics:8.1.0'
+    compile project(':common')
+    compile 'com.android.support:mediarouter-v7:24.0.0'
 }
 
 

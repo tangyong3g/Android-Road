@@ -1,7 +1,5 @@
 package com.ty.util;
 
-import java.util.jar.Attributes;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,7 +7,10 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.view.View;
 
-import com.ty.crashreport.Application;
+import com.sny.tangyong.androiddemo.AndroidApplication;
+
+import java.util.jar.Attributes;
+
 
 /**
  * 		pro: 
@@ -35,7 +36,7 @@ public class UnitShapeFactory {
 
 		if (sInstance == null) {
 			sInstance = new UnitShapeFactory();
-			sInstance.mContext = Application.getInstance().getApplicationContext();
+			sInstance.mContext = AndroidApplication.getInstance().getApplicationContext();
 		}
 
 		return sInstance;
@@ -48,7 +49,7 @@ public class UnitShapeFactory {
 		switch (type) {
 			case LINE_TYPE :
 
-				int width = com.ty.crashreport.Application.getInstance().getScreenInfo().getmWidth();
+				int width = AndroidApplication.getInstance().getScreenInfo().getmWidth();
 				Integer y = 0;
 				y = 20;
 				LineAbsView lineAbsView = new LineAbsView(color, new Point(0, y), new Point(width, y));

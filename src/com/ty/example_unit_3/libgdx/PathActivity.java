@@ -17,7 +17,7 @@ import com.badlogic.gdx.math.CatmullRomSpline;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
-import com.ty.crashreport.Application;
+import com.sny.tangyong.androiddemo.AndroidApplication;
 
 /**
  * 
@@ -98,8 +98,8 @@ public class PathActivity extends Activity implements OnClickListener {
 		// @Override
 		// public void run() {
 		//
-		int screenWidth = Application.getInstance().getScreenInfo().getmWidth();
-		int screenHeight = Application.getInstance().getScreenInfo()
+		int screenWidth = AndroidApplication.getInstance().getScreenInfo().getmWidth();
+		int screenHeight = AndroidApplication.getInstance().getScreenInfo()
 				.getmHeight();
 
 		for (int i = 0; i < 5; i++) {

@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SimpleAdapter;
 
-import com.ty.crashreport.Application;
+import com.sny.tangyong.androiddemo.AndroidApplication;
 import com.sny.tangyong.androiddemo.R;
 
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class ListFragement extends Fragment {
 
         List<HashMap<String, Object>> datas = new ArrayList<HashMap<String, Object>>();
 
-        String[] array = Application.getInstance().getApplicationContext().getResources().getStringArray(R.array.base_android);
+        String[] array = AndroidApplication.getInstance().getApplicationContext().getResources().getStringArray(R.array.base_android);
 
         for (String str : array) {
 

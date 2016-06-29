@@ -1,24 +1,5 @@
 package com.ty.example_unit_6;
 
-import java.io.InputStream;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.example.androiddemo.ScreenInfo;
-import com.ty.crashreport.Application;
-import com.sny.tangyong.androiddemo.R;
-import com.ty.util.Utils;
-
-import jxl.Sheet;
-import jxl.Workbook;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -34,6 +15,26 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
+
+import com.example.androiddemo.ScreenInfo;
+import com.sny.tangyong.androiddemo.AndroidApplication;
+import com.sny.tangyong.androiddemo.R;
+import com.ty.util.Utils;
+
+import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import jxl.Sheet;
+import jxl.Workbook;
 
 /**
  * 
@@ -90,8 +91,8 @@ public class ReadExcelActivity extends Activity {
 
 			comparator = new PersonComparetor();
 
-			width = com.ty.crashreport.Application.getInstance().getScreenInfo().getmWidth();
-			height = com.ty.crashreport.Application.getInstance().getScreenInfo().getmHeight();
+			width = AndroidApplication.getInstance().getScreenInfo().getmWidth();
+			height =AndroidApplication.getInstance().getScreenInfo().getmHeight();
 
 		}
 
@@ -108,7 +109,7 @@ public class ReadExcelActivity extends Activity {
 
 				mPaint.setColor(Color.BLACK);
 				String text = mShowPercent + "%";
-				ScreenInfo info = Application.getInstance().getScreenInfo();
+				ScreenInfo info = AndroidApplication.getInstance().getScreenInfo();
 				int x = info.getmWidth() / 2;
 				int y = info.getmHeight() / 2;
 				canvas.drawText(text, x, y, mPaint);
@@ -378,7 +379,7 @@ public class ReadExcelActivity extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			Toast.makeText(ReadExcelActivity.this.getApplicationContext(), R.string.read_start, 1000).show();
+			Toast.makeText(ReadExcelActivity.this.getApplicationContext(), R.string.read_start, Toast.LENGTH_LONG).show();
 		}
 
 		@Override
@@ -470,12 +471,12 @@ public class ReadExcelActivity extends Activity {
 		@Override
 		protected void onPostExecute(Integer result) {
 			super.onPostExecute(result);
-			
+
 			if (mSimpleView != null) {
 				mSimpleView.invalidate();
 			}
 			
-			Toast.makeText(ReadExcelActivity.this.getApplicationContext(), R.string.read_finish, 1000).show();
+			Toast.makeText(ReadExcelActivity.this.getApplicationContext(), R.string.read_finish, Toast.LENGTH_LONG).show();
 		}
 
 	}
