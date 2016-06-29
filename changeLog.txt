@@ -1,8 +1,0 @@
-
-
-2015-07-30
-
-	多模块开发如果想单独模块编译测试，
-        设置成apply plugin: 'com.android.library'可以被其它的程序依赖。
-        设置成apply plugin: 'com.android.application'不可以被其它的程序依赖,但可以单独的运行。
-        之后的做法是，单独模块单独开发，然后测试完成再并入到主程序里面去。
