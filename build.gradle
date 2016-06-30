@@ -3,24 +3,41 @@ apply plugin: 'com.android.application'
 buildscript {
 
     repositories {
-        mavenCentral()
+        /**
+         * maven中央库速度慢不推荐使用
+         */
+//        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:2.1.0'
     }
 }
 
 
 allprojects {
     repositories {
+
+        /**
+         * 开源中国中央库配置,如果有引用到第三方包来源于oschina需要加上
+         */
+
+        /*
         maven{
             url 'http://maven.oschina.net/content/groups/public/'
         }
+        */
+
+        /**
+         * 包比较多，速度也快
+         */
         jcenter {
             url "http://jcenter.bintray.com"
         }
 
+        /**
+         * 本地的包，如果用到aar的时候需要配置
+         */
         flatDir {
             dirs 'common/libs'
         }
@@ -28,8 +45,10 @@ allprojects {
 }
 
 android {
+    /*编译版本*/
     compileSdkVersion 23
     buildToolsVersion '23.0.3'
+
     defaultConfig {
         applicationId 'com.sny.tangyong.androiddemo'
         minSdkVersion 15
@@ -38,6 +57,7 @@ android {
         versionName "1.1"
         multiDexEnabled true
     }
+
     sourceSets {
         main {
             manifest.srcFile 'androiddemo/AndroidManifest.xml'
@@ -57,6 +77,7 @@ android {
             storePassword 'inrcel'
         }
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -64,7 +85,9 @@ android {
             signingConfig signingConfigs.config
         }
     }
+
     productFlavors {
+
     }
 
     lintOptions{
@@ -79,6 +102,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'androiddemo/libs')
     compile project(':common')
+    compile project(':basic')
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support:design:23.0.0'
     compile 'com.android.support:recyclerview-v7:23.0.0'

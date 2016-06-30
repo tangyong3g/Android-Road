@@ -15,14 +15,17 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
 
+    <!--   android:name=".BasicApplication"  作为一个moudle的时候 不需要配置-->
+
     <application
-        android:name=".BasicApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:theme="@style/Theme.AppCompat">
 
         <!-- uses-library -->
+        <!--
         <uses-library android:name="com.sny.tangyong.common"></uses-library>
+        -->
 
         <meta-data
             android:name="TCL_STATISTICS_APP_KEY"
@@ -37,7 +40,6 @@
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

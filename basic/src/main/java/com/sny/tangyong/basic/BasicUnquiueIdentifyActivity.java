@@ -66,9 +66,7 @@ public class BasicUnquiueIdentifyActivity extends Activity implements View.OnCli
         mTxInstanceId = (TextView) findViewById(R.id.tx_instanceId);
         mTxRandomUUID = (TextView) findViewById(R.id.tx_randomUUID);
         mTxAdvertisingId = (TextView) findViewById(R.id.tx_advertisingId);
-
     }
-
 
     @Override
     public void onClick(View v) {
@@ -76,46 +74,23 @@ public class BasicUnquiueIdentifyActivity extends Activity implements View.OnCli
         if (v == null) {
             return;
         }
-
         int id = v.getId();
 
-        switch (id) {
-
-            case R.id.btn_androidId:
-
-                mTxAndroidId.setText(getAndroidID());
-
-                break;
-
-            case R.id.btn_mac:
-
-                String address = getMacAddress();
-                mTxMac.setText(address);
-
-                break;
-
-            case R.id.btn_imei:
-
-                mTxImei.setText(getImei());
-
-                break;
-
-            case R.id.btn_instanceId:
-
-                mTxInstanceId.setText(getInstanceId());
-
-                break;
-
-            case R.id.btn_randomUUID:
-
-                mTxRandomUUID.setText(getRandomUUID());
-
-                break;
-
-            case R.id.btn_advertisingId:
-                getAdvertisingId();
-                break;
+        if (id == R.id.btn_androidId) {
+            mTxAndroidId.setText(getAndroidID());
+        } else if (id == R.id.btn_mac) {
+            String address = getMacAddress();
+            mTxMac.setText(address);
+        } else if (id == R.id.btn_imei) {
+            mTxImei.setText(getImei());
+        } else if (id == R.id.btn_instanceId) {
+            mTxInstanceId.setText(getInstanceId());
+        } else if (id == R.id.btn_randomUUID) {
+            mTxRandomUUID.setText(getRandomUUID());
+        } else if (id == R.id.btn_advertisingId) {
+            getAdvertisingId();
         }
+
     }
 
 

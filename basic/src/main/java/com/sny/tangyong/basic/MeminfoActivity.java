@@ -14,7 +14,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import com.sny.tangyong.basic.R;
 
 /**
  * 
@@ -39,40 +38,36 @@ public class MeminfoActivity extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			switch (v.getId()) {
-			case R.id.btnStart:
+
+			int id = v.getId();
+
+			if (id == R.id.btnStart) {
 				l.add(new byte[1024 * 1024]);
-				break;
-			case R.id.btnJHRel:
+			} else if (id == R.id.btnJHRel) {
 				l.clear();
-				break;
-			case R.id.btnTest:
+			} else if (id == R.id.btnTest) {
 //				m.add(mJni.malloc());
-				break;
-			case R.id.btnNHRel:
+			} else if (id == R.id.btnNHRel) {
 				for (Object obj : m) {
 //					mJni.free((Integer) obj);
 				}
 				m.clear();
-				break;
-			case R.id.btnDecode:
+			} else if (id == R.id.btnDecode) {
 				try {
 					n.add(BitmapFactory.decodeStream(getAssets()
 							.open("IMG.jpg")));
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				break;
-			case R.id.btnRecycle:
+
+			} else if (id == R.id.btnRecycle) {
 				for (Object obj : n) {
 					Bitmap bitmap = (Bitmap) obj;
 					bitmap.recycle();
 				}
 				n.clear();
-				break;
-			case R.id.btnGC:
+			}else if(id == R.id.btnGC){
 				causeGC3();
-				break;
 			}
 		}
 	};
@@ -112,42 +107,24 @@ public class MeminfoActivity extends Activity {
 			Method sendCauseGCSignal = procClass.getMethod("sendSignal",parameterTypes);
 
 			Object arglist[] = new Object[2];
-
 			arglist[0] = myPid;
 			arglist[1] = signal;
 
 			if (sendCauseGCSignal != null) {
-
 				sendCauseGCSignal.invoke(null, arglist);
-
 			}
-
 		} catch (ClassNotFoundException e) {
-
 			e.printStackTrace();
-
 		} catch (SecurityException e) {
-
 			e.printStackTrace();
-
 		} catch (IllegalArgumentException e) {
-
 			e.printStackTrace();
-
 		} catch (IllegalAccessException e) {
-
 			e.printStackTrace();
-
 		} catch (InvocationTargetException e) {
-
 			e.printStackTrace();
-
 		} catch (NoSuchMethodException e) {
-
 			e.printStackTrace();
-
 		}
-
 	}
-
 }
