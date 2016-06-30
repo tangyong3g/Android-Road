@@ -12,8 +12,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.orhanobut.logger.Logger;
-
 /**
  *
  * @Title:
@@ -243,7 +241,7 @@ public class BasicDeviceInfoActivity extends AppCompatActivity {
         // sb.append(Build.VERSION.PREVIEW_SDK_INT);
         sb.append("\n");
 
-        Logger.d(sb.toString());
+//        Logger.d(sb.toString());
 
         return sb.toString();
     }

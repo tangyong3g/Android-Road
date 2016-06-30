@@ -20,6 +20,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:theme="@style/Theme.AppCompat">
+
+        <!-- uses-library -->
+        <uses-library android:name="com.sny.tangyong.common"></uses-library>
+
         <meta-data
             android:name="TCL_STATISTICS_APP_KEY"
             android:value="yyql057a60" />

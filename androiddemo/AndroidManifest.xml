@@ -32,6 +32,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".AndroidApplication"
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
@@ -158,8 +159,8 @@
         <activity android:name="com.ty.example_unit_6.ABTestActivity" />
 
         <!-- 第7单元　shell engine -->
-        <activity android:name="com.example.androiddemo.unit_7.Cire3DActivity"></activity>
-        <activity android:name="com.example.androiddemo.unit_7.BaseTestActivity"></activity>
+        <!--<activity android:name="com.example.androiddemo.unit_7.Cire3DActivity"></activity>-->
+        <!--<activity android:name="com.example.androiddemo.unit_7.BaseTestActivity"></activity>-->
 
         <!-- 第8单元 EffectJava -->
      <!--   <activity android:name="com.example.androiddemo.EffectJavaActivity"></activity>-->
@@ -182,16 +183,16 @@
         <activity android:name="com.ty.open_source_project.OpenSouceProjectActivity" />
 
         <!-- 特效 -->
-
-        <activity
-            android:name="com.ty.crashreport.CrashReportDialog"
-            android:excludeFromRecents="true"
-            android:exported="true"
-            android:finishOnTaskLaunch="true"
-            android:launchMode="singleInstance"
-            android:theme="@android:style/Theme.Dialog"></activity>
+        <!--<activity-->
+            <!--android:name="com.ty.crashreport.CrashReportDialog"-->
+            <!--android:excludeFromRecents="true"-->
+            <!--android:exported="true"-->
+            <!--android:finishOnTaskLaunch="true"-->
+            <!--android:launchMode="singleInstance"-->
+            <!--android:theme="@android:style/Theme.Dialog"></activity>-->
 
         <!-- Meterail Design support lib -->
+
 
         <!-- Add the following meta-data for devices running Google Play service. -->
         <meta-data

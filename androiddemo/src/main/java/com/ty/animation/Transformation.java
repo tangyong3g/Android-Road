@@ -16,8 +16,8 @@
 
 package com.ty.animation;
 
-import com.badlogic.gdx.math.Matrix4;
 
+import com.ty.tools.path.Matrix4;
 
 /**
  * Defines the transformation to be applied at

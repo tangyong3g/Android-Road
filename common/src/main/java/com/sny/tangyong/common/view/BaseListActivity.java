@@ -25,7 +25,6 @@ public class BaseListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
 
         setListAdapter(new ArrayAdapter<String>(this,R.layout.basic_item, mUnits));
-
     }
 
 
@@ -36,6 +35,10 @@ public class BaseListActivity extends ListActivity {
         String name = findName(v);
         Intent intent = createIntentWithDisplayName(name);
         forward(intent);
+
+        if(R.id.text1 == 1){
+            System.out.print(false);
+        }
 
     }
 

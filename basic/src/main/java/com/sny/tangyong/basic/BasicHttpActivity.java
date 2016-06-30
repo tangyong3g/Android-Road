@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.orhanobut.logger.Logger;
+//import com.orhanobut.logger.Logger;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -144,7 +144,7 @@ public class BasicHttpActivity extends Activity {
         public boolean verify(String hostname, SSLSession session) {
             // TODO Auto-generated method stub
 
-            Logger.d("MyHostnameVerifier" + hostname);
+//            Logger.d("MyHostnameVerifier" + hostname);
 
             return true;
         }

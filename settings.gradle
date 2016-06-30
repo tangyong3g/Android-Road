@@ -1,2 +1,19 @@
+/**
+ * android basic contents
+ */
+
 include ':basic'
+
+/**
+ * comon project contain thirdpart plugin
+ */
 include ':common'
+
+/**
+ *  if you want to edit mailfeedback and recompile AAR .
+ *
+ *  1:  edit mailfeedback
+ *  2:　compile aar
+ *  3:  put aar into project
+ */
+//include ':mailfeedback'

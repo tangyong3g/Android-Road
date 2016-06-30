@@ -2,7 +2,7 @@ package com.sny.tangyong.basic;
 
 import android.app.Application;
 
-import com.tcl.mailfeedback.CrashReport;
+//import com.tcl.mailfeedback.CrashReport;
 
 /**
  * Created by Administrator on 2016/5/17.
@@ -19,7 +19,7 @@ public class BasicApplication extends Application {
         // StatisticsAgent.init(getApplicationContext());
         // StatisticsAgent.setDebugMode(true);
         // 异常启动
-        new CrashReport().start(getApplicationContext());
+//        new CrashReport().start(getApplicationContext());
         instance = this;
     }
 

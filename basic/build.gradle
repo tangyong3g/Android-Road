@@ -19,7 +19,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
+//        multiDexEnabled true
     }
 
 
@@ -29,23 +29,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    useLibrary 'org.apache.http.legacy'
     repositories {
         flatDir {
-            dirs 'libs'
+            dirs '../common/libs'
         }
-    }
-//    useLibrary 'org.apache.http.legacy'
-    lintOptions{
-        checkReleaseBuilds false
-        abortOnError false
     }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile(name: 'logger-debug', ext: 'aar')
-    compile(name: 'mailfeedback-release', ext: 'aar')
-    compile project(':common')
     compile 'com.google.android.gms:play-services:8.3.0'
     compile 'com.android.support:support-v4:23.0.0'
     compile 'com.android.support:cardview-v7:23.0.0'
@@ -53,4 +46,5 @@ dependencies {
     compile 'com.android.support:design:23.0.0'
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support:appcompat-v7:23.0.0'
+    compile project(':common')
 }

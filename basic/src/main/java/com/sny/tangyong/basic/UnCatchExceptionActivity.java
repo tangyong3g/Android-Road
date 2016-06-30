@@ -7,7 +7,7 @@ import android.os.HandlerThread;
 import android.os.Message;
 import android.os.Process;
 import android.view.View;
-import com.orhanobut.logger.Logger;
+//import com.orhanobut.logger.Logger;
 
 
 /**
@@ -29,7 +29,7 @@ public class UnCatchExceptionActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Logger.d("onCreate");
+//        Logger.d("onCreate");
 
         setContentView(R.layout.activity_un_catch_exception);
 
@@ -42,7 +42,7 @@ public class UnCatchExceptionActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        Logger.d("onResume");
+//        Logger.d("onResume");
     }
 
     @Override
@@ -53,12 +53,12 @@ public class UnCatchExceptionActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Logger.d("onDestory");
+//        Logger.d("onDestory");
     }
 
     private void initSubThread(boolean isCatch) {
 
-        Logger.d("初始化子线程的ThreadHandler");
+//        Logger.d("初始化子线程的ThreadHandler");
         mSubThread = new HandlerThread("subThread", Process.THREAD_PRIORITY_BACKGROUND);
         mSubThread.start();
         mSubHandler = new Handler(mSubThread.getLooper(), new SubHandlerCallback());
@@ -67,7 +67,7 @@ public class UnCatchExceptionActivity extends Activity {
             mSubThread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
                 @Override
                 public void uncaughtException(Thread thread, Throwable ex) {
-                    Logger.d("捕获了来自" + thread.getName() + ":\t的异常。");
+//                    Logger.d("捕获了来自" + thread.getName() + ":\t的异常。");
                 }
             });
         }
@@ -78,7 +78,7 @@ public class UnCatchExceptionActivity extends Activity {
             Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
                 @Override
                 public void uncaughtException(Thread thread, Throwable ex) {
-                    Logger.d("uncaughtException");
+//                    Logger.d("uncaughtException");
                     System.exit(0);
                 }
             });

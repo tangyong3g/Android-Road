@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.orhanobut.logger.Logger;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -62,14 +60,14 @@ public class BasicHttpTwoActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Logger.d("onCreate");
+//        Logger.d("onCreate");
         setContentView(R.layout.activity_main);
         initComponent();
     }
 
     private void initComponent() {
 
-        Logger.d("开始测试!");
+//        Logger.d("开始测试!");
         findViewById(R.id.btn_https_method_two).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,7 +155,7 @@ public class BasicHttpTwoActivity extends Activity {
         HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
             @Override
             public boolean verify(String arg0, SSLSession arg1) {
-                Logger.d("免验证!。!!!");
+//                Logger.d("免验证!。!!!");
                 return true;
             }
         });

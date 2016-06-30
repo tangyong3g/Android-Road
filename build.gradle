@@ -17,9 +17,12 @@ allprojects {
         maven{
             url 'http://maven.oschina.net/content/groups/public/'
         }
-
         jcenter {
             url "http://jcenter.bintray.com"
+        }
+
+        flatDir {
+            dirs 'common/libs'
         }
     }
 }
@@ -45,9 +48,7 @@ android {
             jniLibs.srcDirs = ['androiddemo/libs']
         }
     }
-    lintOptions {
-        abortOnError false
-    }
+
     signingConfigs {
         config {
             storeFile file('combiletools/radish.keystore')
@@ -66,17 +67,17 @@ android {
     productFlavors {
     }
 
-    repositories {
-        flatDir {
-            dirs 'androiddemo/libs'
-        }
+    lintOptions{
+        abortOnError false
+        checkAllWarnings false
+        checkReleaseBuilds false
     }
+
 }
 
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile(name: 'logger-debug', ext: 'aar')
+    compile fileTree(include: ['*.jar'], dir: 'androiddemo/libs')
     compile project(':common')
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support:design:23.0.0'

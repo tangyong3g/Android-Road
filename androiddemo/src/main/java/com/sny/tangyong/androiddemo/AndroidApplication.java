@@ -35,8 +35,14 @@ public class AndroidApplication extends android.app.Application {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
+        initPlugin();
         initComponent();
         initGoogleAna();
+    }
+
+    private void initPlugin(){
+//        CrashReport report  = new CrashReport();
+//        report.start(getApplicationContext());
     }
 
     public static AndroidApplication getInstance() {
