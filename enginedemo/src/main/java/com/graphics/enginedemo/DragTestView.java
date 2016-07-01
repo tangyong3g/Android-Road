@@ -1,5 +1,10 @@
 package com.graphics.enginedemo;
 
+import android.content.Context;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.widget.Toast;
+
 import com.go.gl.animation.Animation;
 import com.go.gl.animation.ScaleAnimation;
 import com.go.gl.animation.Transformation3D;
@@ -12,12 +17,6 @@ import com.go.gl.view.GLView;
 import com.go.gl.view.GLViewGroup;
 import com.go.gl.widget.GLDragListener;
 import com.go.gl.widget.GLDragView;
-import com.sny.tangyong.androiddemo.R;
-
-import android.content.Context;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.widget.Toast;
 
 /**
  * 
@@ -222,7 +221,7 @@ public class DragTestView extends GLFrameLayout implements GLDragListener {
 		if (x >= mHoverDrawable.getBounds().left) {
 			mPendingHoverOnRightSide = false;
 			//可选地做一个动画
-			Toast.makeText(getContext(), "onHover", 1000).show();
+			Toast.makeText(getContext(), "onHover", Toast.LENGTH_LONG).show();
 			//希望在动画结束后，恢复高亮hover区域，以便支持连续hover
 			postDelayed(mResumePeningRunnable, 2000);
 			mResumePeningRunnablePosted = true;

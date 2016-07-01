@@ -1,5 +1,8 @@
 package com.graphics.enginedemo;
 
+import android.content.Context;
+import android.view.ViewGroup.LayoutParams;
+
 import com.go.gl.animator.ValueAnimator;
 import com.go.gl.animator.motionfilter.AlphaMotionFilter;
 import com.go.gl.animator.motionfilter.MotionFilter;
@@ -9,10 +12,6 @@ import com.go.gl.animator.motionfilter.ScaleMotionFilter;
 import com.go.gl.view.GLFrameLayout;
 import com.go.gl.view.GLView;
 import com.go.gl.widget.GLImageView;
-import com.sny.tangyong.androiddemo.R;
-
-import android.content.Context;
-import android.view.ViewGroup.LayoutParams;
 
 /**
  * 
@@ -35,7 +34,7 @@ public class MotionFilterTestView extends GLFrameLayout {
 	private void initOriginal(Context context) {
 
 		mView = new GLImageView(context);
-		mView.setImageResource(R.drawable.ic_launcher);
+		mView.setImageResource(R.mipmap.ic_launcher);
 		addView(mView, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 
 		mMotionFilter = new ScaleMotionFilter(1, 0.8f, 1, 1.25f, MotionFilter.RELATIVE_TO_SELF,
@@ -68,7 +67,7 @@ public class MotionFilterTestView extends GLFrameLayout {
 	private void initImageView(Context context) {
 
 		mView = new GLImageView(context);
-		mView.setImageResource(R.drawable.ic_launcher);
+		mView.setImageResource(R.mipmap.ic_launcher);
 		addView(mView, new LayoutParams(200, 200));
 
 	}

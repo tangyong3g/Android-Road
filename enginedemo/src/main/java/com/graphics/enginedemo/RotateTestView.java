@@ -1,12 +1,11 @@
 package com.graphics.enginedemo;
 
+import android.content.Context;
+import android.view.MotionEvent;
+
 import com.go.gl.graphics.GLCanvas;
 import com.go.gl.graphics.GLDrawable;
 import com.go.gl.view.GLView;
-import com.sny.tangyong.androiddemo.R;
-
-import android.content.Context;
-import android.view.MotionEvent;
 
 /**
  * 
@@ -19,7 +18,7 @@ public class RotateTestView extends GLView {
 	// 初始化
 	public RotateTestView(Context context) {
 		super(context);
-		mDrawable = GLDrawable.getDrawable(getResources(), R.drawable.bg_one);
+		mDrawable = GLDrawable.getDrawable(getResources(),R.drawable.grid_white);
 	}
 
 	@Override

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <com.example.androiddemo.unit_7.RectGLView
+        android:id="@+id/label"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="#ffff0000" />
+
+    <!-- 
+    <com.example.android_begin_gl_3d.unit_7.CubeGLView
+        android:id="@+id/cube"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/label" />
+         -->
+    <!--  -->
+    <com.example.androiddemo.unit_7.RectGLView
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dip"
+        android:background="@mipmap/ic_launcher" />
+
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#7f00ffff"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextViewWrapper
+        android:id="@+id/textview_wrapper"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:ellipsize="marquee"
+        android:text="helloworldsssssssssssssss" />
+
+</RelativeLayout>

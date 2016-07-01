@@ -1,7 +1,4 @@
 
-
-
-
 /**
  * android basic contents
  *
@@ -9,7 +6,13 @@
  * 1: 修改build.gradle  apply plugin: 'com.android.library' 为 apply plugin: 'com.android.application'
  * 2：applicationId "com.sny.tangyong.basic"
  * 3:　AndroidManifest文件里面加入 Application配置。
+ * 4: MainActivity加入
  *
+ *
+ *        <intent-filter>
+ *               <action android:name="android.intent.action.MAIN" />
+ *              <category android:name="android.intent.category.LAUNCHER" />
+ *        </intent-filter>
  * 如果作为模块加入到ROOT工程，以上步骤相反的方法。　
  *
  */
@@ -36,3 +39,10 @@ include ':common'
  *
  */
 //include ':mailfeedback'
+
+/**
+ *
+ *   engine demo
+ *
+ */
+include ':enginedemo'

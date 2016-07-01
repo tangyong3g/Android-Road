@@ -1,7 +1,5 @@
 package com.graphics.enginedemo;
 
-import com.sny.tangyong.androiddemo.R;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,8 +19,7 @@ public class ShellEngineActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items,
-				units));
+		setListAdapter(new ArrayAdapter<String>(this, R.layout.main_items, units));
 	}
 
 	@Override

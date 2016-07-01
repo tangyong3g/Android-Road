@@ -1,6 +1,7 @@
 package com.graphics.enginedemo;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.util.Log;
 
 import com.go.gl.animator.Animator;
 import com.go.gl.animator.AnimatorSet;
@@ -11,12 +12,8 @@ import com.go.gl.graphics.GLCanvas;
 import com.go.gl.graphics.GLDrawable;
 import com.go.gl.view.GLView;
 import com.go.gl.view.GLViewGroup;
-import com.sny.tangyong.androiddemo.R;
 
-import android.content.Context;
-import android.util.Log;
-
-;
+import java.util.ArrayList;
 
 /**
  * ValueAnimator 动画类的测试样例
@@ -35,8 +32,7 @@ public class AnimatorSetTestView extends GLViewGroup {
 
 	public AnimatorSetTestView(Context context) {
 		super(context);
-		mDrawable = GLDrawable.getDrawable(getResources(),
-				R.drawable.ic_launcher);
+		mDrawable = GLDrawable.getDrawable(getResources(), R.drawable.bg_one);
 
 		ValueAnimator translateAnimator = ValueAnimator.ofFloat(0, 300);
 		// 设置动画时间

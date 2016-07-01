@@ -1,10 +1,5 @@
 package com.graphics.enginedemo;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.sny.tangyong.androiddemo.R;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +8,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 

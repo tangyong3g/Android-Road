@@ -3,7 +3,6 @@ package com.graphics.enginedemo;
 import com.go.gl.graphics.GLCanvas;
 import com.go.gl.graphics.GLDrawable;
 import com.go.gl.view.GLView;
-import com.sny.tangyong.androiddemo.R;
 
 import android.content.Context;
 import android.graphics.Bitmap;

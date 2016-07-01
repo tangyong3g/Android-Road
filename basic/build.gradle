@@ -35,6 +35,11 @@ android {
             dirs '../common/libs'
         }
     }
+    lintOptions{
+        abortOnError false
+        checkAllWarnings false
+        checkReleaseBuilds false
+    }
 }
 
 dependencies {
