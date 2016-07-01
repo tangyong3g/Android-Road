@@ -48,6 +48,9 @@ public class BasicOtherListActivity extends BaseListActivity {
         info = new ItemComponentInfo("Error Report Test", BasicErrorReportActivity.class);
         mItemsInfo.add(info);
 
+        info = new ItemComponentInfo("interpolator", BasicGraphicInterpolatorActivity.class);
+//        info = new ItemComponentInfo("interpolator", EmptyActivity.class);
+        mItemsInfo.add(info);
 
         info = new ItemComponentInfo("Android N Preview", AndroidNPreViewListActivity.class);
         mItemsInfo.add(info);

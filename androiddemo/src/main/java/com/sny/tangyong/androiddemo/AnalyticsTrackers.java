@@ -2,11 +2,8 @@ package com.sny.tangyong.androiddemo;
 
 import android.content.Context;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.Tracker;
-
-import java.util.HashMap;
-import java.util.Map;
+//import com.google.android.gms.analytics.GoogleAnalytics;
+//import com.google.android.gms.analytics.Tracker;
 
 /**
  * A collection of Google Analytics trackers. Fetch the tracker you need using
@@ -43,7 +40,7 @@ public final class AnalyticsTrackers {
         return sInstance;
     }
 
-    private final Map<Target, Tracker> mTrackers = new HashMap<Target, Tracker>();
+//    private final Map<Target, Tracker> mTrackers = new HashMap<Target, Tracker>();
     private final Context mContext;
 
     /**
@@ -53,19 +50,19 @@ public final class AnalyticsTrackers {
         mContext = context.getApplicationContext();
     }
 
-    public synchronized Tracker get(Target target) {
-        if (!mTrackers.containsKey(target)) {
-            Tracker tracker;
-            switch (target) {
-                case APP:
-                    tracker = GoogleAnalytics.getInstance(mContext).newTracker(R.xml.app_tracker);
-                    break;
-                default:
-                    throw new IllegalArgumentException("Unhandled analytics target " + target);
-            }
-            mTrackers.put(target, tracker);
-        }
-
-        return mTrackers.get(target);
-    }
+//    public synchronized Tracker get(Target target) {
+//        if (!mTrackers.containsKey(target)) {
+//            Tracker tracker;
+//            switch (target) {
+//                case APP:
+//                    tracker = GoogleAnalytics.getInstance(mContext).newTracker(R.xml.app_tracker);
+//                    break;
+//                default:
+//                    throw new IllegalArgumentException("Unhandled analytics target " + target);
+//            }
+//            mTrackers.put(target, tracker);
+//        }
+//
+//        return mTrackers.get(target);
+//    }
 }

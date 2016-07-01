@@ -35,11 +35,6 @@ public class BaseListActivity extends ListActivity {
         String name = findName(v);
         Intent intent = createIntentWithDisplayName(name);
         forward(intent);
-
-        if(R.id.text1 == 1){
-            System.out.print(false);
-        }
-
     }
 
     private String findName(View view) {

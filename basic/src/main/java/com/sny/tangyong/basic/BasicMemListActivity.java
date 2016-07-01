@@ -23,8 +23,10 @@ public class BasicMemListActivity extends BaseListActivity {
 
         ItemComponentInfo info;
 
+
         info = new ItemComponentInfo("Mem consume Test", MeminfoActivity.class);
         mItemsInfo.add(info);
+
 
         initDisplayList();
     }

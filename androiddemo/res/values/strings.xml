@@ -4,7 +4,7 @@
     <string name="app_name">Android Demo</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    
+
     <string name="app_channel">200</string>
 
 
@@ -24,18 +24,18 @@
     <string name="unit_6">第六章</string>
     <string name="unit_7">第七章</string>
     <string name="unit_8">第八章</string>
-    
+
     <string name="set_value">设置数值</string>
     <string name="cancle">取消</string>
     <string name="center">确定</string>
     <string name="alp_scal_animation">AlpAnimation</string>
     <string name="animation_one">动画一</string>
     <string name="animation_two">动画二</string>
-    
-    
+
+
     <!-- 第三单元 -->
     <string name="start">开始</string>
-    
+
     <!-- 第4单元 -->
     <string name="send_msg">发送消息</string>
     <string name="read_start">read start ......</string>
@@ -48,6 +48,6 @@
     <string name="initCustomer">Create customer</string>
     <string name="title_activity_app_com">AppComActivity</string>
     <string name="title_activity_main2">Main2Activity</string>
-    
+
 
 </resources>

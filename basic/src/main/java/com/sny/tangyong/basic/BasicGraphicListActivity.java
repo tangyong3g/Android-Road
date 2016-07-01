@@ -47,9 +47,6 @@ public class BasicGraphicListActivity extends BaseListActivity {
         info = new ItemComponentInfo("Display bitmap on UI", DisplayBitmapActivity.class);
         mItemsInfo.add(info);
 
-        info = new ItemComponentInfo("interpolator", BasicGraphicInterpolatorActivity.class);
-        mItemsInfo.add(info);
-
         initDisplayList();
     }
 

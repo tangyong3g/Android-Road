@@ -10,7 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.0'
+        classpath 'com.android.tools.build:gradle:2.1.2'
     }
 }
 
@@ -106,7 +106,7 @@ dependencies {
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support:design:23.0.0'
     compile 'com.android.support:recyclerview-v7:23.0.0'
-    compile 'com.google.android.gms:play-services-analytics:8.1.0'
+    //    compile 'com.google.android.gms:play-services-analytics:8.1.0'
     compile 'com.android.support:appcompat-v7:23.0.0'
 }
 

@@ -8,13 +8,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.identifier.AdvertisingIdClient;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.iid.InstanceID;
-
-import java.io.IOException;
 import java.util.UUID;
+
+//import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+//import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+//import com.google.android.gms.common.GooglePlayServicesRepairableException;
+//import com.google.android.gms.iid.InstanceID;
 
 
 /**
@@ -140,8 +139,8 @@ public class BasicUnquiueIdentifyActivity extends Activity implements View.OnCli
     private String getInstanceId() {
         String result = null;
 
-        InstanceID instanceID = InstanceID.getInstance(getApplicationContext());
-        result = instanceID.getId();
+//        InstanceID instanceID = InstanceID.getInstance(getApplicationContext());
+//        result = instanceID.getId();
 
         return result;
     }
@@ -163,30 +162,29 @@ public class BasicUnquiueIdentifyActivity extends Activity implements View.OnCli
                 public void run() {
                     super.run();
 
-                    Message msg = null;
-                    msg = Message.obtain();
-                    try {
-
-                        AdvertisingIdClient.Info info =
-                                AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
-                        String adId = info.getId();
-
-                        msg.what = MSG_WHAT_ADID;
-                        msg.obj = adId;
-
-                    } catch (IOException io) {
-                        io.printStackTrace();
-                        msg.what = MSG_WHAT_ERROR_IO;
-                    } catch (GooglePlayServicesNotAvailableException gn) {
-                        gn.printStackTrace();
-                        msg.what = MSG_WHAT_ERROR_GOOGLE_NOT_EXSIT;
-
-                    } catch (GooglePlayServicesRepairableException re) {
-                        re.printStackTrace();
-                        msg.what = MSG_WHAT_ERROR_GOOGLE_CONNECT;
-                    }
-
-                    mHander.sendMessage(msg);
+//                    Message msg = null;
+//                    msg = Message.obtain();
+//                    try {
+//
+//                        AdvertisingIdClient.Info info = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
+//                        String adId = info.getId();
+//
+//                        msg.what = MSG_WHAT_ADID;
+//                        msg.obj = adId;
+//
+//                    } catch (IOException io) {
+//                        io.printStackTrace();
+//                        msg.what = MSG_WHAT_ERROR_IO;
+//                    } catch (GooglePlayServicesNotAvailableException gn) {
+//                        gn.printStackTrace();
+//                        msg.what = MSG_WHAT_ERROR_GOOGLE_NOT_EXSIT;
+//
+//                    } catch (GooglePlayServicesRepairableException re) {
+//                        re.printStackTrace();
+//                        msg.what = MSG_WHAT_ERROR_GOOGLE_CONNECT;
+//                    }
+//
+//                    mHander.sendMessage(msg);
 
                 }
             };

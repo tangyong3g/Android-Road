@@ -1,11 +1,27 @@
+
+
+
+
 /**
  * android basic contents
+ *
+ * 如果要作为单独的项目运行
+ * 1: 修改build.gradle  apply plugin: 'com.android.library' 为 apply plugin: 'com.android.application'
+ * 2：applicationId "com.sny.tangyong.basic"
+ * 3:　AndroidManifest文件里面加入 Application配置。
+ *
+ * 如果作为模块加入到ROOT工程，以上步骤相反的方法。　
+ *
  */
 
 include ':basic'
 
+
 /**
  * comon project contain thirdpart plugin
+ *
+ * Common工程包含常用的jar,aar,如果module项目需要用加入进来即可
+ *
  */
 include ':common'
 
@@ -15,5 +31,8 @@ include ':common'
  *  1:  edit mailfeedback
  *  2:　compile aar
  *  3:  put aar into project
+ *
+ *  用户反馈模块，打成了AAR加入到了common模块中，如果需要修改加入项目中，重新编译即可
+ *
  */
 //include ':mailfeedback'
