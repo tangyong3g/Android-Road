@@ -57,3 +57,11 @@ include ':engine'
  * mailfeckback
  */
 //include ':mailfeedback'
+
+/**
+ *
+ * https://github.com/sromku/android-simple-storage
+ *
+ */
+
+include ':simple-storage'
