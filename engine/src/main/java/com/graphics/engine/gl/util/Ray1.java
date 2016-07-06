@@ -1,6 +1,7 @@
 package com.graphics.engine.gl.util;
 
-import com.go.gl.animation.Transformation3D;
+
+import com.graphics.engine.gl.animation.Transformation3D;
 
 /**
  * 

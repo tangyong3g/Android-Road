@@ -1,12 +1,13 @@
 package com.graphics.engine.gl.scroller.effector.gridscreeeneffector;
 
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.scroller.ScreenScroller;
-import com.go.gl.scroller.ScreenScrollerEffector;
-import com.go.gl.scroller.ScreenScrollerListener;
 
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
+
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.scroller.ScreenScroller;
+import com.graphics.engine.gl.scroller.ScreenScrollerEffector;
+import com.graphics.engine.gl.scroller.ScreenScrollerListener;
 
 /**
  * 只绘制当前两屏网格的特效类的工厂。

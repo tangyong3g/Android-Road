@@ -1,14 +1,15 @@
 package com.graphics.engine.gl.graphics;
 
 
-import com.graphics.engine.gl.util.NdkUtil;
-import com.graphics.engine.gl.view.GLContentView;
-
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Rect;
 import android.opengl.GLES20;
 import android.util.Log;
+
+import com.graphics.engine.gl.util.NdkUtil;
+import com.graphics.engine.gl.view.GLContentView;
+import com.graphics.engine.gl.view.GLView;
 
 /**
  * <br>类描述: OpenGL帧缓冲区(Frame Buffer)的封装类
@@ -648,7 +649,7 @@ public class GLFramebuffer implements TextureListener, GLClearable {
 	 * @param listener 截图完成的监听者
 	 * @param captureRect 截图区域，如果为null则表示截取全部有效区域
 	 */
-	public void saveToBitmap(GLCanvas canvas, OnBitmapCapturedListener listener, Rect captureRect) {
+	public void saveToBitmap(GLCanvas canvas, GLView.OnBitmapCapturedListener listener, Rect captureRect) {
 		final boolean isBinding = mIsBinding;
 		if (!isBinding) {
 			bind(canvas);
@@ -725,7 +726,7 @@ public class GLFramebuffer implements TextureListener, GLClearable {
 	 * @date  [2013-6-20]
 	 */
 	private static class BitmapCapturer implements Renderable {
-		OnBitmapCapturedListener mListener;
+		GLView.OnBitmapCapturedListener mListener;
 		Bitmap mBitmap;
 
 		@Override

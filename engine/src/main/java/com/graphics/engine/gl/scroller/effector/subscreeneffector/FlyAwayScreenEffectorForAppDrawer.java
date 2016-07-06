@@ -1,6 +1,7 @@
 package com.graphics.engine.gl.scroller.effector.subscreeneffector;
 
-import com.go.gl.graphics.GLCanvas;
+
+import com.graphics.engine.gl.graphics.GLCanvas;
 
 /**
  * 放大缩小、淡入淡出效果

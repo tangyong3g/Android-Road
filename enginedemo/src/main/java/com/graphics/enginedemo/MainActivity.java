@@ -10,7 +10,6 @@ import java.util.ArrayList;
 /**
  */
 public class MainActivity extends BaseListActivity {
-
     public MainActivity() {
         initListItems();
     }

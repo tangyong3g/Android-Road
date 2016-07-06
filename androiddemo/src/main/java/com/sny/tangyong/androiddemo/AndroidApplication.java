@@ -36,6 +36,7 @@ public class AndroidApplication extends android.app.Application {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
+
         initPlugin();
         initComponent();
 //        initGoogleAna();

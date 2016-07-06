@@ -1,24 +1,5 @@
 package com.graphics.engine.gl.view;
 
-import java.util.ArrayList;
-import java.util.WeakHashMap;
-
-import com.graphics.engine.gl.ICleanup;
-import com.graphics.engine.gl.animation.Transformation3D;
-import com.graphics.engine.gl.animator.motionfiler.MotionFilter;
-import com.graphics.engine.gl.graphics.BitmapGLDrawable;
-import com.graphics.engine.gl.graphics.ColorGLDrawable;
-import com.graphics.engine.gl.graphics.GLCanvas;
-import com.graphics.engine.gl.graphics.GLDrawable;
-import com.graphics.engine.gl.graphics.GLFramebuffer;
-import com.graphics.engine.gl.graphics.RenderInfoNode;
-import com.graphics.engine.gl.graphics.filters.GraphicsFilter;
-import com.graphics.engine.gl.math3d.GeometryPools;
-import com.graphics.engine.gl.util.Pool;
-import com.graphics.engine.gl.util.Poolable;
-import com.graphics.engine.gl.util.PoolableManager;
-import com.graphics.engine.gl.util.Pools;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -62,6 +43,29 @@ import android.view.accessibility.AccessibilityEventSource;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
+
+import com.graphics.engine.gl.ICleanup;
+import com.graphics.engine.gl.animation.Animation;
+import com.graphics.engine.gl.animation.Transformation3D;
+import com.graphics.engine.gl.animator.ValueAnimator;
+import com.graphics.engine.gl.animator.motionfiler.MotionFilter;
+import com.graphics.engine.gl.graphics.BitmapGLDrawable;
+import com.graphics.engine.gl.graphics.ColorGLDrawable;
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLDrawable;
+import com.graphics.engine.gl.graphics.GLFramebuffer;
+import com.graphics.engine.gl.graphics.RenderInfoNode;
+import com.graphics.engine.gl.graphics.filters.GraphicsFilter;
+import com.graphics.engine.gl.math3d.GeometryPools;
+import com.graphics.engine.gl.math3d.Ray;
+import com.graphics.engine.gl.util.Pool;
+import com.graphics.engine.gl.util.Poolable;
+import com.graphics.engine.gl.util.PoolableManager;
+import com.graphics.engine.gl.util.Pools;
+import com.graphics.engine.gl.widget.ScrollBarDrawable;
+
+import java.util.ArrayList;
+import java.util.WeakHashMap;
 
 
 /**
@@ -889,7 +893,7 @@ public class GLView implements Drawable.Callback, KeyEvent.Callback, Accessibili
     protected GraphicsFilter[] mGraphicsFilters;
 
     MotionFilter mMotionFilter;
-    AnimatorUpdateListener mMotionFilterUpdateListener;
+    ValueAnimator.AnimatorUpdateListener mMotionFilterUpdateListener;
 
     boolean mTouchEnabled = true;
     protected boolean mCleanUped;
@@ -2923,7 +2927,7 @@ public class GLView implements Drawable.Callback, KeyEvent.Callback, Accessibili
 			mMotionFilter = motionFilter;
 			if (mMotionFilter instanceof ValueAnimator) {
 				if (mMotionFilterUpdateListener == null) {
-					mMotionFilterUpdateListener = new AnimatorUpdateListener() {
+					mMotionFilterUpdateListener = new ValueAnimator.AnimatorUpdateListener() {
 
 						@Override
 						public void onAnimationUpdate(ValueAnimator animation) {

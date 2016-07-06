@@ -1,10 +1,9 @@
 package com.graphics.engine.gl.animation;
 
 
-import com.graphics.engine.gl.animator.ValueAnimator;
-
-
 import android.view.animation.Interpolator;
+
+import com.graphics.engine.gl.animator.ValueAnimator;
 
 
 /**
@@ -32,7 +31,7 @@ public class InterpolatorValueAnimation {
 	private boolean mFillAfter = true;
 	private boolean mIsReverse = false;
 	
-	private AnimationListener mAnimationListener;
+	private Animation.AnimationListener mAnimationListener;
 	private Interpolator mInterpolator = InterpolatorFactory
 			.getInterpolator(InterpolatorFactory.LINEAR);
 
@@ -127,7 +126,7 @@ public class InterpolatorValueAnimation {
 		mStartOffset = offset;
 	}
 	
-	public void setAnimationListener(AnimationListener listener) {
+	public void setAnimationListener(Animation.AnimationListener listener) {
 		mAnimationListener = listener;
 	}
 	

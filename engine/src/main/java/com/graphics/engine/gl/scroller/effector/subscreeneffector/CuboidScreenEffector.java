@@ -1,11 +1,12 @@
 package com.graphics.engine.gl.scroller.effector.subscreeneffector;
 
-import com.go.gl.animation.Animation;
-import com.go.gl.animation.AnimationListenerAdapter;
-import com.go.gl.animation.InterpolatorValueAnimation;
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.scroller.ScreenScroller;
-import com.go.gl.view.GLView;
+
+import com.graphics.engine.gl.animation.Animation;
+import com.graphics.engine.gl.animation.AnimationListenerAdapter;
+import com.graphics.engine.gl.animation.InterpolatorValueAnimation;
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.scroller.ScreenScroller;
+import com.graphics.engine.gl.view.GLView;
 
 /**
  * 
@@ -86,7 +87,7 @@ public class CuboidScreenEffector extends CuboidOutsideEffector {
 	}
 
 	private void drawScreenContent(GLCanvas canvas, float percent, int oldAlpha, int screen,
-			float offset) {
+								   float offset) {
 		canvas.translate(offset, 0);
 		canvas.multiplyAlpha((int) (ALPHA * (1 - percent)));
 		mContainer.drawScreen(canvas, screen);

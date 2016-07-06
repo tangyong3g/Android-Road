@@ -17,9 +17,6 @@
 package com.graphics.engine.gl.graphics;
 
 
-import com.graphics.engine.gl.util.FastQueue;
-import com.graphics.engine.gl.util.NdkUtil;
-
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -27,6 +24,9 @@ import android.graphics.Paint;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.util.Log;
+
+import com.graphics.engine.gl.util.FastQueue;
+import com.graphics.engine.gl.util.NdkUtil;
 
 /**
  * 
@@ -75,7 +75,7 @@ public abstract class Texture implements TextureListener, GLClearable {
     //CHECKSTYLE IGNORE 1 LINES
     private static final FastQueue<Texture> sLoadedTextureQueue = new FastQueue<Texture>(1024);
     //CHECKSTYLE IGNORE 1 LINES
-    private static final Processor<Texture> sLoadedTextureProcessor = new Processor<Texture>() {
+    private static final FastQueue.Processor<Texture> sLoadedTextureProcessor = new FastQueue.Processor<Texture>() {
 		@Override
 		public void process(Texture object) {
 			if (object != null) {

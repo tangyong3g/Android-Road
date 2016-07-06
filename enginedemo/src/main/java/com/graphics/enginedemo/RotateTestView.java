@@ -3,9 +3,10 @@ package com.graphics.enginedemo;
 import android.content.Context;
 import android.view.MotionEvent;
 
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.graphics.GLDrawable;
-import com.go.gl.view.GLView;
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLDrawable;
+import com.graphics.engine.gl.view.GLView;
+
 
 /**
  * 

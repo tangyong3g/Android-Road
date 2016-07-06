@@ -3,15 +3,16 @@ package com.graphics.enginedemo;
 import android.content.Context;
 import android.view.ViewGroup.LayoutParams;
 
-import com.go.gl.animator.ValueAnimator;
-import com.go.gl.animator.motionfilter.AlphaMotionFilter;
-import com.go.gl.animator.motionfilter.MotionFilter;
-import com.go.gl.animator.motionfilter.MotionFilterSet;
-import com.go.gl.animator.motionfilter.RotateMotionFilter;
-import com.go.gl.animator.motionfilter.ScaleMotionFilter;
-import com.go.gl.view.GLFrameLayout;
-import com.go.gl.view.GLView;
-import com.go.gl.widget.GLImageView;
+import com.graphics.engine.gl.animator.ValueAnimator;
+import com.graphics.engine.gl.animator.motionfiler.AlphaMotionFilter;
+import com.graphics.engine.gl.animator.motionfiler.MotionFilter;
+import com.graphics.engine.gl.animator.motionfiler.MotionFilterSet;
+import com.graphics.engine.gl.animator.motionfiler.RotateMotionFilter;
+import com.graphics.engine.gl.animator.motionfiler.ScaleMotionFilter;
+import com.graphics.engine.gl.view.GLFrameLayout;
+import com.graphics.engine.gl.view.GLView;
+import com.graphics.engine.gl.widget.GLImageView;
+
 
 /**
  * 

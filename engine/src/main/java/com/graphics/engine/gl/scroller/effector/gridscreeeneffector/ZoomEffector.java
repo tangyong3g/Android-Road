@@ -1,6 +1,7 @@
 package com.graphics.engine.gl.scroller.effector.gridscreeeneffector;
 
-import com.go.gl.graphics.GLCanvas;
+
+import com.graphics.engine.gl.graphics.GLCanvas;
 
 /**
  * 

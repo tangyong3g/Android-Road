@@ -1,11 +1,12 @@
 package com.graphics.engine.gl.scroller;
 
-import com.go.gl.graphics.GLCanvas;
 
 import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.view.animation.Interpolator;
+
+import com.graphics.engine.gl.graphics.GLCanvas;
 
 /**
  * 分屏视图的滚动器。 到两端继续切换就到另外一端

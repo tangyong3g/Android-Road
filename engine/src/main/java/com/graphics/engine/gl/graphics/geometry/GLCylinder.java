@@ -1,8 +1,9 @@
 package com.graphics.engine.gl.graphics.geometry;
 
-import com.go.gl.graphics.GLCanvas;
 
 import android.graphics.RectF;
+
+import com.graphics.engine.gl.graphics.GLCanvas;
 
 /**
  * 

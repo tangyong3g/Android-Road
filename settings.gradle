@@ -1,4 +1,3 @@
-
 /**
  * android basic contents
  *
@@ -19,6 +18,8 @@
 
 include ':basic'
 
+
+//include ':enginddemooriginal'
 
 /**
  * comon project contain thirdpart plugin
@@ -45,9 +46,14 @@ include ':common'
  *   engine demo
  *
  */
-include ':enginedemo'
+//include ':enginedemo'
 
 /**
  * engine source
  */
 include ':engine'
+
+/**
+ * mailfeckback
+ */
+//include ':mailfeedback'

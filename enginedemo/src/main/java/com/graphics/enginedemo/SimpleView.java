@@ -1,8 +1,9 @@
 package com.graphics.enginedemo;
 
-import com.go.gl.widget.GLImageView;
 
 import android.content.Context;
+
+import com.graphics.engine.gl.widget.GLImageView;
 
 /**
  * @author tang
@@ -13,5 +14,4 @@ public class SimpleView extends GLImageView {
 		super(context);
 	}
 	
-
 }

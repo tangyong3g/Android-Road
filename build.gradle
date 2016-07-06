@@ -10,7 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:2.1.0'
     }
 }
 
@@ -103,7 +103,8 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'androiddemo/libs')
     compile project(':common')
     compile project(':basic')
-    compile project(':enginedemo')
+    compile project(':engine')
+    //compile project(':enginedemo')
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support:design:23.0.0'
     compile 'com.android.support:recyclerview-v7:23.0.0'

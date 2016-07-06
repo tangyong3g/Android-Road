@@ -4,12 +4,12 @@ package com.graphics.engine.gl.animation;
 /**
  * 
  * <br>类描述:AnimationListener的简单实现类，所有方法为空
- * <br>功能详细描述:
+ * <br>功能详细描述:功能详细描述
  * 
  * @author  songsiyu
  * @date  [2012-9-28]
  */
-public class AnimationListenerAdapter implements AnimationListener {
+public class AnimationListenerAdapter implements Animation.AnimationListener {
 
 	@Override
 	public void onAnimationStart(Animation animation) {

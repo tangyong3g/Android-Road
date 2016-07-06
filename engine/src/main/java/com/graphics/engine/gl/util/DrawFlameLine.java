@@ -1,9 +1,10 @@
 package com.graphics.engine.gl.util;
 
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.graphics.GLDrawable;
 
 import android.opengl.Matrix;
+
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLDrawable;
 
 /**
  * 

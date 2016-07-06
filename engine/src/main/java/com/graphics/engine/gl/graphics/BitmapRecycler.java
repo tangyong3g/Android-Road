@@ -1,14 +1,14 @@
 package com.graphics.engine.gl.graphics;
 
+import android.graphics.Bitmap;
+import android.util.Log;
+
 import com.graphics.engine.gl.util.FastQueue;
 import com.graphics.engine.gl.util.Pool;
 import com.graphics.engine.gl.util.Poolable;
 import com.graphics.engine.gl.util.PoolableManager;
 import com.graphics.engine.gl.util.Pools;
 import com.graphics.engine.gl.view.GLContentView;
-
-import android.graphics.Bitmap;
-import android.util.Log;
 
 /**
  * 
@@ -118,7 +118,7 @@ public class BitmapRecycler {
 	private static final FastQueue<BitmapRecycleInfo> sQueue = new FastQueue<BitmapRecycleInfo>(QUEUE_LIMIT);
 	
 	//CHECKSTYLE IGNORE 1 LINES
-	private static Processor<BitmapRecycleInfo> sProcessor = new Processor<BitmapRecycleInfo>() {
+	private static FastQueue.Processor<BitmapRecycleInfo> sProcessor = new FastQueue.Processor<BitmapRecycleInfo>() {
 
 		@Override
 		public void process(BitmapRecycleInfo object) {

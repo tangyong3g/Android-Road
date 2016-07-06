@@ -1,6 +1,6 @@
 package com.graphics.engine.gl.scroller.effector.gridscreeeneffector;
 
-import com.go.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLCanvas;
 
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;

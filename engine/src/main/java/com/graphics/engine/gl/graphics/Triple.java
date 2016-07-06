@@ -1,7 +1,7 @@
 package com.graphics.engine.gl.graphics;
 
-import com.go.gl.view.GLContentView;
 
+import com.graphics.engine.gl.view.GLContentView;
 
 /**
  * 二元组数据，用于双线程读写（原本是三元组但是效果不好，Triple这个名字还没改成Dual）

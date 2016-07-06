@@ -1,7 +1,7 @@
 package com.graphics.engine.gl.math3d;
 
-import com.go.gl.util.StackPool;
 
+import com.graphics.engine.gl.util.StackPool;
 
 /**
  * 

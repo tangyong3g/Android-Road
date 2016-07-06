@@ -10,15 +10,17 @@
  */
 package com.ty.log;
 
+
+import android.util.TimingLogger;
+
+import com.graphics.engine.gl.util.Log;
+import com.ty.util.Constant;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import java.text.MessageFormat;
 import java.util.HashMap;
 
-import com.ty.util.Constant;
-
-import android.util.Log;
-import android.util.TimingLogger;
 
 /**
  * <br>类描述:
@@ -47,11 +49,11 @@ public final class LogUtil {
 	private static HashMap<String, TimingLogger> sTimingLoggerCache = new HashMap<String, TimingLogger>();
 
 	/** 框架日志对象 */
-	private static com.go.gl.util.Log sLog = null;
+	private static Log sLog = null;
 
 	static {
 		if (sIsOutToFile) {
-			sLog = new com.go.gl.util.Log(LOG_FILE_PREFIX);
+			sLog = new Log(LOG_FILE_PREFIX);
 		}
 	}
 
@@ -63,7 +65,7 @@ public final class LogUtil {
 			//先清理原来系统插件日志文件
 			deleteLogFile();
 			//创建一个新的框架日志对象
-			sLog = new com.go.gl.util.Log(LOG_FILE_PREFIX);
+			sLog = new Log(LOG_FILE_PREFIX);
 			//设置日志可以输出到文件
 			sIsOutToFile = true;
 		}

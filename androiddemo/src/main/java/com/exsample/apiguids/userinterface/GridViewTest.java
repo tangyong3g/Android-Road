@@ -58,7 +58,7 @@ public class GridViewTest extends Activity {
 		private Integer[] mThumbIds = { R.drawable.bg, R.drawable.bg_one, R.drawable.click_sq, R.drawable.dest, R.drawable.dest, R.drawable.cube_texture, R.drawable.cube_simple,
 				R.drawable.dest, R.drawable.error_1, R.drawable.ground_texture, R.drawable.ghxp, R.drawable.gd, R.drawable.right_1, R.drawable.right_3,
 				R.drawable.unit6_seekbar_setting_dialog_bg, R.drawable.unit6_seekbar_setting_dialog_bg, R.drawable.unit6_seekbar, R.drawable.unit6_seekbar_line2, R.drawable.mask,
-				R.drawable.src, R.drawable.particle, };
+				R.drawable.src };
 
 		public ImageViewAdapter(Context context) {
 			mContext = context;

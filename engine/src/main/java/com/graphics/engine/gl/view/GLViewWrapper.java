@@ -1,19 +1,5 @@
 package com.graphics.engine.gl.view;
 
-import java.lang.reflect.Field;
-
-import com.go.gl.graphics.BitmapGLDrawable;
-import com.go.gl.graphics.BitmapRecycler;
-import com.go.gl.graphics.BitmapTexture;
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.graphics.GLDrawable;
-import com.go.gl.graphics.Texture;
-import com.go.gl.graphics.TextureListener;
-import com.go.gl.graphics.TextureLoadedListener;
-import com.go.gl.graphics.TextureManager;
-import com.go.gl.graphics.filters.GraphicsFilter;
-import com.go.gl.widget.GLTextView;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -34,6 +20,19 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.ViewParent;
 import android.widget.EditText;
 
+import com.graphics.engine.gl.graphics.BitmapGLDrawable;
+import com.graphics.engine.gl.graphics.BitmapRecycler;
+import com.graphics.engine.gl.graphics.BitmapTexture;
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLDrawable;
+import com.graphics.engine.gl.graphics.Texture;
+import com.graphics.engine.gl.graphics.TextureListener;
+import com.graphics.engine.gl.graphics.TextureLoadedListener;
+import com.graphics.engine.gl.graphics.TextureManager;
+import com.graphics.engine.gl.graphics.filters.GraphicsFilter;
+
+import java.lang.reflect.Field;
+
 /**
  * 
  * <br>类描述: {@link View}的封装器
@@ -45,7 +44,7 @@ import android.widget.EditText;
  * 如果不希望它更新，使用{@link #setUseDeferredInvalidate(boolean)}。
  * <li>{@link #setPersistentDrawingCache(boolean)} 这个方法用来设置
  * 绘图缓冲的位图是否常驻内存，如果比较少更新，可以设为不常驻，以节省内存。
- * <li>对于文字，可以使用{@link GLTextView}这个子类，它默认不常驻内存。
+ * <li>对于文字，可以使用{@link com.graphics.engine.gl.widget.GLTextView}这个子类，它默认不常驻内存。
  * <li>{@link OnOutOfMemoryListner}用来处理绘图缓冲因为内存不够申请失败
  * 的情况，例如桌面挂件在此时会显示一张感叹号的图片。
  * </ul>

@@ -1,12 +1,13 @@
 package com.graphics.engine.gl.scroller.effector.subscreeneffector;
 
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.graphics.GLDrawable;
-import com.go.gl.scroller.ScreenScroller;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PaintFlagsDrawFilter;
+
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLDrawable;
+import com.graphics.engine.gl.scroller.ScreenScroller;
 
 /**
  * 

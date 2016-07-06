@@ -5,18 +5,19 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Toast;
 
-import com.go.gl.animation.Animation;
-import com.go.gl.animation.ScaleAnimation;
-import com.go.gl.animation.Transformation3D;
-import com.go.gl.graphics.ColorGLDrawable;
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.math3d.Ray;
-import com.go.gl.view.GLFrameLayout;
-import com.go.gl.view.GLLayoutInflater;
-import com.go.gl.view.GLView;
-import com.go.gl.view.GLViewGroup;
-import com.go.gl.widget.GLDragListener;
-import com.go.gl.widget.GLDragView;
+import com.graphics.engine.gl.animation.Animation;
+import com.graphics.engine.gl.animation.ScaleAnimation;
+import com.graphics.engine.gl.animation.Transformation3D;
+import com.graphics.engine.gl.graphics.ColorGLDrawable;
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.math3d.Ray;
+import com.graphics.engine.gl.view.GLFrameLayout;
+import com.graphics.engine.gl.view.GLLayoutInflater;
+import com.graphics.engine.gl.view.GLView;
+import com.graphics.engine.gl.view.GLViewGroup;
+import com.graphics.engine.gl.widget.GLDragListener;
+import com.graphics.engine.gl.widget.GLDragView;
+
 
 /**
  * 
@@ -119,7 +120,7 @@ public class DragTestView extends GLFrameLayout implements GLDragListener {
 					mDragView.startDrag(DragTestView.this, v, null, null);
 
 					// 施动开始的时候就开始一个300毫秒的动画，放大的动画
-					Animation a = new ScaleAnimation(1, SCALE, 1, SCALE, 
+					Animation a = new ScaleAnimation(1, SCALE, 1, SCALE,
 							Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 					a.setDuration(300);
 					mDragView.startDragAnimation(a);

@@ -1,10 +1,10 @@
 package com.graphics.engine.gl.scroller.effector.gridscreeeneffector;
 
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.scroller.ScreenScroller;
-
 import android.graphics.Paint;
 import android.graphics.PaintFlagsDrawFilter;
+import com.graphics.engine.gl.graphics.GLCanvas;
+
+import com.graphics.engine.gl.scroller.ScreenScroller;
 
 /**
  * 

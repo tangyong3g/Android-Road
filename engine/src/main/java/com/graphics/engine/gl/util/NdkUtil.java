@@ -8,8 +8,8 @@ import android.graphics.Bitmap.Config;
 import android.util.Log;
 
 
+
 /**
- * 
  * <br>类描述: Native工具类
  * <br>功能详细描述:
  * 

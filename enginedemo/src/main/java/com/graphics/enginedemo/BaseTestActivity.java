@@ -8,9 +8,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import com.go.gl.GLActivity;
-import com.go.gl.view.GLContentView;
-import com.go.gl.view.GLView;
+import com.graphics.engine.gl.GLActivity;
+import com.graphics.engine.gl.view.GLContentView;
+import com.graphics.engine.gl.view.GLView;
 
 import java.lang.reflect.Constructor;
 

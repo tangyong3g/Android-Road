@@ -2,6 +2,7 @@ package com.graphics.engine.gl.view;
 
 import java.util.ArrayList;
 
+import com.graphics.engine.gl.animation.Animation;
 import com.graphics.engine.gl.animation.Transformation3D;
 import com.graphics.engine.gl.animator.motionfiler.MotionFilter;
 import com.graphics.engine.gl.graphics.GLCanvas;

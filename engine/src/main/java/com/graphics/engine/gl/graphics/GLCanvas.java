@@ -1,16 +1,5 @@
 package com.graphics.engine.gl.graphics;
 
-import java.io.FileOutputStream;
-import java.lang.reflect.Field;
-import java.nio.FloatBuffer;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
-import com.graphics.engine.gl.animation.Transformation3D;
-import com.graphics.engine.gl.util.FastQueue;
-import com.graphics.engine.gl.util.IBufferFactory;
-
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.Canvas;
@@ -30,6 +19,18 @@ import android.opengl.GLES20;
 import android.opengl.Matrix;
 import android.os.Environment;
 import android.util.Log;
+
+import com.graphics.engine.gl.animation.Transformation3D;
+import com.graphics.engine.gl.util.FastQueue;
+import com.graphics.engine.gl.util.IBufferFactory;
+import com.graphics.engine.gl.util.Ray;
+
+import java.io.FileOutputStream;
+import java.lang.reflect.Field;
+import java.nio.FloatBuffer;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * <br>类描述: 画布类

@@ -1,12 +1,12 @@
 package com.graphics.enginedemo;
 
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.graphics.geometry.ColorGLObjectRender;
-import com.go.gl.graphics.geometry.GLCircle;
-import com.go.gl.view.GLFrameLayout;
-
 import android.content.Context;
 import android.util.AttributeSet;
+
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.geometry.ColorGLObjectRender;
+import com.graphics.engine.gl.graphics.geometry.GLCircle;
+import com.graphics.engine.gl.view.GLFrameLayout;
 
 /**
  * 

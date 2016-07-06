@@ -12,7 +12,7 @@ import com.graphics.engine.gl.animator.ValueAnimator;
  * 
  * @author dengweiming
  *
- * @deprecated 使用{@link InterpolatorValueAnimation}或者{@link com.go.gl.animator.Animator}代替。
+ * @deprecated 使用{@link InterpolatorValueAnimation}或者{@link com.graphics.engine.gl.animator.Animator}代替。
  */
 public class ValueAnimation {
 	private float mValue;

@@ -1,10 +1,10 @@
 package com.graphics.engine.gl.graphics;
 
 
-import com.graphics.engine.gl.util.NdkUtil;
-
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+
+import com.graphics.engine.gl.util.NdkUtil;
 
 /**
  * 
@@ -19,7 +19,7 @@ public class DrawableInfo {
 	//CHECKSTYLE IGNORE 8 LINES
 	Drawable drawable;
 	Bitmap bitmap;
-	WrappedResources res;
+	ResourceManager.WrappedResources res;
 	int resId;
 	int pixels;
 	int width;

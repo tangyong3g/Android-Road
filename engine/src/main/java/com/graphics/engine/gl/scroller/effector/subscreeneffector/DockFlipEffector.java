@@ -1,8 +1,7 @@
 package com.graphics.engine.gl.scroller.effector.subscreeneffector;
 
-import com.go.gl.graphics.GLCanvas;
 
-import android.util.FloatMath;
+import com.graphics.engine.gl.graphics.GLCanvas;
 
 /**
  * 
@@ -27,7 +26,7 @@ public class DockFlipEffector extends MSubScreenEffector {
 
 	@Override
 	protected boolean onDrawScreen(GLCanvas canvas, int screen, int offset1,
-			boolean first) {
+								   boolean first) {
 		
 		float offset = mScroller.getCurrentScreenDrawingOffset(first);
 		canvas.translate(mScroll, 0);
@@ -38,11 +37,12 @@ public class DockFlipEffector extends MSubScreenEffector {
 
 		// 计算translateX和translateZ时用的坐标系，是以旋转中心为原点，以原Z轴负方向为Y方向的坐标系统。
 		// 在此坐标系中，不滑动时，屏幕的中心点坐标为（0，-mRadiu）
-		float angle = (float) (offset * mRatio * Math.PI - Math.PI / 2);
-		float translateX = FloatMath.cos(angle) * mRadiu;
-		float translateZ = FloatMath.sin(angle) * mRadiu - (-mRadiu);
+		double angle = (float) (offset * mRatio * Math.PI - Math.PI / 2);
+		double translateX = Math.cos(angle) * mRadiu;
+		double translateZ = Math.sin(angle) * mRadiu - (-mRadiu);
 
-		canvas.translate(translateX, 0, -translateZ);
+
+		canvas.translate((float)translateX, 0, -(float)translateZ);
 		mContainer.drawScreen(canvas, screen);
 		canvas.setAlpha(oldAlpha);
 		return false;

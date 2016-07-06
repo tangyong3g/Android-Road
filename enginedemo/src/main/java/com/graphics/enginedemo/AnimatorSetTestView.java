@@ -3,15 +3,14 @@ package com.graphics.enginedemo;
 import android.content.Context;
 import android.util.Log;
 
-import com.go.gl.animator.Animator;
-import com.go.gl.animator.AnimatorSet;
-import com.go.gl.animator.FloatValueAnimator;
-import com.go.gl.animator.ValueAnimator;
-import com.go.gl.animator.ValueAnimator.AnimatorUpdateListener;
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.graphics.GLDrawable;
-import com.go.gl.view.GLView;
-import com.go.gl.view.GLViewGroup;
+import com.graphics.engine.gl.animator.Animator;
+import com.graphics.engine.gl.animator.AnimatorSet;
+import com.graphics.engine.gl.animator.FloatValueAnimator;
+import com.graphics.engine.gl.animator.ValueAnimator;
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLDrawable;
+import com.graphics.engine.gl.view.GLView;
+import com.graphics.engine.gl.view.GLViewGroup;
 
 import java.util.ArrayList;
 
@@ -44,7 +43,7 @@ public class AnimatorSetTestView extends GLViewGroup {
 		// 设置名称
 		translateAnimator.setName("translate");
 		// 做动画的时候就会调用
-		translateAnimator.addUpdateListener(new AnimatorUpdateListener() {
+		translateAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 
 			@Override
 			public void onAnimationUpdate(ValueAnimator animation) {
@@ -57,7 +56,7 @@ public class AnimatorSetTestView extends GLViewGroup {
 		ValueAnimator rotateAnimator = ValueAnimator.ofFloat(0, 90);
 		rotateAnimator.setDuration(1500);
 		rotateAnimator.setName("rotate");
-		rotateAnimator.addUpdateListener(new AnimatorUpdateListener() {
+		rotateAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 
 			@Override
 			public void onAnimationUpdate(ValueAnimator animation) {
@@ -73,7 +72,7 @@ public class AnimatorSetTestView extends GLViewGroup {
 		// 设置次数
 		scaleAnimator.setRepeatCount(1);
 		scaleAnimator.setName("scale");
-		scaleAnimator.addUpdateListener(new AnimatorUpdateListener() {
+		scaleAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 
 			@Override
 			public void onAnimationUpdate(ValueAnimator animation) {

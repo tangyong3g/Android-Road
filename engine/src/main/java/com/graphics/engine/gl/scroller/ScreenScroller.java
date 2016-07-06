@@ -1,11 +1,5 @@
 package com.graphics.engine.gl.scroller;
 
-import com.go.gl.graphics.BitmapGLDrawable;
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.graphics.GLDrawable;
-import com.go.gl.scroller.effector.gridscreeneffector.GridScreenContainer;
-import com.go.gl.scroller.effector.gridscreeneffector.GridScreenEffector;
-import com.go.gl.scroller.effector.subscreeneffector.SubScreenEffector;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -18,6 +12,10 @@ import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
+
+import com.graphics.engine.gl.graphics.BitmapGLDrawable;
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLDrawable;
 
 /**
  * 分屏视图的滚动器。 

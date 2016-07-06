@@ -1,39 +1,5 @@
 package com.graphics.engine.gl.view;
 
-import java.lang.Thread.UncaughtExceptionHandler;
-import java.lang.ref.WeakReference;
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.WeakHashMap;
-
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
-import javax.microedition.khronos.opengles.GL10;
-
-import com.graphics.engine.gl.ICleanup;
-import com.graphics.engine.gl.Timer;
-import com.graphics.engine.gl.animator.ValueAnimator;
-import com.graphics.engine.gl.graphics.BitmapRecycler;
-import com.graphics.engine.gl.graphics.BitmapTexture;
-import com.graphics.engine.gl.graphics.GLCanvas;
-import com.graphics.engine.gl.graphics.GLError;
-import com.graphics.engine.gl.graphics.IndexBufferBlock;
-import com.graphics.engine.gl.graphics.RenderContext;
-import com.graphics.engine.gl.graphics.RenderInfoNode;
-import com.graphics.engine.gl.graphics.Renderable;
-import com.graphics.engine.gl.graphics.Texture;
-import com.graphics.engine.gl.graphics.TextureManager;
-import com.graphics.engine.gl.graphics.TextureRecycler;
-import com.graphics.engine.gl.graphics.VertexBufferBlock;
-import com.graphics.engine.gl.math3d.GeometryPools;
-import com.graphics.engine.gl.util.FastQueue;
-import com.graphics.engine.gl.util.FpsCounter;
-import com.graphics.engine.gl.util.FrameTracker;
-import com.graphics.engine.gl.util.NdkUtil;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -59,6 +25,41 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.ViewParent;
 import android.view.ViewTreeObserver;
 import android.view.accessibility.AccessibilityEvent;
+
+import com.graphics.engine.gl.ICleanup;
+import com.graphics.engine.gl.Timer;
+import com.graphics.engine.gl.animator.ValueAnimator;
+import com.graphics.engine.gl.graphics.BitmapRecycler;
+import com.graphics.engine.gl.graphics.BitmapTexture;
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLError;
+import com.graphics.engine.gl.graphics.IndexBufferBlock;
+import com.graphics.engine.gl.graphics.RenderContext;
+import com.graphics.engine.gl.graphics.RenderInfoNode;
+import com.graphics.engine.gl.graphics.Renderable;
+import com.graphics.engine.gl.graphics.Texture;
+import com.graphics.engine.gl.graphics.TextureManager;
+import com.graphics.engine.gl.graphics.TextureRecycler;
+import com.graphics.engine.gl.graphics.VertexBufferBlock;
+import com.graphics.engine.gl.math3d.GeometryPools;
+import com.graphics.engine.gl.math3d.Ray;
+import com.graphics.engine.gl.util.FastQueue;
+import com.graphics.engine.gl.util.FpsCounter;
+import com.graphics.engine.gl.util.FrameTracker;
+import com.graphics.engine.gl.util.NdkUtil;
+
+import java.lang.Thread.UncaughtExceptionHandler;
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
+import java.util.Arrays;
+import java.util.WeakHashMap;
+
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
+import javax.microedition.khronos.opengles.GL10;
 
 /**
  * 
@@ -101,7 +102,7 @@ public class GLContentView extends GLSurfaceView implements GLViewParent {
 	boolean mIsAnimating;
 	private boolean mTraversalScheduled;
 
-	private AttachInfo mAttachInfo;
+	private GLView.AttachInfo mAttachInfo;
 	private GLRenderer mRenderer;
 	private RendererWrapper mRendererWrapper;
 	private int mSurfaceCreateCount;
@@ -212,7 +213,7 @@ public class GLContentView extends GLSurfaceView implements GLViewParent {
 		mRendererWrapper = new RendererWrapper();
 		mRendererWrapper.setRenderer(mRenderer);
 		
-		mAttachInfo = new AttachInfo();
+		mAttachInfo = new GLView.AttachInfo();
 		mAttachInfo.mViewProxy = this;
 		//作为代理必须自己启用这些设置
 		setHapticFeedbackEnabled(true);
@@ -651,8 +652,8 @@ public class GLContentView extends GLSurfaceView implements GLViewParent {
 			final float[] cp = TEMP_VECTOR;
 			GeometryPools.saveStack();
 			mCanvas.getCameraWorldPosition(cp);
-			com.go.gl.math3d.Point p = GeometryPools.acquirePoint().set(cp[0], cp[1], cp[2]);
-			com.go.gl.math3d.Point q = GeometryPools.acquirePoint().set(mTouchX, -mTouchY, 0);
+			com.graphics.engine.gl.math3d.Point p = GeometryPools.acquirePoint().set(cp[0], cp[1], cp[2]);
+			com.graphics.engine.gl.math3d.Point q = GeometryPools.acquirePoint().set(mTouchX, -mTouchY, 0);
 			mTouchRay.set(p, q);
 			mTouchRay.startCast();
 			GeometryPools.restoreStack();
@@ -1163,7 +1164,7 @@ public class GLContentView extends GLSurfaceView implements GLViewParent {
 			mCanvas.mDeltaDrawingTime = deltaTime;
 			mCanvas.mDrawingTime = mDrawingTime;
 			
-			AnimationHandler animationHandler = ValueAnimator.sAnimationHandler;
+			ValueAnimator.AnimationHandler animationHandler = ValueAnimator.sAnimationHandler;
 			ValueAnimator.sCurrentTime = mDrawingTime;
 			animationHandler.run();
 			if (animationHandler.isScheduled()) {
@@ -1823,7 +1824,7 @@ public class GLContentView extends GLSurfaceView implements GLViewParent {
 	
 	private static final int ON_FRAME_RENDERED_ACTION_MAX_COUNT = 32;
 	FastQueue<Runnable> mOnFrameRenderedActionQueue = new FastQueue<Runnable>(ON_FRAME_RENDERED_ACTION_MAX_COUNT);
-	Processor<Runnable> mOnFrameRenderedActionProcessor = new Processor<Runnable>() {
+	FastQueue.Processor<Runnable> mOnFrameRenderedActionProcessor = new FastQueue.Processor<Runnable>() {
 
 		@Override
 		public void process(Runnable object) {
@@ -1844,6 +1845,7 @@ public class GLContentView extends GLSurfaceView implements GLViewParent {
 	 * <br>功能简述:在本帧渲染完成后执行操作
 	 * <br>功能详细描述:
 	 * <br>注意:因为绘制和渲染是异步的，因此在跳转到其他Activity等情况下，需要等待渲染完成后才能执行这些操作。
+	 *
 	 * 需要在主线程上执行本方法，如果在另外的线程调用，需要用post方法来调用本方法。
 	 * @param runnable
 	 * @return

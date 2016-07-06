@@ -692,7 +692,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
             mCrashFilePath = CrashReportConfig.LOG_PATH;
             File destDir = new File(mCrashFilePath);
             if (!destDir.exists()) {
-                destDir.mkdirs();
+                boolean success = destDir.mkdirs();
             }
         }
 

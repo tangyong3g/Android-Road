@@ -1,10 +1,11 @@
 package com.graphics.engine.gl.graphics.geometry;
 
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.graphics.GLVBO;
-import com.go.gl.graphics.IndexBufferBlock;
-import com.go.gl.graphics.Renderable;
-import com.go.gl.graphics.VertexBufferBlock;
+
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLVBO;
+import com.graphics.engine.gl.graphics.IndexBufferBlock;
+import com.graphics.engine.gl.graphics.Renderable;
+import com.graphics.engine.gl.graphics.VertexBufferBlock;
 
 /**
  * 

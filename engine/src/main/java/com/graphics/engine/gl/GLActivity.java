@@ -1,9 +1,5 @@
 package com.graphics.engine.gl;
 
-import com.graphics.engine.gl.view.GLContentView;
-import com.graphics.engine.gl.view.GLLayoutInflater;
-import com.graphics.engine.gl.view.GLView;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
@@ -18,6 +14,10 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.WindowManager;
+
+import com.graphics.engine.gl.view.GLContentView;
+import com.graphics.engine.gl.view.GLLayoutInflater;
+import com.graphics.engine.gl.view.GLView;
 
 /**
  * 
@@ -40,7 +40,7 @@ import android.view.WindowManager;
  * @date [2012-9-5]
  */
 public class GLActivity extends Activity implements OnGlobalLayoutListener,
-		SurfaceViewOwner {
+		GLContentView.SurfaceViewOwner {
 	private static final String TAG = "GLActivity";
 	private static final boolean DBG = false;
 

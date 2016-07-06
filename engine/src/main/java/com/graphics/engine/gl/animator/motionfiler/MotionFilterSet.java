@@ -1,10 +1,12 @@
 package com.graphics.engine.gl.animator.motionfiler;
 
-import java.util.ArrayList;
+import android.view.animation.AnimationSet;
 
 import com.graphics.engine.gl.animation.Transformation3D;
+import com.graphics.engine.gl.animator.AnimatorSet;
+import com.graphics.engine.gl.animator.ValueAnimator;
 
-import android.view.animation.AnimationSet;
+import java.util.ArrayList;
 
 /**
  * 
@@ -18,6 +20,7 @@ import android.view.animation.AnimationSet;
  * @date  [2013-10-9]
  */
 public class MotionFilterSet implements MotionFilter {
+
 	AnimatorSet mAnimatorSet;	//因为是final限定的，不能使用继承的方式，只好作为成员
 	ArrayList<MotionFilter> mMotionFilters;
 	Transformation3D mChildTransformation;

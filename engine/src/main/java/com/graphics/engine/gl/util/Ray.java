@@ -1,16 +1,17 @@
 package com.graphics.engine.gl.util;
 
+import com.graphics.engine.gl.animation.Transformation3D;
+
 import java.nio.FloatBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 
-import com.go.gl.animation.Transformation3D;
 
 /**
  * 
  * <br>类描述: 射线类
  * <br>功能详细描述:
- * @deprecated 使用{@link com.go.gl.math3d.Ray}代替
+ * @deprecated 使用{@link com.graphics.engine.gl.math3d.Ray}代替
  */
 public class Ray {
 	

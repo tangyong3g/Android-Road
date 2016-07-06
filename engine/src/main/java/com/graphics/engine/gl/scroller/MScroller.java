@@ -1,15 +1,15 @@
 package com.graphics.engine.gl.scroller;
 
-import com.go.gl.Timer;
-import com.go.gl.animation.InterpolatorFactory;
-import com.go.gl.graphics.GLCanvas;
-
 import android.content.Context;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
+
+import com.graphics.engine.gl.Timer;
+import com.graphics.engine.gl.animation.InterpolatorFactory;
+import com.graphics.engine.gl.graphics.GLCanvas;
 
 /**
  * 

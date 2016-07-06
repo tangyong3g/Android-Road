@@ -70,7 +70,7 @@ public class Transformation3D {
      * Creates a new transformation with alpha = 1 and the identity matrix.
      */
     public Transformation3D() {
-    	mMatrix3D = new com.graphics.engine.gl.graphics.Matrix();
+    	mMatrix3D = new com.graphics.engine.gl.math3d.Matrix();
     	mMatrix = mMatrix3D.getValues();
 //    	clear();
 		mAlpha = 1.0f;

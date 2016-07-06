@@ -14,17 +14,13 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-
-    <!--   android:name=".BasicApplication"  作为一个moudle的时候 不需要配置-->
-
+    <!-- android:name=".BasicApplication"  作为一个moudle的时候 不需要配置 -->
     <application
         android:allowBackup="true"
         android:theme="@style/Theme.AppCompat">
 
         <!-- uses-library -->
-        <!--
-        <uses-library android:name="com.sny.tangyong.common"></uses-library>
-        -->
+        <!-- <uses-library android:name="com.sny.tangyong.common"></uses-library> -->
 
         <meta-data
             android:name="TCL_STATISTICS_APP_KEY"
@@ -37,6 +33,7 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat">
+
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +41,6 @@
             </intent-filter>
             -->
         </activity>
-
         <activity android:name=".GLSurfaceViewActivity" />
         <activity android:name=".FullScreenTest" />
         <activity android:name=".LooperActivity" />
@@ -88,6 +84,7 @@
             android:name=".BasicDeviceInfoActivity"
             android:label="@string/title_activity_basic_device_info"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <meta-data
             android:name="CHANNEL"
             android:value="GooglePlay" />
@@ -120,7 +117,9 @@
         <activity android:name=".BasicThreadTaskManager" />
         <activity android:name=".BasicGraphicInterpolatorActivity" />
         <activity android:name=".AndroidNPreViewListActivity" />
-        <activity android:name=".BackGroundOptizationActivity"></activity>
+        <activity android:name=".BackGroundOptizationActivity" />
+        <activity android:name=".ExternalStorageActivity" />
+        <activity android:name=".CreateExFileActivity"></activity>
     </application>
 
 </manifest>

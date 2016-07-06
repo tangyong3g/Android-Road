@@ -55,6 +55,8 @@ public class BasicOtherListActivity extends BaseListActivity {
         info = new ItemComponentInfo("Android N Preview", AndroidNPreViewListActivity.class);
         mItemsInfo.add(info);
 
+        info = new ItemComponentInfo("File Info", CreateExFileActivity.class);
+        mItemsInfo.add(info);
 
 
         initDisplayList();

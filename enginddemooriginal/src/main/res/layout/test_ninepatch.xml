@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	<TextViewWrapper
+		android:id="@+id/ninepatch_wrapper0"
+		android:background="@drawable/test"
+		android:text="helloworldsssssssssssssss"
+		android:layout_width="100dp" 
+		android:layout_margin="10dp"
+		android:ellipsize="marquee"
+		android:layout_height="0dp"
+		android:layout_weight="0.5"
+	/>
+	<TextViewWrapper
+		android:id="@+id/ninepatch_wrapper1"
+		android:background="@drawable/preview_panel"
+		android:text="helloworldsssssssssssssss"
+		android:layout_margin="10dp"
+		android:layout_width="200dp" 
+		android:ellipsize="marquee"
+		android:layout_height="0dp"
+		android:layout_weight="0.5"
+	/>
+			
+</LinearLayout>	

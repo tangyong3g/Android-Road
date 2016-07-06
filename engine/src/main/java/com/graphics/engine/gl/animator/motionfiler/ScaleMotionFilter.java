@@ -1,7 +1,8 @@
 package com.graphics.engine.gl.animator.motionfiler;
 
-import com.go.gl.animation.Transformation3D;
-import com.go.gl.animator.FloatValuePairsAnimator;
+
+import com.graphics.engine.gl.animation.Transformation3D;
+import com.graphics.engine.gl.animator.FloatValuePairsAnimator;
 
 /**
  * 

@@ -1,6 +1,11 @@
 package com.graphics.engine.gl.graphics.geometry;
 
 
+import android.content.Context;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+
 import com.graphics.engine.gl.graphics.GLCanvas;
 import com.graphics.engine.gl.math3d.GeometryPools;
 import com.graphics.engine.gl.math3d.Math3D;
@@ -9,11 +14,6 @@ import com.graphics.engine.gl.math3d.Point;
 import com.graphics.engine.gl.math3d.Vector;
 import com.graphics.engine.gl.util.FloatArrayList;
 import com.graphics.engine.gl.util.LinkedFloatBuffer;
-
-import android.content.Context;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.view.ViewConfiguration;
 
 /**
  * 
@@ -440,7 +440,7 @@ public class GLPath extends GLObject {
 		canvas.restore();
 	}
 	
-	private void setPoint(Point p, Iterator iterator) {
+	private void setPoint(Point p, LinkedFloatBuffer.Iterator iterator) {
 		p.x = iterator.next();
 		p.y = iterator.next();
 		p.z = iterator.next();
@@ -487,7 +487,7 @@ public class GLPath extends GLObject {
 		if (size <= mPositionComponent * 2) {
 			return;
 		}
-		Iterator iterator = mPoints.iterator();
+		LinkedFloatBuffer.Iterator iterator = mPoints.iterator();
 		iterator.position(mPositionComponent);
 		float x1 = iterator.next();
 		float y1 = iterator.next();

@@ -46,37 +46,37 @@
 -keep public class com.jb.util.** { public *; protected *;}
 
 # ShellEngine
--keep public class com.go.gl.** { public *; protected *;}
--keep class com.go.gl.ICleanup { *;}
--keep class com.go.gl.graphics.TextureListener { *;}
--keep class com.go.gl.graphics.TextureLoadedListener { *;}
--keep class com.go.gl.scroller.ScreenScrollerListener { *;}
+-keep public class com.graphics.engine.gl.** { public *; protected *;}
+-keep class com.graphics.engine.gl.ICleanup { *;}
+-keep class com.graphics.engine.gl.graphics.TextureListener { *;}
+-keep class com.graphics.engine.gl.graphics.TextureLoadedListener { *;}
+-keep class com.graphics.engine.gl.scroller.ScreenScrollerListener { *;}
 -keep class com.go.gowidget.core.IGoWidget3D { *;}
 -keep class com.go.gowidget.core.IFullScreenNextWidget {*;}
 
 # innerClasses
--keep class com.go.gl.animation.Animation$AnimationListener { *;}
--keep class com.go.gl.view.GLView$On*Listener { *;}
--keep class com.go.gl.view.GLViewGroup$On*Listener { *;}
--keep class com.go.gl.widget.GLAdapterView$On*Listener { *;}
--keep class com.go.gl.widget.GLAbsListView$On*Listener { *;}
--keep class com.go.gl.widget.GLAbsListView$RecyclerListener { *;}
--keep class com.go.gl.view.GLLayoutInflater$Factory { *;}
--keep class com.go.gl.view.GLLayoutInflater$Filter { *;}
--keep class com.go.gl.MemoryManager$MemoryListener { *;}
--keep class com.go.gl.animation.Smoother$SmoothListener { *;}
+-keep class com.graphics.engine.gl.animation.Animation$AnimationListener { *;}
+-keep class com.graphics.engine.gl.view.GLView$On*Listener { *;}
+-keep class com.graphics.engine.gl.view.GLViewGroup$On*Listener { *;}
+-keep class com.graphics.engine.gl.widget.GLAdapterView$On*Listener { *;}
+-keep class com.graphics.engine.gl.widget.GLAbsListView$On*Listener { *;}
+-keep class com.graphics.engine.gl.widget.GLAbsListView$RecyclerListener { *;}
+-keep class com.graphics.engine.gl.view.GLLayoutInflater$Factory { *;}
+-keep class com.graphics.engine.gl.view.GLLayoutInflater$Filter { *;}
+-keep class com.graphics.engine.gl.MemoryManager$MemoryListener { *;}
+-keep class com.graphics.engine.gl.animation.Smoother$SmoothListener { *;}
 
 # keep child extends views
--keep public class * extends com.go.gl.view.GLView
--keep public class * extends com.go.gl.view.GLViewGroup
+-keep public class * extends com.graphics.engine.gl.view.GLView
+-keep public class * extends com.graphics.engine.gl.view.GLViewGroup
 -keep public class * extends com.sny.tangyong.shellengine.animation.Animation
--keep public class * extends com.go.gl.widget.GLAdapterView
--keep public class * extends com.go.gl.widget.GLAbsListView
+-keep public class * extends com.graphics.engine.gl.widget.GLAdapterView
+-keep public class * extends com.graphics.engine.gl.widget.GLAbsListView
 -keep public class com.go.gowidget.core.** { *;}
 
 # 3d widget entry
 -keepclassmembers class * extends android.app.Activity {
-   public ** create3DWidget(android.content.Context, com.go.gl.view.GLLayoutInflater, android.os.Bundle);
+   public ** create3DWidget(android.content.Context, com.graphics.engine.gl.view.GLLayoutInflater, android.os.Bundle);
 }
 
 # ShellEngine4widget
@@ -129,4 +129,4 @@
 -dontwarn net.margaritov.preference.colorpicker.**
 
 -dontwarn net.tsz.afinal.**
--dontwarn com.go.gl.scroller.effector.**
+-dontwarn com.graphics.engine.gl.scroller.effector.**

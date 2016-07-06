@@ -1,14 +1,14 @@
 package com.graphics.engine.gl.graphics;
 
 
+import android.util.Log;
+
 import com.graphics.engine.gl.util.FastQueue;
 import com.graphics.engine.gl.util.Pool;
 import com.graphics.engine.gl.util.Poolable;
 import com.graphics.engine.gl.util.PoolableManager;
 import com.graphics.engine.gl.util.Pools;
 import com.graphics.engine.gl.view.GLContentView;
-
-import android.util.Log;
 
 /**
  * 
@@ -139,7 +139,7 @@ public class TextureRecycler {
 	private static final FastQueue<ClearableRecycleInfo> sQueue = new FastQueue<ClearableRecycleInfo>(QUEUE_LIMIT);
 	
 	//CHECKSTYLE IGNORE 1 LINES
-	private static Processor<ClearableRecycleInfo> sProcessor = new Processor<ClearableRecycleInfo>() {
+	private static FastQueue.Processor<ClearableRecycleInfo> sProcessor = new FastQueue.Processor<ClearableRecycleInfo>() {
 
 		@Override
 		public void process(ClearableRecycleInfo object) {

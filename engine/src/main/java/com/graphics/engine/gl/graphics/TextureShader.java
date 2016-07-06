@@ -1,12 +1,12 @@
 package com.graphics.engine.gl.graphics;
 
-import java.nio.Buffer;
-
-import com.go.gl.util.NdkUtil;
-
 import android.content.res.Resources;
 import android.graphics.PorterDuff.Mode;
 import android.opengl.GLES20;
+
+import com.graphics.engine.gl.util.NdkUtil;
+
+import java.nio.Buffer;
 
 /**
  * <br>类描述: 从纹理取色并可以和遮蔽颜色混合的着色器

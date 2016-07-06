@@ -1,8 +1,7 @@
 package com.graphics.engine.gl.graphics;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Iterator;
+import android.opengl.GLES20;
+import android.util.Log;
 
 import com.graphics.engine.gl.util.FastQueue;
 import com.graphics.engine.gl.util.Pool;
@@ -10,8 +9,9 @@ import com.graphics.engine.gl.util.Poolable;
 import com.graphics.engine.gl.util.PoolableManager;
 import com.graphics.engine.gl.util.Pools;
 
-import android.opengl.GLES20;
-import android.util.Log;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
 
 /**
  * 
@@ -399,7 +399,7 @@ public class TextureManager {
 	private static final FastQueue<PoolableIntergerPair> sIntergerPairQueue = new FastQueue<PoolableIntergerPair>(INTEGER_PAIR_QUEUE_LIMIT);
 	
 	//CHECKSTYLE IGNORE 1 LINES
-	private static Processor<PoolableIntergerPair> sIntergerPairProcessor = new Processor<PoolableIntergerPair>() {
+	private static FastQueue.Processor<PoolableIntergerPair> sIntergerPairProcessor = new FastQueue.Processor<PoolableIntergerPair>() {
 
 		@Override
 		public void process(PoolableIntergerPair object) {

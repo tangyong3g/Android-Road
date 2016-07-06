@@ -1,12 +1,5 @@
 package com.graphics.engine.gl.view;
 
-import com.go.gl.graphics.BitmapGLDrawable;
-import com.go.gl.graphics.BitmapRecycler;
-import com.go.gl.graphics.BitmapTexture;
-import com.go.gl.graphics.GLCanvas;
-import com.go.gl.graphics.GLDrawable;
-import com.go.gl.graphics.Texture;
-import com.go.gl.graphics.filters.GraphicsFilter;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -18,6 +11,14 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
+
+import com.graphics.engine.gl.graphics.BitmapGLDrawable;
+import com.graphics.engine.gl.graphics.BitmapRecycler;
+import com.graphics.engine.gl.graphics.BitmapTexture;
+import com.graphics.engine.gl.graphics.GLCanvas;
+import com.graphics.engine.gl.graphics.GLDrawable;
+import com.graphics.engine.gl.graphics.Texture;
+import com.graphics.engine.gl.graphics.filters.GraphicsFilter;
 
 /**
  * 封装绘制2D图片转3D的视图

@@ -1,8 +1,9 @@
 package com.graphics.enginedemo;
 
-import com.go.gl.GLActivity;
 
 import android.os.Bundle;
+
+import com.graphics.engine.gl.GLActivity;
 
 /**
  * 

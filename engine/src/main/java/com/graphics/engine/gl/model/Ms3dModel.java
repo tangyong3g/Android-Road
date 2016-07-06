@@ -1,7 +1,13 @@
 package com.graphics.engine.gl.model;
 
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.util.Log;
+
+import com.graphics.engine.gl.animator.Animator;
 import com.graphics.engine.gl.animator.FloatValueAnimator;
+import com.graphics.engine.gl.animator.ValueAnimator;
 import com.graphics.engine.gl.graphics.GLCanvas;
 import com.graphics.engine.gl.graphics.GLClearable;
 import com.graphics.engine.gl.graphics.GLDrawable;
@@ -13,10 +19,6 @@ import com.graphics.engine.gl.graphics.TextureManager;
 import com.graphics.engine.gl.graphics.TextureRecycler;
 import com.graphics.engine.gl.graphics.TextureShader;
 import com.graphics.engine.gl.graphics.VertexBufferBlock;
-
-import android.content.Context;
-import android.content.res.Resources;
-import android.util.Log;
 
 /**
  * 
@@ -59,7 +61,7 @@ public class Ms3dModel implements TextureListener, GLClearable {
 		mModelName = "MS3DModel(" + ms3dFileName + ")";
 		Resources res = context.getResources();
 		String packageName = context.getPackageName();
-		OpenAssetFileResult ms3dRes = AssetsUtil.openAssetFile(res.getAssets(), ms3dFileName);
+		AssetsUtil.OpenAssetFileResult ms3dRes = AssetsUtil.openAssetFile(res.getAssets(), ms3dFileName);
 		if (ms3dRes != null && ms3dRes.len > 0) {
 			mModelPointer = loadModel(ms3dRes.descriptor, ms3dRes.offset, ms3dRes.len);
 		}
@@ -115,7 +117,7 @@ public class Ms3dModel implements TextureListener, GLClearable {
 		mAnimationName = psaFileName;
 		if (mModelPointer != 0) {
 			int pointer = 0;
-			OpenAssetFileResult psaRes = AssetsUtil.openAssetFile(context.getResources().getAssets(), psaFileName);
+			AssetsUtil.OpenAssetFileResult psaRes = AssetsUtil.openAssetFile(context.getResources().getAssets(), psaFileName);
 			if (psaRes != null && psaRes.len > 0) {
 				pointer = loadAnimation(mModelPointer, psaRes.descriptor, psaRes.offset, psaRes.len);
 			}
@@ -138,7 +140,7 @@ public class Ms3dModel implements TextureListener, GLClearable {
 	
 	/**
 	 * <br>功能简述: 修正动画首尾两帧之间的旋转量（由于制作动画时数据设置不精确，这里适当修正）
-	 * @param x (x, y, z, w) 为首尾两帧之间的旋转量的四元数{@link com.go.gl.math3d.Quaternion}，(0, 0, 0, 1) 表示没有旋转
+	 * @param x (x, y, z, w) 为首尾两帧之间的旋转量的四元数{@link com.graphics.engine.gl.math3d.Quaternion}，(0, 0, 0, 1) 表示没有旋转
 	 */
 	public void fixAnimationRotation(int animId, float x, float y, float z, float w) {
 		if (mModelPointer != 0) {
@@ -152,7 +154,7 @@ public class Ms3dModel implements TextureListener, GLClearable {
 	 * <br>注意:
 	 * @param listener
 	 */
-	public void addUpdateListener(AnimatorUpdateListener listener) {
+	public void addUpdateListener(ValueAnimator.AnimatorUpdateListener listener) {
 		if (mAnimator == null) {
 			mAnimator = new FloatValueAnimator();
 			mAnimator.setValues(0, 1);
@@ -170,7 +172,7 @@ public class Ms3dModel implements TextureListener, GLClearable {
 	 * <br>注意:
 	 * @param listener
 	 */
-	public void removeUpdateListener(AnimatorUpdateListener listener) {
+	public void removeUpdateListener(ValueAnimator.AnimatorUpdateListener listener) {
 		if (mAnimator != null && listener != null) {
 			mAnimator.removeUpdateListener(listener);
 		}
@@ -182,7 +184,7 @@ public class Ms3dModel implements TextureListener, GLClearable {
 	 * <br>注意:
 	 * @param listener
 	 */
-	public void addListener(AnimatorListener listener) {
+	public void addListener(Animator.AnimatorListener listener) {
 		addUpdateListener(null);
 		if (listener != null) {
 			mAnimator.addListener(listener);
@@ -195,7 +197,7 @@ public class Ms3dModel implements TextureListener, GLClearable {
 	 * <br>注意:
 	 * @param listener
 	 */
-	public void removeListener(AnimatorListener listener) {
+	public void removeListener(Animator.AnimatorListener listener) {
 		if (mAnimator != null && listener != null) {
 			mAnimator.removeListener(listener);
 		}
@@ -391,7 +393,7 @@ public class Ms3dModel implements TextureListener, GLClearable {
 	};
 	
 	//CHECKSTYLE IGNORE 1 LINES
-	class MyAnimtorListener implements AnimatorListener {
+	class MyAnimtorListener implements Animator.AnimatorListener {
 
 		@Override
 		public void onAnimationStart(Animator animation) {
@@ -420,7 +422,7 @@ public class Ms3dModel implements TextureListener, GLClearable {
 	}
 	
 	//CHECKSTYLE IGNORE 1 LINES
-	class MyUpdateListener implements AnimatorUpdateListener {
+	class MyUpdateListener implements ValueAnimator.AnimatorUpdateListener {
 
 		@Override
 		public void onAnimationUpdate(ValueAnimator animation) {

@@ -1,6 +1,7 @@
 package com.graphics.engine.gl.scroller.effector.subscreeneffector;
 
-import com.go.gl.graphics.GLCanvas;
+
+import com.graphics.engine.gl.graphics.GLCanvas;
 
 /**
  * 翻屏幕特效
@@ -19,7 +20,7 @@ public class Flip2Effector extends MSubScreenEffector {
 	
 	@Override
 	protected boolean onDrawScreen(GLCanvas canvas, int screen, int offset1,
-			boolean first) {
+								   boolean first) {
 		float offset = mScroller.getCurrentScreenDrawingOffset(first);
 		
 		canvas.translate(mScroll, 0);

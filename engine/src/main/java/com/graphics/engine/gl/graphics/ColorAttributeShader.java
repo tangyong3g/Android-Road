@@ -1,11 +1,11 @@
 package com.graphics.engine.gl.graphics;
 
-import java.nio.Buffer;
-
-import com.go.gl.util.NdkUtil;
-
 import android.content.res.Resources;
 import android.opengl.GLES20;
+
+import com.graphics.engine.gl.util.NdkUtil;
+
+import java.nio.Buffer;
 
 /**
  * 

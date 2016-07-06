@@ -56,4 +56,8 @@
     <string name="request_info">request info</string>
 
 
+    <string name="getPathInfo">get path info</string>
+    <string name="createPathInfo">create path info</string>
+
+
 </resources>

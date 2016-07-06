@@ -4,7 +4,7 @@ package com.graphics.engine.gl.util;
  * 
  * <br>类描述:3D向量类
  * <br>功能详细描述:
- * @deprecated 使用{@link com.go.gl.math3d.Vector}代替
+ * @deprecated 使用{@link com.graphics.engine.gl.math3d.Vector}代替
  */
 public class Vector3f {
 
