@@ -58,6 +58,8 @@
 
     <string name="getPathInfo">get path info</string>
     <string name="createPathInfo">create path info</string>
+    <string name="createInternalFile">create internal file</string>
+    <string name="createExternalFile">create external file</string>
 
 
 </resources>

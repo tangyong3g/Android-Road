@@ -20,4 +20,20 @@
         android:text="@string/createPathInfo" />
 
 
+    <Button
+        android:id="@+id/btn_save_internal_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="createInternalFile"
+        android:text="@string/createInternalFile" />
+
+
+    <Button
+        android:id="@+id/btn_create_external_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="createExternalFile"
+        android:text="@string/createExternalFile" />
+
+
 </LinearLayout>
