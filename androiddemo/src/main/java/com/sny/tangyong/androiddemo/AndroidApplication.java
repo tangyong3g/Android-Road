@@ -5,6 +5,7 @@ import android.os.Build;
 
 import com.example.androiddemo.ScreenInfo;
 import com.orhanobut.logger.Logger;
+import com.sny.tangyong.basic.TaskManager;
 import com.tcl.mailfeedback.CrashReport;
 
 import java.io.File;
@@ -43,10 +44,17 @@ public class AndroidApplication extends android.app.Application {
 
     private void initPlugin() {
 
-        CrashReport report = new CrashReport();
-        report.start(getApplicationContext());
+        Runnable task = new Runnable() {
+            @Override
+            public void run() {
+                CrashReport report = new CrashReport();
+                report.start(getApplicationContext());
 
-        Logger.init("tyler.tang");
+                Logger.init("tyler.tang");
+
+            }
+        };
+        TaskManager.execWorkTask(task);
     }
 
     public static AndroidApplication getInstance() {

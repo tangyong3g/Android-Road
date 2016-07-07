@@ -186,13 +186,6 @@
         <activity android:name="com.ty.open_source_project.OpenSouceProjectActivity" />
 
         <!-- 特效 -->
-        <!-- <activity -->
-        <!-- android:name="com.ty.crashreport.CrashReportDialog" -->
-        <!-- android:excludeFromRecents="true" -->
-        <!-- android:exported="true" -->
-        <!-- android:finishOnTaskLaunch="true" -->
-        <!-- android:launchMode="singleInstance" -->
-        <!-- android:theme="@android:style/Theme.Dialog"></activity> -->
 
 
         <!-- Meterail Design support lib -->

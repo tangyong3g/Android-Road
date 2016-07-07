@@ -1,0 +1,47 @@
+TASK com.sny.tangyong.androiddemo id=2759
+  ACTIVITY com.sny.tangyong.androiddemo/com.sny.tangyong.basic.BasicOtherListActivity 8761c1f pid=14732
+    Local Activity ebf9641 State:
+      mResumed=false mStopped=true mFinished=false
+      mChangingConfigurations=false
+      mCurrentConfig={1.0 460mcc2mnc en_US ldltr sw360dp w360dp h568dp 480dpi nrml port finger -keyb/v/h -nav/h s.26}
+      mLoadersStarted=true
+      FragmentManager misc state:
+        mHost=android.app.Activity$HostCallbacks@80d2696
+        mContainer=android.app.Activity$HostCallbacks@80d2696
+        mCurState=3 mStateSaved=true mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=false
+      mConsumeBatchedInputImmediatelyScheduled=false
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=false
+      mLastFrameTime=149524889 (103322 ms ago)
+    View Hierarchy:
+      com.android.internal.policy.PhoneWindow$DecorView{d5f5217 I.E...... R......D 0,0-1080,1920}
+        android.widget.LinearLayout{1632604 V.E...... ........ 0,0-1080,1776}
+          android.view.ViewStub{7e497ed G.E...... ......I. 0,0-0,0 #10203a9 android:id/action_mode_bar_stub}
+          android.widget.FrameLayout{ed1622 V.E...... ........ 0,72-1080,1776 #1020002 android:id/content}
+            android.widget.ListView{1fcf8b3 VFED.VC.. .F...... 0,0-1080,1704 #102000a android:id/list}
+              android.widget.TextView{9ee9e70 V.ED..... ........ 0,-48-1080,144 #1020014 android:id/text1}
+              android.widget.TextView{97fc5e9 V.ED..... ........ 0,147-1080,339 #1020014 android:id/text1}
+              android.widget.TextView{4ea726e V.ED..... ........ 0,342-1080,534 #1020014 android:id/text1}
+              android.widget.TextView{5c46d0f V.ED..... ........ 0,537-1080,729 #1020014 android:id/text1}
+              android.widget.TextView{677319c V.ED..... ........ 0,732-1080,924 #1020014 android:id/text1}
+              android.widget.TextView{c85d7a5 V.ED..... ........ 0,927-1080,1119 #1020014 android:id/text1}
+              android.widget.TextView{b4f477a V.ED..... ........ 0,1122-1080,1314 #1020014 android:id/text1}
+              android.widget.TextView{ae4cb2b V.ED..... ........ 0,1317-1080,1509 #1020014 android:id/text1}
+              android.widget.TextView{793cb88 V.ED..... ........ 0,1512-1080,1704 #1020014 android:id/text1}
+        android.view.View{5214921 V.ED..... ......ID 0,1776-1080,1920 #1020030 android:id/navigationBarBackground}
+        android.view.View{3fa6146 V.ED..... ......ID 0,0-1080,72 #102002f android:id/statusBarBackground}
+    Looper (main, tid 1) {d62ef07}
+      (Total messages: 0, polling=false, quitting=false)
+
+  ACTIVITY com.sny.tangyong.androiddemo/com.sny.tangyong.basic.MainActivity 7a1a70c pid=(not running)
+
+  ACTIVITY com.sny.tangyong.androiddemo/com.example.androiddemo.MainActivity efe19eb pid=(not running)

@@ -32,26 +32,27 @@ public class LogRecord {
 
     }
 
-//    public static String readLogFile() {
+    public static String readLogFile() {
 //        String filePath = CrashReportConfig.LOG_PATH + "logrecord";
-//        String str = null;
-//
-//        try {
-//            str = readFile(filePath);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return str;
-//    }
-//
-//    public static void deleteLogFile() {
-//        String filePath = CrashReportConfig.LOG_PATH + "logrecord";
-//
-//        File file = new File(filePath);
-//
-//        file.delete();
-//    }
+        String filePath = ErrorReporter.getInstance().getCrashReportFilePath();
+        String str = null;
+
+        try {
+            str = readFile(filePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return str;
+    }
+
+    public static void deleteLogFile() {
+        String filePath = ErrorReporter.getInstance().getCrashReportFilePath();
+
+        File file = new File(filePath);
+
+        file.delete();
+    }
 //
 //    public static void writeLogFile(String str) throws IOException {
 //        String filePath = CrashReportConfig.LOG_PATH;

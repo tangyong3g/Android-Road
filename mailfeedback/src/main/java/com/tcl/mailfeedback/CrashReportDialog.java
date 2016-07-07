@@ -22,7 +22,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+
+import com.orhanobut.logger.Logger;
 import com.tcl.mailfeedback.ErrorReporter.ReportsSenderWorker;
+
+import java.io.File;
 
 
 /**
@@ -64,19 +68,26 @@ public class CrashReportDialog extends Activity {
         // getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // }
 
-        Log.i(TAG, "CrashReportDialog on create");
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(CrashReportConfig.RES_DIALOG_LAYOUT);
-         mReportFileName = getIntent().getStringExtra(ErrorReporter.EXTRA_REPORT_FILE_NAME);
-        // --TODO delefile and readfile
+        // --TODO delefile and readfile 不知道为什么这里要这么处理 ，两种试获取Folder Name会产生错误
+//         mReportFileName = getIntent().getStringExtra(ErrorReporter.EXTRA_REPORT_FILE_NAME);
+
 //        mReportFileName = LogRecord.readLogFile();
 //        LogRecord.deleteLogFile();
+
+        String[] filesList = ErrorReporter.getInstance().getCrashReportFilesList();
+        if(filesList != null && filesList.length >0){
+            String fileName = filesList[filesList.length-1];
+            mReportFileName = ErrorReporter.getInstance().getCrashReportFilePath()+ File.separator + fileName;
+        }
+        Logger.i("消息到达Diloag中"+mReportFileName);
 
         if (mReportFileName == null) {
             Log.i(TAG, "CrashReportDialog return");
             finish();
         }
-        Log.i(TAG, "CrashReportDialog before button");
+
         Button btnYes = (Button) findViewById(CrashReportConfig.RES_DIALOG_YES_BTN_ID);
         Button btnNo = (Button) findViewById(CrashReportConfig.RES_DIALOG_NO_BTN_ID);
         btnYes.setOnClickListener(new OnClickListener() {

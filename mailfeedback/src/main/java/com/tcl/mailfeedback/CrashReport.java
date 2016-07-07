@@ -167,8 +167,7 @@ public class CrashReport implements SharedPreferences.OnSharedPreferenceChangeLi
         errorReporter.init(mApp.getApplicationContext());
 
         // Check for pending reports
-
-        errorReporter.checkReportsOnApplicationStart();
+//        errorReporter.checkReportsOnApplicationStart();
     }
 
     /**
