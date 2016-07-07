@@ -22,13 +22,13 @@ public interface ScrollerListener {
 	 *            前一次的滚动量
 	 * 
 	 */
-	public void onScrollChanged(int newScroll, int oldScroll);
+	void onScrollChanged(int newScroll, int oldScroll);
 
 	// 以下这些是从ViewGroup的方法中抽取出来的接口
 	/**
 	 * 引发重绘
 	 */
-	public void invalidate();
+	void invalidate();
 
 	/**
 	 * 滚动视图
@@ -38,20 +38,20 @@ public interface ScrollerListener {
 	 * @param y
 	 *            垂直方向上的偏移增量
 	 */
-	public void scrollBy(int x, int y);
+	void scrollBy(int x, int y);
 
 	/**
 	 * 获取水平方向上的偏移量
 	 * 
 	 * @return
 	 */
-	public int getScrollX();
+	int getScrollX();
 
 	/**
 	 * 获取垂直方向上的偏移量
 	 * 
 	 * @return
 	 */
-	public int getScrollY();
+	int getScrollY();
 
 }

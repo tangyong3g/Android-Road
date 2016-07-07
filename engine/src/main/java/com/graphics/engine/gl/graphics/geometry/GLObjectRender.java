@@ -25,6 +25,6 @@ public interface GLObjectRender extends GLClearable {
 	 * @param canvas
 	 * @param object
 	 */
-	public void draw(GLCanvas canvas, GLObject object);
+	void draw(GLCanvas canvas, GLObject object);
 	
 }

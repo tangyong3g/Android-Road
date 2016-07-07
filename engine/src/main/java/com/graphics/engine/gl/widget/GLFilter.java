@@ -199,13 +199,13 @@ public abstract class GLFilter {
      * <p>Listener used to receive a notification upon completion of a filtering
      * operation.</p>
      */
-    public static interface FilterListener {
+    public interface FilterListener {
         /**
          * <p>Notifies the end of a filtering operation.</p>
          *
          * @param count the number of values computed by the filter
          */
-        public void onFilterComplete(int count);
+        void onFilterComplete(int count);
     }
 
     /**

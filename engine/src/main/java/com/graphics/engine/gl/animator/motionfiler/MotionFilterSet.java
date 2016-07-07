@@ -55,7 +55,7 @@ public class MotionFilterSet implements MotionFilter {
 		mWillChangeTransformationMatrix |= filter.willChangeTransformationMatrix();
 		mWillChangeBounds |= filter.willChangeBounds();
 		mHasAlpha |= filter.hasAlpha();
-		mAnimatorSet.play((ValueAnimator) filter);
+		mAnimatorSet.play(filter);
 		mMotionFilters.add(filter);
 	}
 

@@ -1047,7 +1047,7 @@ public abstract class ValueAnimator extends Animator implements MotionFilter {
 	 * @author  dengweiming
 	 * @date  [2013-10-17]
 	 */
-    public static interface AnimatorUpdateListener {
+    public interface AnimatorUpdateListener {
     	
     	/**
     	 * <br>功能简述: 响应动画更新

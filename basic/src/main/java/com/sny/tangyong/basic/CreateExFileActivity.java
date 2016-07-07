@@ -11,8 +11,11 @@ import com.sromku.simple.storage.SimpleStorage;
 import com.sromku.simple.storage.Storage;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.Date;
 import java.util.logging.Logger;
 
 /**
@@ -316,19 +319,13 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
     /* Checks if external storage is available for read and write */
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            return true;
-        }
-        return false;
+        return Environment.MEDIA_MOUNTED.equals(state);
     }
 
     /* Checks if external storage is available to at least read */
     public boolean isExternalStorageReadable() {
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-            return true;
-        }
-        return false;
+        return Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
     }
 
 
@@ -368,7 +365,6 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
 
     }
 
-
     public void getExtFilePath(View view) {
         Logger.getLogger("tyler.tang").info(getExtStorageDirPath());
 
@@ -393,11 +389,10 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
     }
 
 
-    public void createExtFile(View view) {
-
-        // Storage storage = SimpleStorage.getExternalStorage();
-
-        // Storage storage = SimpleStorage.getInternalStorage(getBaseContext());
+    /**
+     * 利用 Storage来处理SD卡读写
+     */
+    private void useStorage() {
 
         Storage storage = null;
 
@@ -406,8 +401,6 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
         } else {
             storage = SimpleStorage.getInternalStorage(getBaseContext());
         }
-
-        storage = SimpleStorage.getInternalStorage(getBaseContext());
 
         String folder = "tangyonghello";
         storage.createDirectory(folder);
@@ -420,59 +413,73 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
 
         Logger.getLogger("tyler.tang").info(file.getAbsolutePath());
 
+    }
+
+    public void createSDCardRootFolderFile(View view) {
+
+        // useStorage();
+
+        // File sd = Environment.getExternalStorageDirectory();
+        // String path = sd.getPath() + "/tangyong";
+        // File file = new File(path);
+        // if (!file.exists()) file.mkdirs();
+        //
+        // try {
+        //
+        // String filePath = file.getAbsoluteFile() + "/helloddd.txt";
+        // File f = createFile(filePath);
+        //
+        // Logger.getLogger("tyler.tang").info("absolutePath" + f.getAbsolutePath());
+        // Logger.getLogger("tyler.tang").info("path" + f.getPath());
+        //
+        // } catch (IOException io) {
+        // io.printStackTrace();
+        // }
 
 
-        /*
-         * File sd = Environment.getExternalStorageDirectory(); String path = sd.getPath() +
-         * "/tangyong"; File file = new File(path); if (!file.exists()) file.mkdir();
-         * 
-         * try {
-         * 
-         * File folder =
-         * Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-         * 
-         * if(!folder.exists()){ folder.mkdirs(); }
-         * 
-         * String filePath = file.getAbsoluteFile()+"/hello.txt"; File f = createFile(filePath);
-         * 
-         * Logger.getLogger("tyler.tang").info("absolutePath"+f.getAbsolutePath());
-         * Logger.getLogger("tyler.tang").info("path"+f.getPath());
-         * 
-         * } catch (IOException io) { io.printStackTrace(); }
-         * 
-         */
-        /*
-         * String newFileDir = getExtStorageDirPath() + File.separator + APP_PRO_PATH; long
-         * timestamp = System.currentTimeMillis(); Logger.getLogger("tyler.tang").info(newFileDir);
-         * File fileDir = new File(newFileDir); boolean rs = fileDir.isDirectory();
-         * Logger.getLogger("tyler.tang").info(rs + ""); if (!rs) { boolean result =
-         * fileDir.mkdirs(); Logger.getLogger("tyler.tang").info("create folder :\t" + result + "");
-         * }
-         * 
-         * newFileDir += (null != null ? SILENT_PREFIX : "") + "stack-" + timestamp +
-         * ERROR_FILE_TYPE; File tFile = new File(newFileDir); FileOutputStream fos = null;
-         * 
-         * Logger.getLogger("tyler.tang").info(tFile.getAbsolutePath());
-         * 
-         * if (!tFile.exists()) { try { boolean createSuccess = tFile.createNewFile();
-         * Logger.getLogger("tyler.tang").info("createSuccess "+createSuccess); } catch (IOException
-         * io) { io.printStackTrace(); } }
-         * 
-         * try {
-         * 
-         * fos = new FileOutputStream(tFile);
-         * 
-         * OutputStreamWriter write = new OutputStreamWriter(fos);
-         * 
-         * write.write(new Date().toString());
-         * 
-         * write.flush(); write.close();
-         * 
-         * fos.flush(); fos.close();
-         * 
-         * } catch (FileNotFoundException ex) { ex.printStackTrace(); } catch (IOException io) {
-         * io.printStackTrace(); }
-         */
+        String newFileDir = getExtStorageDirPath() + File.separator + APP_PRO_PATH;
+        long timestamp = System.currentTimeMillis();
+        File fileDir = new File(newFileDir);
+        boolean rs = fileDir.isDirectory();
+        Logger.getLogger("tyler.tang").info(rs + "");
+        if (!rs) {
+            boolean result = fileDir.mkdirs();
+            Logger.getLogger("tyler.tang").info("create folder :\t" + result + "");
+        }
+
+        newFileDir += (null != null ? SILENT_PREFIX : "") + "stack-" + timestamp + ERROR_FILE_TYPE;
+        File tFile = new File(newFileDir);
+        FileOutputStream fos = null;
+
+        Logger.getLogger("tyler.tang").info(tFile.getAbsolutePath());
+
+        if (!tFile.exists()) {
+            try {
+                boolean createSuccess = tFile.createNewFile();
+                Logger.getLogger("tyler.tang").info("createSuccess " + createSuccess);
+            } catch (IOException io) {
+                io.printStackTrace();
+            }
+        }
+        try {
+
+            fos = new FileOutputStream(tFile);
+
+            OutputStreamWriter write = new OutputStreamWriter(fos);
+
+            write.write(new Date().toString());
+
+            write.flush();
+            write.close();
+
+            fos.flush();
+            fos.close();
+
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (IOException io) {
+            io.printStackTrace();
+        }
     }
 
 

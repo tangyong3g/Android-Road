@@ -226,7 +226,7 @@ public class BlurGLDrawable extends GLDrawable {
 
 				//将帧缓冲区2的内容放大绘制回帧缓冲区1中
 				canvas.reset();
-				canvas.scale(mBufferWidth / (float) w, mBufferHeight / (float) h);
+				canvas.scale(mBufferWidth / w, mBufferHeight / h);
 				mFramebuffer1.bind(canvas);
 				drawable2.draw(canvas);
 				mFramebuffer1.unbind(canvas);

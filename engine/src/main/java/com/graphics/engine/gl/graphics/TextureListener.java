@@ -15,5 +15,5 @@ public interface TextureListener {
 	 * <br>功能详细描述:
 	 * <br>注意:
 	 */
-	public void onTextureInvalidate();
+	void onTextureInvalidate();
 }

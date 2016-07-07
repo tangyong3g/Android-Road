@@ -28,14 +28,14 @@ public final class MemoryManager {
 	 * @author  dengweiming
 	 * @date  [2012-10-22]
 	 */
-	public static interface MemoryListener {
+	public interface MemoryListener {
 
 		/**
 		 * <br>功能简述: 响应内存减少，需要清理不必要的位图和对象
 		 * <br>功能详细描述:
 		 * <br>注意:
 		 */
-		public void onLowMemory();
+		void onLowMemory();
 
 		/**
 		 * <br>功能简述:获取其内存的优先级，越小的话，越先被通知内存减少
@@ -43,14 +43,14 @@ public final class MemoryManager {
 		 * <br>注意: 
 		 * @return 区间[0, 100]上的常量值，预定义了{@link #PRIORITY_LOW}，{@link #PRIORITY_MEDIUM}，{@link #PRIORITY_HIGH}
 		 */
-		public int getMemoryPriority();
+		int getMemoryPriority();
 		
 		/**
 		 * <br>功能简述: 响应显存减少，需要清理不必要的纹理和VBO，FrameBuffer,Shader等等
 		 * <br>功能详细描述:
 		 * <br>注意:
 		 */
-		public void onLowGraphicsMemory();
+		void onLowGraphicsMemory();
 		
 		/**
 		 * <br>功能简述:获取其显存的优先级，越小的话，越先被通知显存减少
@@ -58,7 +58,7 @@ public final class MemoryManager {
 		 * <br>注意:
 		 * @return 区间[0, 100]上的常量值，预定义了{@link #PRIORITY_LOW}，{@link #PRIORITY_MEDIUM}，{@link #PRIORITY_HIGH}
 		 */
-		public int getGraphicsMemoryPriority();
+		int getGraphicsMemoryPriority();
 	}
 
 	public static boolean registerMemoryListener(MemoryListener l) {
@@ -167,7 +167,7 @@ public final class MemoryManager {
 		 * @author  dengweiming
 		 * @date  [2012-10-22]
 		 */
-		static interface PriorityGetter<E> {
+		interface PriorityGetter<E> {
 			/**
 			 * <br>功能简述: 对特定类型对象获取优先级
 			 * <br>功能详细描述:

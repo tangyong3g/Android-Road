@@ -176,7 +176,7 @@ public class BasicOtherWifiConectedActivity extends Activity implements View.OnC
                         mHandler.sendMessage(msg);
                     }
                 };
-            };
+            }
             mScanThread.start();
         }else if(v == mBtnConnect){
 

@@ -32,7 +32,7 @@ public class CuboidInsideEffector extends FlipEffector {
 		mAngleRatio = -RIGHT_ANGLE / mScreenSize;
 		mInnerRadius = -mScreenSize * HALF;
 		mOuterRadius = mInnerRadius * SQRT2;
-		mScale = 1 + mScreenSize / (float) CAMERAZ;
+		mScale = 1 + mScreenSize / CAMERAZ;
 		mTranZ = mScreenSize;
 
 	}

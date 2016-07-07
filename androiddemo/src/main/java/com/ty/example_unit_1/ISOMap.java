@@ -61,7 +61,7 @@ public class ISOMap implements ApplicationListener, InputProcessor {
 	@Override
 	public void render() {
 		Log.out("render");
-		Gdx.gl10.glClear(Gdx.gl10.GL_COLOR_BUFFER_BIT);
+		Gdx.gl10.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		
 		mPersCam.update();
 		mPersCam.apply(Gdx.graphics.getGL10());

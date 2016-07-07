@@ -18,7 +18,7 @@ public interface ScrollerEffector {
 	 * @param canvas
 	 * @return
 	 */
-	public boolean onDraw(GLCanvas canvas);
+	boolean onDraw(GLCanvas canvas);
 
 	/**
 	 * 被加载时的响应
@@ -26,12 +26,12 @@ public interface ScrollerEffector {
 	 * @param scroller
 	 * @param container
 	 */
-	public void onAttach(Scroller scroller, ScrollerListener container);
+	void onAttach(Scroller scroller, ScrollerListener container);
 
 	/**
 	 * 被卸载时的响应
 	 */
-	public void onDetach();
+	void onDetach();
 
 	/**
 	 * 视图大小或者滚动方向变化时的响应
@@ -40,12 +40,12 @@ public interface ScrollerEffector {
 	 * @param h
 	 * @param orientation
 	 */
-	public void onSizeChanged(int w, int h, int orientation);
+	void onSizeChanged(int w, int h, int orientation);
 
 	/**
 	 * 设置绘图质量
 	 * 
 	 * @param quality
 	 */
-	public void setDrawQuality(int quality);
+	void setDrawQuality(int quality);
 }

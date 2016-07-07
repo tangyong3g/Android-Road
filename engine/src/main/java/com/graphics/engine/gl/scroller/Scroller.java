@@ -349,13 +349,13 @@ public class Scroller extends MScroller {
 		if (velocity < 0) {
 			int duration = Math.abs((int) (velocity * tm / mDeceleration));
 			duration = (int) (Math.min(duration, 450) * .5);  // CHECKSTYLE IGNORE THIS LINE
-			int change = (int) (velocity * duration / tm);  
+			int change = velocity * duration / tm;
 			change = Math.max(change, mMinScrollOnFling - scroll);
 			onFling(scroll, change, duration);
 		} else if (velocity > 0) {
 			int duration = Math.abs((int) (velocity * tm / mDeceleration));
 			duration = (int) (Math.min(duration, 450) * .5);  // CHECKSTYLE IGNORE THIS LINE
-			int change = (int) (velocity * duration / tm);
+			int change = velocity * duration / tm;
 			change = Math.min(change, mMaxScrollOnFling - scroll);
 			onFling(scroll, change, duration);
 		}

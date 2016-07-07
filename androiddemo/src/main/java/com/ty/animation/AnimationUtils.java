@@ -58,7 +58,7 @@ public class AnimationUtils {
     	float result   = sRandom.nextInt(max);
     	
     	while( result < min && result > max ){
-    		result  = sRandom.nextInt((int)max);
+    		result  = sRandom.nextInt(max);
     	}
     	
     	return result;

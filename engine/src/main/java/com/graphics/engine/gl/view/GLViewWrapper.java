@@ -101,9 +101,9 @@ public class GLViewWrapper extends GLView implements TextureListener, TextureLoa
 	 * @author  dengweiming
 	 * @date  [2012-12-5]
 	 */
-	public static interface OnOutOfMemoryListner {
+	public interface OnOutOfMemoryListner {
 		
-		public void onOutOfMemory();
+		void onOutOfMemory();
 	}
 
 	//CHECKSTYLE IGNORE 1 LINES

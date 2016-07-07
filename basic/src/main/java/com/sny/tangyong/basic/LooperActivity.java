@@ -69,7 +69,6 @@ public class LooperActivity extends Activity implements OnClickListener {
                             break;
                     }
                 }
-                ;
             };
             Looper.loop();
         }

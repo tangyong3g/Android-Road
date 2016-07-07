@@ -99,11 +99,7 @@ public final class LogUtil {
 		File[] widgetFiles = nextLogDir.listFiles(new FilenameFilter() {
 			@Override
 			public boolean accept(File dir, String filename) {
-				if ((null != filename) && (filename.indexOf(LOG_FILE_PREFIX) == 0)) {
-					return true;
-				} else {
-					return false;
-				}
+				return (null != filename) && (filename.indexOf(LOG_FILE_PREFIX) == 0);
 			}
 		});
 		return widgetFiles;

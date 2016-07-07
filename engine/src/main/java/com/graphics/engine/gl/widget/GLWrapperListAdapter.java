@@ -7,5 +7,5 @@ package com.graphics.engine.gl.widget;
  * 
  */
 public interface GLWrapperListAdapter extends GLListAdapter {
-	public GLListAdapter getWrappedAdapter();
+	GLListAdapter getWrappedAdapter();
 }

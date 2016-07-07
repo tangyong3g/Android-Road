@@ -91,8 +91,7 @@ public class TrustAllSSLSocketFactory extends SSLSocketFactory {
     }
 
     @Override
-    public Socket createSocket(Socket socket, String host, int port, boolean autoClose) throws IOException,
-            UnknownHostException {
+    public Socket createSocket(Socket socket, String host, int port, boolean autoClose) throws IOException {
         if (Build.VERSION.SDK_INT < 11) { // 3.0
             injectHostname(socket, host);
         }

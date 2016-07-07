@@ -66,10 +66,7 @@ public class CuboidOutsideEffector extends FlipEffector {
 			return false;
 		}
 		transform(canvas, angle);
-		if (angleAbs < mCullPassAngle) {
-			return true;
-		}
-		return false;
+		return angleAbs < mCullPassAngle;
 		//TODO:3D的矩阵不能直接用到2D Matrix实例
 //		throw new RuntimeException("3D的矩阵不能直接用到2D Matrix实例");
 		//		canvas.getMatrix(mTransformation);

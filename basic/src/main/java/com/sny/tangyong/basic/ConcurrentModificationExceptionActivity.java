@@ -162,7 +162,7 @@ public class ConcurrentModificationExceptionActivity extends Activity implements
         list.add("4");
         list.add("5");
 
-        Iterator<String> iterator = (Iterator<String>) list.iterator();
+        Iterator<String> iterator = list.iterator();
 
         while (iterator.hasNext()) {
 
@@ -187,7 +187,7 @@ public class ConcurrentModificationExceptionActivity extends Activity implements
         list.add("4");
         list.add("5");
 
-        Iterator<String> iterator = (Iterator<String>) list.iterator();
+        Iterator<String> iterator = list.iterator();
 
         while (iterator.hasNext()) {
             String tempValue = iterator.next();

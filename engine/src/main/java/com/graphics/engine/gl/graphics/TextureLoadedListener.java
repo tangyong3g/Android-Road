@@ -16,5 +16,5 @@ public interface TextureLoadedListener {
 	 * <br>注意: 已经同步在主线程了
 	 * @param texture
 	 */
-	public void onTextureLoaded(Texture texture);
+	void onTextureLoaded(Texture texture);
 }

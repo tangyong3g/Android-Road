@@ -20,21 +20,21 @@ public class StackPool extends FinitePool<StackPool.PoolableObject> {
 	/**
 	 * 数据管理者接口 
 	 */
-	public static interface DataManager<T> {
+	public interface DataManager<T> {
 		/**
 		 * 创建一份数据实例
 		 */
-		public T newInstance();
+		T newInstance();
 
 		/**
 		 * 申请数据时的回调。此时可重新设置数据的状态。
 		 */
-		public void onAcquired(T data);
+		void onAcquired(T data);
 
 		/**
 		 * 释放数据时的回调。此时可释放数据内部占用的资源，也可以重新设置数据状态。
 		 */
-		public void onReleased(T data);
+		void onReleased(T data);
 	}
 
 	/**

@@ -181,7 +181,7 @@ public class BasicHttpTwoActivity extends Activity {
      * @throws ClientProtocolException
      * @throws IOException
      */
-    public void initSSLAllWithHttpClient() throws ClientProtocolException, IOException {
+    public void initSSLAllWithHttpClient() throws IOException {
         int timeOut = 30 * 1000;
         HttpParams param = new BasicHttpParams();
         HttpConnectionParams.setConnectionTimeout(param, timeOut);
@@ -213,7 +213,7 @@ public class BasicHttpTwoActivity extends Activity {
      * @throws ClientProtocolException
      * @throws IOException
      */
-    public void initSSLCertainWithHttpClient() throws ClientProtocolException, IOException {
+    public void initSSLCertainWithHttpClient() throws IOException {
         int timeOut = 30 * 1000;
         HttpParams param = new BasicHttpParams();
         HttpConnectionParams.setConnectionTimeout(param, timeOut);

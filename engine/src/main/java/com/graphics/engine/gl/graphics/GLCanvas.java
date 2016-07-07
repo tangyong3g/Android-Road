@@ -2394,7 +2394,7 @@ public final class GLCanvas {
 		if (drawable instanceof GLDrawable) {
 			((GLDrawable) drawable).draw(this);
 		} else if (drawable instanceof BitmapDrawable) {
-			BitmapGLDrawable d = mBitmapDrawableMap.get((BitmapDrawable) drawable);
+			BitmapGLDrawable d = mBitmapDrawableMap.get(drawable);
 			if (d == null) {
 				d = new BitmapGLDrawable((BitmapDrawable) drawable);
 				mBitmapDrawableMap.put((BitmapDrawable) drawable, d);
@@ -2402,7 +2402,7 @@ public final class GLCanvas {
 			d.setBounds(drawable.getBounds());
 			d.draw(this);
 		} else if (drawable instanceof NinePatchDrawable) {
-			NinePatchGLDrawable d = mNinePatchDrawableMap.get((NinePatchDrawable) drawable);
+			NinePatchGLDrawable d = mNinePatchDrawableMap.get(drawable);
 			if (d == null) {
 				d = new NinePatchGLDrawable((NinePatchDrawable) drawable);
 				mNinePatchDrawableMap.put((NinePatchDrawable) drawable, d);
@@ -2410,7 +2410,7 @@ public final class GLCanvas {
 			d.setBounds(drawable.getBounds());
 			d.draw(this);
 		} else if (drawable instanceof ColorDrawable) {
-			ColorGLDrawable d = mColorDrawableMap.get((ColorDrawable) drawable);
+			ColorGLDrawable d = mColorDrawableMap.get(drawable);
 			if (d == null) {
 				d = new ColorGLDrawable(0);
 				mColorDrawableMap.put((ColorDrawable) drawable, d);
@@ -2433,19 +2433,19 @@ public final class GLCanvas {
 			return;
 		}
 		if (drawable instanceof BitmapDrawable) {
-			BitmapGLDrawable d = mBitmapDrawableMap.get((BitmapDrawable) drawable);
+			BitmapGLDrawable d = mBitmapDrawableMap.get(drawable);
 			if (d != null) {
 				d.clear();
 				mBitmapDrawableMap.remove(drawable);
 			}
 		} else if (drawable instanceof NinePatchDrawable) {
-			NinePatchGLDrawable d = mNinePatchDrawableMap.get((NinePatchDrawable) drawable);
+			NinePatchGLDrawable d = mNinePatchDrawableMap.get(drawable);
 			if (d != null) {
 				d.clear();
 				mNinePatchDrawableMap.remove(drawable);
 			}
 		} else if (drawable instanceof ColorDrawable) {
-			ColorGLDrawable d = mColorDrawableMap.get((ColorDrawable) drawable);
+			ColorGLDrawable d = mColorDrawableMap.get(drawable);
 			if (d != null) {
 				d.clear();
 				mColorDrawableMap.remove(drawable);

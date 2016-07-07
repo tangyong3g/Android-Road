@@ -67,9 +67,10 @@ public class CrashReportDialog extends Activity {
         Log.i(TAG, "CrashReportDialog on create");
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(CrashReportConfig.RES_DIALOG_LAYOUT);
-        // mReportFileName = getIntent().getStringExtra(ErrorReporter.EXTRA_REPORT_FILE_NAME);
-        mReportFileName = LogRecord.readLogFile();
-        LogRecord.deleteLogFile();
+         mReportFileName = getIntent().getStringExtra(ErrorReporter.EXTRA_REPORT_FILE_NAME);
+        // --TODO delefile and readfile
+//        mReportFileName = LogRecord.readLogFile();
+//        LogRecord.deleteLogFile();
 
         if (mReportFileName == null) {
             Log.i(TAG, "CrashReportDialog return");

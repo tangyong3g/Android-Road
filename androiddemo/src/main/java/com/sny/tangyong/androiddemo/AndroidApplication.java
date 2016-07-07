@@ -5,6 +5,7 @@ import android.os.Build;
 
 import com.example.androiddemo.ScreenInfo;
 import com.orhanobut.logger.Logger;
+import com.tcl.mailfeedback.CrashReport;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -12,10 +13,6 @@ import java.io.InputStream;
 import java.lang.reflect.Field;
 
 import dalvik.system.DexClassLoader;
-
-//import com.google.android.gms.analytics.GoogleAnalytics;
-//import com.google.android.gms.analytics.HitBuilders;
-//import com.google.android.gms.analytics.Tracker;
 
 /**
  * @author tyler.tang
@@ -26,8 +23,8 @@ public class AndroidApplication extends android.app.Application {
 
     public static AndroidApplication sInstance;
     private ScreenInfo mScreenInfo;
-//    private Tracker tracker;
-//    public static GoogleAnalytics analytics;
+    // private Tracker tracker;
+    // public static GoogleAnalytics analytics;
 
     public ScreenInfo getScreenInfo() {
         return mScreenInfo;
@@ -40,13 +37,14 @@ public class AndroidApplication extends android.app.Application {
 
         initPlugin();
         initComponent();
-//        initGoogleAna();
+        // initGoogleAna();
 
     }
 
-    private void initPlugin(){
-//        CrashReport report  = new CrashReport();
-//        report.start(getApplicationContext());
+    private void initPlugin() {
+
+        CrashReport report = new CrashReport();
+        report.start(getApplicationContext());
 
         Logger.init("tyler.tang");
     }
@@ -57,14 +55,14 @@ public class AndroidApplication extends android.app.Application {
 
     private void initGoogleAna() {
 
-//        analytics = GoogleAnalytics.getInstance(this);
-//        analytics.setLocalDispatchPeriod(1800);
-//
-//        tracker = analytics.newTracker("UA544730272"); // Replace with actual tracker/property Id
-//        tracker.enableExceptionReporting(true);
-//        tracker.enableAdvertisingIdCollection(true);
-//        tracker.enableAutoActivityTracking(true);
-//        // googleAnaDemo();
+        // analytics = GoogleAnalytics.getInstance(this);
+        // analytics.setLocalDispatchPeriod(1800);
+        //
+        // tracker = analytics.newTracker("UA544730272"); // Replace with actual tracker/property Id
+        // tracker.enableExceptionReporting(true);
+        // tracker.enableAdvertisingIdCollection(true);
+        // tracker.enableAutoActivityTracking(true);
+        // // googleAnaDemo();
     }
 
     private void initComponent() {
@@ -73,17 +71,19 @@ public class AndroidApplication extends android.app.Application {
     }
 
     private void googleAnaDemo() {
-//        GoogleAnalytics analytics = GoogleAnalytics.getInstance(getApplicationContext());
-//        Tracker tracker = analytics.newTracker("UA447441863"); // Send hits to tracker id UAXXXXY
-//
-//        // All subsequent hits will be send with screen name = "main screen"
-//        tracker.setScreenName("main screen");
-//
-//        tracker.send(new HitBuilders.EventBuilder().setCategory("UX").setAction("click").setLabel("submit").build());
-//
-//        // Builder parameters can overwrite the screen name set on the tracker.
-//        tracker.send(
-//                new HitBuilders.EventBuilder().setCategory("UX").setAction("click").setLabel("help popup").build());
+        // GoogleAnalytics analytics = GoogleAnalytics.getInstance(getApplicationContext());
+        // Tracker tracker = analytics.newTracker("UA447441863"); // Send hits to tracker id UAXXXXY
+        //
+        // // All subsequent hits will be send with screen name = "main screen"
+        // tracker.setScreenName("main screen");
+        //
+        // tracker.send(new
+        // HitBuilders.EventBuilder().setCategory("UX").setAction("click").setLabel("submit").build());
+        //
+        // // Builder parameters can overwrite the screen name set on the tracker.
+        // tracker.send(
+        // new HitBuilders.EventBuilder().setCategory("UX").setAction("click").setLabel("help
+        // popup").build());
     }
 
     /**

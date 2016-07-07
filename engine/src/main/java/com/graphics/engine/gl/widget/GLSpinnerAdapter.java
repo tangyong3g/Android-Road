@@ -42,5 +42,5 @@ public interface GLSpinnerAdapter extends GLAdapter {
      * @return a {@link android.view.View} corresponding to the data at the
      *         specified position.
      */
-    public GLView getDropDownView(int position, GLView convertView, GLViewGroup parent);
+    GLView getDropDownView(int position, GLView convertView, GLViewGroup parent);
 }

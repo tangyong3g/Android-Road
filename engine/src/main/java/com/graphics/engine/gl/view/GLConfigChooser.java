@@ -238,11 +238,8 @@ class GLConfigChooser implements GLSurfaceView.EGLConfigChooser {
 		}
 
 		//EGL_WINDOW_BIT | EGL_PBUFFER_BIT | EGL_PIXMAP_BIT
-		if (!containFlag(configDetail[INDEX_SURFACE_TYPE], EGL10.EGL_WINDOW_BIT)) {
-			return false;
-		}
+		return containFlag(configDetail[INDEX_SURFACE_TYPE], EGL10.EGL_WINDOW_BIT);
 
-		return true;
 	}
 
 	/**

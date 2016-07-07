@@ -30,17 +30,17 @@ public interface MotionFilter extends ICleanup {
 	/**
 	 * 指定的尺寸的单位为像素
 	 */
-	public static final int ABSOLUTE = 0;
+	int ABSOLUTE = 0;
 
 	/**
 	 * 指定的尺寸其实是一个比例值，会与相应的视图的尺寸相乘得到实际的尺寸
 	 */
-	public static final int RELATIVE_TO_SELF = 1;
+	int RELATIVE_TO_SELF = 1;
 
 	/**
 	 * 指定的尺寸其实是一个比例值，会与相应的视图的父容器的尺寸相乘得到实际的尺寸
 	 */
-	public static final int RELATIVE_TO_PARENT = 2;
+	int RELATIVE_TO_PARENT = 2;
 
 	/**
 	 * <br>功能简述: 如果需要，初始化动画的参数值
@@ -51,7 +51,7 @@ public interface MotionFilter extends ICleanup {
 	 * @param parentWidth 父容器宽度
 	 * @param parentHeight 父容器高度
 	 */
-	public void initializeIfNeeded(int width, int height, int parentWidth, int parentHeight);
+	void initializeIfNeeded(int width, int height, int parentWidth, int parentHeight);
 
 	/**
 	 * <br>功能简述: 计算当前动画的变换
@@ -59,7 +59,7 @@ public interface MotionFilter extends ICleanup {
 	 * <br>注意: 仅由框架调用
 	 * @param t 计算结果保存到这里
 	 */
-	public void getTransformation(Transformation3D t);
+	void getTransformation(Transformation3D t);
 
 	/**
 	 * <br>功能简述: 获得动画缓存的变换
@@ -68,14 +68,14 @@ public interface MotionFilter extends ICleanup {
 	 * @return
 	 * @see {@link #getInverseTransformation()}
 	 */
-	public Transformation3D getTransformation();
+	Transformation3D getTransformation();
 
 	/**
 	 * <br>功能简述: 设置逆变换矩阵为脏的，需要重新计算
 	 * <br>功能详细描述: 用于检测触摸点是否位于变换后的区域中
 	 * <br>注意: 仅由框架调用
 	 */
-	public void setInverseTransformationDirty();
+	void setInverseTransformationDirty();
 
 	/**
 	 * <br>功能简述: 获得逆变换
@@ -83,42 +83,42 @@ public interface MotionFilter extends ICleanup {
 	 * <br>注意: 仅由框架调用
 	 * @return
 	 */
-	public Transformation3D getInverseTransformation();
+	Transformation3D getInverseTransformation();
 	
 	/**
 	 * <br>功能简述: 是否正在动画（包括开始的延时阶段）
 	 * <br>功能详细描述:
 	 * <br>注意:
 	 */
-	public boolean isRunning();
+	boolean isRunning();
 
 	/**
 	 * <br>功能简述: 开始动画
 	 * <br>功能详细描述:
 	 * <br>注意:
 	 */
-	public void start();
+	void start();
 	
 	/**
 	 * <br>功能简述: 取消动画
 	 * <br>功能详细描述:
 	 * <br>注意:
 	 */
-	public void cancel();
+	void cancel();
 
 	/**
 	 * <br>功能简述: 逆向播放动画
 	 * <br>功能详细描述:
 	 * <br>注意:
 	 */
-	public void reverse();
+	void reverse();
 
 	/**
 	 * <br>功能简述: 以当前相反的方向播放动画
 	 * <br>功能详细描述:
 	 * <br>注意:
 	 */
-	public void relativeReverse();
+	void relativeReverse();
 
 	/**
 	 * <br>功能简述: 是否会改变变换矩阵
@@ -126,7 +126,7 @@ public interface MotionFilter extends ICleanup {
 	 * <br>注意: 子类重载
 	 * @return
 	 */
-	public boolean willChangeTransformationMatrix();
+	boolean willChangeTransformationMatrix();
 
 	/**
 	 * <br>功能简述: 是否会改变视图边界
@@ -134,7 +134,7 @@ public interface MotionFilter extends ICleanup {
 	 * <br>注意: 子类重载
 	 * @return
 	 */
-	public boolean willChangeBounds();
+	boolean willChangeBounds();
 
 	/**
 	 * <br>功能简述: 是否改变不透明度
@@ -142,6 +142,6 @@ public interface MotionFilter extends ICleanup {
 	 * <br>注意: 子类重载
 	 * @return
 	 */
-	public boolean hasAlpha();
+	boolean hasAlpha();
 
 }

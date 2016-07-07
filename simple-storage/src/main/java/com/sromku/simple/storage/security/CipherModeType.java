@@ -19,7 +19,7 @@ public enum CipherModeType {
 
 	private String mName;
 
-	private CipherModeType(String name) {
+	CipherModeType(String name) {
 		mName = name;
 	}
 

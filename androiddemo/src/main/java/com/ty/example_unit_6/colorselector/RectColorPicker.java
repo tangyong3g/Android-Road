@@ -199,7 +199,7 @@ public class RectColorPicker extends View {
 		Log.i("dis", "区间:\t" + disIndex);
 		disIndex = disIndex <= 6 ? disIndex : 0;
 		int dstColor = mRectColors[disIndex]; // 结束顔色
-		float pec = (float) (d % perDistrict / perDistrict);
+		float pec = d % perDistrict / perDistrict;
 
 		int red = aveRGB(Color.red(srcColor), Color.red(dstColor), pec);
 		int green = aveRGB(Color.green(srcColor), Color.green(dstColor), pec);

@@ -61,7 +61,7 @@ class HttpUtils {
      * @throws NoSuchAlgorithmException
      */
     static void doPost(Map<?, ?> parameters, URL url)
-            throws UnsupportedEncodingException, IOException, KeyManagementException, NoSuchAlgorithmException {
+            throws IOException, KeyManagementException, NoSuchAlgorithmException {
 
         URLConnection cnx = getConnection(url);
 

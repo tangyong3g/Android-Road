@@ -112,10 +112,7 @@ public final class Sphere implements Ray.RayIntersectable {
 			return false;	//射线起点在球外且指向远离球的方向
 		}
 		float discr = b * b - c;
-		if (discr < 0) {
-			return false;	//判别式为0,方程无根
-		}
-		return true;
+		return discr >= 0;
 	}
 	
 	/**

@@ -29,9 +29,9 @@ public class CubeRotateActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		view.onResume();
-	};
-	
-	
+	}
+
+
 	@Override
 	protected void onPause() {
 		super.onPause();

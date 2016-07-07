@@ -10,7 +10,7 @@ public enum SizeUnit {
 	private long inBytes;
 	private static final int BYTES = 1024;
 
-	private SizeUnit(long bytes) {
+	SizeUnit(long bytes) {
 		this.inBytes = bytes;
 	}
 

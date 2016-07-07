@@ -17,14 +17,14 @@ public interface GLViewParent {
      * child of this view parent. This will schedule a layout pass of the view
      * tree.
      */
-    public void requestLayout();
+    void requestLayout();
 
     /**
      * Indicates whether layout was requested on this view parent.
      *
      * @return true if layout was requested, false otherwise
      */
-    public boolean isLayoutRequested();
+    boolean isLayoutRequested();
     
     /**
      * All or part of a child is dirty and needs to be redrawn.
@@ -32,7 +32,7 @@ public interface GLViewParent {
      * @param child The child which is dirty
      * @param r The area within the child that is invalid
      */
-    public void invalidateChild(GLView child, Rect r);
+    void invalidateChild(GLView child, Rect r);
 
     /**
      * All or part of a child is dirty and needs to be redrawn.
@@ -54,14 +54,14 @@ public interface GLViewParent {
      *
      * @return the parent of this ViewParent or null
      */
-    public GLViewParent invalidateChildInParent(int[] location, Rect r);
+    GLViewParent invalidateChildInParent(int[] location, Rect r);
     
     /**
      * Returns the parent if it exists, or null.
      *
      * @return a ViewParent or null if this ViewParent does not have a parent
      */
-    public GLViewParent getGLParent();
+    GLViewParent getGLParent();
 
     /**
      * Called when a child of this parent wants focus
@@ -72,16 +72,16 @@ public interface GLViewParent {
      * @param focused The view that is a descendant of child that actually has
      *        focus
      */
-    public void requestChildFocus(GLView child, GLView focused);
+    void requestChildFocus(GLView child, GLView focused);
     
     /**
      * Called when a child of this parent is giving up focus
      * 
      * @param child The view that is giving up focus
      */
-    public void clearChildFocus(GLView child);
+    void clearChildFocus(GLView child);
     
-    public boolean getChildVisibleRect(GLView child, Rect r, android.graphics.Point offset);
+    boolean getChildVisibleRect(GLView child, Rect r, android.graphics.Point offset);
     
     /**
      * Find the nearest view in the specified direction that wants to take focus
@@ -89,14 +89,14 @@ public interface GLViewParent {
      * @param v The view that currently has focus
      * @param direction One of FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, and FOCUS_RIGHT
      */
-    public GLView focusSearch(GLView v, int direction);
+    GLView focusSearch(GLView v, int direction);
 
     /**
      * Change the z order of the child so it's on top of all other children
      * 
      * @param child
      */
-    public void bringChildToFront(GLView child);
+    void bringChildToFront(GLView child);
     
     /**
      * Tells the parent that a new focusable view has become available. This is
@@ -105,7 +105,7 @@ public interface GLViewParent {
      * 
      * @param v The view that has become newly focusable
      */
-    public void focusableViewAvailable(GLView v);
+    void focusableViewAvailable(GLView v);
     
     /**
      * Bring up a context menu for the specified view or its ancestors.
@@ -118,7 +118,7 @@ public interface GLViewParent {
      * @param originalView The source view where the context menu was first invoked
      * @return true if a context menu was displayed
      */
-    public boolean showContextMenuForChild(GLView originalView);
+    boolean showContextMenuForChild(GLView originalView);
 
     /**
      * Have the parent populate the specified context menu if it has anything to
@@ -126,7 +126,7 @@ public interface GLViewParent {
      * 
      * @param menu The menu to populate
      */
-    public void createContextMenu(ContextMenu menu);
+    void createContextMenu(ContextMenu menu);
 
     /**
      * This method is called on the parent when a child's drawable state
@@ -134,7 +134,7 @@ public interface GLViewParent {
      *
      * @param child The child whose drawable state has changed.
      */
-    public void childDrawableStateChanged(GLView child);
+    void childDrawableStateChanged(GLView child);
     
     /**
      * Called when a child does not want this parent and its ancestors to
@@ -148,7 +148,7 @@ public interface GLViewParent {
      * @param disallowIntercept True if the child does not want the parent to
      *            intercept touch events.
      */
-    public void requestDisallowInterceptTouchEvent(boolean disallowIntercept);
+    void requestDisallowInterceptTouchEvent(boolean disallowIntercept);
     
     /**
      * Called when a child of this group wants a particular rectangle to be
@@ -173,6 +173,6 @@ public interface GLViewParent {
      *        false otherwise
      * @return Whether the group scrolled to handle the operation
      */
-    public boolean requestChildRectangleOnScreen(GLView child, Rect rectangle,
-                                                 boolean immediate);
+    boolean requestChildRectangleOnScreen(GLView child, Rect rectangle,
+                                          boolean immediate);
 }

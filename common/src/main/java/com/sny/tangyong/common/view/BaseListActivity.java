@@ -42,8 +42,6 @@ public class BaseListActivity extends ListActivity {
         return tx.getText().toString();
     }
 
-    ;
-
     private Intent createIntentWithDisplayName(String displayName) {
 
         if (mItemsInfo == null) {

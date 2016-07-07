@@ -31,7 +31,7 @@ public interface GLListAdapter extends GLAdapter {
      * 
      * @return True if all items are enabled
      */
-    public boolean areAllItemsEnabled();
+    boolean areAllItemsEnabled();
 
     /**
      * Returns true if the item at the specified position is not a separator.

@@ -64,7 +64,7 @@ public class UnCatchExceptionActivity extends Activity {
         mSubHandler = new Handler(mSubThread.getLooper(), new SubHandlerCallback());
 
         if (isCatch) {
-            mSubThread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+            Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
                 @Override
                 public void uncaughtException(Thread thread, Throwable ex) {
 //                    Logger.d("捕获了来自" + thread.getName() + ":\t的异常。");

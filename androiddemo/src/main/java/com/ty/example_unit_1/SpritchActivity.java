@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.android.AndroidApplication;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -54,7 +55,7 @@ public class SpritchActivity extends AndroidApplication {
 
 		@Override
 		public void render() {
-			Gdx.gl20.glClear(Gdx.gl20.GL_COLOR_BUFFER_BIT);
+			Gdx.gl20.glClear(GL20.GL_COLOR_BUFFER_BIT);
 			
 			mSpriteBatch.begin();
 			mSprite.draw(mSpriteBatch);

@@ -43,7 +43,7 @@ public enum CipherAlgorithmType {
 
 	private String mName;
 
-	private CipherAlgorithmType(String name) {
+	CipherAlgorithmType(String name) {
 		mName = name;
 	}
 

@@ -111,7 +111,6 @@ public class LooperVersion2 extends Activity implements OnClickListener {
                     }
                 }
 
-                ;
             };
             Looper.loop();
         }
@@ -192,7 +191,7 @@ public class LooperVersion2 extends Activity implements OnClickListener {
                 mLooperThread.getThreadHandler().sendMessage(msg);
 
             }catch (Exception e){
-                e.printStackTrace();;
+                e.printStackTrace();
             }
 
         }

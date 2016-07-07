@@ -19,5 +19,5 @@ package com.tcl.mailfeedback;
  * </ul>
  */
 enum ReportingInteractionMode {
-    SILENT, NOTIFICATION, TOAST;
+    SILENT, NOTIFICATION, TOAST
 }

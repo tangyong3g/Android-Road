@@ -202,7 +202,7 @@ public class List1 extends ListActivity {
 		protected void onLayout(boolean changed, int l, int t, int r, int b) {
 			super.onLayout(changed, l, t, r, b);
 			Log.i("tyler.tang", "onLayout:\t" + l + ":\t" + t + ":\t" + r + ":\t" + b);
-		};
+		}
 
 		@Override
 		protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {

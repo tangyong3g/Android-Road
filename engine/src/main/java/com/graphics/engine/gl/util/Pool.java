@@ -28,7 +28,7 @@ public interface Pool<T extends Poolable<T>> {
 	 * <br>注意: 使用完毕需要调用{@link #release(Poolable)}，将对象放回对象池。
 	 * @return
 	 */
-	public abstract T acquire();
+	T acquire();
 	
 	/**
 	 * <br>功能简述: 释放对象
@@ -36,5 +36,5 @@ public interface Pool<T extends Poolable<T>> {
 	 * <br>注意:
 	 * @param element
 	 */
-	public abstract void release(T element);
+	void release(T element);
 }

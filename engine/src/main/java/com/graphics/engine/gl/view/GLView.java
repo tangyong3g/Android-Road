@@ -2209,7 +2209,7 @@ public class GLView implements Drawable.Callback, KeyEvent.Callback, Accessibili
      * @author  dengweiming
      * @date  [2013-6-20]
      */
-	public static interface OnBitmapCapturedListener {
+	public interface OnBitmapCapturedListener {
 
 		/**
 		 * <br>功能简述: 完成截图的回调，在主线程
@@ -2217,7 +2217,7 @@ public class GLView implements Drawable.Callback, KeyEvent.Callback, Accessibili
 		 * <br>注意:
 		 * @param bitmap 为null表示失败。使用完应该recycle
 		 */
-		public void onBitmapCaptured(Bitmap bitmap);
+        void onBitmapCaptured(Bitmap bitmap);
 	}
 
 	/**

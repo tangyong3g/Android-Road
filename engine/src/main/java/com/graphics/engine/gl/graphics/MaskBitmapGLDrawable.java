@@ -147,11 +147,8 @@ public class MaskBitmapGLDrawable extends GLDrawable {
 			return false;
 		}
 		GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
-		if (mFilterTexture == null || !mFilterTexture.bind()) {
-			return false;
-		}
+		return !(mFilterTexture == null || !mFilterTexture.bind());
 
-		return true;
 	}
 
 	/**

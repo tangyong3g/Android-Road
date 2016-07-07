@@ -159,7 +159,7 @@ public class FlagActivity extends Activity {
 
 	class Flag {
 
-		int mPrograms;;// 自定义渲染管线着色器程序id
+		int mPrograms;// 自定义渲染管线着色器程序id
 		int muMVPMatrixHandle;// 总变换矩阵引用
 		int maPositionHandle; // 顶点位置属性引用
 		int maTexCoorHandle; // 顶点纹理坐标属性引用

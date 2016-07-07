@@ -46,7 +46,7 @@ public class CanvasSavelayerActivity extends Activity implements Callback {
 					}
 
 				}
-			};
+			}
 		};
 
 		t.start();

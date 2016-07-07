@@ -94,12 +94,12 @@ public class DrawMethodActivity extends AndroidApplication {
 		public void render() {
 			super.render();
 			GL10 gl = Gdx.graphics.getGL10();
-			gl.glClear(gl.GL_COLOR_BUFFER_BIT);
+			gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
 			gl.glColor4f(1, 1, 1, 1);
 			gl.glPushMatrix();
 //			gl.glRotatef(angle, 1, 1, 0);
-			mMesh.render(gl.GL_TRIANGLES);
+			mMesh.render(GL10.GL_TRIANGLES);
 			gl.glPopMatrix();
 			
 			angle += 0.8;

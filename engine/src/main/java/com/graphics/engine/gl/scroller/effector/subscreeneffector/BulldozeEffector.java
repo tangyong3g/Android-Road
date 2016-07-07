@@ -40,13 +40,13 @@ public class BulldozeEffector extends MSubScreenEffector {
 			canvas.translate(mScroll + (first ? 0 : mScreenSize), 0);
 			canvas.rotateAxisAngle(first ? -angle : angle, 0, 1, 0);
 
-			float scale = (float) w / mScreenSize;
+			float scale = w / mScreenSize;
 			canvas.scale(scale, 1);
 
 			canvas.translate(first ? 0 : -mScreenSize, 0);
 		} else {
 			canvas.translate(0, mScroll + min);
-			canvas.scale(1, (float) (max - min) / mHeight);
+			canvas.scale(1, (max - min) / mHeight);
 		}
 		return true;
 	}

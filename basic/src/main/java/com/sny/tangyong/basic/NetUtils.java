@@ -21,9 +21,9 @@ public class NetUtils {
     /**
      * 枚举网络状态 NET_NO：没有网络 NET_2G:2g网络 NET_3G：3g网络 NET_4G：4g网络 NET_WIFI：wifi NET_UNKNOWN：未知网络
      */
-    public static enum NetState {
+    public enum NetState {
         NET_NO, NET_2G, NET_3G, NET_4G, NET_WIFI, NET_UNKNOWN
-    };
+    }
 
     public static String getConnectType(Context context) {
         NetState netState = getConnectInfo(context);

@@ -31,23 +31,23 @@ public class LinkedFloatBuffer {
 	/**
 	 * 迭代器
 	 */
-	public static interface Iterator {
+	public interface Iterator {
 		
-		public int position();
+		int position();
 		
-		public void position(int index);
+		void position(int index);
 		
-		public float get();
+		float get();
 		
-		public void set(float x);
+		void set(float x);
 
-		public boolean hasNext();
+		boolean hasNext();
 
-		public float next();
+		float next();
 		
-		public int next(float[] buffer, int offset, int count);
+		int next(float[] buffer, int offset, int count);
 		
-		public int next(FloatBuffer buffer, int count);
+		int next(FloatBuffer buffer, int count);
 	}
 
 	/**
@@ -313,8 +313,8 @@ public class LinkedFloatBuffer {
 			return res;
 		}
 
-	};
-	
+	}
+
 	/**
 	 * 使用内存池来缓存的浮点数组块
 	 */

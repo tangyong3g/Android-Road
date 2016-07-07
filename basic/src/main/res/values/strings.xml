@@ -71,6 +71,8 @@
 
     <string name="createSDCardRootFolder">create sd card Root folder</string>
 
+    <string name="createSDCardRootFolderFile">create sd card Root folder/File</string>
+
 
 
 </resources>

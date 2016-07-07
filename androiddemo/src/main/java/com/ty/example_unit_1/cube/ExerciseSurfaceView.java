@@ -63,7 +63,6 @@ public class ExerciseSurfaceView extends GLSurfaceView {
 				mPrevY = -1;
 				break;
 			default :
-				;
 		}
 		return true;	//必须返回true，才能处理所有的触摸事件
 	}

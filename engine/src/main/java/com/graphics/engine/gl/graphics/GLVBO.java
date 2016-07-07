@@ -320,10 +320,10 @@ public class GLVBO implements GLClearable, TextureListener {
 			Buffer buffer;
 			if (mDataType == GLES20.GL_FLOAT) {
 				VertexBufferBlock.rewindReadingBuffer(dataCount);
-				buffer = (Buffer) VertexBufferBlock.popVertexData(dataCount);
+				buffer = VertexBufferBlock.popVertexData(dataCount);
 			} else {
 				IndexBufferBlock.rewindReadingBuffer(dataCount);
-				buffer = (Buffer) IndexBufferBlock.popVertexData(dataCount);
+				buffer = IndexBufferBlock.popVertexData(dataCount);
 			}
 			
 			GLError.clearGLError();

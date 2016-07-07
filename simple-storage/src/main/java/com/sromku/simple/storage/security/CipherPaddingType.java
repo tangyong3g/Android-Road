@@ -12,7 +12,7 @@ public enum CipherPaddingType {
 
 	private String mName;
 
-	private CipherPaddingType(String name) {
+	CipherPaddingType(String name) {
 		mName = name;
 	}
 

@@ -30,7 +30,6 @@ import android.os.Environment;
 import android.os.Looper;
 import android.os.StatFs;
 import android.util.Log;
-import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import java.io.File;
@@ -77,8 +76,8 @@ import java.util.TreeSet;
  */
 public class ErrorReporter implements Thread.UncaughtExceptionHandler {
     private static final String LOG_TAG = CrashReport.LOG_TAG;
-
     public static final int ID_ERROR_REPORT = 4;
+
 
     /**
      * Checks and send reports on a separate Thread.
@@ -571,8 +570,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
         // for pending reports which issues the notification back.
         // Notification cancellation is done in the dialog activity displayed
         // on notification click.
-        NotificationManager notificationManager =
-                (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
 
         // Default notification icon is the warning symbol
         int icon = android.R.drawable.stat_notify_error;
@@ -591,12 +589,13 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
         Intent notificationIntent = new Intent(mContext, CrashReportDialog.class);
         notificationIntent.putExtra(EXTRA_REPORT_FILE_NAME, reportFileName);
 
-        try {
-            LogRecord.deleteLogFile();
-            LogRecord.writeLogFile(reportFileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+            // --TODO delete log file writeLogfile
+//            LogRecord.deleteLogFile();
+//            LogRecord.writeLogFile(reportFileName);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         Log.i(LOG_TAG, "crash report fileName = " + reportFileName);
         PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0, notificationIntent, 0);
 
@@ -639,7 +638,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
      * @throws KeyManagementException Might be thrown if sending over https.
      */
     private static void sendCrashReport(Context context, Properties errorContent)
-            throws UnsupportedEncodingException, IOException, KeyManagementException, NoSuchAlgorithmException {
+            throws IOException, KeyManagementException, NoSuchAlgorithmException {
         // values observed in the GoogleDocs original html form
         errorContent.put("pageNumber", "0");
         errorContent.put("backupCache", "");
@@ -660,7 +659,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
             long timestamp = System.currentTimeMillis();
             String isSilent = mCrashProperties.getProperty(IS_SILENT_KEY);
             String fileName = createSaveFilePath();
-            fileName += (isSilent != null ? SILENT_PREFIX : "") + "stack-" + timestamp + ERROR_FILE_TYPE;
+            fileName += File.separator + (isSilent != null ? SILENT_PREFIX : "") + "stack-" + timestamp + ERROR_FILE_TYPE;
             File file = new File(fileName);
             FileOutputStream trace = new FileOutputStream(file, true);
             Log.i(LOG_TAG, fileName);
@@ -688,8 +687,18 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
     }
 
     private String createSaveFilePath() {
+
         if (mCrashFilePath == null) {
-            mCrashFilePath = CrashReportConfig.LOG_PATH;
+
+            // mCrashFilePath = CrashReportConfig.LOG_PATH;
+            mCrashFilePath = mContext.getExternalFilesDir(null).getAbsolutePath() + CrashReportConfig.Path.LOG_DIR;
+            /**
+             * 在API为22以上时会出现无法创建文件夹的问题，更改文件存储位置，适配6.0
+             */
+            // File folderAppFile = mContext.getExternalFilesDir(null);
+            // mCrashFilePath = folderAppFile.getAbsolutePath() + File.separator +
+            // CrashReportConfig.Path.LOG_DIR;
+
             File destDir = new File(mCrashFilePath);
             if (!destDir.exists()) {
                 boolean success = destDir.mkdirs();
@@ -706,6 +715,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
      */
     String[] getCrashReportFilesList() {
         File dir = mContext.getFilesDir();
+//        File dir = new File(mCrashFilePath);
 
         if (dir == null) {
             return null;

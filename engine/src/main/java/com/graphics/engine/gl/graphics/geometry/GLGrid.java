@@ -408,7 +408,7 @@ public class GLGrid extends GLObject {
 			GLES20.glDrawElements(MODE[mMode], mIndexCount, GLES20.GL_UNSIGNED_SHORT, indexBuffer);
 			
 		}
-	};
-	
-	
+	}
+
+
 }

@@ -23,7 +23,7 @@ public class FastQueue<E> {
 	 * 处理队列元素的回调接口
 	 */
 	public interface Processor<E> {
-		public void process(E object);
+		void process(E object);
 	}
 
 	/**

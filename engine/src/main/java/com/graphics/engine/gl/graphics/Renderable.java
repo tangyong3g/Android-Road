@@ -8,7 +8,7 @@ public interface Renderable {
 	/**
 	 * 静态实例，不做渲染操作，用做哨兵
 	 */
-	public static final Renderable sInstance = new Renderable() {	//CHECKSTYLE IGNORE
+	Renderable sInstance = new Renderable() {	//CHECKSTYLE IGNORE
 
 		@Override
 		public void run(long timeStamp, RenderContext context) {
@@ -23,5 +23,5 @@ public interface Renderable {
 	 * @param timeStamp	时间戳，一般来说没什么用
 	 * @param context 渲染时的上下文，包括MVP矩阵等等一些参数
 	 */
-    public void run(long timeStamp, RenderContext context);
+	void run(long timeStamp, RenderContext context);
 }

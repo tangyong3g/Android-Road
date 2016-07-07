@@ -31,7 +31,7 @@ public class CanvasDemoActivity extends Activity {
 	 */
 	public interface DrawGrapic {
 
-		public void draw(Canvas canvas);
+		void draw(Canvas canvas);
 
 	}
 

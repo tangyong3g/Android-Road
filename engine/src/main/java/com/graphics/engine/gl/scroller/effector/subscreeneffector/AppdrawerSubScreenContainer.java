@@ -20,6 +20,6 @@ public interface AppdrawerSubScreenContainer extends SubScreenContainer {
 	 * @param canvas
 	 * @param screen
 	 */
-	public void drawScreenBackground(GLCanvas canvas, int screen);
+	void drawScreenBackground(GLCanvas canvas, int screen);
 
 }

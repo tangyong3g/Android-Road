@@ -65,7 +65,7 @@ public class SpritchMoveActivity extends AndroidApplication {
 			super.render();
 
 			Gdx.gl20.glClearColor(0, 0, 0, 1);
-			Gdx.gl20.glClear(Gdx.gl20.GL_COLOR_BUFFER_BIT);
+			Gdx.gl20.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 			mSpriteBatch.begin();
 			mSpriteBatch.draw(mTexture, mSpriteVerctor.x, mSpriteVerctor.y);

@@ -303,12 +303,12 @@ public class BitmapUtil {
 	// Drawable转换成byte[]
 	public byte[] Drawable2Bytes(Drawable d) {
 		Bitmap bitmap = this.drawable2Bitmap(d);
-		return this.Bitmap2Bytes(bitmap);
+		return Bitmap2Bytes(bitmap);
 	}
 
 	// byte[]转换成Drawable
 	public Drawable Bytes2Drawable(byte[] b) {
-		Bitmap bitmap = this.Bytes2Bitmap(b);
+		Bitmap bitmap = Bytes2Bitmap(b);
 		return this.bitmap2Drawable(bitmap);
 	}
 
@@ -330,7 +330,7 @@ public class BitmapUtil {
 	// Bitmap转换成Drawable
 	public Drawable bitmap2Drawable(Bitmap bitmap) {
 		BitmapDrawable bd = new BitmapDrawable(bitmap);
-		Drawable d = (Drawable) bd;
+		Drawable d = bd;
 		return d;
 	}
 

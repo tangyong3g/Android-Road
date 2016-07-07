@@ -23,17 +23,9 @@ public class Normal
 	   if(o instanceof  Normal)
 	   {//������������XYZ��������ĲС��ָ������ֵ����Ϊ���������������
 		   Normal tn=(Normal)o;
-		   if(Math.abs(nx-tn.nx)<DIFF&&
-			  Math.abs(ny-tn.ny)<DIFF&&
-			  Math.abs(ny-tn.ny)<DIFF
-             )
-		   {
-			   return true;
-		   }
-		   else
-		   {
-			   return false;
-		   }
+		   return Math.abs(nx - tn.nx) < DIFF &&
+				   Math.abs(ny - tn.ny) < DIFF &&
+				   Math.abs(ny - tn.ny) < DIFF;
 	   }
 	   else
 	   {

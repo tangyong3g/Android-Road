@@ -40,67 +40,67 @@ public interface GridScreenContainer {
 	 * 获取分屏里面单元格的行数
 	 * @return
 	 */
-	public int getCellRow();
+	int getCellRow();
 
 	/**
 	 * 获取分屏里面单元格的列数
 	 * @return
 	 */
-	public int getCellCol();
+	int getCellCol();
 
 	/**
 	 * 获取单元格的数目
 	 * @return
 	 */
-	public int getCellCount();
+	int getCellCount();
 
 	/**
 	 * 获取单元格的宽度
 	 * @return
 	 */
-	public int getCellWidth();
+	int getCellWidth();
 
 	/**
 	 * 获取单元格的高度
 	 * @return
 	 */
-	public int getCellHeight();
+	int getCellHeight();
 
 	/**
 	 * 获取单元格的宽度
 	 * @return
 	 */
-	public int getWidth();
+	int getWidth();
 
 	/**
 	 * 获取分屏的高度
 	 * @return
 	 */
-	public int getHeight();
+	int getHeight();
 
 	/**
 	 * 获取分屏里面的左空白
 	 * @return
 	 */
-	public int getPaddingLeft();
+	int getPaddingLeft();
 
 	/**
 	 * 获取分屏里面的右空白
 	 * @return
 	 */
-	public int getPaddingRight();
+	int getPaddingRight();
 
 	/**
 	 * 获取分屏里面的上空白
 	 * @return
 	 */
-	public int getPaddingTop();
+	int getPaddingTop();
 
 	/**
 	 * 获取分屏里面的下空白
 	 * @return
 	 */
-	public int getPaddingBottom();
+	int getPaddingBottom();
 
 	/**
 	 * 功能简述:画背景
@@ -109,6 +109,6 @@ public interface GridScreenContainer {
 	 * @param canvas
 	 * @param screen
 	 */
-	public void drawScreenBackground(GLCanvas canvas, int screen);
+	void drawScreenBackground(GLCanvas canvas, int screen);
 
 }

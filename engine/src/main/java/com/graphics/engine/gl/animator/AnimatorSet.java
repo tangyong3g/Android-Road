@@ -217,7 +217,7 @@ public final class AnimatorSet extends FloatValueAnimator {
         for (Node node : mNodes) {
             Animator animation = node.animation;
             if (animation instanceof AnimatorSet) {
-                ((AnimatorSet) animation).setTarget(target);
+                animation.setTarget(target);
             }
             //XXX
 //            else if (animation instanceof ObjectAnimator) {
@@ -621,7 +621,7 @@ public final class AnimatorSet extends FloatValueAnimator {
         public Node clone() {
             try {
                 Node node = (Node) super.clone();
-                node.animation = (Animator) animation.clone();
+                node.animation = animation.clone();
                 return node;
             } catch (CloneNotSupportedException e) {
                throw new AssertionError();

@@ -5,9 +5,9 @@ package com.graphics.engine.gl.scroller.effector.gridscreeeneffector;
  */
 public interface GridScreen3DContainer extends GridScreenContainer {
 	
-	public float getContainerTransZ();
+	float getContainerTransZ();
 	
-	public float getRadius();
+	float getRadius();
 
-	public float getShowSurfaceAngle();
+	float getShowSurfaceAngle();
 }

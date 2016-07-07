@@ -53,7 +53,7 @@ public class TrustCertainHostNameFactory extends SSLSocketFactory {
 
   @Override
   public Socket createSocket(Socket socket, String host, int port, boolean autoClose)
-      throws IOException, UnknownHostException {
+      throws IOException {
     return super.createSocket(socket, host, port, autoClose);
   }
 

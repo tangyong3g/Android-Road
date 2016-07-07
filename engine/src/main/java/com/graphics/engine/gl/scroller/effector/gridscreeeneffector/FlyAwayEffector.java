@@ -28,7 +28,7 @@ public class FlyAwayEffector extends MGridScreenEffector {
 
 	@Override
 	public void onDrawScreen(GLCanvas canvas, int screen, float offset) {
-		final GridScreenContainer container = (GridScreenContainer) mContainer;
+		final GridScreenContainer container = mContainer;
 		final int row = container.getCellRow();
 		int col = container.getCellCol();
 		int index = row * col * screen;

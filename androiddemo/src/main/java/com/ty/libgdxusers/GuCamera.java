@@ -10,14 +10,14 @@ import com.badlogic.gdx.math.Vector3;
  */
 public interface GuCamera {
 
-	public void push();
+	void push();
 
-	public void pop();
+	void pop();
 
-	public void handleKeys();
+	void handleKeys();
 
-	public void spin(float delta, float dir);
+	void spin(float delta, float dir);
 
-	public void spin(float delta, Vector3 dir);
+	void spin(float delta, Vector3 dir);
 
 }

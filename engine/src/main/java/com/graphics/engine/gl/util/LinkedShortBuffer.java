@@ -31,23 +31,23 @@ public class LinkedShortBuffer {
 	/**
 	 * 迭代器
 	 */
-	public static interface Iterator {
+	public interface Iterator {
 		
-		public int position();
+		int position();
 		
-		public void position(int index);
+		void position(int index);
 		
-		public short get();
+		short get();
 		
-		public void set(short x);
+		void set(short x);
 
-		public boolean hasNext();
+		boolean hasNext();
 
-		public short next();
+		short next();
 
-		public int next(short[] buffer, int offset, int count);
+		int next(short[] buffer, int offset, int count);
 		
-		public int next(ShortBuffer buffer, int count);
+		int next(ShortBuffer buffer, int count);
 	}
 
 	/**
@@ -313,8 +313,8 @@ public class LinkedShortBuffer {
 			return res;
 		}
 
-	};
-	
+	}
+
 	/**
 	 * 使用内存池来缓存的浮点数组块
 	 */

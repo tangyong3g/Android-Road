@@ -2480,7 +2480,7 @@ public class GLContentView extends GLSurfaceView implements GLViewParent {
 				}
 			});
 		}
-	};
+	}
 
 }
 

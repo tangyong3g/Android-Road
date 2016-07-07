@@ -16,7 +16,7 @@ public interface ICleanup {
 	 * <br>功能详细描述:
 	 * <br>注意: 释放后就不要再使用该对象了
 	 */
-	public void cleanup();
+	void cleanup();
 
 	// 内存不够时调用
 	// public void onLowMemmory();

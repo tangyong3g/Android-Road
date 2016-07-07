@@ -444,10 +444,8 @@ public class Vector2 implements Serializable, Vector<Vector2> {
 		if (NumberUtils.floatToIntBits(x) != NumberUtils
 				.floatToIntBits(other.x))
 			return false;
-		if (NumberUtils.floatToIntBits(y) != NumberUtils
-				.floatToIntBits(other.y))
-			return false;
-		return true;
+		return NumberUtils.floatToIntBits(y) == NumberUtils
+				.floatToIntBits(other.y);
 	}
 
 	/**
@@ -463,9 +461,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
 			return false;
 		if (Math.abs(obj.x - x) > epsilon)
 			return false;
-		if (Math.abs(obj.y - y) > epsilon)
-			return false;
-		return true;
+		return Math.abs(obj.y - y) <= epsilon;
 	}
 
 	/**
@@ -480,8 +476,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
 	public boolean epsilonEquals(float x, float y, float epsilon) {
 		if (Math.abs(x - this.x) > epsilon)
 			return false;
-		if (Math.abs(y - this.y) > epsilon)
-			return false;
-		return true;
+		return Math.abs(y - this.y) <= epsilon;
 	}
 }

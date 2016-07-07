@@ -343,7 +343,7 @@ public class ScreenScroller extends MScroller {
 
 		// 重设当前滚动量
 		scrollScreenGroup(getDstScreen() * mScreenSize);
-		mScrollFloat = mScroll;;
+		mScrollFloat = mScroll;
 	}
 
 	/**
@@ -1032,7 +1032,7 @@ public class ScreenScroller extends MScroller {
 			float res = (mBackgroundWidth - mScreenWidth) * (scroll - mMinScroll) * mScrollRatio;
 			return (int) (res + 0.5f);  // CHECKSTYLE IGNORE THIS LINE
 		} else {
-			return (int) ((mBackgroundWidth - mScreenWidth) / 2);
+			return (mBackgroundWidth - mScreenWidth) / 2;
 		}
 	}
 

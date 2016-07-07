@@ -25,7 +25,7 @@ public class ActorFPSAnimationActivity extends AndroidApplication {
 		ActorLis lis = new ActorLis();
 		initialize(lis, true);
 
-	};
+	}
 
 	class ActorLis extends GdxTest {
 

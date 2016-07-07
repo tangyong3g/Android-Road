@@ -286,7 +286,7 @@ public abstract class Animator implements Cloneable {
      * @author  dengweiming
      * @date  [2013-10-17]
      */
-    public static interface AnimatorListener {
+    public interface AnimatorListener {
     	
         /**
          * 通知动画开始

@@ -134,7 +134,7 @@ public abstract class GLLayoutInflater {
          * @return View Newly created view. Return null for the default
          *         behavior.
          */
-        public GLView onCreateView(String name, Context context, AttributeSet attrs);
+        GLView onCreateView(String name, Context context, AttributeSet attrs);
     }
 
     private static class FactoryMerger implements Factory {		// CHECKSTYLE IGNORE

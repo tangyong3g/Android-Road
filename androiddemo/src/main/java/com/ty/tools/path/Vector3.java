@@ -724,10 +724,8 @@ public class Vector3 implements Serializable, Vector<Vector3> {
 		if (NumberUtils.floatToIntBits(y) != NumberUtils
 				.floatToIntBits(other.y))
 			return false;
-		if (NumberUtils.floatToIntBits(z) != NumberUtils
-				.floatToIntBits(other.z))
-			return false;
-		return true;
+		return NumberUtils.floatToIntBits(z) == NumberUtils
+				.floatToIntBits(other.z);
 	}
 
 	/**
@@ -745,9 +743,7 @@ public class Vector3 implements Serializable, Vector<Vector3> {
 			return false;
 		if (Math.abs(obj.y - y) > epsilon)
 			return false;
-		if (Math.abs(obj.z - z) > epsilon)
-			return false;
-		return true;
+		return Math.abs(obj.z - z) <= epsilon;
 	}
 
 	/**
@@ -761,8 +757,6 @@ public class Vector3 implements Serializable, Vector<Vector3> {
 			return false;
 		if (Math.abs(y - this.y) > epsilon)
 			return false;
-		if (Math.abs(z - this.z) > epsilon)
-			return false;
-		return true;
+		return Math.abs(z - this.z) <= epsilon;
 	}
 }

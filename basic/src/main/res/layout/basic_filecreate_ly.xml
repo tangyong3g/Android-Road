@@ -59,6 +59,7 @@
 
 
 
+    <!-- create root file -->
     <Button
         android:id="@+id/btn_create_sdcard_root_folder"
         android:layout_width="match_parent"
@@ -67,11 +68,12 @@
         android:text="@string/createSDCardRootFolder" />
 
 
-
-
-
-
-
+    <Button
+        android:id="@+id/btn_create_sdcard_root_folder_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="createSDCardRootFolderFile"
+        android:text="@string/createSDCardRootFolderFile" />
 
 
 </LinearLayout>

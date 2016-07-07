@@ -28,8 +28,8 @@ public class RectColorActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 
 		WindowManager manager = getWindow().getWindowManager();
-		int height = (int) (manager.getDefaultDisplay().getHeight());
-		int width = (int) (manager.getDefaultDisplay().getWidth());
+		int height = manager.getDefaultDisplay().getHeight();
+		int width = manager.getDefaultDisplay().getWidth();
 
 		setContentView(R.layout.colorpick);
 

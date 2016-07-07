@@ -22,7 +22,7 @@ public interface GLDragListener {
 	 * <br>注意: 每个listener都会收到
 	 * @param view
 	 */
-	public void onDragStart(GLDragView view);
+	void onDragStart(GLDragView view);
 	
 	/**
 	 * <br>功能简述: 拖动结束
@@ -30,7 +30,7 @@ public interface GLDragListener {
 	 * <br>注意: 每个listener都会收到
 	 * @param view
 	 */
-	public void onDragEnd(GLDragView view);
+	void onDragEnd(GLDragView view);
 	
 	/**
 	 * <br>功能简述: 检查是否触摸到
@@ -42,7 +42,7 @@ public interface GLDragListener {
 	 * @param ray
 	 * @return {@link GLDragView#MISS},{@link GLDragView#PENDING},{@link GLDragView#HIT}
 	 */
-	public int onCheckTouch(GLDragView view, float x, float y, Ray ray);
+	int onCheckTouch(GLDragView view, float x, float y, Ray ray);
 	
 	/**
 	 * <br>功能简述:
@@ -50,7 +50,7 @@ public interface GLDragListener {
 	 * <br>注意:
 	 * @return 是否更新了变换
 	 */
-	public boolean onDragMove(GLDragView view, float x, float y, Ray ray);
+	boolean onDragMove(GLDragView view, float x, float y, Ray ray);
 	
 	/**
 	 * <br>功能简述: 触摸进入，由非命中转为命中
@@ -58,7 +58,7 @@ public interface GLDragListener {
 	 * <br>注意:
 	 * @param view
 	 */
-	public void onDragEnter(GLDragView view);
+	void onDragEnter(GLDragView view);
 	
 	/**
 	 * <br>功能简述:触摸离开，由命中转为非命中
@@ -66,7 +66,7 @@ public interface GLDragListener {
 	 * <br>注意:
 	 * @param view
 	 */
-	public void onDragExit(GLDragView view);
+	void onDragExit(GLDragView view);
 	
 	/**
 	 * <br>功能简述: 触摸悬停
@@ -75,7 +75,7 @@ public interface GLDragListener {
 	 * 
 	 * @return 下一次悬停检测的启动延时。如果需要用动画（例如自动滚屏）来响应，则返回动画所需时间。
 	 */
-	public long onDragHover(GLDragView view, float x, float y, Ray ray);
+	long onDragHover(GLDragView view, float x, float y, Ray ray);
 	
 	/**
 	 * <br>功能简述: 拖动停放，对源listener的回调
@@ -88,7 +88,7 @@ public interface GLDragListener {
 	 * @return 
 	 * @see {@link #onDropTo(GLDragView, float, float, Ray, GLDragListener)}
 	 */
-	public boolean onDropFrom(GLDragView view, float x, float y, Ray ray, GLDragListener target, boolean dropped);
+	boolean onDropFrom(GLDragView view, float x, float y, Ray ray, GLDragListener target, boolean dropped);
 	
 	/**
 	 * <br>功能简述: 拖动停放，对包含目标位置的listener的回调
@@ -103,7 +103,7 @@ public interface GLDragListener {
 	 * @return 是否接受停放
 	 * @see {@link #onDropFrom(GLDragView, float, float, Ray, GLDragListener)}
 	 */
-	public boolean onDropTo(GLDragView view, float x, float y, Ray ray, GLDragListener source);
+	boolean onDropTo(GLDragView view, float x, float y, Ray ray, GLDragListener source);
 	
 	/**
 	 * <br>功能简述: 绘制被拖动的视图
@@ -115,7 +115,7 @@ public interface GLDragListener {
 	 * @param t
 	 * @return
 	 */
-	public boolean onDrawDraggedView(GLDragView view, GLCanvas canvas, GLView draggedView, Transformation3D t);
+	boolean onDrawDraggedView(GLDragView view, GLCanvas canvas, GLView draggedView, Transformation3D t);
 	
 	/**
 	 * <br>功能简述: 是否可见
@@ -123,6 +123,6 @@ public interface GLDragListener {
 	 * <br>注意:
 	 * @return
 	 */
-	public int getVisibility();
+	int getVisibility();
 	
 }

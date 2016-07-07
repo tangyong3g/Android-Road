@@ -18,7 +18,6 @@
 
 include ':basic'
 
-
 //include ':enginddemooriginal'
 
 /**
@@ -39,7 +38,7 @@ include ':common'
  *  用户反馈模块，打成了AAR加入到了common模块中，如果需要修改加入项目中，重新编译即可
  *
  */
-//include ':mailfeedback'
+include ':mailfeedback'
 
 /**
  *

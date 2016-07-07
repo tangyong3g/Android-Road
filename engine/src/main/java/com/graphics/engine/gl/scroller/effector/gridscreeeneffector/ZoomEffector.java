@@ -28,7 +28,7 @@ public class ZoomEffector extends MGridScreenEffector {
 
 	@Override
 	public void onDrawScreen(GLCanvas canvas, int screen, float offset) {
-		final GridScreenContainer container = (GridScreenContainer) mContainer;
+		final GridScreenContainer container = mContainer;
 		final float scale1 = 0.2f;
 		final float scale2 = 0.8f;
 		final int row = container.getCellRow();

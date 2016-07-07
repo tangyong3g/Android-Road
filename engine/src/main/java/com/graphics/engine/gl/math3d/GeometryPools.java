@@ -58,7 +58,7 @@ import com.graphics.engine.gl.util.StackPool;
 public class GeometryPools {
 	
 	static final int POINT_POOL_LIMIT = 512;
-	static final String POINT_POOL_NAME = "PointPool";;
+	static final String POINT_POOL_NAME = "PointPool";
 
 	static final int VECTOR_POOL_LIMIT = 512;
 	static final String VECTOR_POOL_NAME = "VectorPool";

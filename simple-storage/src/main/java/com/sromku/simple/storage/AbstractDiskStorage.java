@@ -212,10 +212,7 @@ abstract class AbstractDiskStorage implements Storage {
 			FilenameFilter filter = new FilenameFilter() {
 				@Override
 				public boolean accept(File dir, String fileName) {
-					if (fileName.matches(matchRegex)) {
-						return true;
-					}
-					return false;
+					return fileName.matches(matchRegex);
 				}
 			};
 			out = Arrays.asList(file.listFiles(filter));
@@ -372,7 +369,7 @@ abstract class AbstractDiskStorage implements Storage {
 					System.arraycopy(chunk.element1, 0, array, offset, chunk.element2);
 					offset += chunk.element2;
 				}
-			};
+			}
 		};
 
 		reader.start();

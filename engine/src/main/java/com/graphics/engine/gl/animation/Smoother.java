@@ -18,8 +18,8 @@ public class Smoother {
 	 * @date  [2012-9-7]
 	 */
 	public interface SmoothListener {
-		public void invalidate();
-		public void onMotion(int x, int y);
+		void invalidate();
+		void onMotion(int x, int y);
 	}
 	
     private static final float SMOOTHING_SPEED = 0.75f;

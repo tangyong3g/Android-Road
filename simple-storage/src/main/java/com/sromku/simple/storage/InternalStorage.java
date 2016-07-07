@@ -40,10 +40,7 @@ public class InternalStorage extends AbstractDiskStorage {
 	@Override
 	public boolean createDirectory(String name) {
 		File dir = mContext.getDir(name, Context.MODE_PRIVATE);
-		if (dir.exists()) {
-			return true;
-		}
-		return false;
+		return dir.exists();
 	}
 
 	/**

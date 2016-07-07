@@ -18,7 +18,7 @@ public final class Ray {
 	/**
 	 * <br>接口描述: 可以和射线相交的物体
 	 */
-	public static interface RayIntersectable {
+	public interface RayIntersectable {
 		
 		/**
 		 * <br>功能简述: 检测是否和射线/线段相交
@@ -27,7 +27,7 @@ public final class Ray {
 		 * @param ray
 		 * @return
 		 */
-		public boolean intersect(Ray ray);
+		boolean intersect(Ray ray);
 		
 		/**
 		 * <br>功能简述:  检测是否和射线/线段相交
@@ -37,7 +37,7 @@ public final class Ray {
 		 * @param ray
 		 * @return
 		 */
-		public boolean testIntersect(Ray ray);
+		boolean testIntersect(Ray ray);
 	}
 	
 	//CHECKSTYLE IGNORE 6 LINES

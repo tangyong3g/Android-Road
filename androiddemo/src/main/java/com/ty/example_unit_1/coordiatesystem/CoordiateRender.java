@@ -1,6 +1,7 @@
 package com.ty.example_unit_1.coordiatesystem;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -43,7 +44,7 @@ public class CoordiateRender extends DemoWapper {
 	@Override
 	public void render() {
 		super.render();
-		Gdx.gl20.glClear(Gdx.gl20.GL_COLOR_BUFFER_BIT);
+		Gdx.gl20.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 		mCamera.position.add(0.1f, 0, 0);
 		mCamera.update();
