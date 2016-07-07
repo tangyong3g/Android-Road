@@ -4,21 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_getextpath"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="getExtFilePath"
-        android:text="@string/getPathInfo" />
-
-
-    <Button
-        android:id="@+id/btn_create_path"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="createExtFile"
-        android:text="@string/createPathInfo" />
-
 
     <Button
         android:id="@+id/btn_save_internal_file"
@@ -34,6 +19,59 @@
         android:layout_height="wrap_content"
         android:onClick="createExternalFile"
         android:text="@string/createExternalFile" />
+
+
+
+
+    <!-- 内部存储文件    dir/data/user/0/com.sny.tangyong.androiddemo/files    -->
+    <Button
+        android:id="@+id/btn_get_internal_file_dir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getInternalFileDir"
+        android:text="@string/getInternalFileDir" />
+
+
+    <!-- 内部存储文件 cache   dir/data/user/0/com.sny.tangyong.androiddemo/cache-->
+    <Button
+        android:id="@+id/btn_get_internal_file_cache_dir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getInternalFileCacheDir"
+        android:text="@string/getInternalFileCacheDir" />
+
+
+    <!-- 外部存储文件,公用的文件夹如DICM /storage/emulated/0/DCIM -->
+    <Button
+        android:id="@+id/btn_get_external_public_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getExternalFilePublic"
+        android:text="@string/getExternalPublicFile" />
+
+    <!-- 外部存储文件夹，但是会创建和应用相同名字的文件夹 /storage/emulated/0/Android/data/com.sny.tangyong.androiddemo/files -->
+    <Button
+        android:id="@+id/btn_get_external_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="getExternalFileRoot"
+        android:text="@string/getExternalFileRoot" />
+
+
+
+    <Button
+        android:id="@+id/btn_create_sdcard_root_folder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="createSDCardRootFolder"
+        android:text="@string/createSDCardRootFolder" />
+
+
+
+
+
+
+
 
 
 </LinearLayout>

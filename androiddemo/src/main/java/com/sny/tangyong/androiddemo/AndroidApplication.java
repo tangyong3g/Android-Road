@@ -4,6 +4,7 @@ import android.content.pm.ApplicationInfo;
 import android.os.Build;
 
 import com.example.androiddemo.ScreenInfo;
+import com.orhanobut.logger.Logger;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -40,11 +41,14 @@ public class AndroidApplication extends android.app.Application {
         initPlugin();
         initComponent();
 //        initGoogleAna();
+
     }
 
     private void initPlugin(){
 //        CrashReport report  = new CrashReport();
 //        report.start(getApplicationContext());
+
+        Logger.init("tyler.tang");
     }
 
     public static AndroidApplication getInstance() {

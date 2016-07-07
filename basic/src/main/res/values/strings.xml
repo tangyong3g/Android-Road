@@ -62,4 +62,15 @@
     <string name="createExternalFile">create external file</string>
 
 
+    <string name="getInternalFileDir">get Internal File</string>
+    <string name="getInternalFileCacheDir">get Internal File cache dir</string>
+
+
+    <string name="getExternalPublicFile">get external public File Root</string>
+    <string name="getExternalFileRoot">get external File Root</string>
+
+    <string name="createSDCardRootFolder">create sd card Root folder</string>
+
+
+
 </resources>

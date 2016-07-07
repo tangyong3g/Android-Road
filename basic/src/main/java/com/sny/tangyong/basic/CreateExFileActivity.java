@@ -16,24 +16,23 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 /**
- * get more information plz see
- * the following url
+ *
+ * get more information plz see the following url
+ *
+ *
  * <p/>
  * https://developer.android.com/training/basics/data-storage/files.html
  * <p/>
- * 内部存储：
- * 它始终可用。
- * 默认情况下只有您的应用可以访问此处保存的文件。
- * 当用户卸载您的应用时，系统会从内部存储中删除您的应用的所有文件。
+ * 内部存储： 它始终可用。 默认情况下只有您的应用可以访问此处保存的文件。 当用户卸载您的应用时，系统会从内部存储中删除您的应用的所有文件。
  * 当您希望确保用户或其他应用均无法访问您的文件时，内部存储是最佳选择。
  * <p/>
  * <p/>
  * 外部存储：
  * <p/>
- * 它并非始终可用，因为用户可采用 USB 存储的形式装载外部存储，并在某些情况下会从设备中将其删除。
- * 它是全局可读的，因此此处保存的文件可能不受您控制地被读取。
- * 当用户卸载您的应用时，只有在您通过 getExternalFilesDir() 将您的应用的文件保存在目录中时，系统才会从此处删除您的应用的文件。
+ * 它并非始终可用，因为用户可采用 USB 存储的形式装载外部存储，并在某些情况下会从设备中将其删除。 它是全局可读的，因此此处保存的文件可能不受您控制地被读取。 当用户卸载您的应用时，只有在您通过
+ * getExternalFilesDir() 将您的应用的文件保存在目录中时，系统才会从此处删除您的应用的文件。
  * 对于无需访问限制以及您希望与其他应用共享或允许用户使用电脑访问的文件，外部存储是最佳位置。
+ *
  */
 public class CreateExFileActivity extends Activity implements View.OnClickListener {
 
@@ -127,16 +126,15 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
         if (isExternalStorageWritable() && isExternalStorageReadable()) {
 
             /*
-            逻辑上分类，所有应用都可以访问  SD卡上面
+             * 逻辑上分类，所有应用都可以访问 SD卡上面
              *
-             *  涵盖以下分类
+             * 涵盖以下分类
              *
-             *  @param type The type of storage directory to return.  Should be one of
-             * {@link #DIRECTORY_MUSIC}, {@link #DIRECTORY_PODCASTS},
-             * {@link #DIRECTORY_RINGTONES}, {@link #DIRECTORY_ALARMS},
-             * {@link #DIRECTORY_NOTIFICATIONS}, {@link #DIRECTORY_PICTURES},
-             * {@link #DIRECTORY_MOVIES}, {@link #DIRECTORY_DOWNLOADS}, or
-             * {@link #DIRECTORY_DCIM}.  May not be null.
+             * @param type The type of storage directory to return. Should be one of {@link
+             * #DIRECTORY_MUSIC}, {@link #DIRECTORY_PODCASTS}, {@link #DIRECTORY_RINGTONES}, {@link
+             * #DIRECTORY_ALARMS}, {@link #DIRECTORY_NOTIFICATIONS}, {@link #DIRECTORY_PICTURES},
+             * {@link #DIRECTORY_MOVIES}, {@link #DIRECTORY_DOWNLOADS}, or {@link #DIRECTORY_DCIM}.
+             * May not be null.
              *
              */
             File externalRoot = android.os.Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
@@ -162,27 +160,28 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
              */
             File externalRootNull = getExternalFilesDir(null);
 
-            Logger.getLogger("tyler.tang").info("create external null file path :"+externalRootNull.getAbsolutePath());
+            Logger.getLogger("tyler.tang")
+                    .info("create external null file path :" + externalRootNull.getAbsolutePath());
 
 
-            File myAppFile = new File(externalRootNull+"/basictest");
+            File myAppFile = new File(externalRootNull + "/basictest");
             boolean externalRootNullFileRs = false;
-            if(!myAppFile.exists()){
+            if (!myAppFile.exists()) {
                 externalRootNullFileRs = myAppFile.mkdirs();
             }
-            Logger.getLogger("tyler.tang").info("create external null file :"+externalRootNullFileRs);
+            Logger.getLogger("tyler.tang").info("create external null file :" + externalRootNullFileRs);
 
             /**
              *
              * 应用范围内分类,应用卸载后信息会被删除
              *
-             {@link android.os.Environment#DIRECTORY_MUSIC},
-             {@link android.os.Environment#DIRECTORY_PODCASTS},
-             {@link android.os.Environment#DIRECTORY_RINGTONES},
-             {@link android.os.Environment#DIRECTORY_ALARMS},
-             {@link android.os.Environment#DIRECTORY_NOTIFICATIONS},
-             {@link android.os.Environment#DIRECTORY_PICTURES}, or
-             {@link android.os.Environment#DIRECTORY_MOVIES}.
+             * {@link android.os.Environment#DIRECTORY_MUSIC},
+             * {@link android.os.Environment#DIRECTORY_PODCASTS},
+             * {@link android.os.Environment#DIRECTORY_RINGTONES},
+             * {@link android.os.Environment#DIRECTORY_ALARMS},
+             * {@link android.os.Environment#DIRECTORY_NOTIFICATIONS},
+             * {@link android.os.Environment#DIRECTORY_PICTURES}, or
+             * {@link android.os.Environment#DIRECTORY_MOVIES}.
              */
             File externalContext = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
             Logger.getLogger("tyler.tang").fine(externalContext.getAbsolutePath());
@@ -191,6 +190,114 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
         }
 
         return false;
+    }
+
+
+
+    /**
+     *
+     * 得到内部存储Dir文件
+     *
+     * @param view
+     */
+    public void getInternalFileDir(View view) {
+
+        File file = getFilesDir();
+
+        com.orhanobut.logger.Logger.i("internal file dir" + file.getAbsolutePath());
+
+    }
+
+
+    /**
+     *
+     * 得到内部存储Cache文件
+     *
+     * @param view
+     */
+    public void getInternalFileCacheDir(View view) {
+
+        File file = getCacheDir();
+
+        com.orhanobut.logger.Logger.i("internal cache file dir" + file.getAbsolutePath());
+
+    }
+
+
+
+    /**
+     *
+     * 得到外部存储文件公开目录
+     *
+     * @param view
+     */
+    public void getExternalFilePublic(View view) {
+
+        if (isExternalStorageReadable()) {
+
+            /**
+             * {@link #DIRECTORY_MUSIC}, {@link #DIRECTORY_PODCASTS}, {@link #DIRECTORY_RINGTONES},
+             * {@link #DIRECTORY_ALARMS}, {@link #DIRECTORY_NOTIFICATIONS},
+             * {@link #DIRECTORY_PICTURES}, {@link #DIRECTORY_MOVIES}, {@link #DIRECTORY_DOWNLOADS},
+             * or {@link #DIRECTORY_DCIM}. May not be null.
+             */
+            File externalPublic = android.os.Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+            com.orhanobut.logger.Logger.i(externalPublic.getAbsolutePath());
+
+
+        }
+    }
+
+
+    /**
+     *
+     * 得到外部存储文件目录 应用内
+     *
+     * note:
+     *
+     * 1: 实际上会定义与程序相同名字的文件夹方便管理 2:
+     *
+     * @param view
+     */
+    public void getExternalFileRoot(View view) {
+
+        if (isExternalStorageReadable()) {
+            /**
+             * {@link #DIRECTORY_MUSIC}, {@link #DIRECTORY_PODCASTS}, {@link #DIRECTORY_RINGTONES},
+             * {@link #DIRECTORY_ALARMS}, {@link #DIRECTORY_NOTIFICATIONS},
+             * {@link #DIRECTORY_PICTURES}, {@link #DIRECTORY_MOVIES}, {@link #DIRECTORY_DOWNLOADS},
+             * or {@link #DIRECTORY_DCIM}. May not be null.
+             */
+            File file = getExternalFilesDir(null);
+            com.orhanobut.logger.Logger.i("getExternalFileRoot" + file.getAbsolutePath());
+        }
+    }
+
+
+    /**
+     * 在SD卡根目录创建文件夹
+     * 
+     * <p>
+     * target在22或者以下的机型才能生效
+     * </p>
+     *
+     * @param view
+     */
+    public void createSDCardRootFolder(View view) {
+
+        if (isExternalStorageReadable() && isExternalStorageWritable()) {
+
+            String newFileDir = getExtStorageDirPath();
+
+            com.orhanobut.logger.Logger.i(newFileDir);
+
+            File folder = new File(newFileDir + File.separator + "test");
+
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
+            com.orhanobut.logger.Logger.i(folder.getAbsolutePath() + File.separator + folder.exists());
+        }
     }
 
 
@@ -218,8 +325,7 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
     /* Checks if external storage is available to at least read */
     public boolean isExternalStorageReadable() {
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state) ||
-                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+        if (Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
             return true;
         }
         return false;
@@ -227,9 +333,10 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
 
 
     /**
-     * <br>功能简述:获取手机SD卡根路径
-     * <br>功能详细描述:
-     * <br>注意:
+     * <br>
+     * 功能简述:获取手机SD卡根路径 <br>
+     * 功能详细描述: <br>
+     * 注意:
      *
      * @return
      */
@@ -243,9 +350,10 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
     }
 
     /**
-     * <br>功能简述:获取手机SD卡根路径文件夹
-     * <br>功能详细描述:
-     * <br>注意:
+     * <br>
+     * 功能简述:获取手机SD卡根路径文件夹 <br>
+     * 功能详细描述: <br>
+     * 注意:
      *
      * @return
      */
@@ -287,9 +395,9 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
 
     public void createExtFile(View view) {
 
-//        Storage storage = SimpleStorage.getExternalStorage();
+        // Storage storage = SimpleStorage.getExternalStorage();
 
-//        Storage storage = SimpleStorage.getInternalStorage(getBaseContext());
+        // Storage storage = SimpleStorage.getInternalStorage(getBaseContext());
 
         Storage storage = null;
 
@@ -314,80 +422,57 @@ public class CreateExFileActivity extends Activity implements View.OnClickListen
 
 
 
-
         /*
-        File sd = Environment.getExternalStorageDirectory();
-        String path = sd.getPath() + "/tangyong";
-        File file = new File(path);
-        if (!file.exists())
-            file.mkdir();
-
-        try {
-
-            File folder   = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-
-            if(!folder.exists()){
-                folder.mkdirs();
-            }
-
-            String filePath = file.getAbsoluteFile()+"/hello.txt";
-            File f = createFile(filePath);
-
-            Logger.getLogger("tyler.tang").info("absolutePath"+f.getAbsolutePath());
-            Logger.getLogger("tyler.tang").info("path"+f.getPath());
-
-        } catch (IOException io) {
-            io.printStackTrace();
-        }
-
-*/
-         /*
-        String newFileDir = getExtStorageDirPath() + File.separator + APP_PRO_PATH;
-        long timestamp = System.currentTimeMillis();
-        Logger.getLogger("tyler.tang").info(newFileDir);
-        File fileDir = new File(newFileDir);
-        boolean rs = fileDir.isDirectory();
-        Logger.getLogger("tyler.tang").info(rs + "");
-        if (!rs) {
-            boolean result = fileDir.mkdirs();
-            Logger.getLogger("tyler.tang").info("create folder :\t" + result + "");
-        }
-
-        newFileDir += (null != null ? SILENT_PREFIX : "") + "stack-" + timestamp + ERROR_FILE_TYPE;
-        File tFile = new File(newFileDir);
-        FileOutputStream fos = null;
-
-        Logger.getLogger("tyler.tang").info(tFile.getAbsolutePath());
-
-        if (!tFile.exists()) {
-            try {
-                boolean createSuccess = tFile.createNewFile();
-                Logger.getLogger("tyler.tang").info("createSuccess "+createSuccess);
-            } catch (IOException io) {
-                io.printStackTrace();
-            }
-        }
-
-        try {
-
-            fos = new FileOutputStream(tFile);
-
-            OutputStreamWriter write = new OutputStreamWriter(fos);
-
-            write.write(new Date().toString());
-
-            write.flush();
-            write.close();
-
-            fos.flush();
-            fos.close();
-
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        } catch (IOException io) {
-            io.printStackTrace();
-        }
-        */
+         * File sd = Environment.getExternalStorageDirectory(); String path = sd.getPath() +
+         * "/tangyong"; File file = new File(path); if (!file.exists()) file.mkdir();
+         * 
+         * try {
+         * 
+         * File folder =
+         * Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+         * 
+         * if(!folder.exists()){ folder.mkdirs(); }
+         * 
+         * String filePath = file.getAbsoluteFile()+"/hello.txt"; File f = createFile(filePath);
+         * 
+         * Logger.getLogger("tyler.tang").info("absolutePath"+f.getAbsolutePath());
+         * Logger.getLogger("tyler.tang").info("path"+f.getPath());
+         * 
+         * } catch (IOException io) { io.printStackTrace(); }
+         * 
+         */
+        /*
+         * String newFileDir = getExtStorageDirPath() + File.separator + APP_PRO_PATH; long
+         * timestamp = System.currentTimeMillis(); Logger.getLogger("tyler.tang").info(newFileDir);
+         * File fileDir = new File(newFileDir); boolean rs = fileDir.isDirectory();
+         * Logger.getLogger("tyler.tang").info(rs + ""); if (!rs) { boolean result =
+         * fileDir.mkdirs(); Logger.getLogger("tyler.tang").info("create folder :\t" + result + "");
+         * }
+         * 
+         * newFileDir += (null != null ? SILENT_PREFIX : "") + "stack-" + timestamp +
+         * ERROR_FILE_TYPE; File tFile = new File(newFileDir); FileOutputStream fos = null;
+         * 
+         * Logger.getLogger("tyler.tang").info(tFile.getAbsolutePath());
+         * 
+         * if (!tFile.exists()) { try { boolean createSuccess = tFile.createNewFile();
+         * Logger.getLogger("tyler.tang").info("createSuccess "+createSuccess); } catch (IOException
+         * io) { io.printStackTrace(); } }
+         * 
+         * try {
+         * 
+         * fos = new FileOutputStream(tFile);
+         * 
+         * OutputStreamWriter write = new OutputStreamWriter(fos);
+         * 
+         * write.write(new Date().toString());
+         * 
+         * write.flush(); write.close();
+         * 
+         * fos.flush(); fos.close();
+         * 
+         * } catch (FileNotFoundException ex) { ex.printStackTrace(); } catch (IOException io) {
+         * io.printStackTrace(); }
+         */
     }
 
 
