@@ -5,13 +5,13 @@ import android.graphics.RectF;
 import android.opengl.GLES20;
 import android.util.AttributeSet;
 
-import com.graphics.engine.gl.graphics.ColorShader;
-import com.graphics.engine.gl.graphics.GLCanvas;
-import com.graphics.engine.gl.graphics.RenderContext;
-import com.graphics.engine.gl.graphics.Renderable;
-import com.graphics.engine.gl.graphics.Triple;
-import com.graphics.engine.gl.util.IBufferFactory;
-import com.graphics.engine.gl.view.GLView;
+import com.graphics.engine.graphics.ColorShader;
+import com.graphics.engine.graphics.GLCanvas;
+import com.graphics.engine.graphics.RenderContext;
+import com.graphics.engine.graphics.Renderable;
+import com.graphics.engine.graphics.Triple;
+import com.graphics.engine.util.IBufferFactory;
+import com.graphics.engine.view.GLView;
 
 import java.nio.FloatBuffer;
 

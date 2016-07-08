@@ -10,7 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.0'
+        classpath 'com.android.tools.build:gradle:2.1.2'
     }
 }
 
@@ -52,7 +52,7 @@ android {
     defaultConfig {
         applicationId 'com.sny.tangyong.androiddemo'
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 23
         versionCode 2
         versionName "1.1"
         multiDexEnabled true
@@ -103,9 +103,10 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'androiddemo/libs')
     compile project(':common')
     compile project(':basic')
-    compile project(':engine')
+    compile project(':graphicengine')
     //compile project(':enginedemo')
     compile project(':mailfeedback')
+    compile project(':enginedemo')
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support:design:23.0.0'
     compile 'com.android.support:recyclerview-v7:23.0.0'

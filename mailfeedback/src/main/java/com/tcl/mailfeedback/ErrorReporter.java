@@ -96,7 +96,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
          */
         @Override
         public void run() {
-//             checkAndSendReports(mContext, mReportFileName);
+            // checkAndSendReports(mContext, mReportFileName);
             try {
                 sendMail(mContext, mReportFileName, mBody);
             } catch (Exception e) {
@@ -530,8 +530,8 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
         mIsUpgradeError = false;
         // Always write the report file
         String reportFileName = saveCrashReportFile();
-//        Log.i(LOG_TAG, reportFileName);
-        com.orhanobut.logger.Logger.i("tyler.tang"+"错误写入文件:"+reportFileName);
+        // Log.i(LOG_TAG, reportFileName);
+        com.orhanobut.logger.Logger.i("tyler.tang" + "错误写入文件:" + reportFileName);
 
         if (!mIsOutOfMemoryError && !mIsUpgradeError) {
             if (reportingInteractionMode == ReportingInteractionMode.SILENT
@@ -540,7 +540,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
                 checkAndSendReports(mContext, null);
             } else if (reportingInteractionMode == ReportingInteractionMode.NOTIFICATION) {
                 // Send reports when user accepts
-                com.orhanobut.logger.Logger.i("tyler.tang"+"传入文件"+reportFileName+"到Notifycation中");
+                com.orhanobut.logger.Logger.i("tyler.tang" + "传入文件" + reportFileName + "到Notifycation中");
                 notifySendReport(reportFileName);
             }
         }
@@ -570,13 +570,14 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
      */
     void notifySendReport(String reportFileName) {
 
-//        com.orhanobut.logger.Logger.i("文件名:\t"+reportFileName+"传入Dialog");
+        // com.orhanobut.logger.Logger.i("文件名:\t"+reportFileName+"传入Dialog");
         // This notification can't be set to AUTO_CANCEL because after a crash,
         // clicking on it restarts the application and this triggers a check
         // for pending reports which issues the notification back.
         // Notification cancellation is done in the dialog activity displayed
         // on notification click.
-        NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationManager notificationManager =
+                (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
 
         // Default notification icon is the warning symbol
         int icon = android.R.drawable.stat_notify_error;
@@ -594,15 +595,15 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
 
         Intent notificationIntent = new Intent(mContext, CrashReportDialog.class);
         notificationIntent.putExtra(EXTRA_REPORT_FILE_NAME, reportFileName);
-        com.orhanobut.logger.Logger.i("传入文件到Dialog中"+reportFileName);
+        com.orhanobut.logger.Logger.i("传入文件到Dialog中" + reportFileName);
 
-//        try {
-            // --TODO delete log file writeLogfile
-//            LogRecord.deleteLogFile();
-//            LogRecord.writeLogFile(reportFileName);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        // try {
+        // --TODO delete log file writeLogfile
+        // LogRecord.deleteLogFile();
+        // LogRecord.writeLogFile(reportFileName);
+        // } catch (IOException e) {
+        // e.printStackTrace();
+        // }
         PendingIntent contentIntent = PendingIntent.getActivity(mContext, 0, notificationIntent, 0);
 
         // 创建通知消息构造器
@@ -666,7 +667,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
             fileName += File.separator + (isSilent != null ? SILENT_PREFIX : "") + "stack-" + timestamp + ERROR_FILE_TYPE;
             File file = new File(fileName);
 
-            if(!file.exists()){
+            if (!file.exists()) {
                 file.createNewFile();
             }
 
@@ -696,28 +697,34 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
         return null;
     }
 
+
     private String createSaveFilePath() {
 
         if (mCrashFilePath == null) {
 
-            File destDir = new File( getCrashReportFilePath());
+            File destDir = new File(getCrashReportFilePath());
 
             if (!destDir.exists()) {
-                boolean success = destDir.mkdirs();
+                 destDir.mkdirs();
             }
         }
         return mCrashFilePath;
     }
 
 
-    public String getCrashReportFilePath(){
+    /**
+     * 得到CrashReportFile的路径
+     * 
+     * @return String
+     */
+    public String getCrashReportFilePath() {
 
-        if(mCrashFilePath == null){
-            mCrashFilePath  =  mContext.getExternalFilesDir(null).getAbsolutePath() + CrashReportConfig.Path.LOG_DIR;
+        if (mCrashFilePath == null) {
+            mCrashFilePath = mContext.getExternalFilesDir(null).getAbsolutePath() + CrashReportConfig.Path.LOG_DIR;
 
             File destDir = new File(mCrashFilePath);
 
-            if(!destDir.exists()){
+            if (!destDir.exists()) {
                 destDir.mkdirs();
             }
 
@@ -731,7 +738,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
      * @return an array containing the names of available crash report files.
      */
     String[] getCrashReportFilesList() {
-//        File dir = mContext.getFilesDir();
+        // File dir = mContext.getFilesDir();
 
         File dir = new File(getCrashReportFilePath());
 
@@ -855,7 +862,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
      */
     private void sendMail(Context context, String file, String body) {
 
-        com.orhanobut.logger.Logger.i("到达发送邮件"+file);
+        com.orhanobut.logger.Logger.i("到达发送邮件" + file);
         Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
         emailIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
@@ -873,7 +880,7 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
             emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, body);
         }
 
-        com.orhanobut.logger.Logger.i("传入邮件intend"+file);
+        com.orhanobut.logger.Logger.i("传入邮件intend" + file);
         File fileIn = new File(file);
         emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(fileIn));
         emailIntent.setType("plain/text");
@@ -910,9 +917,9 @@ public class ErrorReporter implements Thread.UncaughtExceptionHandler {
                 }
                 new ReportsSenderWorker().start();
             } else if (mReportingInteractionMode == ReportingInteractionMode.NOTIFICATION) {
-//                com.orhanobut.logger.Logger.i();
-//                Log.i("tyler.tang","开机检查最后一个文件:"+filesList[filesList.length - 1]);
-               // ErrorReporter.getInstance().notifySendReport(filesList[filesList.length - 1]);
+                // com.orhanobut.logger.Logger.i();
+                // Log.i("tyler.tang","开机检查最后一个文件:"+filesList[filesList.length - 1]);
+                // ErrorReporter.getInstance().notifySendReport(filesList[filesList.length - 1]);
             }
         }
 

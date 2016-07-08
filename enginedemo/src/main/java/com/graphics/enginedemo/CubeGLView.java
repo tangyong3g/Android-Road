@@ -1,19 +1,19 @@
 package com.graphics.enginedemo;
 
+import java.nio.FloatBuffer;
+import java.nio.ShortBuffer;
+
+import com.graphics.engine.graphics.ColorAttributeShader;
+import com.graphics.engine.graphics.GLCanvas;
+import com.graphics.engine.graphics.RenderContext;
+import com.graphics.engine.graphics.Renderable;
+import com.graphics.engine.graphics.Triple;
+import com.graphics.engine.util.IBufferFactory;
+import com.graphics.engine.view.GLView;
+
 import android.content.Context;
 import android.opengl.GLES20;
 import android.util.AttributeSet;
-
-import com.graphics.engine.gl.graphics.ColorAttributeShader;
-import com.graphics.engine.gl.graphics.GLCanvas;
-import com.graphics.engine.gl.graphics.RenderContext;
-import com.graphics.engine.gl.graphics.Renderable;
-import com.graphics.engine.gl.graphics.Triple;
-import com.graphics.engine.gl.util.IBufferFactory;
-import com.graphics.engine.gl.view.GLView;
-
-import java.nio.FloatBuffer;
-import java.nio.ShortBuffer;
 
 /**
  * 

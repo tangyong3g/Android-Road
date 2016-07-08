@@ -1,25 +1,23 @@
 package com.graphics.enginedemo;
 
+
 import android.content.Context;
 import android.view.MotionEvent;
 
-import com.graphics.engine.gl.graphics.GLCanvas;
-import com.graphics.engine.gl.graphics.GLDrawable;
-import com.graphics.engine.gl.view.GLView;
-
+import com.graphics.engine.graphics.GLCanvas;
+import com.graphics.engine.graphics.GLDrawable;
+import com.graphics.engine.view.GLView;
 
 /**
  * 
  */
 public class RotateTestView extends GLView {
-	// 用来绘制的图片
 	GLDrawable mDrawable;
 	float mEuler[] = new float[3];
 
-	// 初始化
 	public RotateTestView(Context context) {
 		super(context);
-		mDrawable = GLDrawable.getDrawable(getResources(),R.drawable.grid_white);
+		mDrawable = GLDrawable.getDrawable(getResources(), R.drawable.preview_panel);
 	}
 
 	@Override
@@ -27,7 +25,7 @@ public class RotateTestView extends GLView {
 		mDrawable.setBounds(0, 0, (int) (w * 0.75f), (int) (h * 0.75f));
 	}
 
-	float t;
+	float t;	//CHECKSTYLE IGNORE
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
@@ -48,8 +46,7 @@ public class RotateTestView extends GLView {
 		//		float delta = (float) Math.atan(w / (float) h);
 		float a = delta * (1 - t);
 		//		canvas.rotateAxisAngle(180 * t, (float) Math.sin(a), (float) Math.cos(a), 0);
-		GLCanvas.convertAxisAngleToEulerAngle(180 * t, (float) Math.sin(a), (float) Math.cos(a), 0,
-				mEuler);
+		GLCanvas.convertAxisAngleToEulerAngle(180 * t, (float) Math.sin(a), (float) Math.cos(a), 0, mEuler);
 		canvas.rotateEuler(mEuler[0], mEuler[1], mEuler[2]);
 
 		canvas.translate(-w / 2, -h / 2);

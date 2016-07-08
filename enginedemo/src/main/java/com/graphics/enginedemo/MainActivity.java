@@ -1,15 +1,14 @@
 package com.graphics.enginedemo;
 
-import android.os.Bundle;
+import java.util.ArrayList;
 
 import com.sny.tangyong.common.view.BaseListActivity;
 import com.sny.tangyong.common.view.ItemComponentInfo;
 
-import java.util.ArrayList;
+import android.os.Bundle;
 
-/**
- */
 public class MainActivity extends BaseListActivity {
+
     public MainActivity() {
         initListItems();
     }
@@ -20,8 +19,15 @@ public class MainActivity extends BaseListActivity {
 
         ItemComponentInfo info;
 
+//        info = new ItemComponentInfo("Test", GoLauncher3DTestActivity.class);
+//        mItemsInfo.add(info);
+
         info = new ItemComponentInfo("GraphicsEngine", Main.class);
         mItemsInfo.add(info);
+
+        info = new ItemComponentInfo("InterpolaterTest", InterpolaterTestActivity.class);
+        mItemsInfo.add(info);
+
 
         initDisplayList();
     }

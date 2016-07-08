@@ -3,7 +3,8 @@ package com.graphics.enginedemo;
 
 import android.content.Context;
 
-import com.graphics.engine.gl.widget.GLImageView;
+import com.graphics.engine.widget.GLImageView;
+
 
 /**
  * @author tang

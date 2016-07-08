@@ -18,7 +18,6 @@
 
 include ':basic'
 
-//include ':enginddemooriginal'
 
 /**
  * comon project contain thirdpart plugin
@@ -45,17 +44,13 @@ include ':mailfeedback'
  *   engine demo
  *
  */
-//include ':enginedemo'
+include ':enginedemo'
 
 /**
  * engine source
  */
-include ':engine'
+include ':graphicengine'
 
-/**
- * mailfeckback
- */
-//include ':mailfeedback'
 
 /**
  *

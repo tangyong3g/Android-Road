@@ -3,7 +3,8 @@ package com.graphics.enginedemo;
 
 import android.os.Bundle;
 
-import com.graphics.engine.gl.GLActivity;
+import com.graphics.engine.GLActivity;
+
 
 /**
  * 
